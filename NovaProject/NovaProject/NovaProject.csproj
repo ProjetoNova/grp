@@ -159,14 +159,34 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CadastroController\TipoUsuarioController.cs" />
+    <Compile Include="Controllers\CadastroController\UsuarioController.cs" />
+    <Compile Include="Controllers\ProjetoController\AnexoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\CadastroController\LoginController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ProjetoController\AtividadeController.cs" />
+    <Compile Include="Controllers\ProjetoController\FaseProjetoController.cs" />
+    <Compile Include="Controllers\ProjetoController\ProjetoController.cs" />
+    <Compile Include="Controllers\ProjetoController\SituacaoController.cs" />
+    <Compile Include="Controllers\ProjetoController\TipoAtividadeController.cs" />
+    <Compile Include="Dao\DaoGenerico.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Cadastro\TipoUsuario.cs" />
+    <Compile Include="Models\Cadastro\Usuario.cs" />
+    <Compile Include="Models\Cadastro\UsuarioProjeto.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Projeto\Anexo.cs" />
+    <Compile Include="Models\Projeto\Atividade.cs" />
+    <Compile Include="Models\Projeto\AtividadeRelacionada.cs" />
+    <Compile Include="Models\Projeto\FaseProjeto.cs" />
+    <Compile Include="Models\Projeto\Projeto.cs" />
+    <Compile Include="Models\Projeto\Situacao.cs" />
+    <Compile Include="Models\Projeto\TipoAtividade.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
