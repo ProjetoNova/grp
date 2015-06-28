@@ -7,5 +7,6 @@ namespace NovaProject.Models.Projeto
 {
     public class Anexo
     {
+        
     }
 }
