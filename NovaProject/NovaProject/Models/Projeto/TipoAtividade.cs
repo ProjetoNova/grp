@@ -7,5 +7,7 @@ namespace NovaProject.Models.Projeto
 {
     public class TipoAtividade
     {
+        
+        
     }
 }
