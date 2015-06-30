@@ -67,21 +67,21 @@
             // usuarioToolStripMenuItem
             // 
             this.usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
-            this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.usuarioToolStripMenuItem.Text = "Usuario";
             this.usuarioToolStripMenuItem.Click += new System.EventHandler(this.usuarioToolStripMenuItem_Click);
             // 
             // tipoUsuarioToolStripMenuItem
             // 
             this.tipoUsuarioToolStripMenuItem.Name = "tipoUsuarioToolStripMenuItem";
-            this.tipoUsuarioToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.tipoUsuarioToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.tipoUsuarioToolStripMenuItem.Text = "Tipo Usuario";
             this.tipoUsuarioToolStripMenuItem.Click += new System.EventHandler(this.tipoUsuarioToolStripMenuItem_Click);
             // 
             // tipoAtividadeToolStripMenuItem
             // 
             this.tipoAtividadeToolStripMenuItem.Name = "tipoAtividadeToolStripMenuItem";
-            this.tipoAtividadeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.tipoAtividadeToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.tipoAtividadeToolStripMenuItem.Text = "Tipo Atividade";
             this.tipoAtividadeToolStripMenuItem.Click += new System.EventHandler(this.tipoAtividadeToolStripMenuItem_Click);
             // 
@@ -120,14 +120,14 @@
             // minhaContaToolStripMenuItem
             // 
             this.minhaContaToolStripMenuItem.Name = "minhaContaToolStripMenuItem";
-            this.minhaContaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.minhaContaToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.minhaContaToolStripMenuItem.Text = "Minha Conta";
             this.minhaContaToolStripMenuItem.Click += new System.EventHandler(this.minhaContaToolStripMenuItem_Click);
             // 
             // sairToolStripMenuItem
             // 
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
@@ -143,6 +143,7 @@
             this.MinimizeBox = false;
             this.Name = "MenuPrincipal";
             this.Text = "Nova Project";
+            this.Load += new System.EventHandler(this.MenuPrincipal_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

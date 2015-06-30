@@ -33,5 +33,19 @@ namespace NovaProjectWF.View.Utilitarios
             return resultado;
         }
 
+        //Mensagem de Aviso
+        public static void Aviso(string mensagem)
+        {
+            MessageBox.Show(mensagem, "Aviso", 
+                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+        
+        //Mensagem de Erro
+        public static void Erro(string mensagem)
+        {
+            MessageBox.Show(mensagem, "Erro",
+               MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
     }
 }

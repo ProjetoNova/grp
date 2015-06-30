@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using NovaProjectWF.View.Utilitarios;
+using NovaProjectWF.Controllers.SessaoController;
 
 namespace NovaProjectWF.View.Conta
 {
@@ -25,7 +26,7 @@ namespace NovaProjectWF.View.Conta
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            DialogResult result = Mensagem.Confirmacao();
+            DialogResult result = Mensagem.Confirmacao("Sair", "Você deseja sair do sistema?");
             if (result == DialogResult.Yes)
             {
                 this.Close();
@@ -35,10 +36,19 @@ namespace NovaProjectWF.View.Conta
         private void btnEntrar_Click(object sender, EventArgs e)
         {
             //INSERIR UM METODO DE LOGIN AQUI
+            LoginController lControl = new LoginController();
 
-            MenuPrincipal menu = new MenuPrincipal();
-            menu.Show();
-            this.Visible = false;
+            if(lControl.Login(txtUsuario.Text.Trim(),
+                    txtSenha.Text.Trim()).Usuario == null)
+            {
+                Mensagem.Aviso("Usuario ou Senha Incorretos");
+            }
+            //else
+            //{
+                MenuPrincipal menu = new MenuPrincipal();
+                menu.Show();
+                this.Visible = false;
+            //}
         }
     }
 }

@@ -77,6 +77,8 @@
     <Compile Include="Controllers\ProjetoController\ProjetoController.cs" />
     <Compile Include="Controllers\ProjetoController\SituacaoController.cs" />
     <Compile Include="Controllers\ProjetoController\TipoAtividadeController.cs" />
+    <Compile Include="Controllers\SessaoController\LoginController.cs" />
+    <Compile Include="Controllers\SessaoController\Sessao.cs" />
     <Compile Include="Dao\Contexto.cs" />
     <Compile Include="Models\Anexo.cs" />
     <Compile Include="Models\Atividade.cs" />

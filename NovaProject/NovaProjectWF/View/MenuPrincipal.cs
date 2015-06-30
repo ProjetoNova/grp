@@ -21,20 +21,20 @@ namespace NovaProjectWF.View
             InitializeComponent();
         }
 
-        //sobrescrita do método onClosed
-        protected override void OnClosed(EventArgs e)
+        protected override void OnClosing(CancelEventArgs e)
         {
-            DialogResult result = 
-                Mensagem.Confirmacao("Fechar Sistema", "Tem certeza que deseja sair do Sistema?");
+
+            DialogResult result =
+               Mensagem.Confirmacao("Fechar Sistema", "Tem certeza que deseja sair do Sistema?");
             if (result == DialogResult.Yes)
             {
-                base.OnClosed(e);
                 Application.Exit();
             }
             else if (result == DialogResult.No)
             {
-               //nao ta funcionando
+                //nao ta funcionando
             }
+            
         }
 
         //Menu Cadastro de Usuario
@@ -89,5 +89,12 @@ namespace NovaProjectWF.View
         {
             //IMPLEMENTAR METODO DE LOGOUT
         }
+
+        private void MenuPrincipal_Load(object sender, EventArgs e)
+        {
+
+        }
+
+       
     }
 }
