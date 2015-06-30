@@ -16,6 +16,14 @@ namespace NovaProjectWF.View
 {
     public partial class MenuPrincipal : Form
     {
+        //Telas do Sistema
+        private CadastroUsuario cadUsuario;
+        private CadastroTipoUsuario cadTipUsuario;
+        private CadastroTipoAtividade cadTipoAtividade;
+        private MeusProjetos meusProjetos;
+        private NovoProjeto novoProj;
+        private MinhaConta minhaConta;
+
         public MenuPrincipal()
         {
             InitializeComponent();
@@ -40,49 +48,55 @@ namespace NovaProjectWF.View
         //Menu Cadastro de Usuario
         private void usuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CadastroUsuario cadUsuario = new CadastroUsuario();
+            if (Janela.Fechada(cadUsuario))
+                cadUsuario = new CadastroUsuario();
 
-            cadUsuario.Show();
+            Janela.Exibir(cadUsuario, this);
         }
 
         //Menu Cadastro de Tipo de Usuario
         private void tipoUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CadastroTipoUsuario cadTipUsuario = new CadastroTipoUsuario();
+            if(Janela.Fechada(cadTipUsuario)) 
+                cadTipUsuario = new CadastroTipoUsuario();
 
-            cadTipUsuario.Show();
+            Janela.Exibir(cadTipUsuario, this);
         }
 
         //Menu Cadastro de Tipo de Atividade
         private void tipoAtividadeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CadastroTipoAtividade cadTipoAtividade = new CadastroTipoAtividade();
+            if(Janela.Fechada(cadTipoAtividade))
+                cadTipoAtividade = new CadastroTipoAtividade();
 
-            cadTipoAtividade.Show();
+            Janela.Exibir(cadTipoAtividade, this);
         }
         
         //Menu Meus Projetos
         private void meusProjetosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MeusProjetos meusProjetos = new MeusProjetos();
+            if(Janela.Fechada(meusProjetos))
+                meusProjetos = new MeusProjetos();
 
-            meusProjetos.Show();
+            Janela.Exibir(meusProjetos, this);
         }
 
         //Menu Novo Projeto
         private void novoProjetoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            NovoProjeto novoProj = new NovoProjeto();
+            if(Janela.Fechada(novoProj))
+                novoProj = new NovoProjeto();
 
-            novoProj.Show();
+            Janela.Exibir(novoProj, this);
         }
 
         //Menu Minha Conta
         private void minhaContaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MinhaConta minhaConta = new MinhaConta();
+            if(Janela.Fechada(minhaConta))
+                minhaConta = new MinhaConta();
 
-            minhaConta.Show();
+            Janela.Exibir(minhaConta, this);
         }
 
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
@@ -92,7 +106,7 @@ namespace NovaProjectWF.View
 
         private void MenuPrincipal_Load(object sender, EventArgs e)
         {
-
+            this.WindowState = FormWindowState.Maximized;
         }
 
        

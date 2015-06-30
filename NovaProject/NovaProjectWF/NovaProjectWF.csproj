@@ -151,6 +151,7 @@
     <Compile Include="View\Projeto\NovoProjeto.Designer.cs">
       <DependentUpon>NovoProjeto.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Utilitarios\Janela.cs" />
     <Compile Include="View\Utilitarios\Mensagem.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -204,12 +205,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\logotipo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\logotipo1.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logotipo2.png" />
