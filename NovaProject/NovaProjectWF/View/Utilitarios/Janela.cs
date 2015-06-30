@@ -12,7 +12,6 @@ namespace NovaProjectWF.View.Utilitarios
 {
     class Janela
     {
-
         //Metodo para controle de exibicao das telas do sistema
         public static void Exibir(Form tela, Form parent)
         {
@@ -35,14 +34,24 @@ namespace NovaProjectWF.View.Utilitarios
             else
             {
                 tela.WindowState = FormWindowState.Maximized;
-                tela.Show();
+                tela.ShowDialog();
             }
         }
 
         //retorna true se a janela estiver fechada
-        public static bool Fechada(Form tela)
+        public static bool Fechada(Form parent, Type tipoTela)
         {
-            return (tela == null || tela.Disposing);
+            bool retorno = true;
+
+            foreach (Form form in parent.MdiChildren)
+            {
+                if (form.GetType().Equals(tipoTela))
+                {
+                    retorno = false;
+                }
+            }
+
+            return retorno;
         }
     }
 }

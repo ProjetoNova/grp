@@ -29,9 +29,9 @@ namespace NovaProjectWF.View
             InitializeComponent();
         }
 
+        //Sobrescrita do Metodo OnClosing
         protected override void OnClosing(CancelEventArgs e)
         {
-
             DialogResult result =
                Mensagem.Confirmacao("Fechar Sistema", "Tem certeza que deseja sair do Sistema?");
             if (result == DialogResult.Yes)
@@ -42,13 +42,12 @@ namespace NovaProjectWF.View
             {
                 e.Cancel = true;
             }
-            
         }
 
         //Menu Cadastro de Usuario
         private void usuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (Janela.Fechada(cadUsuario))
+            if (Janela.Fechada(this, typeof(CadastroUsuario)))
                 cadUsuario = new CadastroUsuario();
 
             Janela.Exibir(cadUsuario, this);
@@ -57,7 +56,7 @@ namespace NovaProjectWF.View
         //Menu Cadastro de Tipo de Usuario
         private void tipoUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(Janela.Fechada(cadTipUsuario)) 
+            if (Janela.Fechada(this, typeof(CadastroTipoUsuario))) 
                 cadTipUsuario = new CadastroTipoUsuario();
 
             Janela.Exibir(cadTipUsuario, this);
@@ -66,7 +65,7 @@ namespace NovaProjectWF.View
         //Menu Cadastro de Tipo de Atividade
         private void tipoAtividadeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(Janela.Fechada(cadTipoAtividade))
+            if (Janela.Fechada(this, typeof(CadastroTipoAtividade)))
                 cadTipoAtividade = new CadastroTipoAtividade();
 
             Janela.Exibir(cadTipoAtividade, this);
@@ -75,7 +74,7 @@ namespace NovaProjectWF.View
         //Menu Meus Projetos
         private void meusProjetosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(Janela.Fechada(meusProjetos))
+            if (Janela.Fechada(this, typeof(MeusProjetos)))
                 meusProjetos = new MeusProjetos();
 
             Janela.Exibir(meusProjetos, this);
@@ -84,7 +83,7 @@ namespace NovaProjectWF.View
         //Menu Novo Projeto
         private void novoProjetoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(Janela.Fechada(novoProj))
+            if (Janela.Fechada(this, typeof(NovoProjeto)))
                 novoProj = new NovoProjeto();
 
             Janela.Exibir(novoProj, this);
@@ -93,7 +92,7 @@ namespace NovaProjectWF.View
         //Menu Minha Conta
         private void minhaContaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(Janela.Fechada(minhaConta))
+            if (Janela.Fechada(this, typeof(MinhaConta)))
                 minhaConta = new MinhaConta();
 
             Janela.Exibir(minhaConta, this);
@@ -108,7 +107,5 @@ namespace NovaProjectWF.View
         {
             this.WindowState = FormWindowState.Maximized;
         }
-
-       
     }
 }
