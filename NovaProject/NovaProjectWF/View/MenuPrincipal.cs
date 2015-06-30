@@ -23,6 +23,7 @@ namespace NovaProjectWF.View
         private MeusProjetos meusProjetos;
         private NovoProjeto novoProj;
         private MinhaConta minhaConta;
+        private Inicio inicio;
 
         public MenuPrincipal()
         {
@@ -98,6 +99,15 @@ namespace NovaProjectWF.View
             Janela.Exibir(minhaConta, this);
         }
 
+        //Menu de Inicio
+        private void inicioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Janela.Fechada(this, typeof(Inicio)))
+                inicio = new Inicio();
+
+            Janela.Exibir(inicio, this);
+        }
+
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //IMPLEMENTAR METODO DE LOGOUT
@@ -106,6 +116,12 @@ namespace NovaProjectWF.View
         private void MenuPrincipal_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
+
+            inicio = new Inicio();
+
+            Janela.Exibir(inicio, this);
         }
+
+        
     }
 }
