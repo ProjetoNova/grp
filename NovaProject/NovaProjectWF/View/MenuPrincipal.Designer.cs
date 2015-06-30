@@ -50,7 +50,7 @@
             this.contaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(496, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(678, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -76,12 +76,14 @@
             this.tipoUsuarioToolStripMenuItem.Name = "tipoUsuarioToolStripMenuItem";
             this.tipoUsuarioToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.tipoUsuarioToolStripMenuItem.Text = "Tipo Usuario";
+            this.tipoUsuarioToolStripMenuItem.Click += new System.EventHandler(this.tipoUsuarioToolStripMenuItem_Click);
             // 
             // tipoAtividadeToolStripMenuItem
             // 
             this.tipoAtividadeToolStripMenuItem.Name = "tipoAtividadeToolStripMenuItem";
             this.tipoAtividadeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.tipoAtividadeToolStripMenuItem.Text = "Tipo Atividade";
+            this.tipoAtividadeToolStripMenuItem.Click += new System.EventHandler(this.tipoAtividadeToolStripMenuItem_Click);
             // 
             // projetosToolStripMenuItem
             // 
@@ -129,10 +131,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(496, 28);
+            this.ClientSize = new System.Drawing.Size(678, 26);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "MenuPrincipal";
             this.Text = "Nova Project";
             this.menuStrip1.ResumeLayout(false);

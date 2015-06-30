@@ -31,5 +31,14 @@ namespace NovaProjectWF.View.Conta
                 this.Close();
             }
         }
+
+        private void btnEntrar_Click(object sender, EventArgs e)
+        {
+            //INSERIR UM METODO DE LOGIN AQUI
+
+            MenuPrincipal menu = new MenuPrincipal();
+            menu.Show();
+            this.Visible = false;
+        }
     }
 }

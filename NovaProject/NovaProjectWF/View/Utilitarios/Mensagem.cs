@@ -20,6 +20,12 @@ namespace NovaProjectWF.View.Utilitarios
             //titulo da janela
             string titulo = "Confirmação";
 
+            return Confirmacao(titulo, mensagem);
+        }
+
+        //Mensagem de Confirmacao
+        public static DialogResult Confirmacao(string titulo, string mensagem)
+        {
             MessageBoxButtons botao = MessageBoxButtons.YesNo;
 
             DialogResult resultado = MessageBox.Show(mensagem, titulo, botao);
