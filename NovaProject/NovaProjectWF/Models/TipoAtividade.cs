@@ -8,5 +8,6 @@ namespace NovaProjectWF.Models
 {
     class TipoAtividade
     {
+        public string nome { get; set; }
     }
 }

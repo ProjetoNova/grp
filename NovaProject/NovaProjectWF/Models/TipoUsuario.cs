@@ -8,5 +8,6 @@ namespace NovaProjectWF.Models
 {
     class TipoUsuario
     {
+        public string descricao { get; set; }
     }
 }

@@ -8,5 +8,6 @@ namespace NovaProjectWF.Models
 {
     class Situacao
     {
+        public string nome { get; set; }
     }
 }

@@ -8,5 +8,9 @@ namespace NovaProjectWF.Models
 {
     class FaseProjeto
     {
+        public string descricao { get; set; }
+        public DateTime dataInicio { get; set; }
+        public DateTime dataFim { get; set; }
+
     }
 }

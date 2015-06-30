@@ -8,5 +8,6 @@ namespace NovaProjectWF.Models
 {
     class UsuarioProjeto
     {
+        public string papel { get; set; }
     }
 }

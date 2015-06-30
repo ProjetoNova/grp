@@ -8,11 +8,13 @@ namespace NovaProjectWF.Models
 {
     class Projeto
     {
-        public Projeto()
-        {
-
-        }
-
-        public int Id { get; set; }
+           public int Id { get; set; }
+           public string nome { get; set; }
+           public string descricao { get; set; }
+           public DateTime dataInicio { get; set; }
+           public DateTime dataPrevisao {get; set; }
+           public Boolean situacao { get; set; }
+           public string planoProjeto { get; set; }
+      
     }
 }
