@@ -6,9 +6,9 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using NovaProject.Models;
+using NovaProjecWF.Models;
 
-namespace NovaProject.Controllers
+namespace NovaProjecWF.Controllers
 {
     [Authorize]
     public class ManageController : Controller

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace NovaProject.Controllers
+namespace NovaProjecWF.Controllers
 {
     public class HomeController : Controller
     {

@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
 
-namespace NovaProject.Models
+namespace NovaProjecWF.Models
 {
     public class IndexViewModel
     {

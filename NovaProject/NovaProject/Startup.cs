@@ -1,8 +1,8 @@
 ﻿using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartupAttribute(typeof(NovaProject.Startup))]
-namespace NovaProject
+[assembly: OwinStartupAttribute(typeof(NovaProjecWF.Startup))]
+namespace NovaProjecWF
 {
     public partial class Startup
     {

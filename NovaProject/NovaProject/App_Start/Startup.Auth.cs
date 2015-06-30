@@ -5,9 +5,9 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
-using NovaProject.Models;
+using NovaProjecWF.Models;
 
-namespace NovaProject
+namespace NovaProjecWF
 {
     public partial class Startup
     {

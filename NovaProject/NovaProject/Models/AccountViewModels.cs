@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace NovaProject.Models
+namespace NovaProjecWF.Models
 {
     public class ExternalLoginConfirmationViewModel
     {

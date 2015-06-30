@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
-namespace NovaProject.Models
+namespace NovaProjecWF.Models
 {
     // Você pode adicionar dados de perfil para o usuário adicionando mais propriedades à sua classe ApplicationUser, acesse http://go.microsoft.com/fwlink/?LinkID=317594 para saber mais.
     public class ApplicationUser : IdentityUser

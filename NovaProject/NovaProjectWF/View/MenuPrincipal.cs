@@ -60,8 +60,34 @@ namespace NovaProjectWF.View
 
             cadTipoAtividade.Show();
         }
-
-
         
+        //Menu Meus Projetos
+        private void meusProjetosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MeusProjetos meusProjetos = new MeusProjetos();
+
+            meusProjetos.Show();
+        }
+
+        //Menu Novo Projeto
+        private void novoProjetoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NovoProjeto novoProj = new NovoProjeto();
+
+            novoProj.Show();
+        }
+
+        //Menu Minha Conta
+        private void minhaContaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MinhaConta minhaConta = new MinhaConta();
+
+            minhaConta.Show();
+        }
+
+        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //IMPLEMENTAR METODO DE LOGOUT
+        }
     }
 }

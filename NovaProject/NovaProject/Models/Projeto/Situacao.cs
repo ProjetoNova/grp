@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace NovaProject.Models.Projeto
+namespace NovaProjecWF.Models.Projeto
 {
     public class Situacao
     {

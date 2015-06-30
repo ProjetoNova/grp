@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace NovaProject
+namespace NovaProjecWF
 {
     public class BundleConfig
     {
