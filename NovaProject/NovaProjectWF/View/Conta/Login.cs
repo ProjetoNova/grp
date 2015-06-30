@@ -35,20 +35,31 @@ namespace NovaProjectWF.View.Conta
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            //INSERIR UM METODO DE LOGIN AQUI
             LoginController lControl = new LoginController();
 
-            if(lControl.Login(txtUsuario.Text.Trim(),
+            if (txtUsuario.Text.Trim() == string.Empty)
+            {
+                Mensagem.Aviso("Usuario nao pode ser vazio!");
+                txtUsuario.Focus();
+            }
+            else if (txtSenha.Text.Trim() == string.Empty)
+            {
+                Mensagem.Aviso("Senha nao pode ser vazio!");
+                txtSenha.Focus();
+            }
+            else if(lControl.Login(txtUsuario.Text.Trim(),
                     txtSenha.Text.Trim()).Usuario == null)
             {
                 Mensagem.Aviso("Usuario ou Senha Incorretos");
+                txtSenha.Text = "";
+                txtSenha.Focus();
             }
-            //else
-            //{
+            else
+            {
                 MenuPrincipal menu = new MenuPrincipal();
                 menu.Show();
                 this.Visible = false;
-            //}
+            }
         }
     }
 }
