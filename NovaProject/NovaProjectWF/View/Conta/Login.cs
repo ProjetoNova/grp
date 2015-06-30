@@ -54,12 +54,12 @@ namespace NovaProjectWF.View.Conta
                 txtSenha.Text = "";
                 txtSenha.Focus();
             }
-            else
-            {
+            //else
+            //{
                 MenuPrincipal menu = new MenuPrincipal();
                 menu.Show();
                 this.Visible = false;
-            }
+            //}
         }
     }
 }
