@@ -40,7 +40,7 @@ namespace NovaProjectWF.View
             }
             else if (result == DialogResult.No)
             {
-                //nao ta funcionando
+                e.Cancel = true;
             }
             
         }
