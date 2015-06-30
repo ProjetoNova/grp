@@ -34,18 +34,20 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnEntrar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(12, 29);
+            this.txtUsuario.Location = new System.Drawing.Point(16, 107);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(188, 20);
             this.txtUsuario.TabIndex = 0;
             // 
             // txtSenha
             // 
-            this.txtSenha.Location = new System.Drawing.Point(12, 68);
+            this.txtSenha.Location = new System.Drawing.Point(16, 146);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(188, 20);
@@ -54,7 +56,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(80, 13);
+            this.label1.Location = new System.Drawing.Point(84, 91);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(43, 13);
             this.label1.TabIndex = 2;
@@ -63,7 +65,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(80, 52);
+            this.label2.Location = new System.Drawing.Point(84, 130);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(38, 13);
             this.label2.TabIndex = 3;
@@ -71,7 +73,7 @@
             // 
             // btnEntrar
             // 
-            this.btnEntrar.Location = new System.Drawing.Point(222, 26);
+            this.btnEntrar.Location = new System.Drawing.Point(226, 104);
             this.btnEntrar.Name = "btnEntrar";
             this.btnEntrar.Size = new System.Drawing.Size(75, 23);
             this.btnEntrar.TabIndex = 4;
@@ -81,7 +83,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(222, 68);
+            this.btnCancelar.Location = new System.Drawing.Point(226, 146);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 5;
@@ -89,11 +91,21 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::NovaProjectWF.Properties.Resources.logotipo2;
+            this.pictureBox1.Location = new System.Drawing.Point(16, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(285, 76);
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(314, 109);
+            this.ClientSize = new System.Drawing.Size(314, 177);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnEntrar);
             this.Controls.Add(this.label2);
@@ -105,6 +117,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Login_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -118,5 +131,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnEntrar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

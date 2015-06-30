@@ -158,6 +158,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="View\Cadastro\CadastroUsuario.resx">
       <DependentUpon>CadastroUsuario.cs</DependentUpon>
@@ -201,6 +202,15 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logotipo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logotipo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logotipo2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
