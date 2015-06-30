@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NovaProjectWF.View.Cadastro;
+using NovaProjectWF.View.Conta;
+using NovaProjectWF.View.Projeto;
 
 namespace NovaProjectWF.View
 {
@@ -15,6 +18,13 @@ namespace NovaProjectWF.View
         public MenuPrincipal()
         {
             InitializeComponent();
+        }
+
+        private void usuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CadastroUsuario cadUsuario = new CadastroUsuario();
+
+            cadUsuario.Show();
         }
     }
 }

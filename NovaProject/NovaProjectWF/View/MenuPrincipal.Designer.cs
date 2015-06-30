@@ -30,13 +30,15 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.cadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.projetosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.contaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.meusProjetosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.novoProjetoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tipoUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tipoAtividadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.projetosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.meusProjetosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.novoProjetoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.minhaContaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,38 +64,12 @@
             this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.cadastroToolStripMenuItem.Text = "Cadastro";
             // 
-            // projetosToolStripMenuItem
-            // 
-            this.projetosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.meusProjetosToolStripMenuItem,
-            this.novoProjetoToolStripMenuItem});
-            this.projetosToolStripMenuItem.Name = "projetosToolStripMenuItem";
-            this.projetosToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
-            this.projetosToolStripMenuItem.Text = "Projetos";
-            // 
-            // contaToolStripMenuItem
-            // 
-            this.contaToolStripMenuItem.Name = "contaToolStripMenuItem";
-            this.contaToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
-            this.contaToolStripMenuItem.Text = "Conta";
-            // 
-            // meusProjetosToolStripMenuItem
-            // 
-            this.meusProjetosToolStripMenuItem.Name = "meusProjetosToolStripMenuItem";
-            this.meusProjetosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.meusProjetosToolStripMenuItem.Text = "Meus Projetos";
-            // 
-            // novoProjetoToolStripMenuItem
-            // 
-            this.novoProjetoToolStripMenuItem.Name = "novoProjetoToolStripMenuItem";
-            this.novoProjetoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.novoProjetoToolStripMenuItem.Text = "Novo Projeto";
-            // 
             // usuarioToolStripMenuItem
             // 
             this.usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
             this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.usuarioToolStripMenuItem.Text = "Usuario";
+            this.usuarioToolStripMenuItem.Click += new System.EventHandler(this.usuarioToolStripMenuItem_Click);
             // 
             // tipoUsuarioToolStripMenuItem
             // 
@@ -107,15 +83,58 @@
             this.tipoAtividadeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.tipoAtividadeToolStripMenuItem.Text = "Tipo Atividade";
             // 
+            // projetosToolStripMenuItem
+            // 
+            this.projetosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.meusProjetosToolStripMenuItem,
+            this.novoProjetoToolStripMenuItem});
+            this.projetosToolStripMenuItem.Name = "projetosToolStripMenuItem";
+            this.projetosToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
+            this.projetosToolStripMenuItem.Text = "Projetos";
+            // 
+            // meusProjetosToolStripMenuItem
+            // 
+            this.meusProjetosToolStripMenuItem.Name = "meusProjetosToolStripMenuItem";
+            this.meusProjetosToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.meusProjetosToolStripMenuItem.Text = "Meus Projetos";
+            // 
+            // novoProjetoToolStripMenuItem
+            // 
+            this.novoProjetoToolStripMenuItem.Name = "novoProjetoToolStripMenuItem";
+            this.novoProjetoToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.novoProjetoToolStripMenuItem.Text = "Novo Projeto";
+            // 
+            // contaToolStripMenuItem
+            // 
+            this.contaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.minhaContaToolStripMenuItem,
+            this.sairToolStripMenuItem});
+            this.contaToolStripMenuItem.Name = "contaToolStripMenuItem";
+            this.contaToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
+            this.contaToolStripMenuItem.Text = "Conta";
+            // 
+            // minhaContaToolStripMenuItem
+            // 
+            this.minhaContaToolStripMenuItem.Name = "minhaContaToolStripMenuItem";
+            this.minhaContaToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.minhaContaToolStripMenuItem.Text = "Minha Conta";
+            // 
+            // sairToolStripMenuItem
+            // 
+            this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.sairToolStripMenuItem.Text = "Sair";
+            // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(496, 28);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MenuPrincipal";
-            this.Text = "MenuPrincipal";
+            this.Text = "Nova Project";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -134,5 +153,7 @@
         private System.Windows.Forms.ToolStripMenuItem meusProjetosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem novoProjetoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem contaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem minhaContaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
     }
 }
