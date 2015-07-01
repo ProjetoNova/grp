@@ -92,11 +92,11 @@
     <Compile Include="Controllers\SessaoController\Sessao.cs" />
     <Compile Include="Dao\Contexto.cs" />
     <Compile Include="Dao\CRUD.cs" />
+    <Compile Include="Dao\CRUDTipoUsuario.cs" />
     <Compile Include="Models\Anexo.cs" />
     <Compile Include="Models\Atividade.cs" />
     <Compile Include="Models\FaseProjeto.cs" />
     <Compile Include="Models\Interfaces\IEntidade.cs" />
-    <Compile Include="Models\Interfaces\ITelaCRUD.cs" />
     <Compile Include="Models\Projeto.cs" />
     <Compile Include="Models\Situacao.cs" />
     <Compile Include="Models\TipoAtividade.cs" />
@@ -243,12 +243,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Untitled-1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ComponenteGenerico\ComponenteGenerico.csproj">
-      <Project>{718555AA-8C83-49BE-8304-E5A0435ABE91}</Project>
-      <Name>ComponenteGenerico</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
