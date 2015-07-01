@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NovaProjectWF.Models.Interfaces;
 
 namespace NovaProjectWF.Models
 {
-    class Anexo
+    class Anexo : IEntidade
     {
-        public string anexo { get; set; }
-        //Trocar "string" por um tipo valido equivalente a "File"
-
+        public int Id { get; set; }
+        public byte anexo { get; set; }
     }
 }

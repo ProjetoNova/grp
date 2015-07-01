@@ -80,7 +80,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\CadastroController\LoginController.cs" />
     <Compile Include="Controllers\CadastroController\TipoUsuarioController.cs" />
     <Compile Include="Controllers\CadastroController\UsuarioController.cs" />
     <Compile Include="Controllers\ProjetoController\AnexoController.cs" />
@@ -92,9 +91,12 @@
     <Compile Include="Controllers\SessaoController\LoginController.cs" />
     <Compile Include="Controllers\SessaoController\Sessao.cs" />
     <Compile Include="Dao\Contexto.cs" />
+    <Compile Include="Dao\CRUD.cs" />
     <Compile Include="Models\Anexo.cs" />
     <Compile Include="Models\Atividade.cs" />
     <Compile Include="Models\FaseProjeto.cs" />
+    <Compile Include="Models\Interfaces\IEntidade.cs" />
+    <Compile Include="Models\Interfaces\ITelaCRUD.cs" />
     <Compile Include="Models\Projeto.cs" />
     <Compile Include="Models\Situacao.cs" />
     <Compile Include="Models\TipoAtividade.cs" />
@@ -181,6 +183,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="View\Cadastro\CadastroTipoUsuario.resx">
+      <DependentUpon>CadastroTipoUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Cadastro\CadastroUsuario.resx">
       <DependentUpon>CadastroUsuario.cs</DependentUpon>
     </EmbeddedResource>
@@ -232,6 +237,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logotipo2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fundo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ComponenteGenerico\ComponenteGenerico.csproj">
+      <Project>{718555AA-8C83-49BE-8304-E5A0435ABE91}</Project>
+      <Name>ComponenteGenerico</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

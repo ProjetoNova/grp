@@ -7,11 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NovaProjectWF.View.Cadastro;
+using NovaProjectWF.View.Conta;
+using NovaProjectWF.View.Projeto;
+using NovaProjectWF.View.Utilitarios;
 
 namespace NovaProjectWF.View
 {
     public partial class Inicio : Form
     {
+        private MeusProjetos meusProjetos;
+        private NovoProjeto novoProj;
+        private Atividade atividades;
+
         public Inicio()
         {
             InitializeComponent();
@@ -19,6 +27,43 @@ namespace NovaProjectWF.View
 
         private void lblFechar_Click(object sender, EventArgs e)
         {
+            this.Close();
+        }
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            DialogResult result =
+               Mensagem.Confirmacao("Fechar Sistema", "Tem certeza que deseja sair do Sistema?");
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void btnNovoProjeto_Click(object sender, EventArgs e)
+        {
+            if (Janela.Fechada(this.MdiParent, typeof(NovoProjeto)))
+                novoProj = new NovoProjeto();
+
+            Janela.Exibir(novoProj, this.MdiParent);
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (Janela.Fechada(this.MdiParent, typeof(MeusProjetos)))
+                meusProjetos = new MeusProjetos();
+
+            Janela.Exibir(meusProjetos, this.MdiParent);
+            this.Close();
+        }
+
+        private void btnVerProjetos_Click(object sender, EventArgs e)
+        {
+            if (Janela.Fechada(this.MdiParent, typeof(Atividade)))
+                atividades = new Atividade();
+
+            Janela.Exibir(atividades, this.MdiParent);
             this.Close();
         }
     }

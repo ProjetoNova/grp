@@ -45,6 +45,11 @@ namespace NovaProjectWF.View
             }
         }
 
+        protected override void OnResize(EventArgs e)
+        {
+            base.OnResize(e);
+        }
+
         //Menu Cadastro de Usuario
         private void usuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {

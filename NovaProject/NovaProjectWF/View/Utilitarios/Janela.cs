@@ -33,7 +33,6 @@ namespace NovaProjectWF.View.Utilitarios
             }
             else
             {
-                tela.WindowState = FormWindowState.Maximized;
                 tela.ShowDialog();
             }
         }

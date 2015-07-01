@@ -11,6 +11,5 @@ namespace NovaProjectWF.Controllers.SessaoController
     {
         public Usuario Usuario { get; set; }
         public DateTime HoraLogin { get; set; }
-
     }
 }
