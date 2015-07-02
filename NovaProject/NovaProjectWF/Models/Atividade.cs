@@ -10,13 +10,19 @@ namespace NovaProjectWF.Models
     class Atividade : IEntidade
     {
         public int Id { get; set; }
-        public string titulo { get; set; }
-        public string descricao { get; set; }
-        public DateTime dataInicio { get; set; }
-        public DateTime dataPrevista { get; set; }
-        public DateTime dataFim { get; set; }
-        public int tempoEstimado { get; set; }
-        public int tempoGasto { get; set; }
-        public string prioridade { get; set; }
+
+        public virtual TipoAtividade TipoAtividade { get; set; }
+        public virtual SituacaoAtividade Situacao { get; set; }
+        public virtual Usuario Colaborador { get; set; }
+        public virtual FaseProjeto FaseProjeto { get; set; }
+
+        public string Titulo { get; set; }
+        public string Prioridade { get; set; }
+        public string Descricao { get; set; }
+        public DateTime DataInicio { get; set; }
+        public DateTime DataPrevista { get; set; }
+        public DateTime DataFim { get; set; }
+        public int TempoEstimado { get; set; }
+        public int TempoGasto { get; set; }
     }
 }

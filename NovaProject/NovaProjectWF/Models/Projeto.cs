@@ -4,18 +4,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NovaProjectWF.Models.Interfaces;
+using NovaProjectWF.Models.Enumerados;
 
 namespace NovaProjectWF.Models
 {
     class Projeto : IEntidade
     {
            public int Id { get; set; }
-           public string nome { get; set; }
-           public string descricao { get; set; }
-           public DateTime dataInicio { get; set; }
-           public DateTime dataPrevisao {get; set; }
-           public Boolean situacao { get; set; }
-           public string planoProjeto { get; set; }
-      
+
+           public virtual ICollection<FaseProjeto> FasesProjeto { get; set; }
+           public virtual ICollection<UsuarioProjeto> UsuariosProjeto { get; set; }
+           public ESituacaoProjeto Situacao { get; set; }
+
+           public string Titulo { get; set; }
+           public string Descricao { get; set; }
+           public DateTime DataInicio { get; set; }
+           public DateTime DataPrevisao {get; set; }
+           public DateTime DataFim { get; set; } 
+           public string PlanoProjeto { get; set; } 
+       
     }
 }
