@@ -22,6 +22,12 @@ namespace NovaProjectWF.View.Utilitarios
 
             tela.StartPosition = FormStartPosition.CenterScreen;
 
+            if (!tela.FormBorderStyle.Equals(FormBorderStyle.None))
+            {
+                tela.FormBorderStyle = FormBorderStyle.FixedSingle;
+                tela.MaximizeBox = false;
+            }
+
             if (tela.WindowState == FormWindowState.Minimized)
             {
                 tela.WindowState = FormWindowState.Normal;
@@ -33,7 +39,7 @@ namespace NovaProjectWF.View.Utilitarios
             }
             else
             {
-                tela.ShowDialog();
+                tela.Show();
             }
         }
 
@@ -52,5 +58,7 @@ namespace NovaProjectWF.View.Utilitarios
 
             return retorno;
         }
+
+
     }
 }

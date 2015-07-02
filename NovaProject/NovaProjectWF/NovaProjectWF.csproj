@@ -81,18 +81,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\CadastroController\TipoUsuarioController.cs" />
-    <Compile Include="Controllers\CadastroController\UsuarioController.cs" />
-    <Compile Include="Controllers\ProjetoController\AnexoController.cs" />
-    <Compile Include="Controllers\ProjetoController\AtividadeController.cs" />
-    <Compile Include="Controllers\ProjetoController\FaseProjetoController.cs" />
-    <Compile Include="Controllers\ProjetoController\ProjetoController.cs" />
-    <Compile Include="Controllers\ProjetoController\SituacaoController.cs" />
-    <Compile Include="Controllers\ProjetoController\TipoAtividadeController.cs" />
     <Compile Include="Controllers\SessaoController\LoginController.cs" />
     <Compile Include="Controllers\SessaoController\Sessao.cs" />
     <Compile Include="Dao\Contexto.cs" />
     <Compile Include="Dao\CRUD.cs" />
-    <Compile Include="Dao\CRUDTipoUsuario.cs" />
+    <Compile Include="Dao\TipoUsuarioDAO.cs" />
     <Compile Include="Models\Anexo.cs" />
     <Compile Include="Models\Atividade.cs" />
     <Compile Include="Models\FaseProjeto.cs" />
@@ -122,6 +115,12 @@
     </Compile>
     <Compile Include="View\Cadastro\CadastroUsuario.Designer.cs">
       <DependentUpon>CadastroUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Cadastro\PesquisaTipoUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Cadastro\PesquisaTipoUsuario.Designer.cs">
+      <DependentUpon>PesquisaTipoUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Conta\Login.cs">
       <SubType>Form</SubType>
@@ -171,6 +170,12 @@
     <Compile Include="View\Projeto\NovoProjeto.Designer.cs">
       <DependentUpon>NovoProjeto.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Utilitarios\Carregando.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Utilitarios\Carregando.Designer.cs">
+      <DependentUpon>Carregando.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Utilitarios\Janela.cs" />
     <Compile Include="View\Utilitarios\Mensagem.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -189,6 +194,9 @@
     <EmbeddedResource Include="View\Cadastro\CadastroUsuario.resx">
       <DependentUpon>CadastroUsuario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Cadastro\PesquisaTipoUsuario.resx">
+      <DependentUpon>PesquisaTipoUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Conta\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -200,6 +208,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Projeto\MeusProjetos.resx">
       <DependentUpon>MeusProjetos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Utilitarios\Carregando.resx">
+      <DependentUpon>Carregando.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -243,6 +254,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Untitled-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controllers\ProjetoController\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loading.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

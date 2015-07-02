@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace NovaProjectWF.View.Utilitarios
 {
     public class Mensagem
@@ -45,6 +46,13 @@ namespace NovaProjectWF.View.Utilitarios
         {
             MessageBox.Show(mensagem, "Erro",
                MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        //Mensagem de Informacao
+        public static void Informacao(string mensagem)
+        {
+            MessageBox.Show(mensagem, "Informacao",
+               MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
     }

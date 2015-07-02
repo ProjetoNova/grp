@@ -11,7 +11,7 @@ using NovaProjectWF.View.Cadastro;
 using NovaProjectWF.View.Conta;
 using NovaProjectWF.View.Projeto;
 using NovaProjectWF.View.Utilitarios;
-
+using NovaProjectWF.Dao;
 namespace NovaProjectWF.View
 {
     public partial class MenuPrincipal : Form
@@ -24,10 +24,17 @@ namespace NovaProjectWF.View
         private NovoProjeto novoProj;
         private MinhaConta minhaConta;
         private Inicio inicio;
+        private Contexto ctx;
 
         public MenuPrincipal()
         {
             InitializeComponent();
+
+        }
+
+        public Object getCtx()
+        {
+            return ctx;
         }
 
         //Sobrescrita do Metodo OnClosing
@@ -122,11 +129,11 @@ namespace NovaProjectWF.View
         {
             this.WindowState = FormWindowState.Maximized;
 
+            ctx = new Contexto();
+
             inicio = new Inicio();
 
             Janela.Exibir(inicio, this);
         }
-
-        
     }
 }
