@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NovaProjectWF.Models.Interfaces;
+using NovaProjectWF.Models;
 
 namespace NovaProjectWF.View.Cadastro
 {

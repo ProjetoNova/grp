@@ -9,5 +9,6 @@ namespace NovaProjectWF.Models.Interfaces
     public interface IEntidade
     {
         int Id { get; set; }
+
     }
 }

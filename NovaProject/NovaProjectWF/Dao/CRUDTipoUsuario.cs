@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NovaProjectWF.Models;
 
-namespace NovaProjectWF.Models.Interfaces
+namespace NovaProjectWF.Dao
 {
-    public interface ITelaCRUD
+    class CRUDTipoUsuario : CRUD<TipoUsuario>
     {
-        Object ClasseCRUD { get; set; }
+        
     }
 }
