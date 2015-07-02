@@ -10,7 +10,6 @@ namespace NovaProjectWF.Models
     class Anexo : IEntidade
     {
         public int Id { get; set; }
-        public byte[] Arquivo { get; set; }
-        public string Descricao { get; set; }
+        public byte anexo { get; set; }
     }
-} 
+}

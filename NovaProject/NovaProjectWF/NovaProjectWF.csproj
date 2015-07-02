@@ -80,21 +80,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\CadastroController\TipoAtividadeController.cs" />
+    <Compile Include="Controllers\CadastroController\TipoUsuarioController.cs" />
+    <Compile Include="Controllers\CadastroController\UsuarioController.cs" />
+    <Compile Include="Controllers\ProjetoController\AnexoController.cs" />
+    <Compile Include="Controllers\ProjetoController\AtividadeController.cs" />
+    <Compile Include="Controllers\ProjetoController\FaseProjetoController.cs" />
+    <Compile Include="Controllers\ProjetoController\ProjetoController.cs" />
+    <Compile Include="Controllers\ProjetoController\SituacaoController.cs" />
+    <Compile Include="Controllers\ProjetoController\TipoAtividadeController.cs" />
     <Compile Include="Controllers\SessaoController\LoginController.cs" />
     <Compile Include="Controllers\SessaoController\Sessao.cs" />
     <Compile Include="Dao\Contexto.cs" />
     <Compile Include="Dao\CRUD.cs" />
-    <Compile Include="Dao\CRUDTipoAtividade.cs" />
     <Compile Include="Models\Anexo.cs" />
     <Compile Include="Models\Atividade.cs" />
-    <Compile Include="Models\Enumerados\ESituacaoProjeto.cs" />
     <Compile Include="Models\FaseProjeto.cs" />
     <Compile Include="Models\Interfaces\IEntidade.cs" />
     <Compile Include="Models\Interfaces\ITelaCRUD.cs" />
-    <Compile Include="Models\PapelUsuario.cs" />
     <Compile Include="Models\Projeto.cs" />
-    <Compile Include="Models\SituacaoAtividade.cs" />
+    <Compile Include="Models\Situacao.cs" />
     <Compile Include="Models\TipoAtividade.cs" />
     <Compile Include="Models\TipoUsuario.cs" />
     <Compile Include="Models\Usuario.cs" />
@@ -245,9 +249,6 @@
       <Project>{718555AA-8C83-49BE-8304-E5A0435ABE91}</Project>
       <Name>ComponenteGenerico</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controllers\ProjetoController\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

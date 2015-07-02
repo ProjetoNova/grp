@@ -10,16 +10,12 @@ namespace NovaProjectWF.Models
     class Usuario : IEntidade
     {
         public int Id { get; set; }
-
-        public virtual TipoUsuario TipoUsuario { get; set; }
-
-        public string Nome { get; set; }
-        public string FormacaoAcademica { get; set; }
-        public string ExperienciaSistema { get; set; }
-        public string Email { get; set; }
-        public string Login { get; set; }
-        public string Senha { get; set; }
-        public string LinkExterno { get; set; }
-
+        public string nome { get; set; }
+        public string formacaoAcademica { get; set; }
+        public string experienciaSistema { get; set; }
+        public string email { get; set; }
+        public string login { get; set; }
+        public string senha { get; set; }
+        public string linkExterno { get; set; }
     }
 }
