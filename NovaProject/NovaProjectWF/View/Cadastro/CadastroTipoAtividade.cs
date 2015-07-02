@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using NovaProjectWF.Models.Interfaces;
 using NovaProjectWF.Models;
 
-namespace NovaProjectWF.View.Cadastro
+namespace NovaProjectWF.View.Utilitarios
 {
     public partial class CadastroTipoAtividade : Form
     {

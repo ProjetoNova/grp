@@ -10,6 +10,37 @@ namespace NovaProjectWF.Dao
 {
     class TipoUsuarioDAO : CRUD<TipoUsuario>
     {
-        
+        public override List<TipoUsuario> selectAll()
+        {
+            List<TipoUsuario> allTipoUsuario = new List<TipoUsuario>();
+
+            using (Contexto ctx = new Contexto())
+            {
+                var query = from c in ctx.TipoUsuario select c;
+
+                foreach (var item in query)
+                {
+                    allTipoUsuario.Add(item);
+                }
+            }
+
+            return allTipoUsuario;
+        }
+
+        public TipoUsuario selectNome(string nome)
+        {
+            using (Contexto ctx = new Contexto())
+            {
+                var query = from c in ctx.TipoUsuario 
+                            where c.descricao == nome select c;
+
+                foreach (var item in query)
+                {
+                    return item;
+                }
+            }
+
+            return null;
+        }
     }
 }

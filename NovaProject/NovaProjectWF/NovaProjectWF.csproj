@@ -65,11 +65,13 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.WebForms.DLL</HintPath>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -83,6 +85,7 @@
     <Compile Include="Controllers\CadastroController\TipoUsuarioController.cs" />
     <Compile Include="Controllers\SessaoController\LoginController.cs" />
     <Compile Include="Controllers\SessaoController\Sessao.cs" />
+    <Compile Include="Controllers\Validar.cs" />
     <Compile Include="Dao\Contexto.cs" />
     <Compile Include="Dao\CRUD.cs" />
     <Compile Include="Dao\TipoUsuarioDAO.cs" />
@@ -115,12 +118,6 @@
     </Compile>
     <Compile Include="View\Cadastro\CadastroUsuario.Designer.cs">
       <DependentUpon>CadastroUsuario.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\Cadastro\PesquisaTipoUsuario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Cadastro\PesquisaTipoUsuario.Designer.cs">
-      <DependentUpon>PesquisaTipoUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Conta\Login.cs">
       <SubType>Form</SubType>
@@ -170,12 +167,6 @@
     <Compile Include="View\Projeto\NovoProjeto.Designer.cs">
       <DependentUpon>NovoProjeto.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Utilitarios\Carregando.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Utilitarios\Carregando.Designer.cs">
-      <DependentUpon>Carregando.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\Utilitarios\Janela.cs" />
     <Compile Include="View\Utilitarios\Mensagem.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -194,9 +185,6 @@
     <EmbeddedResource Include="View\Cadastro\CadastroUsuario.resx">
       <DependentUpon>CadastroUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Cadastro\PesquisaTipoUsuario.resx">
-      <DependentUpon>PesquisaTipoUsuario.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\Conta\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -209,10 +197,8 @@
     <EmbeddedResource Include="View\Projeto\MeusProjetos.resx">
       <DependentUpon>MeusProjetos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Utilitarios\Carregando.resx">
-      <DependentUpon>Carregando.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\NovaProjectWF.Models.TipoUsuario.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

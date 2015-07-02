@@ -39,5 +39,20 @@ namespace NovaProjectWF.Controllers.CadastroController
             return null;
         }
 
+        public TipoUsuario BuscarPorId(string Id)
+        {
+            return (TipoUsuario)crud.select(Convert.ToInt32(Id));
+        }
+
+        public TipoUsuario BuscarPorNome(string nome)
+        {
+            return (TipoUsuario)crud.selectNome(nome);
+        }
+
+        public List<TipoUsuario> TodosOsDados()
+        {
+            return crud.selectAll();
+        }
+
     }
 }

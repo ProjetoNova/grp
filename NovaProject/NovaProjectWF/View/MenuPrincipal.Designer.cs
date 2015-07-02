@@ -103,14 +103,14 @@
             // meusProjetosToolStripMenuItem
             // 
             this.meusProjetosToolStripMenuItem.Name = "meusProjetosToolStripMenuItem";
-            this.meusProjetosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.meusProjetosToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.meusProjetosToolStripMenuItem.Text = "Meus Projetos";
             this.meusProjetosToolStripMenuItem.Click += new System.EventHandler(this.meusProjetosToolStripMenuItem_Click);
             // 
             // novoProjetoToolStripMenuItem
             // 
             this.novoProjetoToolStripMenuItem.Name = "novoProjetoToolStripMenuItem";
-            this.novoProjetoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.novoProjetoToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.novoProjetoToolStripMenuItem.Text = "Novo Projeto";
             this.novoProjetoToolStripMenuItem.Click += new System.EventHandler(this.novoProjetoToolStripMenuItem_Click);
             // 
@@ -148,7 +148,7 @@
             // inicioToolStripMenuItem
             // 
             this.inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
-            this.inicioToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.inicioToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.inicioToolStripMenuItem.Text = "Tela de Inicio";
             this.inicioToolStripMenuItem.Click += new System.EventHandler(this.inicioToolStripMenuItem_Click);
             // 

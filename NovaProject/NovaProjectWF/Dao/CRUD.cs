@@ -39,7 +39,6 @@ namespace NovaProjectWF.Dao
 
         public virtual List<T> selectAll()
         {
-            
 
             return null;
         }

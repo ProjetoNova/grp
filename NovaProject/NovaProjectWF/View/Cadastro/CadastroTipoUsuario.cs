@@ -11,25 +11,66 @@ using NovaProjectWF.View.Utilitarios;
 using NovaProjectWF.Controllers.CadastroController;
 using NovaProjectWF.Models;
 using System.Threading;
+using NovaProjectWF.Controllers;
 
-namespace NovaProjectWF.View.Cadastro
+namespace NovaProjectWF.View.Utilitarios
 {
     public partial class CadastroTipoUsuario : Form
     {
-        PesquisaTipoUsuario pesquisa;
-
         public CadastroTipoUsuario()
         {
             InitializeComponent();
+            string[] colunas = {"Id", "Nome"};
+            comboBox1.DataSource = colunas;
+        }
+
+        private void button1_Click(object sender, EventArgs e){}
+        private void button3_Click(object sender, EventArgs e){}
+        private void button4_Click(object sender, EventArgs e){}
+
+        //botao pesquisar
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            TipoUsuarioController control = new TipoUsuarioController();
+            List<TipoUsuario> listaControle = new List<TipoUsuario>();
+
+            if (textBox1.Text.Trim() == string.Empty)
+            {
+                dataGridView1.DataSource = null;
+                dataGridView1.DataSource = control.TodosOsDados();
+            }
+            else if (comboBox1.SelectedValue.ToString() == "Id")
+            {
+                if (Validar.Numero(textBox1.Text.Trim()))
+                {
+                    listaControle.Add(
+                        control.BuscarPorId(textBox1.Text.Trim()));
+                    dataGridView1.DataSource = null;
+                    dataGridView1.DataSource = listaControle;
+                    dataGridView1.Refresh();
+                }
+                else
+                {
+                    Mensagem.Aviso("Nenhum dado encontrado");
+                }
+            }
+            else if (comboBox1.SelectedValue.ToString() == "Nome")
+            {
+                listaControle.Add(
+                        control.BuscarPorNome(textBox1.Text.Trim()));
+                dataGridView1.DataSource = null;
+                dataGridView1.DataSource = listaControle;
+                dataGridView1.Refresh();
+            }
         }
 
         //botao salvar
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)
         {
             TipoUsuarioController controller = new TipoUsuarioController();
 
             Object retorno = controller.Salvar(lblId.Text, txtNome.Text.Trim(), txtDescricao.Text.Trim());
-            
+
             if (retorno == null)
             {
                 Mensagem.Erro("Não foi possível Salvar");
@@ -53,19 +94,11 @@ namespace NovaProjectWF.View.Cadastro
         }
 
         //botao novo
-        private void button3_Click(object sender, EventArgs e)
+        private void button3_Click_1(object sender, EventArgs e)
         {
             lblId.Text = string.Empty;
             txtNome.Text = string.Empty;
             txtDescricao.Text = string.Empty;
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            if (Janela.Fechada(this.MdiParent, typeof(PesquisaTipoUsuario)))
-                pesquisa = new PesquisaTipoUsuario();
-
-            Janela.Exibir(pesquisa, this.MdiParent);
         }
     }
 }

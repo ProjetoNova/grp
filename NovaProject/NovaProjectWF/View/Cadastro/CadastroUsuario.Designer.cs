@@ -1,4 +1,4 @@
-﻿namespace NovaProjectWF.View.Cadastro
+﻿namespace NovaProjectWF.View.Utilitarios
 {
     partial class CadastroUsuario
     {

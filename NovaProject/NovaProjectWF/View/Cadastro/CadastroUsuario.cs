@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace NovaProjectWF.View.Cadastro
+namespace NovaProjectWF.View.Utilitarios
 {
     public partial class CadastroUsuario : Form
     {
