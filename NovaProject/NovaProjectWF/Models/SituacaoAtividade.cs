@@ -7,9 +7,11 @@ using NovaProjectWF.Models.Interfaces;
 
 namespace NovaProjectWF.Models
 {
-    class Situacao : IEntidade
+    class SituacaoAtividade : IEntidade
     {
         public int Id { get; set; }
-        public string nome { get; set; }
+        public string Nome { get; set; }
+        public bool Status { get; set; }
+
     }
 }

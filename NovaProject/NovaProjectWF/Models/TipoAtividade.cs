@@ -10,6 +10,8 @@ namespace NovaProjectWF.Models
     class TipoAtividade : IEntidade
     {
         public int Id { get; set; }
-        public string nome { get; set; }
+        public string Nome { get; set; }
+        public bool Status { get; set; }
+
     }
 }

@@ -10,9 +10,13 @@ namespace NovaProjectWF.Models
     class FaseProjeto : IEntidade
     {
         public int Id { get; set; }
-        public string descricao { get; set; }
-        public DateTime dataInicio { get; set; }
-        public DateTime dataFim { get; set; }
+
+        public virtual Projeto Projeto { get; set; }
+
+        public string Descricao { get; set; }
+        public DateTime DataInicio { get; set; }
+        public DateTime DataFim { get; set; }
+        public bool Status { get; set; } 
 
     }
 }
