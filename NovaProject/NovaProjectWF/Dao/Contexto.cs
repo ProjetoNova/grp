@@ -13,14 +13,14 @@ namespace NovaProjectWF.Dao
 
         }
 
-        public DbSet<Anexo> Anexo { get; set; }
-        public DbSet<Atividade> Atividade { get; set; }
-        public DbSet<FaseProjeto> FaseProjeto { get; set; }
-        public DbSet<Projeto> Projeto { get; set; }
-        public DbSet<TipoAtividade> TipoAtividade { get; set; }
-        public DbSet<TipoUsuario> TipoUsuario { get; set; }
-        public DbSet<Usuario> Usuario { get; set; }
-        public DbSet<UsuarioProjeto> UsuarioProjeto { get; set; }
+        public DbSet<Anexo> ANEXO_ { get; set; }
+        public DbSet<Atividade> ATIVIDADE_ { get; set; }
+        public DbSet<FaseProjeto> FASE_PROJETO_ { get; set; }
+        public DbSet<Projeto> PROJETO_ { get; set; }
+        public DbSet<TipoAtividade> TIPO_ATIVIDADE_ { get; set; }
+        public DbSet<TipoUsuario> TIPO_USUARIO_ { get; set; }
+        public DbSet<Usuario> USUARIO_ { get; set; }
+        public DbSet<UsuarioProjeto> USUARIO_PROJETO { get; set; }
        
     }
 }

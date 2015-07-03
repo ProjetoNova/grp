@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NovaProjectWF.Models.Interfaces;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace NovaProjectWF.Models
 {
@@ -11,7 +12,10 @@ namespace NovaProjectWF.Models
     {
         public int Id { get; set; }
 
+        [ForeignKey("TipoUsuario")]
         public virtual TipoUsuario TipoUsuario { get; set; }
+        [InverseProperty("Usuario")]
+        public virtual ICollection<UsuarioProjeto> Projetos { get; set; }
    
         public string Nome { get; set; }
         public string FormacaoAcademica { get; set; }

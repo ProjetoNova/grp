@@ -1,6 +1,6 @@
 ﻿namespace NovaProjectWF.View.Projeto
 {
-    partial class MeusProjetos
+    partial class Atividades
     {
         /// <summary>
         /// Required designer variable.
@@ -28,17 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // MeusProjetos
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(340, 505);
-            this.Name = "MeusProjetos";
-            this.Text = "MeusProjetos";
-            this.ResumeLayout(false);
-
+            this.Text = "Atividade";
         }
 
         #endregion

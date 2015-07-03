@@ -16,7 +16,7 @@ namespace NovaProjectWF.Dao
 
             using (Contexto ctx = new Contexto())
             {
-                var query = from c in ctx.TipoUsuario select c;
+                var query = from c in ctx.TIPO_USUARIO_ select c;
 
                 foreach (var item in query)
                 {
@@ -31,7 +31,7 @@ namespace NovaProjectWF.Dao
         {
             using (Contexto ctx = new Contexto())
             {
-                var query = from c in ctx.TipoUsuario 
+                var query = from c in ctx.TIPO_USUARIO_ 
                             where c.Nome == nome select c;
 
                 foreach (var item in query)

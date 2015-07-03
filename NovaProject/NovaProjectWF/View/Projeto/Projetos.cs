@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace NovaProjectWF.View.Projeto
 {
-    public partial class Atividade : Form
+    public partial class Projetos : Form
     {
-        public Atividade()
+        public Projetos()
         {
             InitializeComponent();
         }

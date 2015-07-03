@@ -19,7 +19,7 @@ namespace NovaProjectWF.View
         private CadastroUsuario cadUsuario;
         private CadastroTipoUsuario cadTipUsuario;
         private CadastroTipoAtividade cadTipoAtividade;
-        private MeusProjetos meusProjetos;
+        private Projetos meusProjetos;
         private NovoProjeto novoProj;
         private MinhaConta minhaConta;
         private Inicio inicio;
@@ -80,8 +80,8 @@ namespace NovaProjectWF.View
         //Menu Meus Projetos
         private void meusProjetosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (Janela.Fechada(this, typeof(MeusProjetos)))
-                meusProjetos = new MeusProjetos();
+            if (Janela.Fechada(this, typeof(Projetos)))
+                meusProjetos = new Projetos();
 
             Janela.Exibir(meusProjetos, this);
         }

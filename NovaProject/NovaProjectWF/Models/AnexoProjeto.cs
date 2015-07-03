@@ -6,17 +6,18 @@ using System.Threading.Tasks;
 using NovaProjectWF.Models.Interfaces;
 using System.ComponentModel.DataAnnotations.Schema;
 
+/**
+ * Classe AnexoProjeto
+ * */
 namespace NovaProjectWF.Models
 {
-    class UsuarioProjeto : IEntidade
+    class AnexoProjeto : IEntidade
     {
         public int Id { get; set; }
-        
-        [ForeignKey("FaseProjeto")]
-        public virtual FaseProjeto FaseProjeto { get; set; }
-        [ForeignKey("Usuario")]
-        public virtual Usuario Usuario { get; set; }
+        [ForeignKey("Anexo")]
+        public Anexo Anexo { get; set; }
+        [ForeignKey("Projeto")]
+        public Projeto Projeto { get; set; }
 
-        public string Papel { get; set; }
     }
 }

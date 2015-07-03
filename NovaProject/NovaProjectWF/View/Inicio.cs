@@ -15,9 +15,9 @@ namespace NovaProjectWF.View
 {
     public partial class Inicio : Form
     {
-        private MeusProjetos meusProjetos;
+        private Projetos meusProjetos;
         private NovoProjeto novoProj;
-        private Atividade atividades;
+        private Atividades atividades;
 
         public Inicio()
         {
@@ -50,8 +50,8 @@ namespace NovaProjectWF.View
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (Janela.Fechada(this.MdiParent, typeof(MeusProjetos)))
-                meusProjetos = new MeusProjetos();
+            if (Janela.Fechada(this.MdiParent, typeof(Projetos)))
+                meusProjetos = new Projetos();
 
             Janela.Exibir(meusProjetos, this.MdiParent);
             this.Close();
@@ -59,8 +59,8 @@ namespace NovaProjectWF.View
 
         private void btnVerProjetos_Click(object sender, EventArgs e)
         {
-            if (Janela.Fechada(this.MdiParent, typeof(Atividade)))
-                atividades = new Atividade();
+            if (Janela.Fechada(this.MdiParent, typeof(Atividades)))
+                atividades = new Atividades();
 
             Janela.Exibir(atividades, this.MdiParent);
             this.Close();

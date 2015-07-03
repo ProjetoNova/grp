@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NovaProjectWF.Models.Interfaces;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 
 namespace NovaProjectWF.Models
 {
@@ -11,14 +13,20 @@ namespace NovaProjectWF.Models
     {
            public int Id { get; set; }
 
-           public virtual UsuarioProjeto UsuarioProjeto { get; set; }
-           public virtual FaseProjeto FaseProjeto { get; set; }
+           [InverseProperty("Projeto")]     
+           public virtual ICollection<FaseProjeto> FaseProjeto { get; set; }
+           [InverseProperty("Projeto")]
+           public virtual ICollection<AnexoProjeto> Anexos {get; set;}
 
+           [Required]
            public string Nome { get; set; }
+           [Required]
            public string Descricao { get; set; }
+           [Timestamp, Required]
            public DateTime DataInicio { get; set; }
+           [Timestamp, Required]
            public DateTime DataPrevisao {get; set; }
-           //public Boolean Situacao { get; set; }
+           [Required]
            public string PlanoProjeto { get; set; }
       
     }

@@ -90,6 +90,8 @@
     <Compile Include="Dao\CRUD.cs" />
     <Compile Include="Dao\TipoUsuarioDAO.cs" />
     <Compile Include="Models\Anexo.cs" />
+    <Compile Include="Models\AnexoAtividade.cs" />
+    <Compile Include="Models\AnexoProjeto.cs" />
     <Compile Include="Models\Atividade.cs" />
     <Compile Include="Models\FaseProjeto.cs" />
     <Compile Include="Models\Interfaces\IEntidade.cs" />
@@ -142,17 +144,17 @@
     <Compile Include="View\MenuPrincipal.Designer.cs">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Projeto\Atividade.cs">
+    <Compile Include="View\Projeto\Atividades.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Projeto\Atividade.Designer.cs">
-      <DependentUpon>Atividade.cs</DependentUpon>
+    <Compile Include="View\Projeto\Atividades.Designer.cs">
+      <DependentUpon>Atividades.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Projeto\MeusProjetos.cs">
+    <Compile Include="View\Projeto\Projetos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Projeto\MeusProjetos.Designer.cs">
-      <DependentUpon>MeusProjetos.cs</DependentUpon>
+    <Compile Include="View\Projeto\Projetos.Designer.cs">
+      <DependentUpon>Projetos.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Projeto\NovaAtividade.cs">
       <SubType>Form</SubType>
@@ -193,8 +195,11 @@
     <EmbeddedResource Include="View\MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Projeto\MeusProjetos.resx">
-      <DependentUpon>MeusProjetos.cs</DependentUpon>
+    <EmbeddedResource Include="View\Projeto\Projetos.resx">
+      <DependentUpon>Projetos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Projeto\NovoProjeto.resx">
+      <DependentUpon>NovoProjeto.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\NovaProjectWF.Models.TipoUsuario.datasource" />
