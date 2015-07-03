@@ -18,7 +18,7 @@ namespace NovaProjectWF.Controllers.CadastroController
             crud = new TipoUsuarioDAO();
         }
 
-        public Object Salvar(string Id, string Nome, string Descricao)
+        public Object Salvar(string Id, string Nome, bool Status)
         {
             if (Nome == string.Empty)
             {
@@ -29,7 +29,8 @@ namespace NovaProjectWF.Controllers.CadastroController
             {
                 TipoUsuario tipoUsuario = new TipoUsuario();
 
-                tipoUsuario.descricao = Descricao;
+                tipoUsuario.Nome = Nome;
+                tipoUsuario.Status = Status;
 
                 Object retorno = crud.save(Id, tipoUsuario);
 

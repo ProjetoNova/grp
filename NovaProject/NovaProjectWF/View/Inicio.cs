@@ -10,7 +10,6 @@ using System.Windows.Forms;
 using NovaProjectWF.View.Utilitarios;
 using NovaProjectWF.View.Conta;
 using NovaProjectWF.View.Projeto;
-using NovaProjectWF.View.Utilitarios;
 
 namespace NovaProjectWF.View
 {

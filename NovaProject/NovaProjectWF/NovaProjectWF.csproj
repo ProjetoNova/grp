@@ -94,7 +94,6 @@
     <Compile Include="Models\FaseProjeto.cs" />
     <Compile Include="Models\Interfaces\IEntidade.cs" />
     <Compile Include="Models\Projeto.cs" />
-    <Compile Include="Models\Situacao.cs" />
     <Compile Include="Models\TipoAtividade.cs" />
     <Compile Include="Models\TipoUsuario.cs" />
     <Compile Include="Models\Usuario.cs" />

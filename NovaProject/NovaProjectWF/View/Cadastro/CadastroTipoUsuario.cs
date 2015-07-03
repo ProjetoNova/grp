@@ -69,7 +69,7 @@ namespace NovaProjectWF.View.Utilitarios
         {
             TipoUsuarioController controller = new TipoUsuarioController();
 
-            Object retorno = controller.Salvar(lblId.Text, txtNome.Text.Trim(), txtDescricao.Text.Trim());
+            Object retorno = controller.Salvar(lblId.Text, txtNome.Text.Trim(), checkBox1.CanSelect);
 
             if (retorno == null)
             {

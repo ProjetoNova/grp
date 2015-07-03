@@ -16,7 +16,7 @@ namespace NovaProjectWF.Models
         public virtual Usuario Colaborador { get; set; }
         public virtual TipoAtividade TipoAtividade{ get; set; }
         /**COLOCAR CLASSE PRIORIDADE**/
-        public virtual string Prioridade { get; set; }
+        public string Prioridade { get; set; }
 
         public string Titulo { get; set; }
         public string Descricao { get; set; }
@@ -25,6 +25,5 @@ namespace NovaProjectWF.Models
         public DateTime DataFim { get; set; }
         public int TempoEstimado { get; set; }
         public int TempoGasto { get; set; }
-        }
     }
 }

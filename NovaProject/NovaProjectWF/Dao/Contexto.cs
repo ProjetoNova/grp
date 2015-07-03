@@ -17,7 +17,6 @@ namespace NovaProjectWF.Dao
         public DbSet<Atividade> Atividade { get; set; }
         public DbSet<FaseProjeto> FaseProjeto { get; set; }
         public DbSet<Projeto> Projeto { get; set; }
-        public DbSet<SituacaoAtividade> Situacao { get; set; }
         public DbSet<TipoAtividade> TipoAtividade { get; set; }
         public DbSet<TipoUsuario> TipoUsuario { get; set; }
         public DbSet<Usuario> Usuario { get; set; }

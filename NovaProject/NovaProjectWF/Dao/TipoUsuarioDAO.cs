@@ -32,7 +32,7 @@ namespace NovaProjectWF.Dao
             using (Contexto ctx = new Contexto())
             {
                 var query = from c in ctx.TipoUsuario 
-                            where c.descricao == nome select c;
+                            where c.Nome == nome select c;
 
                 foreach (var item in query)
                 {
