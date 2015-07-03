@@ -14,12 +14,13 @@ namespace NovaProjectWF.Models
 
         public int FaseProjetoId { get; set; }
         public int UsuarioId { get; set; }
+        public int TipoUsuarioId { get; set; }
 
         [ForeignKey("FaseProjetoId")]
         public virtual FaseProjeto FaseProjeto { get; set; }
         [ForeignKey("UsuarioId")]
         public virtual Usuario Usuario { get; set; }
-
-        public string Papel { get; set; }
+        [ForeignKey("TipoUsuarioId")]
+        public virtual TipoUsuario Papel { get; set; }
     }
 }

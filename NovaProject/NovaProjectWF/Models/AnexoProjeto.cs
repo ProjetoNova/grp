@@ -15,11 +15,9 @@ namespace NovaProjectWF.Models
     {
         public int Id { get; set; }
 
-        public int AnexoId { get; set; }
         public int ProjetoId { get; set; }
-
-        [ForeignKey("AnexoId")]
-        public Anexo Anexo { get; set; }
+                
+        public byte[] Anexo { get; set; }
         [ForeignKey("ProjetoId")]
         public Projeto Projeto { get; set; }
 

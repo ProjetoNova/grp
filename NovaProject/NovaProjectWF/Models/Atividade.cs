@@ -21,6 +21,7 @@ namespace NovaProjectWF.Models
         public int UsuarioId { get; set; }
         public int TipoAtividadeId { get; set; }
 
+
         [ForeignKey("FaseProjetoId"), Required]
         public virtual FaseProjeto FaseProjeto { get; set; }
         [ForeignKey("UsuarioId"), Required]

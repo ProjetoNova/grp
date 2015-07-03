@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using NovaProjectWF.Models.Interfaces;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using NovaProjectWF.Models.Enumerados;
 
 namespace NovaProjectWF.Models
 {
@@ -28,6 +29,6 @@ namespace NovaProjectWF.Models
            public DateTime DataPrevisao {get; set; }
            [Required]
            public string PlanoProjeto { get; set; }
-      
-    }
+           public  ESituacaoProjeto Situacao { get; set; }
+      }
 }
