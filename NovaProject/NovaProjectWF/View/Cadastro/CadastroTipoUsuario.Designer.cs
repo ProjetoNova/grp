@@ -185,8 +185,10 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(9, 81);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(328, 219);
             this.dataGridView1.TabIndex = 22;
             // 
@@ -198,6 +200,7 @@
             this.btnEditar.TabIndex = 21;
             this.btnEditar.Text = "Selecionar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnPesquisar
             // 
@@ -240,7 +243,7 @@
             this.ClientSize = new System.Drawing.Size(374, 348);
             this.Controls.Add(this.tabControl1);
             this.Name = "CadastroTipoUsuario";
-            this.Text = "CadastroTipoUsuario";
+            this.Text = "Tipo de Usuario";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();

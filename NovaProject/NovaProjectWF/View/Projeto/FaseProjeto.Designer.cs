@@ -1,6 +1,6 @@
-﻿namespace NovaProjectWF.View.Utilitarios
+﻿namespace NovaProjectWF.View.Projeto
 {
-    partial class CadastroUsuario
+    partial class FaseProjeto
     {
         /// <summary>
         /// Required designer variable.
@@ -30,15 +30,13 @@
         {
             this.SuspendLayout();
             // 
-            // CadastroUsuario
+            // FaseProjeto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(572, 308);
-            this.Name = "CadastroUsuario";
-            this.ShowInTaskbar = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Cadastro de Usuario";
+            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Name = "FaseProjeto";
+            this.Text = "Fase do Projeto";
             this.ResumeLayout(false);
 
         }

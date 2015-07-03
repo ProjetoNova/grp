@@ -17,6 +17,8 @@ namespace NovaProjectWF.View.Utilitarios
 {
     public partial class CadastroTipoUsuario : Form
     {
+        List<TipoUsuario> listaControle;
+
         public CadastroTipoUsuario()
         {
             InitializeComponent();
@@ -32,7 +34,7 @@ namespace NovaProjectWF.View.Utilitarios
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
             TipoUsuarioController control = new TipoUsuarioController();
-            List<TipoUsuario> listaControle = new List<TipoUsuario>();
+            listaControle = new List<TipoUsuario>();
 
             if (textBox1.Text.Trim() == string.Empty)
             {
@@ -69,7 +71,7 @@ namespace NovaProjectWF.View.Utilitarios
         {
             TipoUsuarioController controller = new TipoUsuarioController();
 
-            Object retorno = controller.Salvar(lblId.Text, txtNome.Text.Trim(), checkBox1.CanSelect);
+            Object retorno = controller.Salvar(lblId.Text, txtNome.Text.Trim(), checkBox1.Checked);
 
             if (retorno == null)
             {
@@ -99,6 +101,16 @@ namespace NovaProjectWF.View.Utilitarios
             lblId.Text = string.Empty;
             txtNome.Text = string.Empty;
             txtDescricao.Text = string.Empty;
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            TipoUsuario tipoUsuario = null;
+
+            foreach(DataGridViewRow row in dataGridView1.SelectedRows) {
+                tipoUsuario = listaControle[row.Index];
+            }
+
         }
     }
 }

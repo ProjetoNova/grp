@@ -21,6 +21,12 @@ namespace NovaProjectWF.Dao
         public DbSet<TipoUsuario> TIPO_USUARIO_ { get; set; }
         public DbSet<Usuario> USUARIO_ { get; set; }
         public DbSet<UsuarioProjeto> USUARIO_PROJETO { get; set; }
-       
+
+        public class MyInitializer : DropCreateDatabaseIfModelChanges<Contexto>
+        {
+        }
+
     }
+
+
 }

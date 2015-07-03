@@ -14,9 +14,14 @@ namespace NovaProjectWF.Models
     class AnexoAtividade : IEntidade
     {
         public int Id { get; set; }
-        [ForeignKey("Anexo")]
+
+        public int AnexoId { get; set; }
+        public int AtividadeId { get; set; }        
+        
+        [ForeignKey("AnexoId")]
         public Anexo Anexo { get; set; }
-        [ForeignKey("Atividade")]
+
+        [ForeignKey("AtividadeId")]
         public Atividade Atividade { get; set; }
     }
 }

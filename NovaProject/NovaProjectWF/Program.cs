@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using NovaProjectWF.View.Conta;
+using System.Data.Entity;
 
 namespace NovaProjectWF
 {
@@ -15,7 +16,7 @@ namespace NovaProjectWF
         [STAThread]
         static void Main()
         {
-
+            Database.SetInitializer(new NovaProjectWF.Dao.Contexto.MyInitializer());
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Login());

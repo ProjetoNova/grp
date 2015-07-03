@@ -17,11 +17,15 @@ namespace NovaProjectWF.Models
     {
         public int Id { get; set; }
 
-        [ForeignKey("FaseProjeto"), Required]
+        public int FaseProjetoId { get; set; }
+        public int UsuarioId { get; set; }
+        public int TipoAtividadeId { get; set; }
+
+        [ForeignKey("FaseProjetoId"), Required]
         public virtual FaseProjeto FaseProjeto { get; set; }
-        [ForeignKey("Colaborador"), Required]
+        [ForeignKey("UsuarioId"), Required]
         public virtual Usuario Colaborador { get; set; }
-        [ForeignKey("TipoAtividade"), Required]
+        [ForeignKey("TipoAtividadeId"), Required]
         public virtual TipoAtividade TipoAtividade{ get; set; }
         
         [InverseProperty("Atividade")]
@@ -33,11 +37,11 @@ namespace NovaProjectWF.Models
         public string Titulo { get; set; }
         [Required]
         public string Descricao { get; set; }
-        [Timestamp, Required]
+        [Required]
         public DateTime DataInicio { get; set; }
-        [Timestamp, Required]
+        [Required]
         public DateTime DataPrevista { get; set; }
-        [Timestamp]
+        
         public DateTime DataFim { get; set; }
         public double TempoEstimado { get; set; }
         public double TempoGasto { get; set; }

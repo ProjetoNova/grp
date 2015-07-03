@@ -78,7 +78,7 @@
             this.Controls.Add(this.btnFiltrar);
             this.Controls.Add(this.cbProjetos);
             this.Name = "Projetos";
-            this.Text = "Projetos";
+            this.Text = "Lista de Projetos";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

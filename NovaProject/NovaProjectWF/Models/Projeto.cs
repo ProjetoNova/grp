@@ -22,9 +22,9 @@ namespace NovaProjectWF.Models
            public string Nome { get; set; }
            [Required]
            public string Descricao { get; set; }
-           [Timestamp, Required]
+           [Required]
            public DateTime DataInicio { get; set; }
-           [Timestamp, Required]
+           [Required]
            public DateTime DataPrevisao {get; set; }
            [Required]
            public string PlanoProjeto { get; set; }

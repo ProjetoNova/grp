@@ -23,6 +23,7 @@ namespace NovaProjectWF.View
         private NovoProjeto novoProj;
         private MinhaConta minhaConta;
         private Inicio inicio;
+        private Sobre sobre;
 
         public MenuPrincipal()
         {
@@ -125,6 +126,15 @@ namespace NovaProjectWF.View
             inicio = new Inicio();
 
             Janela.Exibir(inicio, this);
+        }
+
+        //janela sobre
+        private void ajudaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (Janela.Fechada(this, typeof(Sobre)))
+                sobre = new Sobre();
+
+            Janela.Exibir(sobre, this);
         }
 
     }

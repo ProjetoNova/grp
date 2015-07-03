@@ -102,6 +102,12 @@
     <Compile Include="Models\UsuarioProjeto.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\Ajuda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Ajuda.Designer.cs">
+      <DependentUpon>Ajuda.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Cadastro\CadastroTipoAtividade.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +156,12 @@
     <Compile Include="View\Projeto\Atividades.Designer.cs">
       <DependentUpon>Atividades.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Projeto\FaseProjeto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Projeto\FaseProjeto.Designer.cs">
+      <DependentUpon>FaseProjeto.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Projeto\Projetos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,6 +192,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="View\Ajuda.resx">
+      <DependentUpon>Ajuda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Cadastro\CadastroTipoAtividade.resx">
+      <DependentUpon>CadastroTipoAtividade.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Cadastro\CadastroTipoUsuario.resx">
       <DependentUpon>CadastroTipoUsuario.cs</DependentUpon>
     </EmbeddedResource>
@@ -189,11 +207,23 @@
     <EmbeddedResource Include="View\Conta\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Conta\MinhaConta.resx">
+      <DependentUpon>MinhaConta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Projeto\Atividades.resx">
+      <DependentUpon>Atividades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Projeto\FaseProjeto.resx">
+      <DependentUpon>FaseProjeto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Projeto\NovaAtividade.resx">
+      <DependentUpon>NovaAtividade.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Projeto\Projetos.resx">
       <DependentUpon>Projetos.cs</DependentUpon>
