@@ -15,7 +15,8 @@ namespace NovaProjectWF.Models
         public virtual Projeto Projeto { get; set; }
         public virtual Usuario Colaborador { get; set; }
         public virtual TipoAtividade TipoAtividade{ get; set; }
-        public virtual Prioridade Prioridade { get; set; }
+        /**COLOCAR CLASSE PRIORIDADE**/
+        public virtual string Prioridade { get; set; }
 
         public string Titulo { get; set; }
         public string Descricao { get; set; }
