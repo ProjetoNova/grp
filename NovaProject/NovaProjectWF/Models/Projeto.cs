@@ -30,7 +30,7 @@ namespace NovaProjectWF.Models
            [Required]
            public DateTime DataPrevisao {get; set; }
            [Required]
-           public string PlanoProjeto { get; set; }
-           public  ESituacaoProjeto Situacao { get; set; }
+           public byte[] PlanoProjeto { get; set; }
+           public ESituacaoProjeto Situacao { get; set; }
       }
 }
