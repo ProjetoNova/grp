@@ -101,6 +101,7 @@
     <Compile Include="Models\AnexoAtividade.cs" />
     <Compile Include="Models\AnexoProjeto.cs" />
     <Compile Include="Models\Atividade.cs" />
+    <Compile Include="Models\Enumerados\EPrioridade.cs" />
     <Compile Include="Models\Enumerados\ESituacaoProjeto.cs" />
     <Compile Include="Models\FaseProjeto.cs" />
     <Compile Include="Models\Interfaces\IEntidade.cs" />

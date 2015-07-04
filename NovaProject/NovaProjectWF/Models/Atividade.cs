@@ -7,6 +7,7 @@ using NovaProjectWF.Models.Interfaces;
 using NovaProjectWF.Models;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using NovaProjectWF.Models.Enumerados;
 
 /**
  * Class Atividade
@@ -31,9 +32,9 @@ namespace NovaProjectWF.Models
         
         [InverseProperty("Atividade")]
         public virtual ICollection<AnexoAtividade> Anexos { get; set; }
-        /**COLOCAR CLASSE PRIORIDADE**/
+
         [Required]
-        public string Prioridade { get; set; }
+        public EPrioridade Prioridade { get; set; }
         [Required]
         public string Titulo { get; set; }
         [Required]
