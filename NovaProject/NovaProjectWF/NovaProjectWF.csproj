@@ -361,8 +361,8 @@
     <None Include="Resources\loading.gif" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\Desktop\RicherTextBox\RicherTextBox.csproj">
-      <Project>{8F3074D8-E771-4C5E-A11E-0C0FBAE34AE3}</Project>
+    <ProjectReference Include="..\RicherTextBox\RicherTextBox.csproj">
+      <Project>{8f3074d8-e771-4c5e-a11e-0c0fbae34ae3}</Project>
       <Name>RicherTextBox</Name>
     </ProjectReference>
   </ItemGroup>
