@@ -8,15 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace NovaProjectWF.View.Projeto
+namespace NovaProjectWF.View.Cadastro
 {
-    public partial class NovoProjeto : Form
+    public partial class SituacaoAtividade : Form
     {
-        public NovoProjeto()
+        public SituacaoAtividade()
         {
             InitializeComponent();
-
-            
         }
     }
 }

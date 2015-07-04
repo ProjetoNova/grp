@@ -30,39 +30,56 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.lblStatus = new System.Windows.Forms.Label();
+            this.dtFim = new System.Windows.Forms.MaskedTextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.gridEquipe = new System.Windows.Forms.DataGridView();
+            this.btnExcluirUsuario = new System.Windows.Forms.Button();
+            this.btnIncluirUsuario = new System.Windows.Forms.Button();
+            this.cbSituacao = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.txtDescricao = new System.Windows.Forms.RichTextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtPrevista = new System.Windows.Forms.DateTimePicker();
+            this.dtInicio = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtNome = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnEditarFase = new System.Windows.Forms.Button();
+            this.btnNovaFase = new System.Windows.Forms.Button();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnSalvarRTF = new System.Windows.Forms.Button();
             this.btnAbrirRTF = new System.Windows.Forms.Button();
             this.txtPlanoProjeto = new System.Windows.Forms.RichTextBox();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.btnEditarFase = new System.Windows.Forms.Button();
-            this.btnNovaFase = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.gridAnexos = new System.Windows.Forms.DataGridView();
             this.btnEnviarArquivo = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnEscolherArquivo = new System.Windows.Forms.Button();
             this.btnNovo = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
+            this.btnAtividade = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.gridFase = new System.Windows.Forms.DataGridView();
+            this.gridAtividade = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridEquipe)).BeginInit();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tabPage3.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridAnexos)).BeginInit();
+            this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridFase)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridAtividade)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -80,19 +97,20 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage1.Controls.Add(this.comboBox1);
+            this.tabPage1.Controls.Add(this.lblStatus);
+            this.tabPage1.Controls.Add(this.dtFim);
+            this.tabPage1.Controls.Add(this.label2);
+            this.tabPage1.Controls.Add(this.groupBox2);
+            this.tabPage1.Controls.Add(this.cbSituacao);
             this.tabPage1.Controls.Add(this.label7);
-            this.tabPage1.Controls.Add(this.richTextBox1);
+            this.tabPage1.Controls.Add(this.txtDescricao);
             this.tabPage1.Controls.Add(this.label6);
-            this.tabPage1.Controls.Add(this.dateTimePicker2);
-            this.tabPage1.Controls.Add(this.dateTimePicker1);
+            this.tabPage1.Controls.Add(this.dtPrevista);
+            this.tabPage1.Controls.Add(this.dtInicio);
             this.tabPage1.Controls.Add(this.label5);
             this.tabPage1.Controls.Add(this.label4);
-            this.tabPage1.Controls.Add(this.textBox1);
+            this.tabPage1.Controls.Add(this.txtNome);
             this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.groupBox1);
-            this.tabPage1.Controls.Add(this.txtPlanoProjeto);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -100,14 +118,82 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Projeto";
             // 
-            // comboBox1
+            // lblStatus
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(512, 46);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(180, 21);
-            this.comboBox1.TabIndex = 5;
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Location = new System.Drawing.Point(698, 93);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(0, 13);
+            this.lblStatus.TabIndex = 23;
+            // 
+            // dtFim
+            // 
+            this.dtFim.Enabled = false;
+            this.dtFim.Location = new System.Drawing.Point(512, 87);
+            this.dtFim.Mask = "00/00/0000";
+            this.dtFim.Name = "dtFim";
+            this.dtFim.Size = new System.Drawing.Size(68, 20);
+            this.dtFim.TabIndex = 22;
+            this.dtFim.ValidatingType = typeof(System.DateTime);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(443, 93);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(52, 13);
+            this.label2.TabIndex = 21;
+            this.label2.Text = "Data Fim:";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.gridEquipe);
+            this.groupBox2.Controls.Add(this.btnExcluirUsuario);
+            this.groupBox2.Controls.Add(this.btnIncluirUsuario);
+            this.groupBox2.Location = new System.Drawing.Point(9, 118);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(791, 368);
+            this.groupBox2.TabIndex = 20;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Equipe do Projeto";
+            // 
+            // gridEquipe
+            // 
+            this.gridEquipe.AllowUserToAddRows = false;
+            this.gridEquipe.AllowUserToDeleteRows = false;
+            this.gridEquipe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridEquipe.Location = new System.Drawing.Point(7, 50);
+            this.gridEquipe.Name = "gridEquipe";
+            this.gridEquipe.ReadOnly = true;
+            this.gridEquipe.Size = new System.Drawing.Size(778, 312);
+            this.gridEquipe.TabIndex = 2;
+            // 
+            // btnExcluirUsuario
+            // 
+            this.btnExcluirUsuario.Location = new System.Drawing.Point(89, 19);
+            this.btnExcluirUsuario.Name = "btnExcluirUsuario";
+            this.btnExcluirUsuario.Size = new System.Drawing.Size(75, 23);
+            this.btnExcluirUsuario.TabIndex = 1;
+            this.btnExcluirUsuario.Text = "Excluir";
+            this.btnExcluirUsuario.UseVisualStyleBackColor = true;
+            // 
+            // btnIncluirUsuario
+            // 
+            this.btnIncluirUsuario.Location = new System.Drawing.Point(7, 20);
+            this.btnIncluirUsuario.Name = "btnIncluirUsuario";
+            this.btnIncluirUsuario.Size = new System.Drawing.Size(75, 23);
+            this.btnIncluirUsuario.TabIndex = 0;
+            this.btnIncluirUsuario.Text = "Incluir Colaborador";
+            this.btnIncluirUsuario.UseVisualStyleBackColor = true;
+            // 
+            // cbSituacao
+            // 
+            this.cbSituacao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbSituacao.FormattingEnabled = true;
+            this.cbSituacao.Location = new System.Drawing.Point(512, 46);
+            this.cbSituacao.Name = "cbSituacao";
+            this.cbSituacao.Size = new System.Drawing.Size(180, 21);
+            this.cbSituacao.TabIndex = 5;
             // 
             // label7
             // 
@@ -118,48 +204,48 @@
             this.label7.TabIndex = 19;
             this.label7.Text = "Situação:";
             // 
-            // richTextBox1
+            // txtDescricao
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(79, 46);
-            this.richTextBox1.MaxLength = 255;
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(355, 61);
-            this.richTextBox1.TabIndex = 4;
-            this.richTextBox1.Text = "";
+            this.txtDescricao.Location = new System.Drawing.Point(79, 46);
+            this.txtDescricao.MaxLength = 255;
+            this.txtDescricao.Name = "txtDescricao";
+            this.txtDescricao.Size = new System.Drawing.Size(355, 61);
+            this.txtDescricao.TabIndex = 4;
+            this.txtDescricao.Text = "";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(14, 46);
+            this.label6.Location = new System.Drawing.Point(6, 46);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(58, 13);
             this.label6.TabIndex = 17;
             this.label6.Text = "Descrição:";
             // 
-            // dateTimePicker2
+            // dtPrevista
             // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(698, 7);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(102, 20);
-            this.dateTimePicker2.TabIndex = 3;
+            this.dtPrevista.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtPrevista.Location = new System.Drawing.Point(698, 7);
+            this.dtPrevista.Name = "dtPrevista";
+            this.dtPrevista.Size = new System.Drawing.Size(102, 20);
+            this.dtPrevista.TabIndex = 3;
             // 
-            // dateTimePicker1
+            // dtInicio
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(512, 7);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(98, 20);
-            this.dateTimePicker1.TabIndex = 2;
+            this.dtInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtInicio.Location = new System.Drawing.Point(512, 7);
+            this.dtInicio.Name = "dtInicio";
+            this.dtInicio.Size = new System.Drawing.Size(98, 20);
+            this.dtInicio.TabIndex = 2;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(615, 10);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(77, 13);
+            this.label5.Size = new System.Drawing.Size(74, 13);
             this.label5.TabIndex = 13;
-            this.label5.Text = "Data Previsão:";
+            this.label5.Text = "Data Prevista:";
             // 
             // label4
             // 
@@ -170,13 +256,13 @@
             this.label4.TabIndex = 11;
             this.label4.Text = "Data Início: ";
             // 
-            // textBox1
+            // txtNome
             // 
-            this.textBox1.Location = new System.Drawing.Point(77, 7);
-            this.textBox1.MaxLength = 50;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(357, 20);
-            this.textBox1.TabIndex = 1;
+            this.txtNome.Location = new System.Drawing.Point(77, 7);
+            this.txtNome.MaxLength = 50;
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(357, 20);
+            this.txtNome.TabIndex = 1;
             // 
             // label3
             // 
@@ -187,59 +273,14 @@
             this.label3.TabIndex = 9;
             this.label3.Text = "Nome:";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 129);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(85, 13);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Plano de Projeto";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.btnSalvarRTF);
-            this.groupBox1.Controls.Add(this.btnAbrirRTF);
-            this.groupBox1.Location = new System.Drawing.Point(700, 149);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(102, 162);
-            this.groupBox1.TabIndex = 7;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Opções";
-            // 
-            // btnSalvarRTF
-            // 
-            this.btnSalvarRTF.Location = new System.Drawing.Point(7, 50);
-            this.btnSalvarRTF.Name = "btnSalvarRTF";
-            this.btnSalvarRTF.Size = new System.Drawing.Size(89, 23);
-            this.btnSalvarRTF.TabIndex = 1;
-            this.btnSalvarRTF.Text = "Salvar..";
-            this.btnSalvarRTF.UseVisualStyleBackColor = true;
-            // 
-            // btnAbrirRTF
-            // 
-            this.btnAbrirRTF.Location = new System.Drawing.Point(7, 20);
-            this.btnAbrirRTF.Name = "btnAbrirRTF";
-            this.btnAbrirRTF.Size = new System.Drawing.Size(89, 23);
-            this.btnAbrirRTF.TabIndex = 0;
-            this.btnAbrirRTF.Text = "Abrir...";
-            this.btnAbrirRTF.UseVisualStyleBackColor = true;
-            // 
-            // txtPlanoProjeto
-            // 
-            this.txtPlanoProjeto.Location = new System.Drawing.Point(6, 149);
-            this.txtPlanoProjeto.MaxLength = 5000;
-            this.txtPlanoProjeto.Name = "txtPlanoProjeto";
-            this.txtPlanoProjeto.Size = new System.Drawing.Size(686, 337);
-            this.txtPlanoProjeto.TabIndex = 6;
-            this.txtPlanoProjeto.Text = "";
-            // 
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage2.Controls.Add(this.groupBox4);
+            this.tabPage2.Controls.Add(this.groupBox3);
+            this.tabPage2.Controls.Add(this.btnAtividade);
             this.tabPage2.Controls.Add(this.btnEditarFase);
             this.tabPage2.Controls.Add(this.btnNovaFase);
-            this.tabPage2.Controls.Add(this.dataGridView1);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -265,31 +306,60 @@
             this.btnNovaFase.Text = "Nova Fase";
             this.btnNovaFase.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(-4, 35);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(809, 461);
-            this.dataGridView1.TabIndex = 0;
-            // 
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage3.Controls.Add(this.groupBox1);
+            this.tabPage3.Controls.Add(this.txtPlanoProjeto);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage3.Size = new System.Drawing.Size(808, 492);
             this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Atividades";
+            this.tabPage3.Text = "Plano de Projeto";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnSalvarRTF);
+            this.groupBox1.Controls.Add(this.btnAbrirRTF);
+            this.groupBox1.Location = new System.Drawing.Point(700, 6);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(102, 162);
+            this.groupBox1.TabIndex = 9;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Opções";
+            // 
+            // btnSalvarRTF
+            // 
+            this.btnSalvarRTF.Location = new System.Drawing.Point(7, 50);
+            this.btnSalvarRTF.Name = "btnSalvarRTF";
+            this.btnSalvarRTF.Size = new System.Drawing.Size(89, 23);
+            this.btnSalvarRTF.TabIndex = 1;
+            this.btnSalvarRTF.Text = "Salvar..";
+            this.btnSalvarRTF.UseVisualStyleBackColor = true;
+            // 
+            // btnAbrirRTF
+            // 
+            this.btnAbrirRTF.Location = new System.Drawing.Point(7, 20);
+            this.btnAbrirRTF.Name = "btnAbrirRTF";
+            this.btnAbrirRTF.Size = new System.Drawing.Size(89, 23);
+            this.btnAbrirRTF.TabIndex = 0;
+            this.btnAbrirRTF.Text = "Abrir...";
+            this.btnAbrirRTF.UseVisualStyleBackColor = true;
+            // 
+            // txtPlanoProjeto
+            // 
+            this.txtPlanoProjeto.Location = new System.Drawing.Point(6, 6);
+            this.txtPlanoProjeto.MaxLength = 5000;
+            this.txtPlanoProjeto.Name = "txtPlanoProjeto";
+            this.txtPlanoProjeto.Size = new System.Drawing.Size(686, 480);
+            this.txtPlanoProjeto.TabIndex = 8;
+            this.txtPlanoProjeto.Text = "";
             // 
             // tabPage4
             // 
             this.tabPage4.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage4.Controls.Add(this.listView1);
+            this.tabPage4.Controls.Add(this.gridAnexos);
             this.tabPage4.Controls.Add(this.btnEnviarArquivo);
             this.tabPage4.Controls.Add(this.label1);
             this.tabPage4.Controls.Add(this.btnEscolherArquivo);
@@ -300,14 +370,16 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Anexos";
             // 
-            // listView1
+            // gridAnexos
             // 
-            this.listView1.BackColor = System.Drawing.SystemColors.Control;
-            this.listView1.Location = new System.Drawing.Point(7, 36);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(795, 450);
-            this.listView1.TabIndex = 7;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.gridAnexos.AllowUserToAddRows = false;
+            this.gridAnexos.AllowUserToDeleteRows = false;
+            this.gridAnexos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridAnexos.Location = new System.Drawing.Point(7, 36);
+            this.gridAnexos.Name = "gridAnexos";
+            this.gridAnexos.ReadOnly = true;
+            this.gridAnexos.Size = new System.Drawing.Size(795, 450);
+            this.gridAnexos.TabIndex = 77;
             // 
             // btnEnviarArquivo
             // 
@@ -355,6 +427,57 @@
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
             // 
+            // btnAtividade
+            // 
+            this.btnAtividade.Location = new System.Drawing.Point(170, 7);
+            this.btnAtividade.Name = "btnAtividade";
+            this.btnAtividade.Size = new System.Drawing.Size(75, 23);
+            this.btnAtividade.TabIndex = 4;
+            this.btnAtividade.Text = "Atividade";
+            this.btnAtividade.UseVisualStyleBackColor = true;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.gridFase);
+            this.groupBox3.Location = new System.Drawing.Point(7, 36);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(795, 181);
+            this.groupBox3.TabIndex = 5;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Fases";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.gridAtividade);
+            this.groupBox4.Location = new System.Drawing.Point(7, 224);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(795, 262);
+            this.groupBox4.TabIndex = 6;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Atividade (Selecione uma Fase)";
+            // 
+            // gridFase
+            // 
+            this.gridFase.AllowUserToAddRows = false;
+            this.gridFase.AllowUserToDeleteRows = false;
+            this.gridFase.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridFase.Location = new System.Drawing.Point(7, 20);
+            this.gridFase.Name = "gridFase";
+            this.gridFase.ReadOnly = true;
+            this.gridFase.Size = new System.Drawing.Size(782, 155);
+            this.gridFase.TabIndex = 0;
+            // 
+            // gridAtividade
+            // 
+            this.gridAtividade.AllowUserToAddRows = false;
+            this.gridAtividade.AllowUserToDeleteRows = false;
+            this.gridAtividade.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridAtividade.Location = new System.Drawing.Point(7, 20);
+            this.gridAtividade.Name = "gridAtividade";
+            this.gridAtividade.ReadOnly = true;
+            this.gridAtividade.Size = new System.Drawing.Size(782, 236);
+            this.gridAtividade.TabIndex = 0;
+            // 
             // NovoProjeto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -368,11 +491,18 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridEquipe)).EndInit();
             this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridAnexos)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridFase)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridAtividade)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -381,33 +511,43 @@
 
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btnSalvarRTF;
-        private System.Windows.Forms.Button btnAbrirRTF;
-        private System.Windows.Forms.RichTextBox txtPlanoProjeto;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Button btnNovo;
         private System.Windows.Forms.Button btnSalvar;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Button btnEnviarArquivo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnEscolherArquivo;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtPrevista;
+        private System.Windows.Forms.DateTimePicker dtInicio;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox txtDescricao;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ComboBox cbSituacao;
         private System.Windows.Forms.Button btnNovaFase;
         private System.Windows.Forms.Button btnEditarFase;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnSalvarRTF;
+        private System.Windows.Forms.Button btnAbrirRTF;
+        private System.Windows.Forms.RichTextBox txtPlanoProjeto;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button btnIncluirUsuario;
+        private System.Windows.Forms.Button btnExcluirUsuario;
+        private System.Windows.Forms.DataGridView gridEquipe;
+        private System.Windows.Forms.MaskedTextBox dtFim;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.DataGridView gridAnexos;
+        private System.Windows.Forms.Button btnAtividade;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.DataGridView gridFase;
+        private System.Windows.Forms.DataGridView gridAtividade;
 
     }
 }

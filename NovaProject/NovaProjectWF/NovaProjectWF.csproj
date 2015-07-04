@@ -137,6 +137,12 @@
     <Compile Include="View\Cadastro\CadastroUsuario.Designer.cs">
       <DependentUpon>CadastroUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Cadastro\SituacaoAtividade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Cadastro\SituacaoAtividade.Designer.cs">
+      <DependentUpon>SituacaoAtividade.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Conta\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -214,6 +220,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Cadastro\CadastroUsuario.resx">
       <DependentUpon>CadastroUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Cadastro\SituacaoAtividade.resx">
+      <DependentUpon>SituacaoAtividade.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Conta\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

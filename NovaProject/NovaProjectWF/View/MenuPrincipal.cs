@@ -24,6 +24,7 @@ namespace NovaProjectWF.View
         private MinhaConta minhaConta;
         private Inicio inicio;
         private Sobre sobre;
+        private NovaAtividade novaAtividade;
 
         public MenuPrincipal()
         {
@@ -135,6 +136,14 @@ namespace NovaProjectWF.View
                 sobre = new Sobre();
 
             Janela.Exibir(sobre, this);
+        }
+
+        private void gAMBIARRAToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Janela.Fechada(this, typeof(NovaAtividade)))
+                novaAtividade = new NovaAtividade();
+
+            Janela.Exibir(novaAtividade, this);
         }
 
     }
