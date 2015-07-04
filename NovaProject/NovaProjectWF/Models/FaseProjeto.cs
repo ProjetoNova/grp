@@ -20,8 +20,7 @@ namespace NovaProjectWF.Models
 
         [ForeignKey("ProjetoId"), Required]
         public virtual Projeto Projeto { get; set; }
-        [InverseProperty("FaseProjeto")]
-        public virtual ICollection<UsuarioProjeto> Usuarios { get; set; }
+        
 
         [Required]
         public string Descricao { get; set; }

@@ -4,39 +4,49 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NovaProjectWF.Models;
+using NovaProjectWF.Dao;
+using NovaProjectWF.Controllers.CadastroController;
 
 namespace NovaProjectWF.Controllers.SessaoController
 {
     class LoginController
     {
         //Login do Usuario
-        public Sessao Login(string usuario, string senha)
+        public bool Login(string usuario, string senha)
         {
             Usuario usuarioLogin = null;
 
-            //INSERIR AQUI UM METODO DE PESQUISA DE USUARIO NO BANCO
+            UsuarioDAO crud = new UsuarioDAO();
+            TipoUsuarioController control = new TipoUsuarioController();
+            usuarioLogin = crud.login(usuario, senha);
 
-            Sessao sessaoAtiva = new Sessao();
+            if (usuarioLogin == null)
+            {
+                return false;
+            }
 
-            sessaoAtiva.Usuario = usuarioLogin;
+            SessaoSistema.Administrador = control.BuscarPorId(
+                                            usuarioLogin.TipoUsuarioId+"").Administrador;
+            SessaoSistema.LoginUsuario = usuarioLogin.Login;
+            SessaoSistema.NomeUsuario = usuarioLogin.Nome;
+            SessaoSistema.UsuarioId = usuarioLogin.Id;
 
-            sessaoAtiva.HoraLogin = new DateTime();
-
-            return sessaoAtiva;
+            return true;
         }
 
         //realiza logout do usuario
-        public Sessao Logout(Sessao sessaoAtiva)
+        public void Logout()
         {
-            sessaoAtiva.Usuario = null;
-
-            return sessaoAtiva;
+            SessaoSistema.Administrador = false;
+            SessaoSistema.LoginUsuario = null;
+            SessaoSistema.NomeUsuario = null;
+            SessaoSistema.UsuarioId = 0;
         }
 
         //verifica se a sessao do usuario esta ativa
-        public bool SessaoAtiva(Sessao sessao)
+        public bool SessaoAtiva()
         {
-            if (sessao.Usuario != null)
+            if (SessaoSistema.UsuarioId != 0)
             {
                 return true;
             }

@@ -28,26 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtLink = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.txtFormacao = new System.Windows.Forms.RichTextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.txtExperiencia = new System.Windows.Forms.RichTextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSalvar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // textBox6
+            // txtLink
             // 
-            this.textBox6.Location = new System.Drawing.Point(15, 314);
-            this.textBox6.MaxLength = 100;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(403, 20);
-            this.textBox6.TabIndex = 53;
+            this.txtLink.Location = new System.Drawing.Point(15, 314);
+            this.txtLink.MaxLength = 100;
+            this.txtLink.Name = "txtLink";
+            this.txtLink.Size = new System.Drawing.Size(403, 20);
+            this.txtLink.TabIndex = 5;
             // 
             // label10
             // 
@@ -58,14 +58,14 @@
             this.label10.TabIndex = 52;
             this.label10.Text = "Link Externo:";
             // 
-            // richTextBox2
+            // txtFormacao
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(15, 221);
-            this.richTextBox2.MaxLength = 5000;
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(403, 69);
-            this.richTextBox2.TabIndex = 51;
-            this.richTextBox2.Text = "";
+            this.txtFormacao.Location = new System.Drawing.Point(15, 221);
+            this.txtFormacao.MaxLength = 5000;
+            this.txtFormacao.Name = "txtFormacao";
+            this.txtFormacao.Size = new System.Drawing.Size(403, 69);
+            this.txtFormacao.TabIndex = 4;
+            this.txtFormacao.Text = "";
             // 
             // label9
             // 
@@ -76,14 +76,14 @@
             this.label9.TabIndex = 50;
             this.label9.Text = "Formação Acadêmica";
             // 
-            // richTextBox1
+            // txtExperiencia
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(15, 129);
-            this.richTextBox1.MaxLength = 5000;
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(403, 69);
-            this.richTextBox1.TabIndex = 49;
-            this.richTextBox1.Text = "";
+            this.txtExperiencia.Location = new System.Drawing.Point(15, 129);
+            this.txtExperiencia.MaxLength = 5000;
+            this.txtExperiencia.Name = "txtExperiencia";
+            this.txtExperiencia.Size = new System.Drawing.Size(403, 69);
+            this.txtExperiencia.TabIndex = 3;
+            this.txtExperiencia.Text = "";
             // 
             // label3
             // 
@@ -94,13 +94,13 @@
             this.label3.TabIndex = 48;
             this.label3.Text = "Experiencia de Sistema";
             // 
-            // textBox2
+            // txtEmail
             // 
-            this.textBox2.Location = new System.Drawing.Point(69, 84);
-            this.textBox2.MaxLength = 50;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(349, 20);
-            this.textBox2.TabIndex = 42;
+            this.txtEmail.Location = new System.Drawing.Point(69, 84);
+            this.txtEmail.MaxLength = 50;
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(349, 20);
+            this.txtEmail.TabIndex = 2;
             // 
             // label5
             // 
@@ -111,14 +111,14 @@
             this.label5.TabIndex = 41;
             this.label5.Text = "E-mail:";
             // 
-            // button1
+            // btnSalvar
             // 
-            this.button1.Location = new System.Drawing.Point(12, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 40;
-            this.button1.Text = "Salvar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSalvar.Location = new System.Drawing.Point(12, 12);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(75, 23);
+            this.btnSalvar.TabIndex = 40;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -135,22 +135,22 @@
             this.txtNome.MaxLength = 50;
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(349, 20);
-            this.txtNome.TabIndex = 38;
+            this.txtNome.TabIndex = 1;
             // 
             // MinhaConta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(433, 342);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.txtLink);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.richTextBox2);
+            this.Controls.Add(this.txtFormacao);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.txtExperiencia);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtNome);
             this.Name = "MinhaConta";
@@ -162,15 +162,15 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtLink;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.RichTextBox txtFormacao;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox txtExperiencia;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtNome;
 

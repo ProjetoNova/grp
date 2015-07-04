@@ -16,10 +16,10 @@ namespace NovaProjectWF
         [STAThread]
         static void Main()
         {
-            Database.SetInitializer(new NovaProjectWF.Dao.Contexto.MyInitializer());
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Login());
+            Database.SetInitializer(new NovaProjectWF.Dao.Contexto.MyInitializer());
         }
     }
 }

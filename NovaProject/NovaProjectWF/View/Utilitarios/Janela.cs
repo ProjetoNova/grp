@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NovaProjectWF.Controllers.SessaoController;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,8 +14,20 @@ namespace NovaProjectWF.View.Utilitarios
     class Janela
     {
         //Metodo para controle de exibicao das telas do sistema
-        public static void Exibir(Form tela, Form parent)
+        public static void Exibir(Form tela, Form parent, bool Controle)
         {
+
+            if (Controle && !SessaoSistema.Administrador)
+            {
+                Mensagem.Erro("Você não tem permissão para acessar essa tela");
+                return;
+            }
+
+            if (tela == null)
+            {
+                return;
+            }
+
             if (parent != null)
             {
                 tela.MdiParent = parent;
@@ -22,7 +35,7 @@ namespace NovaProjectWF.View.Utilitarios
 
             tela.StartPosition = FormStartPosition.CenterScreen;
 
-            if (!tela.FormBorderStyle.Equals(FormBorderStyle.None))
+            if (tela.FormBorderStyle.Equals(FormBorderStyle.Sizable))
             {
                 tela.FormBorderStyle = FormBorderStyle.FixedSingle;
                 tela.MaximizeBox = false;

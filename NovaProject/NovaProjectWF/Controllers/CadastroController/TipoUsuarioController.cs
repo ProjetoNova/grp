@@ -18,11 +18,16 @@ namespace NovaProjectWF.Controllers.CadastroController
             crud = new TipoUsuarioDAO();
         }
 
-        public Object Salvar(string Id, string Nome, bool Status)
+        public Object Salvar(string Id, string Nome, bool Status, bool Adm)
         {
             if (Nome == string.Empty)
             {
                 Mensagem.Erro("Nome não pode ser Nulo!");
+            }
+
+            if (Id == string.Empty)
+            {
+                Id = "0";
             }
 
             else
@@ -31,8 +36,9 @@ namespace NovaProjectWF.Controllers.CadastroController
 
                 tipoUsuario.Nome = Nome;
                 tipoUsuario.Status = Status;
+                tipoUsuario.Administrador = Adm;
 
-                Object retorno = crud.save(Id, tipoUsuario);
+                Object retorno = crud.save(Convert.ToInt32(Id), tipoUsuario);
 
                 return retorno;
             }
@@ -45,9 +51,9 @@ namespace NovaProjectWF.Controllers.CadastroController
             return (TipoUsuario)crud.select(Convert.ToInt32(Id));
         }
 
-        public TipoUsuario BuscarPorNome(string nome)
+        public List<TipoUsuario> BuscarPorNome(string nome)
         {
-            return (TipoUsuario)crud.selectNome(nome);
+            return (List<TipoUsuario>)crud.selectNome(nome);
         }
 
         public List<TipoUsuario> TodosOsDados()

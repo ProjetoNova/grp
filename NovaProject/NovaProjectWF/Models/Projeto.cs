@@ -18,6 +18,8 @@ namespace NovaProjectWF.Models
            public virtual ICollection<FaseProjeto> FaseProjeto { get; set; }
            [InverseProperty("Projeto")]
            public virtual ICollection<AnexoProjeto> Anexos {get; set;}
+           [InverseProperty("Projeto")]
+           public virtual ICollection<UsuarioProjeto> Usuarios { get; set; }
 
            [Required]
            public string Nome { get; set; }

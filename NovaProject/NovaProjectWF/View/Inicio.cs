@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using NovaProjectWF.View.Utilitarios;
 using NovaProjectWF.View.Conta;
 using NovaProjectWF.View.Projeto;
+using NovaProjectWF.Controllers.SessaoController;
 
 namespace NovaProjectWF.View
 {
@@ -22,6 +23,11 @@ namespace NovaProjectWF.View
         public Inicio()
         {
             InitializeComponent();
+            if (!SessaoSistema.Administrador)
+            {
+                btnProjetos.Visible = false;
+                btnNovoProjeto.Visible = false;
+            }
         }
 
         private void lblFechar_Click(object sender, EventArgs e)
@@ -44,7 +50,7 @@ namespace NovaProjectWF.View
             if (Janela.Fechada(this.MdiParent, typeof(NovoProjeto)))
                 novoProj = new NovoProjeto();
 
-            Janela.Exibir(novoProj, this.MdiParent);
+            Janela.Exibir(novoProj, this.MdiParent, true);
             this.Close();
         }
 
@@ -53,7 +59,7 @@ namespace NovaProjectWF.View
             if (Janela.Fechada(this.MdiParent, typeof(Projetos)))
                 meusProjetos = new Projetos();
 
-            Janela.Exibir(meusProjetos, this.MdiParent);
+            Janela.Exibir(meusProjetos, this.MdiParent, true);
             this.Close();
         }
 
@@ -62,7 +68,7 @@ namespace NovaProjectWF.View
             if (Janela.Fechada(this.MdiParent, typeof(Atividades)))
                 atividades = new Atividades();
 
-            Janela.Exibir(atividades, this.MdiParent);
+            Janela.Exibir(atividades, this.MdiParent, false);
             this.Close();
         }
     }

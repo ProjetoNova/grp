@@ -47,19 +47,20 @@ namespace NovaProjectWF.View.Conta
                 Mensagem.Aviso("Senha nao pode ser vazio!");
                 txtSenha.Focus();
             }
-            else if(lControl.Login(txtUsuario.Text.Trim(),
-                    txtSenha.Text.Trim()).Usuario == null)
+            else if(!lControl.Login(txtUsuario.Text.Trim(),
+                    txtSenha.Text.Trim()))
             {
                 Mensagem.Aviso("Usuario ou Senha Incorretos");
                 txtSenha.Text = "";
                 txtSenha.Focus();
             }
-            //else
-            //{
+            else
+            {
                 MenuPrincipal menu = new MenuPrincipal();
+                menu.Text = menu.Text + " - " + SessaoSistema.NomeUsuario;
                 menu.Show();
                 this.Visible = false;
-            //}
+            }
         }
     }
 }

@@ -31,10 +31,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnNovoProjeto = new System.Windows.Forms.Button();
-            this.btnVerProjetos = new System.Windows.Forms.Button();
+            this.btnAtividades = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
             this.lblFechar = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnProjetos = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -61,7 +61,7 @@
             // btnNovoProjeto
             // 
             this.btnNovoProjeto.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnNovoProjeto.Location = new System.Drawing.Point(110, 183);
+            this.btnNovoProjeto.Location = new System.Drawing.Point(110, 225);
             this.btnNovoProjeto.Name = "btnNovoProjeto";
             this.btnNovoProjeto.Size = new System.Drawing.Size(191, 35);
             this.btnNovoProjeto.TabIndex = 2;
@@ -69,21 +69,21 @@
             this.btnNovoProjeto.UseVisualStyleBackColor = false;
             this.btnNovoProjeto.Click += new System.EventHandler(this.btnNovoProjeto_Click);
             // 
-            // btnVerProjetos
+            // btnAtividades
             // 
-            this.btnVerProjetos.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnVerProjetos.Location = new System.Drawing.Point(110, 302);
-            this.btnVerProjetos.Name = "btnVerProjetos";
-            this.btnVerProjetos.Size = new System.Drawing.Size(191, 35);
-            this.btnVerProjetos.TabIndex = 3;
-            this.btnVerProjetos.Text = "Minhas Atividades...";
-            this.btnVerProjetos.UseVisualStyleBackColor = false;
-            this.btnVerProjetos.Click += new System.EventHandler(this.btnVerProjetos_Click);
+            this.btnAtividades.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnAtividades.Location = new System.Drawing.Point(110, 283);
+            this.btnAtividades.Name = "btnAtividades";
+            this.btnAtividades.Size = new System.Drawing.Size(191, 35);
+            this.btnAtividades.TabIndex = 3;
+            this.btnAtividades.Text = "Minhas Atividades...";
+            this.btnAtividades.UseVisualStyleBackColor = false;
+            this.btnAtividades.Click += new System.EventHandler(this.btnVerProjetos_Click);
             // 
             // btnSair
             // 
             this.btnSair.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnSair.Location = new System.Drawing.Point(110, 360);
+            this.btnSair.Location = new System.Drawing.Point(110, 338);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(191, 35);
             this.btnSair.TabIndex = 4;
@@ -103,16 +103,16 @@
             this.lblFechar.Text = "X";
             this.lblFechar.Click += new System.EventHandler(this.lblFechar_Click);
             // 
-            // button1
+            // btnProjetos
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Location = new System.Drawing.Point(110, 242);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(191, 35);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Meus Projetos...";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnProjetos.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnProjetos.Location = new System.Drawing.Point(110, 170);
+            this.btnProjetos.Name = "btnProjetos";
+            this.btnProjetos.Size = new System.Drawing.Size(191, 35);
+            this.btnProjetos.TabIndex = 6;
+            this.btnProjetos.Text = "Projetos...";
+            this.btnProjetos.UseVisualStyleBackColor = false;
+            this.btnProjetos.Click += new System.EventHandler(this.button1_Click);
             // 
             // Inicio
             // 
@@ -121,10 +121,10 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(413, 433);
             this.ControlBox = false;
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnProjetos);
             this.Controls.Add(this.lblFechar);
             this.Controls.Add(this.btnSair);
-            this.Controls.Add(this.btnVerProjetos);
+            this.Controls.Add(this.btnAtividades);
             this.Controls.Add(this.btnNovoProjeto);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -144,9 +144,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnNovoProjeto;
-        private System.Windows.Forms.Button btnVerProjetos;
+        private System.Windows.Forms.Button btnAtividades;
         private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.Label lblFechar;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnProjetos;
     }
 }

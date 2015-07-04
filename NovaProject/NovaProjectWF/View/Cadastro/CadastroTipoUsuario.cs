@@ -39,7 +39,8 @@ namespace NovaProjectWF.View.Utilitarios
             if (textBox1.Text.Trim() == string.Empty)
             {
                 dataGridView1.DataSource = null;
-                dataGridView1.DataSource = control.TodosOsDados();
+                listaControle = control.TodosOsDados();
+                dataGridView1.DataSource = listaControle;
             }
             else if (comboBox1.SelectedValue.ToString() == "Id")
             {
@@ -58,8 +59,8 @@ namespace NovaProjectWF.View.Utilitarios
             }
             else if (comboBox1.SelectedValue.ToString() == "Nome")
             {
-                listaControle.Add(
-                        control.BuscarPorNome(textBox1.Text.Trim()));
+                listaControle=
+                        control.BuscarPorNome(textBox1.Text.Trim());
                 dataGridView1.DataSource = null;
                 dataGridView1.DataSource = listaControle;
                 dataGridView1.Refresh();
@@ -71,7 +72,8 @@ namespace NovaProjectWF.View.Utilitarios
         {
             TipoUsuarioController controller = new TipoUsuarioController();
 
-            Object retorno = controller.Salvar(lblId.Text, txtNome.Text.Trim(), checkBox1.Checked);
+            Object retorno = controller.Salvar(lblId.Text, txtNome.Text.Trim(), 
+                checkBox1.Checked, cbAdministrador.Checked);
 
             if (retorno == null)
             {
@@ -100,7 +102,8 @@ namespace NovaProjectWF.View.Utilitarios
         {
             lblId.Text = string.Empty;
             txtNome.Text = string.Empty;
-            txtDescricao.Text = string.Empty;
+            checkBox1.Checked = true;
+            cbAdministrador.Checked = false;
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -111,6 +114,14 @@ namespace NovaProjectWF.View.Utilitarios
                 tipoUsuario = listaControle[row.Index];
             }
 
+            if(tipoUsuario!=null) {
+                lblId.Text = tipoUsuario.Id+"";
+                txtNome.Text = tipoUsuario.Nome;
+                cbAdministrador.Checked = tipoUsuario.Administrador;
+                checkBox1.Checked = tipoUsuario.Status;
+
+                tabControl1.SelectedIndex = 0;
+            }
         }
     }
 }

@@ -30,12 +30,11 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.txtDescricao = new System.Windows.Forms.RichTextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.cbConcluida = new System.Windows.Forms.CheckBox();
+            this.cbAtivo = new System.Windows.Forms.CheckBox();
+            this.btnNovo = new System.Windows.Forms.Button();
             this.lblId = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSalvar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -46,7 +45,6 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -66,13 +64,11 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage1.Controls.Add(this.checkBox2);
-            this.tabPage1.Controls.Add(this.checkBox1);
-            this.tabPage1.Controls.Add(this.button3);
-            this.tabPage1.Controls.Add(this.txtDescricao);
-            this.tabPage1.Controls.Add(this.label3);
+            this.tabPage1.Controls.Add(this.cbConcluida);
+            this.tabPage1.Controls.Add(this.cbAtivo);
+            this.tabPage1.Controls.Add(this.btnNovo);
             this.tabPage1.Controls.Add(this.lblId);
-            this.tabPage1.Controls.Add(this.button1);
+            this.tabPage1.Controls.Add(this.btnSalvar);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.txtNome);
             this.tabPage1.Controls.Add(this.label1);
@@ -83,43 +79,38 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Cadastro";
             // 
-            // checkBox1
+            // cbConcluida
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Checked = true;
-            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Location = new System.Drawing.Point(280, 53);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(50, 17);
-            this.checkBox1.TabIndex = 20;
-            this.checkBox1.Text = "Ativo";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.cbConcluida.AutoSize = true;
+            this.cbConcluida.Checked = true;
+            this.cbConcluida.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbConcluida.Location = new System.Drawing.Point(79, 116);
+            this.cbConcluida.Name = "cbConcluida";
+            this.cbConcluida.Size = new System.Drawing.Size(75, 17);
+            this.cbConcluida.TabIndex = 13;
+            this.cbConcluida.Text = "Concluída";
+            this.cbConcluida.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // cbAtivo
             // 
-            this.button3.Location = new System.Drawing.Point(96, 6);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 19;
-            this.button3.Text = "Novo";
-            this.button3.UseVisualStyleBackColor = true;
+            this.cbAtivo.AutoSize = true;
+            this.cbAtivo.Checked = true;
+            this.cbAtivo.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbAtivo.Location = new System.Drawing.Point(280, 53);
+            this.cbAtivo.Name = "cbAtivo";
+            this.cbAtivo.Size = new System.Drawing.Size(50, 17);
+            this.cbAtivo.TabIndex = 20;
+            this.cbAtivo.Text = "Ativo";
+            this.cbAtivo.UseVisualStyleBackColor = true;
             // 
-            // txtDescricao
+            // btnNovo
             // 
-            this.txtDescricao.Location = new System.Drawing.Point(80, 120);
-            this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(250, 44);
-            this.txtDescricao.TabIndex = 17;
-            this.txtDescricao.Text = "";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 120);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 13);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "Descrição:";
+            this.btnNovo.Location = new System.Drawing.Point(96, 6);
+            this.btnNovo.Name = "btnNovo";
+            this.btnNovo.Size = new System.Drawing.Size(75, 23);
+            this.btnNovo.TabIndex = 19;
+            this.btnNovo.Text = "Novo";
+            this.btnNovo.UseVisualStyleBackColor = true;
             // 
             // lblId
             // 
@@ -129,14 +120,14 @@
             this.lblId.Size = new System.Drawing.Size(0, 13);
             this.lblId.TabIndex = 15;
             // 
-            // button1
+            // btnSalvar
             // 
-            this.button1.Location = new System.Drawing.Point(15, 6);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Salvar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSalvar.Location = new System.Drawing.Point(15, 6);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(75, 23);
+            this.btnSalvar.TabIndex = 14;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -150,6 +141,7 @@
             // txtNome
             // 
             this.txtNome.Location = new System.Drawing.Point(79, 90);
+            this.txtNome.MaxLength = 30;
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(251, 20);
             this.txtNome.TabIndex = 12;
@@ -234,18 +226,6 @@
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 17;
             // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Checked = true;
-            this.checkBox2.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox2.Location = new System.Drawing.Point(79, 180);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(75, 17);
-            this.checkBox2.TabIndex = 21;
-            this.checkBox2.Text = "Concluída";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
             // SituacaoAtividade
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -268,12 +248,10 @@
 
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.RichTextBox txtDescricao;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.CheckBox cbAtivo;
+        private System.Windows.Forms.Button btnNovo;
         private System.Windows.Forms.Label lblId;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label label1;
@@ -284,6 +262,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox cbConcluida;
     }
 }

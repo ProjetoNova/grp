@@ -30,26 +30,24 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.txtDescricao = new System.Windows.Forms.RichTextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.cbAtivo = new System.Windows.Forms.CheckBox();
+            this.btnNovo = new System.Windows.Forms.Button();
             this.lblId = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSalvar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.gridTipoAtividade = new System.Windows.Forms.DataGridView();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnPesquisar = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtPesquisa = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbPesquisa = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridTipoAtividade)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -65,12 +63,10 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage1.Controls.Add(this.checkBox1);
-            this.tabPage1.Controls.Add(this.button3);
-            this.tabPage1.Controls.Add(this.txtDescricao);
-            this.tabPage1.Controls.Add(this.label3);
+            this.tabPage1.Controls.Add(this.cbAtivo);
+            this.tabPage1.Controls.Add(this.btnNovo);
             this.tabPage1.Controls.Add(this.lblId);
-            this.tabPage1.Controls.Add(this.button1);
+            this.tabPage1.Controls.Add(this.btnSalvar);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.txtNome);
             this.tabPage1.Controls.Add(this.label1);
@@ -81,43 +77,26 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Cadastro";
             // 
-            // checkBox1
+            // cbAtivo
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Checked = true;
-            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Location = new System.Drawing.Point(280, 53);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(50, 17);
-            this.checkBox1.TabIndex = 20;
-            this.checkBox1.Text = "Ativo";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.cbAtivo.AutoSize = true;
+            this.cbAtivo.Checked = true;
+            this.cbAtivo.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbAtivo.Location = new System.Drawing.Point(280, 53);
+            this.cbAtivo.Name = "cbAtivo";
+            this.cbAtivo.Size = new System.Drawing.Size(50, 17);
+            this.cbAtivo.TabIndex = 20;
+            this.cbAtivo.Text = "Ativo";
+            this.cbAtivo.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnNovo
             // 
-            this.button3.Location = new System.Drawing.Point(96, 6);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 19;
-            this.button3.Text = "Novo";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // txtDescricao
-            // 
-            this.txtDescricao.Location = new System.Drawing.Point(80, 120);
-            this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(250, 44);
-            this.txtDescricao.TabIndex = 17;
-            this.txtDescricao.Text = "";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 120);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 13);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "Descrição:";
+            this.btnNovo.Location = new System.Drawing.Point(96, 6);
+            this.btnNovo.Name = "btnNovo";
+            this.btnNovo.Size = new System.Drawing.Size(75, 23);
+            this.btnNovo.TabIndex = 19;
+            this.btnNovo.Text = "Novo";
+            this.btnNovo.UseVisualStyleBackColor = true;
             // 
             // lblId
             // 
@@ -127,14 +106,14 @@
             this.lblId.Size = new System.Drawing.Size(0, 13);
             this.lblId.TabIndex = 15;
             // 
-            // button1
+            // btnSalvar
             // 
-            this.button1.Location = new System.Drawing.Point(15, 6);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Salvar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSalvar.Location = new System.Drawing.Point(15, 6);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(75, 23);
+            this.btnSalvar.TabIndex = 14;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -148,6 +127,7 @@
             // txtNome
             // 
             this.txtNome.Location = new System.Drawing.Point(79, 90);
+            this.txtNome.MaxLength = 30;
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(251, 20);
             this.txtNome.TabIndex = 12;
@@ -164,12 +144,12 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage2.Controls.Add(this.dataGridView1);
+            this.tabPage2.Controls.Add(this.gridTipoAtividade);
             this.tabPage2.Controls.Add(this.btnEditar);
             this.tabPage2.Controls.Add(this.btnPesquisar);
-            this.tabPage2.Controls.Add(this.textBox1);
+            this.tabPage2.Controls.Add(this.txtPesquisa);
             this.tabPage2.Controls.Add(this.label4);
-            this.tabPage2.Controls.Add(this.comboBox1);
+            this.tabPage2.Controls.Add(this.cbPesquisa);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -177,18 +157,18 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Pesquisar";
             // 
-            // dataGridView1
+            // gridTipoAtividade
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(9, 81);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(328, 219);
-            this.dataGridView1.TabIndex = 22;
+            this.gridTipoAtividade.AllowUserToAddRows = false;
+            this.gridTipoAtividade.AllowUserToDeleteRows = false;
+            this.gridTipoAtividade.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridTipoAtividade.Location = new System.Drawing.Point(9, 81);
+            this.gridTipoAtividade.MultiSelect = false;
+            this.gridTipoAtividade.Name = "gridTipoAtividade";
+            this.gridTipoAtividade.ReadOnly = true;
+            this.gridTipoAtividade.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gridTipoAtividade.Size = new System.Drawing.Size(328, 219);
+            this.gridTipoAtividade.TabIndex = 22;
             // 
             // btnEditar
             // 
@@ -208,12 +188,12 @@
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // txtPesquisa
             // 
-            this.textBox1.Location = new System.Drawing.Point(9, 54);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(209, 20);
-            this.textBox1.TabIndex = 19;
+            this.txtPesquisa.Location = new System.Drawing.Point(9, 54);
+            this.txtPesquisa.Name = "txtPesquisa";
+            this.txtPesquisa.Size = new System.Drawing.Size(209, 20);
+            this.txtPesquisa.TabIndex = 19;
             // 
             // label4
             // 
@@ -224,13 +204,13 @@
             this.label4.TabIndex = 18;
             this.label4.Text = "Pesquisar por: ";
             // 
-            // comboBox1
+            // cbPesquisa
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.Location = new System.Drawing.Point(97, 12);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 17;
+            this.cbPesquisa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbPesquisa.Location = new System.Drawing.Point(97, 12);
+            this.cbPesquisa.Name = "cbPesquisa";
+            this.cbPesquisa.Size = new System.Drawing.Size(121, 21);
+            this.cbPesquisa.TabIndex = 17;
             // 
             // CadastroTipoAtividade
             // 
@@ -245,7 +225,7 @@
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridTipoAtividade)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -254,21 +234,19 @@
 
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.RichTextBox txtDescricao;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.CheckBox cbAtivo;
+        private System.Windows.Forms.Button btnNovo;
         private System.Windows.Forms.Label lblId;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView gridTipoAtividade;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnPesquisar;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtPesquisa;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbPesquisa;
     }
 }

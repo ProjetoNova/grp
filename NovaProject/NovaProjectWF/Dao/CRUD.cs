@@ -54,13 +54,13 @@ namespace NovaProjectWF.Dao
             return result;
         }
 
-        public virtual Object save(string Id, T newObj)
+        public virtual Object save(int Id, T newObj)
         {
             Object objRetorno = null;
 
-            if (Id != string.Empty)
+            if (Id != 0)
             {
-                objRetorno = select(Convert.ToInt32(Id));
+                objRetorno = select(Id);
             }
 
             if (objRetorno == null)
@@ -69,7 +69,7 @@ namespace NovaProjectWF.Dao
             }
             else
             {
-                objRetorno = update(Convert.ToInt32(Id), newObj);
+                objRetorno = update(Id, newObj);
             }
 
             return objRetorno;

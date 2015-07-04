@@ -8,9 +8,38 @@ using NovaProjectWF.Dao;
 
 namespace NovaProjectWF.Controllers.SessaoController
 {
-    class Sessao
+    public static class SessaoSistema
     {
-        public Usuario Usuario { get; set; }
-        public DateTime HoraLogin { get; set; }
+        //usuario
+
+        private static Int32 _usuarioId;
+        private static String _nomeUsuario;
+        private static String _loginUsuario;
+        private static Boolean _admin;
+
+        //get e set
+        public static int UsuarioId
+        {
+            get { return SessaoSistema._usuarioId; }
+            set { SessaoSistema._usuarioId = value; }
+        }
+
+        public static String NomeUsuario
+        {
+            get { return SessaoSistema._nomeUsuario; }
+            set { SessaoSistema._nomeUsuario = value; }
+        }
+
+        public static String LoginUsuario
+        {
+            get { return SessaoSistema._loginUsuario; }
+            set { SessaoSistema._loginUsuario = value; }
+        }
+
+        public static bool Administrador
+        {
+            get { return SessaoSistema._admin; }
+            set { SessaoSistema._admin = value; }
+        }
     }
 }

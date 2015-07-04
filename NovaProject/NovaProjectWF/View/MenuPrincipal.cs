@@ -10,7 +10,9 @@ using System.Windows.Forms;
 using NovaProjectWF.View.Utilitarios;
 using NovaProjectWF.View.Conta;
 using NovaProjectWF.View.Projeto;
+using NovaProjectWF.View.Cadastro;
 using NovaProjectWF.Dao;
+using NovaProjectWF.Controllers.SessaoController;
 namespace NovaProjectWF.View
 {
     public partial class MenuPrincipal : Form
@@ -24,12 +26,19 @@ namespace NovaProjectWF.View
         private MinhaConta minhaConta;
         private Inicio inicio;
         private Sobre sobre;
-        private NovaAtividade novaAtividade;
+        private AlterarSenha alterarSenha;
+        private SituacaoAtividade situacao;
+        private Atividades atividades;
 
         public MenuPrincipal()
         {
             InitializeComponent();
 
+            if (!SessaoSistema.Administrador)
+            {
+                cadastroToolStripMenuItem.Visible = false;
+                meusProjetosToolStripMenuItem.Visible = false;
+            }
         }
 
         //Sobrescrita do Metodo OnClosing
@@ -58,7 +67,7 @@ namespace NovaProjectWF.View
             if (Janela.Fechada(this, typeof(CadastroUsuario)))
                 cadUsuario = new CadastroUsuario();
 
-            Janela.Exibir(cadUsuario, this);
+            Janela.Exibir(cadUsuario, this, true);
         }
 
         //Menu Cadastro de Tipo de Usuario
@@ -67,7 +76,7 @@ namespace NovaProjectWF.View
             if (Janela.Fechada(this, typeof(CadastroTipoUsuario))) 
                 cadTipUsuario = new CadastroTipoUsuario();
 
-            Janela.Exibir(cadTipUsuario, this);
+            Janela.Exibir(cadTipUsuario, this, true);
         }
 
         //Menu Cadastro de Tipo de Atividade
@@ -76,16 +85,16 @@ namespace NovaProjectWF.View
             if (Janela.Fechada(this, typeof(CadastroTipoAtividade)))
                 cadTipoAtividade = new CadastroTipoAtividade();
 
-            Janela.Exibir(cadTipoAtividade, this);
+            Janela.Exibir(cadTipoAtividade, this, true);
         }
         
-        //Menu Meus Projetos
+        //Menu Projetos
         private void meusProjetosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (Janela.Fechada(this, typeof(Projetos)))
                 meusProjetos = new Projetos();
 
-            Janela.Exibir(meusProjetos, this);
+            Janela.Exibir(meusProjetos, this, true);
         }
 
         //Menu Novo Projeto
@@ -94,7 +103,7 @@ namespace NovaProjectWF.View
             if (Janela.Fechada(this, typeof(NovoProjeto)))
                 novoProj = new NovoProjeto();
 
-            Janela.Exibir(novoProj, this);
+            Janela.Exibir(novoProj, this, true);
         }
 
         //Menu Minha Conta
@@ -103,7 +112,7 @@ namespace NovaProjectWF.View
             if (Janela.Fechada(this, typeof(MinhaConta)))
                 minhaConta = new MinhaConta();
 
-            Janela.Exibir(minhaConta, this);
+            Janela.Exibir(minhaConta, this, false);
         }
 
         //Menu de Inicio
@@ -112,7 +121,7 @@ namespace NovaProjectWF.View
             if (Janela.Fechada(this, typeof(Inicio)))
                 inicio = new Inicio();
 
-            Janela.Exibir(inicio, this);
+            Janela.Exibir(inicio, this, false);
         }
 
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
@@ -126,7 +135,7 @@ namespace NovaProjectWF.View
 
             inicio = new Inicio();
 
-            Janela.Exibir(inicio, this);
+            Janela.Exibir(inicio, this, false);
         }
 
         //janela sobre
@@ -135,16 +144,34 @@ namespace NovaProjectWF.View
             if (Janela.Fechada(this, typeof(Sobre)))
                 sobre = new Sobre();
 
-            Janela.Exibir(sobre, this);
+            Janela.Exibir(sobre, this, false);
         }
 
-        private void gAMBIARRAToolStripMenuItem_Click(object sender, EventArgs e)
+        //menu alterar senha
+        private void alterarSenhaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (Janela.Fechada(this, typeof(NovaAtividade)))
-                novaAtividade = new NovaAtividade();
+            if (Janela.Fechada(this, typeof(AlterarSenha)))
+                alterarSenha = new AlterarSenha();
 
-            Janela.Exibir(novaAtividade, this);
+            Janela.Exibir(alterarSenha, this, false);
         }
 
+        //menu situacao atividade
+        private void situaçãoAtividadeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Janela.Fechada(this, typeof(SituacaoAtividade)))
+                situacao = new SituacaoAtividade();
+
+            Janela.Exibir(situacao, this, true);
+        }
+
+        //menu atividades
+        private void minhasAtividadesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Janela.Fechada(this, typeof(Atividades)))
+                atividades = new Atividades();
+
+            Janela.Exibir(atividades, this, false);
+        }
     }
 }

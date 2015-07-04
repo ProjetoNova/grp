@@ -12,10 +12,14 @@ namespace NovaProjectWF.Models
     class Usuario : IEntidade
     {
         public int Id { get; set; }
+        public int TipoUsuarioId { get; set; }
 
         [InverseProperty("Usuario")]
         public virtual ICollection<UsuarioProjeto> Projetos { get; set; }
-   
+
+        [ForeignKey("TipoUsuarioId")]
+        public virtual TipoUsuario TipoUsuarioSistema { get; set; }
+
         public string Nome { get; set; }
         public string FormacaoAcademica { get; set; }
         public string ExperienciaSistema { get; set; }

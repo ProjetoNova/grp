@@ -27,20 +27,22 @@ namespace NovaProjectWF.Dao
             return allTipoUsuario;
         }
 
-        public TipoUsuario selectNome(string nome)
+        public List<TipoUsuario> selectNome(string nome)
         {
+            List<TipoUsuario> tipoUsuario = new List<TipoUsuario>();
+
             using (Contexto ctx = new Contexto())
             {
                 var query = from c in ctx.TIPO_USUARIO_ 
-                            where c.Nome == nome select c;
+                            where c.Nome.Contains(nome) select c;
 
                 foreach (var item in query)
                 {
-                    return item;
+                    tipoUsuario.Add(item);
                 }
             }
 
-            return null;
+            return tipoUsuario;
         }
     }
 }

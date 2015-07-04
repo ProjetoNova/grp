@@ -30,10 +30,9 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.cbAdministrador = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.button3 = new System.Windows.Forms.Button();
-            this.txtDescricao = new System.Windows.Forms.RichTextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.lblId = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -65,10 +64,9 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage1.Controls.Add(this.cbAdministrador);
             this.tabPage1.Controls.Add(this.checkBox1);
             this.tabPage1.Controls.Add(this.button3);
-            this.tabPage1.Controls.Add(this.txtDescricao);
-            this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.lblId);
             this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.label2);
@@ -80,6 +78,18 @@
             this.tabPage1.Size = new System.Drawing.Size(343, 306);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Cadastro";
+            // 
+            // cbAdministrador
+            // 
+            this.cbAdministrador.AutoSize = true;
+            this.cbAdministrador.Checked = true;
+            this.cbAdministrador.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbAdministrador.Location = new System.Drawing.Point(79, 116);
+            this.cbAdministrador.Name = "cbAdministrador";
+            this.cbAdministrador.Size = new System.Drawing.Size(89, 17);
+            this.cbAdministrador.TabIndex = 21;
+            this.cbAdministrador.Text = "Administrador";
+            this.cbAdministrador.UseVisualStyleBackColor = true;
             // 
             // checkBox1
             // 
@@ -102,23 +112,6 @@
             this.button3.Text = "Novo";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click_1);
-            // 
-            // txtDescricao
-            // 
-            this.txtDescricao.Location = new System.Drawing.Point(80, 120);
-            this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(250, 44);
-            this.txtDescricao.TabIndex = 17;
-            this.txtDescricao.Text = "";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 120);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 13);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "Descrição:";
             // 
             // lblId
             // 
@@ -150,6 +143,7 @@
             // txtNome
             // 
             this.txtNome.Location = new System.Drawing.Point(79, 90);
+            this.txtNome.MaxLength = 30;
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(251, 20);
             this.txtNome.TabIndex = 12;
@@ -260,8 +254,6 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.RichTextBox txtDescricao;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label2;
@@ -274,6 +266,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.CheckBox cbAdministrador;
 
     }
 }
