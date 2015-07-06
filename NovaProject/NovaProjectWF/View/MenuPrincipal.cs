@@ -36,8 +36,8 @@ namespace NovaProjectWF.View
 
             if (!SessaoSistema.Administrador)
             {
-                cadastroToolStripMenuItem.Visible = false;
-                meusProjetosToolStripMenuItem.Visible = false;
+                //cadastroToolStripMenuItem.Visible = false;
+                //meusProjetosToolStripMenuItem.Visible = false;
             }
         }
 

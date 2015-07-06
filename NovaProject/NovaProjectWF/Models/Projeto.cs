@@ -20,15 +20,16 @@ namespace NovaProjectWF.Models
            public virtual ICollection<AnexoProjeto> Anexos {get; set;}
            [InverseProperty("Projeto")]
            public virtual ICollection<UsuarioProjeto> Usuarios { get; set; }
-
            [Required]
-           public string Nome { get; set; }
+           public string Titulo { get; set; } //troquei 'Nome' por 'Titulo'
            [Required]
            public string Descricao { get; set; }
            [Required]
            public DateTime DataInicio { get; set; }
            [Required]
            public DateTime DataPrevisao {get; set; }
+           [Required]
+           public DateTime DataConclusao { get; set; }
            [Required]
            public byte[] PlanoProjeto { get; set; }
            public ESituacaoProjeto Situacao { get; set; }

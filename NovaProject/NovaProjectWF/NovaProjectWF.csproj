@@ -133,6 +133,8 @@
   <ItemGroup>
     <Compile Include="Controllers\CadastroController\TipoUsuarioController.cs" />
     <Compile Include="Controllers\CadastroController\UsuarioController.cs" />
+    <Compile Include="Controllers\ProjetoController\AtividadeController.cs" />
+    <Compile Include="Controllers\ProjetoController\ProjetoController.cs" />
     <Compile Include="Controllers\SessaoController\LoginController.cs" />
     <Compile Include="Controllers\SessaoController\Sessao.cs" />
     <Compile Include="Controllers\Validar.cs" />
@@ -354,9 +356,7 @@
   <ItemGroup>
     <None Include="Resources\Untitled-1.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controllers\ProjetoController\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\loading.gif" />
   </ItemGroup>

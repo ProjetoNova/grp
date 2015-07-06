@@ -19,8 +19,8 @@ namespace NovaProjectWF.View.Utilitarios
 
             if (Controle && !SessaoSistema.Administrador)
             {
-                Mensagem.Erro("Você não tem permissão para acessar essa tela");
-                return;
+                //Mensagem.Erro("Você não tem permissão para acessar essa tela");
+                //return;
             }
 
             if (tela == null)
