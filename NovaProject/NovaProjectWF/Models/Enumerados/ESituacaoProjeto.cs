@@ -29,6 +29,30 @@ namespace NovaProjectWF.Models.Enumerados
             return lista;
         }
 
+        //retorna o index
+        public static int GetIndex(ESituacaoProjeto situacao)
+        {
+            int ret = 0;
+            switch (situacao)
+            {
+                case ESituacaoProjeto.NAO_INICIADO:
+                    ret = 0;
+                    break;
+                case ESituacaoProjeto.INICIADO:
+                    ret = 1;
+                    break;
+                case ESituacaoProjeto.CONCLUIDO:
+                    ret = 2;
+                    break;
+                case ESituacaoProjeto.CANCELADO:
+                    ret = 3;
+                    break;
+                default:
+                    break;
+            }
+            return ret;
+        }
+
         //retorna em formato de enum
         public static ESituacaoProjeto GetEnum(string value)
         {

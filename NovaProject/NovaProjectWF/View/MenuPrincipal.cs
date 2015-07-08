@@ -36,8 +36,8 @@ namespace NovaProjectWF.View
 
             if (!SessaoSistema.Administrador)
             {
-                //cadastroToolStripMenuItem.Visible = false;
-                //meusProjetosToolStripMenuItem.Visible = false;
+                cadastroToolStripMenuItem.Visible = false;
+                meusProjetosToolStripMenuItem.Visible = false;
             }
         }
 
@@ -126,7 +126,13 @@ namespace NovaProjectWF.View
 
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //IMPLEMENTAR METODO DE LOGOUT
+            LoginController control = new LoginController();
+
+            control.Logout();
+
+            this.Close();
+
+            Janela.Exibir(new Login(), null, false);
         }
 
         private void MenuPrincipal_Load(object sender, EventArgs e)

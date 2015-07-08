@@ -29,11 +29,17 @@
         private void InitializeComponent()
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabProjeto = new System.Windows.Forms.TabPage();
+            this.lblId = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.lblStatus = new System.Windows.Forms.Label();
             this.dtFim = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cbPapel = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.cbUsuario = new System.Windows.Forms.ComboBox();
             this.gridEquipe = new System.Windows.Forms.DataGridView();
             this.btnExcluirUsuario = new System.Windows.Forms.Button();
             this.btnIncluirUsuario = new System.Windows.Forms.Button();
@@ -47,74 +53,84 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabFase = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnAtividade = new System.Windows.Forms.Button();
             this.gridAtividade = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.gridFase = new System.Windows.Forms.DataGridView();
-            this.btnAtividade = new System.Windows.Forms.Button();
             this.btnEditarFase = new System.Windows.Forms.Button();
             this.btnNovaFase = new System.Windows.Forms.Button();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.gridAnexos = new System.Windows.Forms.DataGridView();
-            this.btnEnviarArquivo = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnEscolherArquivo = new System.Windows.Forms.Button();
+            this.tabPlano = new System.Windows.Forms.TabPage();
+            this.txtPlanoProjeto = new RicherTextBox.RicherTextBox();
             this.btnNovo = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
-            this.save = new System.Windows.Forms.SaveFileDialog();
-            this.open = new System.Windows.Forms.OpenFileDialog();
-            this.txtPlanoProjeto = new RicherTextBox.RicherTextBox();
             this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.tabProjeto.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridEquipe)).BeginInit();
-            this.tabPage2.SuspendLayout();
+            this.tabFase.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridAtividade)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridFase)).BeginInit();
-            this.tabPage3.SuspendLayout();
-            this.tabPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridAnexos)).BeginInit();
+            this.tabPlano.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabProjeto);
+            this.tabControl1.Controls.Add(this.tabFase);
+            this.tabControl1.Controls.Add(this.tabPlano);
             this.tabControl1.Location = new System.Drawing.Point(13, 41);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(816, 518);
             this.tabControl1.TabIndex = 0;
             // 
-            // tabPage1
+            // tabProjeto
             // 
-            this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage1.Controls.Add(this.lblStatus);
-            this.tabPage1.Controls.Add(this.dtFim);
-            this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.groupBox2);
-            this.tabPage1.Controls.Add(this.cbSituacao);
-            this.tabPage1.Controls.Add(this.label7);
-            this.tabPage1.Controls.Add(this.txtDescricao);
-            this.tabPage1.Controls.Add(this.label6);
-            this.tabPage1.Controls.Add(this.dtPrevista);
-            this.tabPage1.Controls.Add(this.dtInicio);
-            this.tabPage1.Controls.Add(this.label5);
-            this.tabPage1.Controls.Add(this.label4);
-            this.tabPage1.Controls.Add(this.txtNome);
-            this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(808, 492);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Projeto";
+            this.tabProjeto.BackColor = System.Drawing.SystemColors.Control;
+            this.tabProjeto.Controls.Add(this.lblId);
+            this.tabProjeto.Controls.Add(this.label8);
+            this.tabProjeto.Controls.Add(this.lblStatus);
+            this.tabProjeto.Controls.Add(this.dtFim);
+            this.tabProjeto.Controls.Add(this.label2);
+            this.tabProjeto.Controls.Add(this.groupBox2);
+            this.tabProjeto.Controls.Add(this.cbSituacao);
+            this.tabProjeto.Controls.Add(this.label7);
+            this.tabProjeto.Controls.Add(this.txtDescricao);
+            this.tabProjeto.Controls.Add(this.label6);
+            this.tabProjeto.Controls.Add(this.dtPrevista);
+            this.tabProjeto.Controls.Add(this.dtInicio);
+            this.tabProjeto.Controls.Add(this.label5);
+            this.tabProjeto.Controls.Add(this.label4);
+            this.tabProjeto.Controls.Add(this.txtNome);
+            this.tabProjeto.Controls.Add(this.label3);
+            this.tabProjeto.Location = new System.Drawing.Point(4, 22);
+            this.tabProjeto.Name = "tabProjeto";
+            this.tabProjeto.Padding = new System.Windows.Forms.Padding(3);
+            this.tabProjeto.Size = new System.Drawing.Size(808, 492);
+            this.tabProjeto.TabIndex = 0;
+            this.tabProjeto.Text = "Projeto";
+            // 
+            // lblId
+            // 
+            this.lblId.AutoSize = true;
+            this.lblId.Location = new System.Drawing.Point(31, 7);
+            this.lblId.Name = "lblId";
+            this.lblId.Size = new System.Drawing.Size(0, 13);
+            this.lblId.TabIndex = 25;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(6, 7);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(19, 13);
+            this.label8.TabIndex = 24;
+            this.label8.Text = "Id:";
             // 
             // lblStatus
             // 
@@ -137,7 +153,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(443, 93);
+            this.label2.Location = new System.Drawing.Point(443, 90);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 13);
             this.label2.TabIndex = 21;
@@ -145,6 +161,10 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.cbPapel);
+            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.cbUsuario);
             this.groupBox2.Controls.Add(this.gridEquipe);
             this.groupBox2.Controls.Add(this.btnExcluirUsuario);
             this.groupBox2.Controls.Add(this.btnIncluirUsuario);
@@ -154,6 +174,42 @@
             this.groupBox2.TabIndex = 20;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Equipe do Projeto";
+            // 
+            // cbPapel
+            // 
+            this.cbPapel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbPapel.FormattingEnabled = true;
+            this.cbPapel.Location = new System.Drawing.Point(388, 22);
+            this.cbPapel.Name = "cbPapel";
+            this.cbPapel.Size = new System.Drawing.Size(235, 21);
+            this.cbPapel.TabIndex = 6;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(345, 25);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(37, 13);
+            this.label10.TabIndex = 5;
+            this.label10.Text = "Papel:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(7, 26);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(46, 13);
+            this.label9.TabIndex = 4;
+            this.label9.Text = "Usuário:";
+            // 
+            // cbUsuario
+            // 
+            this.cbUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbUsuario.FormattingEnabled = true;
+            this.cbUsuario.Location = new System.Drawing.Point(59, 23);
+            this.cbUsuario.Name = "cbUsuario";
+            this.cbUsuario.Size = new System.Drawing.Size(280, 21);
+            this.cbUsuario.TabIndex = 3;
             // 
             // gridEquipe
             // 
@@ -168,7 +224,7 @@
             // 
             // btnExcluirUsuario
             // 
-            this.btnExcluirUsuario.Location = new System.Drawing.Point(89, 19);
+            this.btnExcluirUsuario.Location = new System.Drawing.Point(710, 21);
             this.btnExcluirUsuario.Name = "btnExcluirUsuario";
             this.btnExcluirUsuario.Size = new System.Drawing.Size(75, 23);
             this.btnExcluirUsuario.TabIndex = 1;
@@ -177,12 +233,13 @@
             // 
             // btnIncluirUsuario
             // 
-            this.btnIncluirUsuario.Location = new System.Drawing.Point(7, 20);
+            this.btnIncluirUsuario.Location = new System.Drawing.Point(629, 21);
             this.btnIncluirUsuario.Name = "btnIncluirUsuario";
             this.btnIncluirUsuario.Size = new System.Drawing.Size(75, 23);
             this.btnIncluirUsuario.TabIndex = 0;
             this.btnIncluirUsuario.Text = "Incluir Colaborador";
             this.btnIncluirUsuario.UseVisualStyleBackColor = true;
+            this.btnIncluirUsuario.Click += new System.EventHandler(this.btnIncluirUsuario_Click);
             // 
             // cbSituacao
             // 
@@ -196,11 +253,11 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(440, 46);
+            this.label7.Location = new System.Drawing.Point(440, 50);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(52, 13);
+            this.label7.Size = new System.Drawing.Size(59, 13);
             this.label7.TabIndex = 19;
-            this.label7.Text = "Situação:";
+            this.label7.Text = "Situação: *";
             // 
             // txtDescricao
             // 
@@ -216,9 +273,9 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(6, 46);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(58, 13);
+            this.label6.Size = new System.Drawing.Size(65, 13);
             this.label6.TabIndex = 17;
-            this.label6.Text = "Descrição:";
+            this.label6.Text = "Descrição: *";
             // 
             // dtPrevista
             // 
@@ -230,6 +287,7 @@
             // 
             // dtInicio
             // 
+            this.dtInicio.Checked = false;
             this.dtInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtInicio.Location = new System.Drawing.Point(512, 7);
             this.dtInicio.Name = "dtInicio";
@@ -241,70 +299,93 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(615, 10);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(74, 13);
+            this.label5.Size = new System.Drawing.Size(81, 13);
             this.label5.TabIndex = 13;
-            this.label5.Text = "Data Prevista:";
+            this.label5.Text = "Data Prevista: *";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(440, 10);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(66, 13);
+            this.label4.Size = new System.Drawing.Size(70, 13);
             this.label4.TabIndex = 11;
-            this.label4.Text = "Data Início: ";
+            this.label4.Text = "Data Início: *";
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(77, 7);
+            this.txtNome.Location = new System.Drawing.Point(120, 7);
             this.txtNome.MaxLength = 50;
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(357, 20);
+            this.txtNome.Size = new System.Drawing.Size(314, 20);
             this.txtNome.TabIndex = 1;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(11, 10);
+            this.label3.Location = new System.Drawing.Point(76, 10);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 13);
+            this.label3.Size = new System.Drawing.Size(45, 13);
             this.label3.TabIndex = 9;
-            this.label3.Text = "Nome:";
+            this.label3.Text = "Nome: *";
             // 
-            // tabPage2
+            // tabFase
             // 
-            this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage2.Controls.Add(this.groupBox4);
-            this.tabPage2.Controls.Add(this.groupBox3);
-            this.tabPage2.Controls.Add(this.btnAtividade);
-            this.tabPage2.Controls.Add(this.btnEditarFase);
-            this.tabPage2.Controls.Add(this.btnNovaFase);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(808, 492);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Fases do Projeto";
+            this.tabFase.BackColor = System.Drawing.SystemColors.Control;
+            this.tabFase.Controls.Add(this.groupBox4);
+            this.tabFase.Controls.Add(this.groupBox3);
+            this.tabFase.Controls.Add(this.btnEditarFase);
+            this.tabFase.Controls.Add(this.btnNovaFase);
+            this.tabFase.Location = new System.Drawing.Point(4, 22);
+            this.tabFase.Name = "tabFase";
+            this.tabFase.Padding = new System.Windows.Forms.Padding(3);
+            this.tabFase.Size = new System.Drawing.Size(808, 492);
+            this.tabFase.TabIndex = 1;
+            this.tabFase.Text = "Fases do Projeto";
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.button1);
+            this.groupBox4.Controls.Add(this.btnAtividade);
             this.groupBox4.Controls.Add(this.gridAtividade);
-            this.groupBox4.Location = new System.Drawing.Point(7, 224);
+            this.groupBox4.Location = new System.Drawing.Point(7, 185);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(795, 262);
+            this.groupBox4.Size = new System.Drawing.Size(795, 301);
             this.groupBox4.TabIndex = 6;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Atividade (Selecione uma Fase)";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(111, 19);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(98, 23);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Editar Atividade";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnAtividade
+            // 
+            this.btnAtividade.Location = new System.Drawing.Point(7, 19);
+            this.btnAtividade.Name = "btnAtividade";
+            this.btnAtividade.Size = new System.Drawing.Size(98, 23);
+            this.btnAtividade.TabIndex = 5;
+            this.btnAtividade.Text = "Incluir Atividade";
+            this.btnAtividade.UseVisualStyleBackColor = true;
+            this.btnAtividade.Click += new System.EventHandler(this.btnAtividade_Click);
             // 
             // gridAtividade
             // 
             this.gridAtividade.AllowUserToAddRows = false;
             this.gridAtividade.AllowUserToDeleteRows = false;
             this.gridAtividade.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridAtividade.Location = new System.Drawing.Point(7, 20);
+            this.gridAtividade.Location = new System.Drawing.Point(7, 48);
+            this.gridAtividade.MultiSelect = false;
             this.gridAtividade.Name = "gridAtividade";
             this.gridAtividade.ReadOnly = true;
-            this.gridAtividade.Size = new System.Drawing.Size(782, 236);
+            this.gridAtividade.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gridAtividade.Size = new System.Drawing.Size(782, 247);
             this.gridAtividade.TabIndex = 0;
             // 
             // groupBox3
@@ -312,7 +393,7 @@
             this.groupBox3.Controls.Add(this.gridFase);
             this.groupBox3.Location = new System.Drawing.Point(7, 36);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(795, 181);
+            this.groupBox3.Size = new System.Drawing.Size(795, 143);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Fases";
@@ -323,19 +404,13 @@
             this.gridFase.AllowUserToDeleteRows = false;
             this.gridFase.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridFase.Location = new System.Drawing.Point(7, 20);
+            this.gridFase.MultiSelect = false;
             this.gridFase.Name = "gridFase";
             this.gridFase.ReadOnly = true;
-            this.gridFase.Size = new System.Drawing.Size(782, 155);
+            this.gridFase.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gridFase.Size = new System.Drawing.Size(782, 114);
             this.gridFase.TabIndex = 0;
-            // 
-            // btnAtividade
-            // 
-            this.btnAtividade.Location = new System.Drawing.Point(170, 7);
-            this.btnAtividade.Name = "btnAtividade";
-            this.btnAtividade.Size = new System.Drawing.Size(75, 23);
-            this.btnAtividade.TabIndex = 4;
-            this.btnAtividade.Text = "Atividade";
-            this.btnAtividade.UseVisualStyleBackColor = true;
+            this.gridFase.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridFase_CellContentClick);
             // 
             // btnEditarFase
             // 
@@ -345,6 +420,7 @@
             this.btnEditarFase.TabIndex = 2;
             this.btnEditarFase.Text = "Editar Fase";
             this.btnEditarFase.UseVisualStyleBackColor = true;
+            this.btnEditarFase.Click += new System.EventHandler(this.btnEditarFase_Click);
             // 
             // btnNovaFase
             // 
@@ -354,70 +430,65 @@
             this.btnNovaFase.TabIndex = 1;
             this.btnNovaFase.Text = "Nova Fase";
             this.btnNovaFase.UseVisualStyleBackColor = true;
+            this.btnNovaFase.Click += new System.EventHandler(this.btnNovaFase_Click);
             // 
-            // tabPage3
+            // tabPlano
             // 
-            this.tabPage3.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage3.Controls.Add(this.txtPlanoProjeto);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(808, 492);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Plano de Projeto";
+            this.tabPlano.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPlano.Controls.Add(this.txtPlanoProjeto);
+            this.tabPlano.Location = new System.Drawing.Point(4, 22);
+            this.tabPlano.Name = "tabPlano";
+            this.tabPlano.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPlano.Size = new System.Drawing.Size(808, 492);
+            this.tabPlano.TabIndex = 2;
+            this.tabPlano.Text = "Plano de Projeto";
             // 
-            // tabPage4
+            // txtPlanoProjeto
             // 
-            this.tabPage4.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage4.Controls.Add(this.gridAnexos);
-            this.tabPage4.Controls.Add(this.btnEnviarArquivo);
-            this.tabPage4.Controls.Add(this.label1);
-            this.tabPage4.Controls.Add(this.btnEscolherArquivo);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(808, 492);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Anexos";
-            // 
-            // gridAnexos
-            // 
-            this.gridAnexos.AllowUserToAddRows = false;
-            this.gridAnexos.AllowUserToDeleteRows = false;
-            this.gridAnexos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridAnexos.Location = new System.Drawing.Point(7, 36);
-            this.gridAnexos.Name = "gridAnexos";
-            this.gridAnexos.ReadOnly = true;
-            this.gridAnexos.Size = new System.Drawing.Size(795, 450);
-            this.gridAnexos.TabIndex = 77;
-            // 
-            // btnEnviarArquivo
-            // 
-            this.btnEnviarArquivo.Enabled = false;
-            this.btnEnviarArquivo.Location = new System.Drawing.Point(296, 7);
-            this.btnEnviarArquivo.Name = "btnEnviarArquivo";
-            this.btnEnviarArquivo.Size = new System.Drawing.Size(107, 23);
-            this.btnEnviarArquivo.TabIndex = 67;
-            this.btnEnviarArquivo.Text = "Enviar Arquivo";
-            this.btnEnviarArquivo.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(132, 11);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(148, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Nenhum Arquivo Selecionado";
-            // 
-            // btnEscolherArquivo
-            // 
-            this.btnEscolherArquivo.Location = new System.Drawing.Point(7, 6);
-            this.btnEscolherArquivo.Name = "btnEscolherArquivo";
-            this.btnEscolherArquivo.Size = new System.Drawing.Size(119, 23);
-            this.btnEscolherArquivo.TabIndex = 76;
-            this.btnEscolherArquivo.Text = "Escolher Arquivo...";
-            this.btnEscolherArquivo.UseVisualStyleBackColor = true;
+            this.txtPlanoProjeto.AlignCenterVisible = false;
+            this.txtPlanoProjeto.AlignLeftVisible = false;
+            this.txtPlanoProjeto.AlignRightVisible = false;
+            this.txtPlanoProjeto.BoldVisible = false;
+            this.txtPlanoProjeto.BulletsVisible = false;
+            this.txtPlanoProjeto.ChooseFontVisible = false;
+            this.txtPlanoProjeto.FindReplaceVisible = false;
+            this.txtPlanoProjeto.FontColorVisible = false;
+            this.txtPlanoProjeto.FontFamilyVisible = false;
+            this.txtPlanoProjeto.FontSizeVisible = false;
+            this.txtPlanoProjeto.GroupAlignmentVisible = false;
+            this.txtPlanoProjeto.GroupBoldUnderlineItalicVisible = false;
+            this.txtPlanoProjeto.GroupFontColorVisible = false;
+            this.txtPlanoProjeto.GroupFontNameAndSizeVisible = false;
+            this.txtPlanoProjeto.GroupIndentationAndBulletsVisible = false;
+            this.txtPlanoProjeto.GroupInsertVisible = false;
+            this.txtPlanoProjeto.GroupSaveAndLoadVisible = false;
+            this.txtPlanoProjeto.GroupZoomVisible = false;
+            this.txtPlanoProjeto.INDENT = 10;
+            this.txtPlanoProjeto.IndentVisible = false;
+            this.txtPlanoProjeto.InsertPictureVisible = false;
+            this.txtPlanoProjeto.ItalicVisible = false;
+            this.txtPlanoProjeto.LoadVisible = false;
+            this.txtPlanoProjeto.Location = new System.Drawing.Point(0, 0);
+            this.txtPlanoProjeto.Name = "txtPlanoProjeto";
+            this.txtPlanoProjeto.OutdentVisible = false;
+            this.txtPlanoProjeto.Rtf = "{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1046{\\fonttbl{\\f0\\fnil\\fcharset204 Microsoft" +
+    " Sans Serif;}}\r\n\\viewkind4\\uc1\\pard\\f0\\fs18\\par\r\n}\r\n";
+            this.txtPlanoProjeto.SaveVisible = false;
+            this.txtPlanoProjeto.SeparatorAlignVisible = false;
+            this.txtPlanoProjeto.SeparatorBoldUnderlineItalicVisible = false;
+            this.txtPlanoProjeto.SeparatorFontColorVisible = false;
+            this.txtPlanoProjeto.SeparatorFontVisible = false;
+            this.txtPlanoProjeto.SeparatorIndentAndBulletsVisible = false;
+            this.txtPlanoProjeto.SeparatorInsertVisible = false;
+            this.txtPlanoProjeto.SeparatorSaveLoadVisible = false;
+            this.txtPlanoProjeto.Size = new System.Drawing.Size(812, 492);
+            this.txtPlanoProjeto.TabIndex = 0;
+            this.txtPlanoProjeto.ToolStripVisible = false;
+            this.txtPlanoProjeto.UnderlineVisible = false;
+            this.txtPlanoProjeto.WordWrapVisible = false;
+            this.txtPlanoProjeto.ZoomFactorTextVisible = false;
+            this.txtPlanoProjeto.ZoomInVisible = false;
+            this.txtPlanoProjeto.ZoomOutVisible = false;
             // 
             // btnNovo
             // 
@@ -427,6 +498,7 @@
             this.btnNovo.TabIndex = 10;
             this.btnNovo.Text = "Novo";
             this.btnNovo.UseVisualStyleBackColor = true;
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
             // btnSalvar
             // 
@@ -437,57 +509,6 @@
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
-            // 
-            // open
-            // 
-            this.open.FileName = "openFileDialog1";
-            // 
-            // txtPlanoProjeto
-            // 
-            this.txtPlanoProjeto.AlignCenterVisible = true;
-            this.txtPlanoProjeto.AlignLeftVisible = true;
-            this.txtPlanoProjeto.AlignRightVisible = true;
-            this.txtPlanoProjeto.BoldVisible = true;
-            this.txtPlanoProjeto.BulletsVisible = true;
-            this.txtPlanoProjeto.ChooseFontVisible = true;
-            this.txtPlanoProjeto.FindReplaceVisible = true;
-            this.txtPlanoProjeto.FontColorVisible = true;
-            this.txtPlanoProjeto.FontFamilyVisible = true;
-            this.txtPlanoProjeto.FontSizeVisible = true;
-            this.txtPlanoProjeto.GroupAlignmentVisible = true;
-            this.txtPlanoProjeto.GroupBoldUnderlineItalicVisible = true;
-            this.txtPlanoProjeto.GroupFontColorVisible = true;
-            this.txtPlanoProjeto.GroupFontNameAndSizeVisible = true;
-            this.txtPlanoProjeto.GroupIndentationAndBulletsVisible = true;
-            this.txtPlanoProjeto.GroupInsertVisible = true;
-            this.txtPlanoProjeto.GroupSaveAndLoadVisible = true;
-            this.txtPlanoProjeto.GroupZoomVisible = true;
-            this.txtPlanoProjeto.INDENT = 10;
-            this.txtPlanoProjeto.IndentVisible = true;
-            this.txtPlanoProjeto.InsertPictureVisible = true;
-            this.txtPlanoProjeto.ItalicVisible = true;
-            this.txtPlanoProjeto.LoadVisible = true;
-            this.txtPlanoProjeto.Location = new System.Drawing.Point(6, 15);
-            this.txtPlanoProjeto.Name = "txtPlanoProjeto";
-            this.txtPlanoProjeto.OutdentVisible = true;
-            this.txtPlanoProjeto.Rtf = "{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1046{\\fonttbl{\\f0\\fnil\\fcharset204 Microsoft" +
-    " Sans Serif;}}\r\n\\viewkind4\\uc1\\pard\\f0\\fs18\\par\r\n}\r\n";
-            this.txtPlanoProjeto.SaveVisible = true;
-            this.txtPlanoProjeto.SeparatorAlignVisible = true;
-            this.txtPlanoProjeto.SeparatorBoldUnderlineItalicVisible = true;
-            this.txtPlanoProjeto.SeparatorFontColorVisible = true;
-            this.txtPlanoProjeto.SeparatorFontVisible = true;
-            this.txtPlanoProjeto.SeparatorIndentAndBulletsVisible = true;
-            this.txtPlanoProjeto.SeparatorInsertVisible = true;
-            this.txtPlanoProjeto.SeparatorSaveLoadVisible = true;
-            this.txtPlanoProjeto.Size = new System.Drawing.Size(796, 474);
-            this.txtPlanoProjeto.TabIndex = 10;
-            this.txtPlanoProjeto.ToolStripVisible = true;
-            this.txtPlanoProjeto.UnderlineVisible = true;
-            this.txtPlanoProjeto.WordWrapVisible = true;
-            this.txtPlanoProjeto.ZoomFactorTextVisible = true;
-            this.txtPlanoProjeto.ZoomInVisible = true;
-            this.txtPlanoProjeto.ZoomOutVisible = true;
             // 
             // NovoProjeto
             // 
@@ -500,19 +521,17 @@
             this.Name = "NovoProjeto";
             this.Text = "Projeto";
             this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
+            this.tabProjeto.ResumeLayout(false);
+            this.tabProjeto.PerformLayout();
             this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridEquipe)).EndInit();
-            this.tabPage2.ResumeLayout(false);
+            this.tabFase.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridAtividade)).EndInit();
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridFase)).EndInit();
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage4.ResumeLayout(false);
-            this.tabPage4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridAnexos)).EndInit();
+            this.tabPlano.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -520,15 +539,11 @@
         #endregion
 
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabPage tabProjeto;
+        private System.Windows.Forms.TabPage tabFase;
+        private System.Windows.Forms.TabPage tabPlano;
         private System.Windows.Forms.Button btnNovo;
         private System.Windows.Forms.Button btnSalvar;
-        private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.Button btnEnviarArquivo;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnEscolherArquivo;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label label4;
@@ -548,14 +563,18 @@
         private System.Windows.Forms.MaskedTextBox dtFim;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblStatus;
-        private System.Windows.Forms.DataGridView gridAnexos;
-        private System.Windows.Forms.Button btnAtividade;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.DataGridView gridFase;
         private System.Windows.Forms.DataGridView gridAtividade;
-        private System.Windows.Forms.SaveFileDialog save;
-        private System.Windows.Forms.OpenFileDialog open;
+        private System.Windows.Forms.Label lblId;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox cbUsuario;
+        private System.Windows.Forms.ComboBox cbPapel;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAtividade;
         private RicherTextBox.RicherTextBox txtPlanoProjeto;
 
     }

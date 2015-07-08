@@ -30,6 +30,9 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.dtFim = new System.Windows.Forms.TextBox();
+            this.txtFase = new System.Windows.Forms.TextBox();
+            this.txtProjeto = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.cbSituacao = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -38,7 +41,6 @@
             this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
             this.txtEstimado = new System.Windows.Forms.MaskedTextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.dtPrevista = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
@@ -50,35 +52,26 @@
             this.label7 = new System.Windows.Forms.Label();
             this.cbTipoAtividade = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.cbFase = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.cbProjeto = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtDescricao = new System.Windows.Forms.RichTextBox();
-            this.btnNova = new System.Windows.Forms.Button();
             this.lblId = new System.Windows.Forms.Label();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.gridAnexos = new System.Windows.Forms.DataGridView();
-            this.btnEnviarArquivo = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnEscolherArquivo = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridAnexos)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -88,11 +81,13 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage1.Controls.Add(this.dtFim);
+            this.tabPage1.Controls.Add(this.txtFase);
+            this.tabPage1.Controls.Add(this.txtProjeto);
             this.tabPage1.Controls.Add(this.label13);
             this.tabPage1.Controls.Add(this.cbSituacao);
             this.tabPage1.Controls.Add(this.groupBox3);
             this.tabPage1.Controls.Add(this.groupBox2);
-            this.tabPage1.Controls.Add(this.maskedTextBox1);
             this.tabPage1.Controls.Add(this.label11);
             this.tabPage1.Controls.Add(this.dtPrevista);
             this.tabPage1.Controls.Add(this.label10);
@@ -104,12 +99,9 @@
             this.tabPage1.Controls.Add(this.label7);
             this.tabPage1.Controls.Add(this.cbTipoAtividade);
             this.tabPage1.Controls.Add(this.label6);
-            this.tabPage1.Controls.Add(this.cbFase);
             this.tabPage1.Controls.Add(this.label5);
-            this.tabPage1.Controls.Add(this.cbProjeto);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.groupBox1);
-            this.tabPage1.Controls.Add(this.btnNova);
             this.tabPage1.Controls.Add(this.lblId);
             this.tabPage1.Controls.Add(this.btnSalvar);
             this.tabPage1.Controls.Add(this.label2);
@@ -121,14 +113,38 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Atividade";
             // 
+            // dtFim
+            // 
+            this.dtFim.Enabled = false;
+            this.dtFim.Location = new System.Drawing.Point(9, 391);
+            this.dtFim.Name = "dtFim";
+            this.dtFim.Size = new System.Drawing.Size(138, 20);
+            this.dtFim.TabIndex = 43;
+            // 
+            // txtFase
+            // 
+            this.txtFase.Enabled = false;
+            this.txtFase.Location = new System.Drawing.Point(546, 47);
+            this.txtFase.Name = "txtFase";
+            this.txtFase.Size = new System.Drawing.Size(255, 20);
+            this.txtFase.TabIndex = 42;
+            // 
+            // txtProjeto
+            // 
+            this.txtProjeto.Enabled = false;
+            this.txtProjeto.Location = new System.Drawing.Point(156, 45);
+            this.txtProjeto.Name = "txtProjeto";
+            this.txtProjeto.Size = new System.Drawing.Size(293, 20);
+            this.txtProjeto.TabIndex = 41;
+            // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(3, 167);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(49, 13);
+            this.label13.Size = new System.Drawing.Size(56, 13);
             this.label13.TabIndex = 40;
-            this.label13.Text = "Situação";
+            this.label13.Text = "Situação *";
             // 
             // cbSituacao
             // 
@@ -167,13 +183,12 @@
             this.groupBox2.Location = new System.Drawing.Point(7, 417);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(140, 69);
-            this.groupBox2.TabIndex = 37;
+            this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tempo";
             // 
             // maskedTextBox3
             // 
-            this.maskedTextBox3.Enabled = false;
             this.maskedTextBox3.Location = new System.Drawing.Point(54, 37);
             this.maskedTextBox3.Mask = "00:00";
             this.maskedTextBox3.Name = "maskedTextBox3";
@@ -187,7 +202,8 @@
             this.txtEstimado.Mask = "00:00";
             this.txtEstimado.Name = "txtEstimado";
             this.txtEstimado.Size = new System.Drawing.Size(42, 20);
-            this.txtEstimado.TabIndex = 10;
+            this.txtEstimado.TabIndex = 1;
+            this.txtEstimado.Text = "0100";
             this.txtEstimado.ValidatingType = typeof(System.DateTime);
             // 
             // label12
@@ -195,28 +211,18 @@
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(7, 20);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(89, 13);
+            this.label12.Size = new System.Drawing.Size(96, 13);
             this.label12.TabIndex = 0;
-            this.label12.Text = "Estimado / Gasto";
-            // 
-            // maskedTextBox1
-            // 
-            this.maskedTextBox1.Enabled = false;
-            this.maskedTextBox1.Location = new System.Drawing.Point(7, 390);
-            this.maskedTextBox1.Mask = "00/00/0000 90:00";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(140, 20);
-            this.maskedTextBox1.TabIndex = 36;
-            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
+            this.label12.Text = "Estimado * / Gasto";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(6, 374);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(49, 13);
+            this.label11.Size = new System.Drawing.Size(56, 13);
             this.label11.TabIndex = 35;
-            this.label11.Text = "Data Fim";
+            this.label11.Text = "Data Fim *";
             // 
             // dtPrevista
             // 
@@ -231,9 +237,9 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(7, 331);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(71, 13);
+            this.label10.Size = new System.Drawing.Size(78, 13);
             this.label10.TabIndex = 33;
-            this.label10.Text = "Data Prevista";
+            this.label10.Text = "Data Prevista *";
             // 
             // dtInicio
             // 
@@ -248,9 +254,9 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(7, 292);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(60, 13);
+            this.label9.Size = new System.Drawing.Size(67, 13);
             this.label9.TabIndex = 31;
-            this.label9.Text = "Data Início";
+            this.label9.Text = "Data Início *";
             // 
             // cbAtribuidoPara
             // 
@@ -266,9 +272,9 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(3, 207);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(54, 13);
+            this.label8.Size = new System.Drawing.Size(61, 13);
             this.label8.TabIndex = 29;
-            this.label8.Text = "Prioridade";
+            this.label8.Text = "Prioridade *";
             // 
             // cbPrioridade
             // 
@@ -284,9 +290,9 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(3, 247);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(74, 13);
+            this.label7.Size = new System.Drawing.Size(81, 13);
             this.label7.TabIndex = 27;
-            this.label7.Text = "Atribuído para";
+            this.label7.Text = "Atribuído para *";
             // 
             // cbTipoAtividade
             // 
@@ -302,18 +308,9 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(3, 127);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(90, 13);
+            this.label6.Size = new System.Drawing.Size(97, 13);
             this.label6.TabIndex = 25;
-            this.label6.Text = "Tipo de Atividade";
-            // 
-            // cbFase
-            // 
-            this.cbFase.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbFase.FormattingEnabled = true;
-            this.cbFase.Location = new System.Drawing.Point(545, 45);
-            this.cbFase.Name = "cbFase";
-            this.cbFase.Size = new System.Drawing.Size(256, 21);
-            this.cbFase.TabIndex = 2;
+            this.label6.Text = "Tipo de Atividade *";
             // 
             // label5
             // 
@@ -323,15 +320,6 @@
             this.label5.Size = new System.Drawing.Size(84, 13);
             this.label5.TabIndex = 23;
             this.label5.Text = "Fase do Projeto:";
-            // 
-            // cbProjeto
-            // 
-            this.cbProjeto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbProjeto.FormattingEnabled = true;
-            this.cbProjeto.Location = new System.Drawing.Point(156, 45);
-            this.cbProjeto.Name = "cbProjeto";
-            this.cbProjeto.Size = new System.Drawing.Size(293, 21);
-            this.cbProjeto.TabIndex = 1;
             // 
             // label3
             // 
@@ -357,17 +345,8 @@
             this.txtDescricao.Location = new System.Drawing.Point(7, 20);
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.Size = new System.Drawing.Size(631, 350);
-            this.txtDescricao.TabIndex = 11;
+            this.txtDescricao.TabIndex = 12;
             this.txtDescricao.Text = "";
-            // 
-            // btnNova
-            // 
-            this.btnNova.Location = new System.Drawing.Point(96, 6);
-            this.btnNova.Name = "btnNova";
-            this.btnNova.Size = new System.Drawing.Size(75, 23);
-            this.btnNova.TabIndex = 13;
-            this.btnNova.Text = "Nova";
-            this.btnNova.UseVisualStyleBackColor = true;
             // 
             // lblId
             // 
@@ -385,15 +364,16 @@
             this.btnSalvar.TabIndex = 12;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(112, 91);
+            this.label2.Location = new System.Drawing.Point(108, 94);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 13);
+            this.label2.Size = new System.Drawing.Size(45, 13);
             this.label2.TabIndex = 13;
-            this.label2.Text = "Título:";
+            this.label2.Text = "Título: *";
             // 
             // txtNome
             // 
@@ -402,64 +382,25 @@
             this.txtNome.Size = new System.Drawing.Size(645, 20);
             this.txtNome.TabIndex = 3;
             // 
-            // tabPage2
+            // openFileDialog1
             // 
-            this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage2.Controls.Add(this.gridAnexos);
-            this.tabPage2.Controls.Add(this.btnEnviarArquivo);
-            this.tabPage2.Controls.Add(this.label4);
-            this.tabPage2.Controls.Add(this.btnEscolherArquivo);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(808, 499);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Anexo";
-            // 
-            // gridAnexos
-            // 
-            this.gridAnexos.AllowUserToAddRows = false;
-            this.gridAnexos.AllowUserToDeleteRows = false;
-            this.gridAnexos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridAnexos.Location = new System.Drawing.Point(6, 38);
-            this.gridAnexos.Name = "gridAnexos";
-            this.gridAnexos.ReadOnly = true;
-            this.gridAnexos.Size = new System.Drawing.Size(799, 455);
-            this.gridAnexos.TabIndex = 81;
-            // 
-            // btnEnviarArquivo
-            // 
-            this.btnEnviarArquivo.Enabled = false;
-            this.btnEnviarArquivo.Location = new System.Drawing.Point(295, 9);
-            this.btnEnviarArquivo.Name = "btnEnviarArquivo";
-            this.btnEnviarArquivo.Size = new System.Drawing.Size(107, 23);
-            this.btnEnviarArquivo.TabIndex = 79;
-            this.btnEnviarArquivo.Text = "Enviar Arquivo";
-            this.btnEnviarArquivo.UseVisualStyleBackColor = true;
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(131, 13);
+            this.label4.Location = new System.Drawing.Point(349, 536);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(148, 13);
-            this.label4.TabIndex = 78;
-            this.label4.Text = "Nenhum Arquivo Selecionado";
-            // 
-            // btnEscolherArquivo
-            // 
-            this.btnEscolherArquivo.Location = new System.Drawing.Point(6, 8);
-            this.btnEscolherArquivo.Name = "btnEscolherArquivo";
-            this.btnEscolherArquivo.Size = new System.Drawing.Size(119, 23);
-            this.btnEscolherArquivo.TabIndex = 80;
-            this.btnEscolherArquivo.Text = "Escolher Arquivo...";
-            this.btnEscolherArquivo.UseVisualStyleBackColor = true;
+            this.label4.Size = new System.Drawing.Size(158, 13);
+            this.label4.TabIndex = 44;
+            this.label4.Text = "(Campos com * são obrigatórios)";
             // 
             // NovaAtividade
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(833, 549);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.tabControl1);
             this.Name = "NovaAtividade";
             this.Text = "Atividade";
@@ -471,10 +412,8 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridAnexos)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -482,21 +421,13 @@
 
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.Button btnNova;
         private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtNome;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.DataGridView gridAnexos;
-        private System.Windows.Forms.Button btnEnviarArquivo;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btnEscolherArquivo;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox cbProjeto;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox cbFase;
         private System.Windows.Forms.ComboBox cbTipoAtividade;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.RichTextBox txtDescricao;
@@ -508,7 +439,6 @@
         private System.Windows.Forms.DateTimePicker dtPrevista;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DateTimePicker dtInicio;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label12;
@@ -518,5 +448,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox cbSituacao;
+        private System.Windows.Forms.TextBox txtFase;
+        private System.Windows.Forms.TextBox txtProjeto;
+        private System.Windows.Forms.TextBox dtFim;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Label label4;
     }
 }

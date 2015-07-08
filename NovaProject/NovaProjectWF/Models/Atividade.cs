@@ -21,14 +21,16 @@ namespace NovaProjectWF.Models
         public int FaseProjetoId { get; set; }
         public int UsuarioId { get; set; }
         public int TipoAtividadeId { get; set; }
+        public int SituacaoAtividadeId { get; set; }
 
-
-        [ForeignKey("FaseProjetoId"), Required]
+        [ForeignKey("FaseProjetoId")]
         public virtual FaseProjeto FaseProjeto { get; set; }
-        [ForeignKey("UsuarioId"), Required]
+        [ForeignKey("UsuarioId")]
         public virtual Usuario Colaborador { get; set; }
-        [ForeignKey("TipoAtividadeId"), Required]
+        [ForeignKey("TipoAtividadeId")]
         public virtual TipoAtividade TipoAtividade{ get; set; }
+        [ForeignKey("SituacaoAtividadeId")]
+        public virtual SituacaoAtividade SituacaoAtividade { get; set; }
         
         [InverseProperty("Atividade")]
         public virtual ICollection<AnexoAtividade> Anexos { get; set; }
@@ -44,8 +46,8 @@ namespace NovaProjectWF.Models
         [Required]
         public DateTime DataPrevista { get; set; }
         
-        public DateTime DataFim { get; set; }
+        public DateTime? DataFim { get; set; }
         public double TempoEstimado { get; set; }
-        public double TempoGasto { get; set; }
+        public double? TempoGasto { get; set; }
     }
 }

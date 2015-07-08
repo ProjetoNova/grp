@@ -19,8 +19,8 @@ namespace NovaProjectWF.View.Utilitarios
 
             if (Controle && !SessaoSistema.Administrador)
             {
-                //Mensagem.Erro("Você não tem permissão para acessar essa tela");
-                //return;
+                Mensagem.Erro("Você não tem permissão para acessar essa tela");
+                return;
             }
 
             if (tela == null)
@@ -59,19 +59,30 @@ namespace NovaProjectWF.View.Utilitarios
         //retorna true se a janela estiver fechada
         public static bool Fechada(Form parent, Type tipoTela)
         {
-            bool retorno = true;
+            bool retorno = false;
 
-            foreach (Form form in parent.MdiChildren)
+            if (JanelaAberta(parent, tipoTela) == null)
             {
-                if (form.GetType().Equals(tipoTela))
-                {
-                    retorno = false;
-                }
+                retorno = true;
             }
 
             return retorno;
         }
 
+        public static Form JanelaAberta(Form parent, Type tipoTela)
+        {
+            Form retorno = null;
+
+            foreach (Form form in parent.MdiChildren)
+            {
+                if (form.GetType().Equals(tipoTela))
+                {
+                    retorno = form;
+                }
+            }
+
+            return retorno;
+        }
 
     }
 }

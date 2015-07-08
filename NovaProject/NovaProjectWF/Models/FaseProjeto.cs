@@ -18,18 +18,13 @@ namespace NovaProjectWF.Models
 
         public int ProjetoId { get; set; }
 
-        [ForeignKey("ProjetoId"), Required]
+        [ForeignKey("ProjetoId")]
         public virtual Projeto Projeto { get; set; }
         
-
         [Required]
         public string Descricao { get; set; }
-        [Required]
         public DateTime DataInicio { get; set; }
-        
         public DateTime DataFim { get; set; }
-        [Required]
         public bool Status { get; set; } 
-
     }
 }

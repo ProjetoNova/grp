@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using NovaProjectWF.Models;
 using NovaProjectWF.View.Utilitarios;
 using NovaProjectWF.Dao;
+using NovaProjectWF.Models.Enumerados;
 
 namespace NovaProjectWF.Controllers.ProjetoController
 {
@@ -18,16 +19,26 @@ namespace NovaProjectWF.Controllers.ProjetoController
             crud = new AtividadeDAO();
         }
 
-        public Object Salvar(string Id, string titulo, string descricao, bool situacaoAtividade,
-            DateTime dataInicio, DateTime dataPrevista, DateTime dataFinal, string colaborador, string prioridade, double tempoGasto,
-            double tempoEstimado, byte anexo)
+        public List<Atividade> GetAtividadesDaFase(int FaseProjetoId)
+        {
+            crud = new AtividadeDAO();
+
+            List<Atividade> lista = crud.GetAtividadesDaFase(FaseProjetoId);
+
+            return lista;
+        }
+
+        public Object Salvar(string Id, EPrioridade prioridade, SituacaoAtividade situacaoAtividade, 
+            double tempoEstimado, double? tempoGasto, TipoAtividade tipoAtividade, string titulo, 
+            Usuario usuario, DateTime? dataFim, DateTime dataInicio, DateTime dataPrevista, string descricao, 
+            FaseProjeto faseProjeto)
         {
 
             if (Id == string.Empty)
             {
                 Id = "0";
             }
-            else if (titulo == string.Empty)
+            if (titulo == string.Empty)
             {
                 Mensagem.Erro("Título não pode ser Nulo!");
             }
@@ -43,40 +54,59 @@ namespace NovaProjectWF.Controllers.ProjetoController
             {
                 Mensagem.Erro("Data Prevista não pode ser Nula!");
             }
-            else if (Convert.ToString(dataFinal) == string.Empty)
-            {
-                Mensagem.Erro("Data de Conclusão não pode ser Nula!");
-            }
-            else if (prioridade == string.Empty)
+            else if (prioridade == null)
             {
                 Mensagem.Erro("Prioridade não pode ser Nula!");
-            }
-            else if (Convert.ToString(tempoGasto) == string.Empty)
-            {
-                Mensagem.Erro("Tempo Gasto não pode ser Nulo!");
             }
             else if (Convert.ToString(tempoEstimado) == string.Empty)
             {
                 Mensagem.Erro("Tempo Estimado não pode ser Nulo!");
             }
-            /////
+            else if (dataPrevista < dataInicio)
+            {
+                Mensagem.Erro("Data Prevista não pode ser menor que data Início!");
+            }
             else
             {
                 Atividade atividade = new Atividade();
 
+                if (situacaoAtividade.Concluida && dataFim == null)
+                {
+                    atividade.DataFim = Convert.ToDateTime(DateTime.Now);
+                }
+
+                atividade.Prioridade = prioridade;
+                atividade.SituacaoAtividadeId = situacaoAtividade.Id;
+                atividade.TempoEstimado = tempoEstimado;
+                atividade.TempoGasto = tempoGasto;
+                atividade.TipoAtividadeId = tipoAtividade.Id;
                 atividade.Titulo = titulo;
-                atividade.Descricao = descricao;
+                atividade.UsuarioId = usuario.Id;
                 atividade.DataInicio = dataInicio;
                 atividade.DataPrevista = dataPrevista;
-                atividade.Prioridade = prioridade;
-                atividade.TempoGasto = tempoGasto;
-                atividade.TempoEstimado = tempoEstimado;
-                atividade.Anexos = anexo;
-                //Duvidas em relação a 'anexo' e 'prioridade' sobre a sintaxe correta acima
+                atividade.Descricao = descricao;
+                atividade.FaseProjetoId = faseProjeto.Id;
+
                 Object retorno = crud.save(Convert.ToInt32(Id), atividade);
 
                 return retorno;
             }
+            return null;
+        }
+
+        public List<Atividade> GetAtividadePorSituacao(SituacaoAtividade atv)
+        {
+           return crud.selectPorSituacao(atv);
+        }
+
+        public Atividade BuscarPorId(string Id)
+        {
+            return (Atividade)crud.select(Convert.ToInt32(Id));
+        }
+
+        public List<Atividade> BuscarPorNomeOuDescricao(string valor)
+        {
+            return crud.selectPorNomeOuDescrica(valor);
         }
     }
 }

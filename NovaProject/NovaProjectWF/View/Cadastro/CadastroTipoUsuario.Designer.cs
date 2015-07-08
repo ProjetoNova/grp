@@ -45,6 +45,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -64,6 +65,7 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.cbAdministrador);
             this.tabPage1.Controls.Add(this.checkBox1);
             this.tabPage1.Controls.Add(this.button3);
@@ -136,9 +138,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(12, 93);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 13);
+            this.label2.Size = new System.Drawing.Size(45, 13);
             this.label2.TabIndex = 13;
-            this.label2.Text = "Nome:";
+            this.label2.Text = "Nome: *";
             // 
             // txtNome
             // 
@@ -230,6 +232,15 @@
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 17;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(93, 290);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(158, 13);
+            this.label3.TabIndex = 22;
+            this.label3.Text = "(Campos com * são obrigatórios)";
+            // 
             // CadastroTipoUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -267,6 +278,7 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.CheckBox cbAdministrador;
+        private System.Windows.Forms.Label label3;
 
     }
 }

@@ -63,5 +63,22 @@ namespace NovaProjectWF.Dao
 
             return usuario;
         }
+
+        public override List<Usuario> selectAll()
+        {
+            List<Usuario> allUsuario = new List<Usuario>();
+
+            using (Contexto ctx = new Contexto())
+            {
+                var query = from c in ctx.USUARIO_ select c;
+
+                foreach (var item in query)
+                {
+                    allUsuario.Add(item);
+                }
+            }
+
+            return allUsuario;
+        }
     }
 }

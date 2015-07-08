@@ -11,12 +11,19 @@ namespace NovaProjectWF.Controllers.SessaoController
 {
     class LoginController
     {
+
+        UsuarioDAO crud;
+
+        public LoginController()
+        {
+            crud = new UsuarioDAO();
+        }
+
         //Login do Usuario
         public bool Login(string usuario, string senha)
         {
             Usuario usuarioLogin = null;
 
-            UsuarioDAO crud = new UsuarioDAO();
             TipoUsuarioController control = new TipoUsuarioController();
             usuarioLogin = crud.login(usuario, senha);
 
@@ -52,6 +59,13 @@ namespace NovaProjectWF.Controllers.SessaoController
             }
 
             return false;
+        }
+
+        internal void AlterarSenha(string senha)
+        {
+            Usuario usuario = (Usuario)crud.select(SessaoSistema.UsuarioId);
+            usuario.Senha = senha;
+            crud.save(SessaoSistema.UsuarioId, usuario);
         }
     }
 }

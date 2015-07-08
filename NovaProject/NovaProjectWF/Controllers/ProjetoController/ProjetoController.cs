@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using NovaProjectWF.Models;
 using NovaProjectWF.View.Utilitarios;
 using NovaProjectWF.Dao;
+using NovaProjectWF.Models.Enumerados;
 
 namespace NovaProjectWF.Controllers.ProjetoController
 {
@@ -19,14 +20,15 @@ namespace NovaProjectWF.Controllers.ProjetoController
         }
 
         public Object Salvar(string Id, string titulo, string descricao, DateTime dataInicio, 
-            DateTime dataPrevista, byte planoProjeto, DateTime dataConclusao, byte anexo)
+            DateTime dataPrevista, byte[] planoProjeto, DateTime dataConclusao, ESituacaoProjeto situacao)
         {
             
             if (Id == string.Empty)
             {
                 Id = "0";
             }
-            else if (titulo == string.Empty)
+            
+            if (titulo == string.Empty)
             {
                 Mensagem.Erro("Título não pode ser Nulo!");
             }
@@ -42,7 +44,7 @@ namespace NovaProjectWF.Controllers.ProjetoController
             {
                 Mensagem.Erro("Data Prevista não pode ser Nula!");
             }
-            else if (Convert.ToString(planoProjeto) == string.Empty)
+            else if (planoProjeto.Count() == 0)
             {
                 Mensagem.Erro("Plano de Projeto não pode ser Nulo!");
             }
@@ -50,10 +52,18 @@ namespace NovaProjectWF.Controllers.ProjetoController
             {
                 Mensagem.Erro("Data de Conclusao não pode ser Nula!");
             }
-            
+            else if (dataPrevista < dataInicio)
+            {
+                Mensagem.Erro("Data Prevista não pode ser anterior a data de Início");
+            }
             else
             {
                 Projeto projeto = new Projeto();
+
+                if (situacao.Equals(ESituacaoProjeto.CONCLUIDO) && dataConclusao == null)
+                {
+                    projeto.DataConclusao = Convert.ToDateTime(DateTime.Now);
+                }
 
                 projeto.Titulo = titulo;
                 projeto.Descricao = descricao;
@@ -61,13 +71,39 @@ namespace NovaProjectWF.Controllers.ProjetoController
                 projeto.DataPrevisao = dataPrevista;
                 projeto.PlanoProjeto = planoProjeto;
                 projeto.DataConclusao = dataConclusao;
-                projeto.Anexos = anexo;
-                //Duvidas em relação a 'anexo' e 'planoProjeto' sobre a sintaxe correta acima
+                projeto.Situacao = situacao;
                 Object retorno = crud.save(Convert.ToInt32(Id), projeto);
 
                 return retorno;
             }
+            return null;
+        }
 
+        public List<Projeto> TodosOsDados()
+        {
+            return crud.selectAll();
+        }
+
+        public Projeto BuscarPorId(string Id)
+        {
+            return (Projeto)crud.select(Convert.ToInt32(Id));
+        }
+
+        internal List<Projeto> ProjetoPorUsuario(int userId)
+        {
+            UsuarioProjetoDAO upDao = new UsuarioProjetoDAO();
+
+            List<UsuarioProjeto> projetos = upDao.GetProjetosDoUsuario(userId);
+
+            List<Projeto> retorno = new List<Projeto>();
+
+            foreach (var item in projetos)
+            {
+                int v = Convert.ToInt32(((UsuarioProjeto)item).ProjetoId);
+                retorno.Add((Projeto)crud.select(v));                
+            }
+
+            return retorno;
         }
     }
 }

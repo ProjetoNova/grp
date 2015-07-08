@@ -44,6 +44,7 @@
             this.txtPesquisa = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.cbPesquisa = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -63,6 +64,7 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.cbAtivo);
             this.tabPage1.Controls.Add(this.btnNovo);
             this.tabPage1.Controls.Add(this.lblId);
@@ -97,6 +99,7 @@
             this.btnNovo.TabIndex = 19;
             this.btnNovo.Text = "Novo";
             this.btnNovo.UseVisualStyleBackColor = true;
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
             // lblId
             // 
@@ -114,15 +117,17 @@
             this.btnSalvar.TabIndex = 14;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label2.Location = new System.Drawing.Point(12, 93);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 13);
+            this.label2.Size = new System.Drawing.Size(45, 13);
             this.label2.TabIndex = 13;
-            this.label2.Text = "Nome:";
+            this.label2.Text = "Nome: *";
             // 
             // txtNome
             // 
@@ -178,6 +183,7 @@
             this.btnEditar.TabIndex = 21;
             this.btnEditar.Text = "Selecionar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnPesquisar
             // 
@@ -187,6 +193,7 @@
             this.btnPesquisar.TabIndex = 20;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
             // txtPesquisa
             // 
@@ -211,6 +218,15 @@
             this.cbPesquisa.Name = "cbPesquisa";
             this.cbPesquisa.Size = new System.Drawing.Size(121, 21);
             this.cbPesquisa.TabIndex = 17;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(93, 290);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(158, 13);
+            this.label3.TabIndex = 21;
+            this.label3.Text = "(Campos com * são obrigatórios)";
             // 
             // CadastroTipoAtividade
             // 
@@ -248,5 +264,6 @@
         private System.Windows.Forms.TextBox txtPesquisa;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cbPesquisa;
+        private System.Windows.Forms.Label label3;
     }
 }

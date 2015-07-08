@@ -60,6 +60,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.cbPesquisa = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -121,11 +122,11 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(243, 204);
+            this.label11.Location = new System.Drawing.Point(243, 199);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(70, 13);
+            this.label11.Size = new System.Drawing.Size(77, 13);
             this.label11.TabIndex = 38;
-            this.label11.Text = "Tipo Usuário:";
+            this.label11.Text = "Tipo Usuário: *";
             // 
             // txtSenha
             // 
@@ -194,9 +195,9 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(225, 164);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(88, 13);
+            this.label8.Size = new System.Drawing.Size(95, 13);
             this.label8.TabIndex = 30;
-            this.label8.Text = "Confirmar Senha:";
+            this.label8.Text = "Confirmar Senha: *";
             // 
             // txtConfSenha
             // 
@@ -212,18 +213,18 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(12, 164);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(41, 13);
+            this.label7.Size = new System.Drawing.Size(48, 13);
             this.label7.TabIndex = 27;
-            this.label7.Text = "Senha:";
+            this.label7.Text = "Senha: *";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(277, 130);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(36, 13);
+            this.label6.Size = new System.Drawing.Size(43, 13);
             this.label6.TabIndex = 26;
-            this.label6.Text = "Login:";
+            this.label6.Text = "Login: *";
             // 
             // txtLogin
             // 
@@ -295,9 +296,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(12, 93);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 13);
+            this.label2.Size = new System.Drawing.Size(45, 13);
             this.label2.TabIndex = 13;
-            this.label2.Text = "Nome:";
+            this.label2.Text = "Nome: *";
             // 
             // txtNome
             // 
@@ -388,11 +389,21 @@
             this.cbPesquisa.Size = new System.Drawing.Size(240, 21);
             this.cbPesquisa.TabIndex = 17;
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(162, 484);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(158, 13);
+            this.label12.TabIndex = 22;
+            this.label12.Text = "(Campos com * são obrigatórios)";
+            // 
             // CadastroUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(491, 501);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.tabControl1);
             this.Name = "CadastroUsuario";
             this.ShowInTaskbar = false;
@@ -406,6 +417,7 @@
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridUsuario)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -443,5 +455,6 @@
         private System.Windows.Forms.ComboBox cbPesquisa;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox cbTipoUsuario;
+        private System.Windows.Forms.Label label12;
     }
 }

@@ -9,16 +9,16 @@ using NovaProjectWF.Dao;
 
 namespace NovaProjectWF.Controllers.CadastroController
 {
-    class TipoUsuarioController
+    class SituacaoAtividadeController
     {
-        TipoUsuarioDAO crud;
+        SituacaoAtividadeDAO crud;
 
-        public TipoUsuarioController()
+        public SituacaoAtividadeController()
         {
-            crud = new TipoUsuarioDAO();
+            crud = new SituacaoAtividadeDAO();
         }
 
-        public Object Salvar(string Id, string Nome, bool Status, bool Adm)
+        public Object Salvar(string Id, string Nome, bool Status, bool Concluida)
         {
 
             if (Id == string.Empty)
@@ -32,13 +32,13 @@ namespace NovaProjectWF.Controllers.CadastroController
             }
             else
             {
-                TipoUsuario tipoUsuario = new TipoUsuario();
+                SituacaoAtividade situacao = new SituacaoAtividade();
 
-                tipoUsuario.Nome = Nome;
-                tipoUsuario.Status = Status;
-                tipoUsuario.Administrador = Adm;
+                situacao.Nome = Nome;
+                situacao.Status = Status;
+                situacao.Concluida = Concluida;
 
-                Object retorno = crud.save(Convert.ToInt32(Id), tipoUsuario);
+                Object retorno = crud.save(Convert.ToInt32(Id), situacao);
 
                 return retorno;
             }
@@ -46,17 +46,17 @@ namespace NovaProjectWF.Controllers.CadastroController
             return null;
         }
 
-        public TipoUsuario BuscarPorId(string Id)
+        public SituacaoAtividade BuscarPorId(string Id)
         {
-            return (TipoUsuario)crud.select(Convert.ToInt32(Id));
+            return (SituacaoAtividade)crud.select(Convert.ToInt32(Id));
         }
 
-        public List<TipoUsuario> BuscarPorNome(string nome)
+        public List<SituacaoAtividade> BuscarPorNome(string nome)
         {
-            return (List<TipoUsuario>)crud.selectNome(nome);
+            return (List<SituacaoAtividade>)crud.selectNome(nome);
         }
 
-        public List<TipoUsuario> TodosOsDados()
+        public List<SituacaoAtividade> TodosOsDados()
         {
             return crud.selectAll();
         }
@@ -65,7 +65,7 @@ namespace NovaProjectWF.Controllers.CadastroController
         {
             List<String> nomes = new List<String>();
 
-            foreach (TipoUsuario t in crud.selectAll())
+            foreach (SituacaoAtividade t in crud.selectAll())
             {
                 nomes.Add(t.Nome);
             }
