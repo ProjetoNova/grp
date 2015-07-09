@@ -37,6 +37,7 @@ namespace NovaProjectWF.Controllers.SessaoController
             SessaoSistema.LoginUsuario = usuarioLogin.Login;
             SessaoSistema.NomeUsuario = usuarioLogin.Nome;
             SessaoSistema.UsuarioId = usuarioLogin.Id;
+            SessaoSistema.DataHoraLogin = Convert.ToDateTime(DateTime.Now);
 
             return true;
         }

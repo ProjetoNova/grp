@@ -179,5 +179,12 @@ namespace NovaProjectWF.View
 
             Janela.Exibir(atividades, this, false);
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            timeStatus.Text = DateTime.Now.ToLongDateString() + " " + DateTime.Now.ToLongTimeString();
+               // DateTime.Now.ToShortDateString() +" "+ 
+        }
+
     }
 }

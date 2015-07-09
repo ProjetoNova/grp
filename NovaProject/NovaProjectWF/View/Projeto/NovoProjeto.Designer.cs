@@ -217,8 +217,10 @@
             this.gridEquipe.AllowUserToDeleteRows = false;
             this.gridEquipe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridEquipe.Location = new System.Drawing.Point(7, 50);
+            this.gridEquipe.MultiSelect = false;
             this.gridEquipe.Name = "gridEquipe";
             this.gridEquipe.ReadOnly = true;
+            this.gridEquipe.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridEquipe.Size = new System.Drawing.Size(778, 312);
             this.gridEquipe.TabIndex = 2;
             // 

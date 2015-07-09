@@ -217,6 +217,12 @@
     <Compile Include="View\Conta\MinhaConta.Designer.cs">
       <DependentUpon>MinhaConta.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Iniciando.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Iniciando.Designer.cs">
+      <DependentUpon>Iniciando.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Inicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -295,6 +301,9 @@
     <EmbeddedResource Include="View\Conta\MinhaConta.resx">
       <DependentUpon>MinhaConta.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Iniciando.resx">
+      <DependentUpon>Iniciando.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
     </EmbeddedResource>
@@ -360,7 +369,9 @@
   <ItemGroup>
     <None Include="Resources\Untitled-1.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\carregando.gif" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\loading.gif" />
   </ItemGroup>
@@ -369,6 +380,15 @@
       <Project>{8f3074d8-e771-4c5e-a11e-0c0fbae34ae3}</Project>
       <Name>RicherTextBox</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carregando.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carregando2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carregando3.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

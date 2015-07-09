@@ -30,6 +30,7 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label3 = new System.Windows.Forms.Label();
             this.cbConcluida = new System.Windows.Forms.CheckBox();
             this.cbAtivo = new System.Windows.Forms.CheckBox();
             this.btnNovo = new System.Windows.Forms.Button();
@@ -45,7 +46,6 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -80,6 +80,15 @@
             this.tabPage1.Size = new System.Drawing.Size(343, 306);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Cadastro";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(93, 290);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(158, 13);
+            this.label3.TabIndex = 22;
+            this.label3.Text = "(Campos com * são obrigatórios)";
             // 
             // cbConcluida
             // 
@@ -136,11 +145,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 93);
+            this.label2.Location = new System.Drawing.Point(12, 92);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 13);
+            this.label2.Size = new System.Drawing.Size(45, 13);
             this.label2.TabIndex = 13;
-            this.label2.Text = "Nome:";
+            this.label2.Text = "Nome: *";
             // 
             // txtNome
             // 
@@ -231,15 +240,6 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 17;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(93, 290);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(158, 13);
-            this.label3.TabIndex = 22;
-            this.label3.Text = "(Campos com * são obrigatórios)";
             // 
             // SituacaoAtividade
             // 

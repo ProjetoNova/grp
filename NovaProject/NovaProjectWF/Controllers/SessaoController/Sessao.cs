@@ -16,6 +16,7 @@ namespace NovaProjectWF.Controllers.SessaoController
         private static String _nomeUsuario;
         private static String _loginUsuario;
         private static Boolean _admin;
+        private static DateTime _dataHoraLogin;
 
         //get e set
         public static int UsuarioId
@@ -40,6 +41,12 @@ namespace NovaProjectWF.Controllers.SessaoController
         {
             get { return SessaoSistema._admin; }
             set { SessaoSistema._admin = value; }
+        }
+
+        public static DateTime DataHoraLogin
+        {
+            get { return SessaoSistema._dataHoraLogin; }
+            set { SessaoSistema._dataHoraLogin = value; }
         }
     }
 }
