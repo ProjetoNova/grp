@@ -55,33 +55,37 @@ namespace NovaProjectWF.View.Projeto
         
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
-            SituacaoAtividade s =  control.BuscarPorNome(comboBox1.SelectedItem.ToString())[0];
+            if(comboBox1.SelectedItem!=null) {
 
-            AtividadeController atv = new AtividadeController();
+                SituacaoAtividade s =  control.BuscarPorNome(comboBox1.SelectedItem.ToString())[0];
 
-            if (rbMinhas.Checked)
-            {
-                atividades = new List<Atividade>();
+                AtividadeController atv = new AtividadeController();
 
-                foreach (Atividade item in atv.GetAtividadePorSituacao(s))
+                if (rbMinhas.Checked)
                 {
-                    if (item.UsuarioId.Equals(SessaoSistema.UsuarioId))
+                    atividades = new List<Atividade>();
+
+                    foreach (Atividade item in atv.GetAtividadePorSituacao(s))
                     {
-                        atividades.Add(item);
+                        if (item.UsuarioId.Equals(SessaoSistema.UsuarioId))
+                        {
+                            atividades.Add(item);
+                        }
                     }
+
+                    gridAtividade.DataSource = null;
+                    gridAtividade.DataSource = atividades;
+                }
+                else
+                {
+                    gridAtividade.DataSource = null;
+                    atividades = atv.GetAtividadePorSituacao(s);
+                    gridAtividade.DataSource = atividades;
+
                 }
 
-                gridAtividade.DataSource = null;
-                gridAtividade.DataSource = atividades;
-            }
-            else
-            {
-                gridAtividade.DataSource = null;
-                gridAtividade.DataSource = atv.GetAtividadePorSituacao(s);
-
-            }
-
-            LimparGrid();   
+                LimparGrid();   
+          }
         }
 
         private void btnPesquisar_Click(object sender, EventArgs e)
@@ -128,7 +132,7 @@ namespace NovaProjectWF.View.Projeto
 
                 Models.FaseProjeto fp = fControl.BuscarPorId(atv_.FaseProjetoId+"");
 
-                NovaAtividade atv = new NovaAtividade(this, fp.ProjetoId);
+                NovaAtividade atv = new NovaAtividade(null, fp.ProjetoId);
 
                 atv.Exibir(this.MdiParent, atv_);
             }

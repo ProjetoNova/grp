@@ -1,6 +1,7 @@
 ﻿using NovaProjectWF.Controllers;
 using NovaProjectWF.Controllers.CadastroController;
 using NovaProjectWF.Controllers.ProjetoController;
+using NovaProjectWF.Controllers.SessaoController;
 using NovaProjectWF.Models;
 using NovaProjectWF.Models.Enumerados;
 using NovaProjectWF.View.Utilitarios;
@@ -32,10 +33,12 @@ namespace NovaProjectWF.View.Projeto
         List<string> situacoes;
         List<string> usuarios;
 
+        //inicia uma atividade ja existente
         public NovaAtividade(Object janelaProjeto, int ProjetoId)
         {
             InitializeComponent();
-            proj = (NovoProjeto)janelaProjeto;
+            if(janelaProjeto != null)
+                proj = (NovoProjeto)janelaProjeto;
             tControl = new TipoAtividadeController();
             sControl = new SituacaoAtividadeController();
             uControl = new UsuarioProjetoController();
@@ -68,7 +71,8 @@ namespace NovaProjectWF.View.Projeto
 
         private void AtualizaProjeto()
         {
-            proj.gridAtividadesRefresh();
+            if(proj != null)
+                proj.gridAtividadesRefresh();
         }
 
         public void Exibir(Form parent, Object Atividade) {
@@ -99,13 +103,19 @@ namespace NovaProjectWF.View.Projeto
 
             if (Janela.Fechada(parent, this.GetType()))
             {
-                Janela.Exibir(this, parent, true);
+                Janela.Exibir(this, parent, false);
             }
             else
             {
                 Janela.JanelaAberta(parent, this.GetType()).Close();
-                Janela.Exibir(this, parent, true);
+                Janela.Exibir(this, parent, false);
             }
+
+            UsuarioProjetoController upc = new UsuarioProjetoController();
+            TipoUsuarioController tuc = new TipoUsuarioController();
+            AtivaDesativaCampos(tuc.BuscarPorId(
+                upc.GetUsuarioProjeto(this.atividade.FaseProjeto.ProjetoId,
+                SessaoSistema.UsuarioId).TipoUsuarioId.ToString()).Administrador);
         }
 
         public void ExibirNova(Form parent, Object FaseProjeto)
@@ -113,6 +123,11 @@ namespace NovaProjectWF.View.Projeto
             this.atividade = new Atividade();
             this.atividade.FaseProjeto = (Models.FaseProjeto)FaseProjeto;
             this.atividade.FaseProjetoId = this.atividade.FaseProjeto.Id;
+
+            this.dtInicio.MinDate = this.atividade.FaseProjeto.DataInicio;
+            this.dtInicio.MaxDate = this.atividade.FaseProjeto.DataFim;
+            this.dtPrevista.MinDate = this.atividade.FaseProjeto.DataInicio;
+            this.dtPrevista.MaxDate = this.atividade.FaseProjeto.DataFim;
 
             this.txtProjeto.Text = this.atividade.FaseProjeto.Projeto.Titulo;
             this.txtFase.Text = this.atividade.FaseProjeto.Descricao;
@@ -126,6 +141,8 @@ namespace NovaProjectWF.View.Projeto
                 Janela.JanelaAberta(parent, this.GetType()).Close();
                 Janela.Exibir(this, parent, true);
             }
+
+           
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -190,15 +207,21 @@ namespace NovaProjectWF.View.Projeto
 
         }
 
-        private void btnEscolherArquivo_Click(object sender, EventArgs e)
+        //Ativa ou desativa os campos em questao ao gerente de projetos
+        public void AtivaDesativaCampos(bool Gerente)
         {
-            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            if (!Gerente && !SessaoSistema.Administrador)
             {
-                System.IO.StreamReader sr = new
-                   System.IO.StreamReader(openFileDialog1.FileName);
-                
-                
+                txtNome.Enabled = false;
+                txtDescricao.ReadOnly = true;
+                cbTipoAtividade.Enabled = false;
+                cbPrioridade.Enabled = false;
+                dtInicio.Enabled = false;
+                dtPrevista.Enabled = false;
+                txtEstimado.Enabled = false;
             }
         }
+
+        private void btnEscolherArquivo_Click(object sender, EventArgs e){}
     }
 }

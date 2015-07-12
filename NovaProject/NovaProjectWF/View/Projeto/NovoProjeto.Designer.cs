@@ -30,6 +30,8 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabProjeto = new System.Windows.Forms.TabPage();
+            this.dtPrevista = new System.Windows.Forms.DateTimePicker();
+            this.dtInicio = new System.Windows.Forms.DateTimePicker();
             this.lblId = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.lblStatus = new System.Windows.Forms.Label();
@@ -47,16 +49,14 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txtDescricao = new System.Windows.Forms.RichTextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.dtPrevista = new System.Windows.Forms.DateTimePicker();
-            this.dtInicio = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.tabFase = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnAtividade = new System.Windows.Forms.Button();
+            this.btnEditarAtividade = new System.Windows.Forms.Button();
+            this.btnNovaAtividade = new System.Windows.Forms.Button();
             this.gridAtividade = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.gridFase = new System.Windows.Forms.DataGridView();
@@ -92,6 +92,8 @@
             // tabProjeto
             // 
             this.tabProjeto.BackColor = System.Drawing.SystemColors.Control;
+            this.tabProjeto.Controls.Add(this.dtPrevista);
+            this.tabProjeto.Controls.Add(this.dtInicio);
             this.tabProjeto.Controls.Add(this.lblId);
             this.tabProjeto.Controls.Add(this.label8);
             this.tabProjeto.Controls.Add(this.lblStatus);
@@ -102,8 +104,6 @@
             this.tabProjeto.Controls.Add(this.label7);
             this.tabProjeto.Controls.Add(this.txtDescricao);
             this.tabProjeto.Controls.Add(this.label6);
-            this.tabProjeto.Controls.Add(this.dtPrevista);
-            this.tabProjeto.Controls.Add(this.dtInicio);
             this.tabProjeto.Controls.Add(this.label5);
             this.tabProjeto.Controls.Add(this.label4);
             this.tabProjeto.Controls.Add(this.txtNome);
@@ -114,6 +114,22 @@
             this.tabProjeto.Size = new System.Drawing.Size(808, 492);
             this.tabProjeto.TabIndex = 0;
             this.tabProjeto.Text = "Projeto";
+            // 
+            // dtPrevista
+            // 
+            this.dtPrevista.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtPrevista.Location = new System.Drawing.Point(722, 7);
+            this.dtPrevista.Name = "dtPrevista";
+            this.dtPrevista.Size = new System.Drawing.Size(78, 20);
+            this.dtPrevista.TabIndex = 29;
+            // 
+            // dtInicio
+            // 
+            this.dtInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtInicio.Location = new System.Drawing.Point(554, 7);
+            this.dtInicio.Name = "dtInicio";
+            this.dtInicio.Size = new System.Drawing.Size(78, 20);
+            this.dtInicio.TabIndex = 28;
             // 
             // lblId
             // 
@@ -143,7 +159,7 @@
             // dtFim
             // 
             this.dtFim.Enabled = false;
-            this.dtFim.Location = new System.Drawing.Point(512, 87);
+            this.dtFim.Location = new System.Drawing.Point(564, 83);
             this.dtFim.Mask = "00/00/0000";
             this.dtFim.Name = "dtFim";
             this.dtFim.Size = new System.Drawing.Size(68, 20);
@@ -153,7 +169,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(443, 90);
+            this.label2.Location = new System.Drawing.Point(478, 87);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 13);
             this.label2.TabIndex = 21;
@@ -232,6 +248,7 @@
             this.btnExcluirUsuario.TabIndex = 1;
             this.btnExcluirUsuario.Text = "Excluir";
             this.btnExcluirUsuario.UseVisualStyleBackColor = true;
+            this.btnExcluirUsuario.Click += new System.EventHandler(this.btnExcluirUsuario_Click);
             // 
             // btnIncluirUsuario
             // 
@@ -247,7 +264,7 @@
             // 
             this.cbSituacao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSituacao.FormattingEnabled = true;
-            this.cbSituacao.Location = new System.Drawing.Point(512, 46);
+            this.cbSituacao.Location = new System.Drawing.Point(564, 43);
             this.cbSituacao.Name = "cbSituacao";
             this.cbSituacao.Size = new System.Drawing.Size(180, 21);
             this.cbSituacao.TabIndex = 5;
@@ -255,7 +272,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(440, 50);
+            this.label7.Location = new System.Drawing.Point(478, 46);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(59, 13);
             this.label7.TabIndex = 19;
@@ -264,9 +281,9 @@
             // txtDescricao
             // 
             this.txtDescricao.Location = new System.Drawing.Point(79, 46);
-            this.txtDescricao.MaxLength = 255;
+            this.txtDescricao.MaxLength = 300;
             this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(355, 61);
+            this.txtDescricao.Size = new System.Drawing.Size(393, 61);
             this.txtDescricao.TabIndex = 4;
             this.txtDescricao.Text = "";
             // 
@@ -279,27 +296,10 @@
             this.label6.TabIndex = 17;
             this.label6.Text = "Descrição: *";
             // 
-            // dtPrevista
-            // 
-            this.dtPrevista.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtPrevista.Location = new System.Drawing.Point(698, 7);
-            this.dtPrevista.Name = "dtPrevista";
-            this.dtPrevista.Size = new System.Drawing.Size(102, 20);
-            this.dtPrevista.TabIndex = 3;
-            // 
-            // dtInicio
-            // 
-            this.dtInicio.Checked = false;
-            this.dtInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtInicio.Location = new System.Drawing.Point(512, 7);
-            this.dtInicio.Name = "dtInicio";
-            this.dtInicio.Size = new System.Drawing.Size(98, 20);
-            this.dtInicio.TabIndex = 2;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(615, 10);
+            this.label5.Location = new System.Drawing.Point(640, 10);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(81, 13);
             this.label5.TabIndex = 13;
@@ -308,7 +308,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(440, 10);
+            this.label4.Location = new System.Drawing.Point(478, 10);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(70, 13);
             this.label4.TabIndex = 11;
@@ -316,10 +316,11 @@
             // 
             // txtNome
             // 
+            this.txtNome.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.txtNome.Location = new System.Drawing.Point(120, 7);
-            this.txtNome.MaxLength = 50;
+            this.txtNome.MaxLength = 70;
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(314, 20);
+            this.txtNome.Size = new System.Drawing.Size(352, 20);
             this.txtNome.TabIndex = 1;
             // 
             // label3
@@ -347,8 +348,8 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.button1);
-            this.groupBox4.Controls.Add(this.btnAtividade);
+            this.groupBox4.Controls.Add(this.btnEditarAtividade);
+            this.groupBox4.Controls.Add(this.btnNovaAtividade);
             this.groupBox4.Controls.Add(this.gridAtividade);
             this.groupBox4.Location = new System.Drawing.Point(7, 185);
             this.groupBox4.Name = "groupBox4";
@@ -357,25 +358,25 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Atividade (Selecione uma Fase)";
             // 
-            // button1
+            // btnEditarAtividade
             // 
-            this.button1.Location = new System.Drawing.Point(111, 19);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(98, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Editar Atividade";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnEditarAtividade.Location = new System.Drawing.Point(111, 19);
+            this.btnEditarAtividade.Name = "btnEditarAtividade";
+            this.btnEditarAtividade.Size = new System.Drawing.Size(98, 23);
+            this.btnEditarAtividade.TabIndex = 6;
+            this.btnEditarAtividade.Text = "Editar Atividade";
+            this.btnEditarAtividade.UseVisualStyleBackColor = true;
+            this.btnEditarAtividade.Click += new System.EventHandler(this.button1_Click);
             // 
-            // btnAtividade
+            // btnNovaAtividade
             // 
-            this.btnAtividade.Location = new System.Drawing.Point(7, 19);
-            this.btnAtividade.Name = "btnAtividade";
-            this.btnAtividade.Size = new System.Drawing.Size(98, 23);
-            this.btnAtividade.TabIndex = 5;
-            this.btnAtividade.Text = "Incluir Atividade";
-            this.btnAtividade.UseVisualStyleBackColor = true;
-            this.btnAtividade.Click += new System.EventHandler(this.btnAtividade_Click);
+            this.btnNovaAtividade.Location = new System.Drawing.Point(7, 19);
+            this.btnNovaAtividade.Name = "btnNovaAtividade";
+            this.btnNovaAtividade.Size = new System.Drawing.Size(98, 23);
+            this.btnNovaAtividade.TabIndex = 5;
+            this.btnNovaAtividade.Text = "Incluir Atividade";
+            this.btnNovaAtividade.UseVisualStyleBackColor = true;
+            this.btnNovaAtividade.Click += new System.EventHandler(this.btnAtividade_Click);
             // 
             // gridAtividade
             // 
@@ -514,12 +515,15 @@
             // 
             // NovoProjeto
             // 
+            this.AcceptButton = this.btnSalvar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(841, 571);
             this.Controls.Add(this.btnNovo);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.tabControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "NovoProjeto";
             this.Text = "Projeto";
             this.tabControl1.ResumeLayout(false);
@@ -550,8 +554,6 @@
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker dtPrevista;
-        private System.Windows.Forms.DateTimePicker dtInicio;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.RichTextBox txtDescricao;
         private System.Windows.Forms.Label label7;
@@ -575,9 +577,11 @@
         private System.Windows.Forms.ComboBox cbPapel;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btnAtividade;
+        private System.Windows.Forms.Button btnEditarAtividade;
+        private System.Windows.Forms.Button btnNovaAtividade;
         private RicherTextBox.RicherTextBox txtPlanoProjeto;
+        private System.Windows.Forms.DateTimePicker dtInicio;
+        private System.Windows.Forms.DateTimePicker dtPrevista;
 
     }
 }

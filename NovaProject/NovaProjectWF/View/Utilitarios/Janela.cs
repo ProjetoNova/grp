@@ -16,44 +16,43 @@ namespace NovaProjectWF.View.Utilitarios
         //Metodo para controle de exibicao das telas do sistema
         public static void Exibir(Form tela, Form parent, bool Controle)
         {
-
-            if (Controle && !SessaoSistema.Administrador)
+            //faz o controle de acesso apnas para administrador
+            if (Controle && (!SessaoSistema.Administrador))
             {
                 Mensagem.Erro("Você não tem permissão para acessar essa tela");
-                return;
+                return ;
             }
-
+            //verifica nulidade do objeto
             if (tela == null)
             {
-                return;
+                return ;
             }
-
-            if (parent != null)
-            {
-                tela.MdiParent = parent;
-            }
-
+            //centraliza a tela
             tela.StartPosition = FormStartPosition.CenterScreen;
-
+            //se a borda for redimensionavel, seta para fixada
             if (tela.FormBorderStyle.Equals(FormBorderStyle.Sizable))
             {
                 tela.FormBorderStyle = FormBorderStyle.FixedSingle;
                 tela.MaximizeBox = false;
             }
-
             if (tela.WindowState == FormWindowState.Minimized)
             {
                 tela.WindowState = FormWindowState.Normal;
             }
-            else if(tela.WindowState == FormWindowState.Maximized
-                || tela.WindowState == FormWindowState.Normal)
+            else if (JanelaAberta(parent, tela.GetType())!=null)
             {
                 tela.Focus();
             }
-            else
+            else 
             {
+                //se o parent for diferente de nulo, seta ele
+                if (parent != null)
+                {
+                    tela.MdiParent = parent;
+                }
                 tela.Show();
             }
+
         }
 
         //retorna true se a janela estiver fechada
@@ -68,7 +67,7 @@ namespace NovaProjectWF.View.Utilitarios
 
             return retorno;
         }
-
+        //retorna a jalena aberta do tipo passado
         public static Form JanelaAberta(Form parent, Type tipoTela)
         {
             Form retorno = null;

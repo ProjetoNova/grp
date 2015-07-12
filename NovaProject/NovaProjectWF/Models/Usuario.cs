@@ -28,5 +28,7 @@ namespace NovaProjectWF.Models
         public string Senha { get; set; }
         public string LinkExterno { get; set; }
         public bool Status { get; set; }
+
+        public bool Master { get; set; }
     }
 }

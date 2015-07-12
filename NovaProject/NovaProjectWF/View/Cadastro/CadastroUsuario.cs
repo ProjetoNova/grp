@@ -15,6 +15,8 @@ namespace NovaProjectWF.View.Utilitarios
 {
     public partial class CadastroUsuario : Form
     {
+
+        List<Usuario> listaControle;
         public CadastroUsuario()
         {
             InitializeComponent();
@@ -28,6 +30,9 @@ namespace NovaProjectWF.View.Utilitarios
             }
 
             cbTipoUsuario.DataSource = lista;
+
+            string[] colunas = { "Id", "Nome" };
+            cbPesquisa.DataSource = colunas;
         }
 
         private void CadastroUsuario_Load(object sender, EventArgs e)
@@ -45,7 +50,8 @@ namespace NovaProjectWF.View.Utilitarios
 
             Object retorno = control.Salvar(lblId.Text, txtNome.Text.Trim(), txtFormacao.Text.Trim(),
                 txtExperiencia.Text.Trim(), txtEmail.Text.Trim(), txtLogin.Text.Trim(),
-                txtSenha.Text.Trim(), txtConfSenha.Text.Trim(), txtLink.Text.Trim(), cbAtivo.Checked, tipoUsuario.Id);
+                txtSenha.Text.Trim(), txtConfSenha.Text.Trim(), txtLink.Text.Trim(), cbAtivo.Checked, tipoUsuario.Id,
+                false);
 
             if (retorno == null)
             {
@@ -81,6 +87,54 @@ namespace NovaProjectWF.View.Utilitarios
             txtLogin.Text = "";
             txtSenha.Text = "";
             cbAtivo.Checked = true;
+        }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            UsuarioController control = new UsuarioController();
+            listaControle = new List<Usuario>();
+
+            if (textBox1.Text.Trim() == string.Empty)
+            {
+                gridUsuario.DataSource = null;
+                listaControle = control.TodosOsDados();
+                gridUsuario.DataSource = listaControle;
+            }
+            else if (cbPesquisa.SelectedValue.ToString() == "Id")
+            {
+                if (Validar.Numero(textBox1.Text.Trim()))
+                {
+                    listaControle.Add(
+                        control.BuscarPorId(textBox1.Text.Trim()));
+                    gridUsuario.DataSource = null;
+                    gridUsuario.DataSource = listaControle;
+                    gridUsuario.Refresh();
+                }
+                else
+                {
+                    Mensagem.Aviso("Nenhum dado encontrado");
+                }
+            }
+            else if (cbPesquisa.SelectedValue.ToString() == "Nome")
+            {
+                listaControle =
+                        control.BuscarPorNome(textBox1.Text.Trim());
+                gridUsuario.DataSource = null;
+                gridUsuario.DataSource = listaControle;
+                gridUsuario.Refresh();
+            }
+
+            this.gridUsuario.Columns["TipoUsuarioId"].Visible = false;
+            this.gridUsuario.Columns["Projetos"].Visible = false;
+            this.gridUsuario.Columns["TipoUsuarioSistema"].Visible = false;
+            this.gridUsuario.Columns["FormacaoAcademica"].Visible = false;
+            this.gridUsuario.Columns["ExperienciaSistema"].Visible = false;
+            this.gridUsuario.Columns["Senha"].Visible = false;
+            this.gridUsuario.Columns["LinkExterno"].Visible = false;
+            this.gridUsuario.Columns["Master"].Visible = false;
+
+            this.gridUsuario.Columns["Id"].Width = 20;
+        
         }
     }
 }

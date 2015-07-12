@@ -363,6 +363,7 @@
             this.btnPesquisar.TabIndex = 20;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
             // textBox1
             // 
@@ -371,6 +372,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(328, 20);
             this.textBox1.TabIndex = 19;
+            this.textBox1.Tag = "Digite sua pesquisa aqui...";
             // 
             // label4
             // 

@@ -19,10 +19,12 @@ namespace NovaProjectWF.Controllers.ProjetoController
             crud = new ProjetoDAO();
         }
 
-        public Object Salvar(string Id, string titulo, string descricao, DateTime dataInicio, 
-            DateTime dataPrevista, byte[] planoProjeto, DateTime dataConclusao, ESituacaoProjeto situacao)
+        public Object Salvar(string Id, string titulo, string descricao, string dataInicio, 
+            string dataPrevista, byte[] planoProjeto, string dataConclusao, ESituacaoProjeto situacao)
         {
+
             
+
             if (Id == string.Empty)
             {
                 Id = "0";
@@ -36,11 +38,11 @@ namespace NovaProjectWF.Controllers.ProjetoController
             {
                 Mensagem.Erro("Descrição não pode ser Nula!");
             }
-            else if (Convert.ToString(dataInicio) == string.Empty)
+            else if (dataInicio.Replace("_", "").Replace("/", "").Trim() == string.Empty)
             {
                 Mensagem.Erro("Data de Início não pode ser Nula!");
             }
-            else if (Convert.ToString(dataPrevista) == string.Empty)
+            else if (dataPrevista.Replace("_", "").Replace("/", "").Trim() == string.Empty)
             {
                 Mensagem.Erro("Data Prevista não pode ser Nula!");
             }
@@ -48,29 +50,31 @@ namespace NovaProjectWF.Controllers.ProjetoController
             {
                 Mensagem.Erro("Plano de Projeto não pode ser Nulo!");
             }
-            else if (Convert.ToString(dataConclusao) == string.Empty)
-            {
-                Mensagem.Erro("Data de Conclusao não pode ser Nula!");
-            }
-            else if (dataPrevista < dataInicio)
-            {
-                Mensagem.Erro("Data Prevista não pode ser anterior a data de Início");
-            }
             else
             {
+                DateTime dtDataInicio = Convert.ToDateTime(dataInicio);
+                DateTime dtDataPrevista = Convert.ToDateTime(dataPrevista);
+
+                if (dtDataPrevista < dtDataInicio)
+                {
+                    Mensagem.Erro("Data Prevista não pode ser anterior a data de Início");
+
+                    return null;
+                }
+
                 Projeto projeto = new Projeto();
 
-                if (situacao.Equals(ESituacaoProjeto.CONCLUIDO) && dataConclusao == null)
+                if (situacao == ESituacaoProjeto.CONCLUIDO &&
+                    (dataConclusao == null || dataConclusao == string.Empty))
                 {
                     projeto.DataConclusao = Convert.ToDateTime(DateTime.Now);
                 }
 
                 projeto.Titulo = titulo;
                 projeto.Descricao = descricao;
-                projeto.DataInicio = dataInicio;
-                projeto.DataPrevisao = dataPrevista;
+                projeto.DataInicio = dtDataInicio;
+                projeto.DataPrevisao = dtDataPrevista;
                 projeto.PlanoProjeto = planoProjeto;
-                projeto.DataConclusao = dataConclusao;
                 projeto.Situacao = situacao;
                 Object retorno = crud.save(Convert.ToInt32(Id), projeto);
 

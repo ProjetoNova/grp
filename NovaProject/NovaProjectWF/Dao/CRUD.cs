@@ -17,6 +17,17 @@ namespace NovaProjectWF.Dao
             contexto = new Contexto();
         }
 
+        public virtual Object delete(T objeto)
+        {
+            Object objRetorno = false;
+
+            objRetorno = contexto.Set(typeof(T)).Remove(objeto);
+
+            contexto.SaveChanges();
+
+            return objRetorno;
+        }
+
         public virtual Object insert(T objeto)
         {
             Object objRetorno = null;

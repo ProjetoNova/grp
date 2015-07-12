@@ -62,7 +62,11 @@ namespace NovaProjectWF.View.Projeto
             this.faseProjeto.Projeto = (Models.Projeto)projeto;
 
             this.txtProjeto.Text = this.faseProjeto.Projeto.Titulo;
-             
+
+            this.dtInicio.MinDate = this.faseProjeto.Projeto.DataInicio;
+            this.dtInicio.MaxDate = this.faseProjeto.Projeto.DataPrevisao;
+            this.dtFim.MinDate = this.faseProjeto.Projeto.DataInicio;
+            this.dtFim.MaxDate = this.faseProjeto.Projeto.DataPrevisao;
 
             if (Janela.Fechada(parent, this.GetType()))
             {

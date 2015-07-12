@@ -32,7 +32,7 @@ namespace NovaProjectWF.Controllers.CadastroController
 
         public Object Salvar(string Id, string Nome, string Formacao,
            string Experiencia, string Email, string Login, string senha, string confSenha,
-           string Link, bool Status, int TipoUsuarioId)
+           string Link, bool Status, int TipoUsuarioId, bool Master)
         {
             int IdInt;
             if (Id != string.Empty)
@@ -82,6 +82,7 @@ namespace NovaProjectWF.Controllers.CadastroController
                 usuario.LinkExterno = Link;
                 usuario.Status = Status;
                 usuario.TipoUsuarioId = TipoUsuarioId;
+                usuario.Master = Master;
 
                 Object retorno = crud.save(IdInt, usuario);
 

@@ -37,7 +37,7 @@ namespace NovaProjectWF.View
             if (!SessaoSistema.Administrador)
             {
                 cadastroToolStripMenuItem.Visible = false;
-                meusProjetosToolStripMenuItem.Visible = false;
+                novoProjetoToolStripMenuItem.Visible = false;
             }
         }
 
@@ -94,7 +94,7 @@ namespace NovaProjectWF.View
             if (Janela.Fechada(this, typeof(Projetos)))
                 meusProjetos = new Projetos();
 
-            Janela.Exibir(meusProjetos, this, true);
+            Janela.Exibir(meusProjetos, this, false);
         }
 
         //Menu Novo Projeto
@@ -129,9 +129,7 @@ namespace NovaProjectWF.View
             LoginController control = new LoginController();
 
             control.Logout();
-
-            this.Close();
-
+            
             Janela.Exibir(new Login(), null, false);
         }
 
@@ -184,6 +182,61 @@ namespace NovaProjectWF.View
         {
             timeStatus.Text = DateTime.Now.ToLongDateString() + " " + DateTime.Now.ToLongTimeString();
                // DateTime.Now.ToShortDateString() +" "+ 
+        }
+
+        private void visualizarEmCascataToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MaximizarTudo();
+            this.LayoutMdi(System.Windows.Forms.MdiLayout.Cascade);
+        }
+
+        private void verticalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MaximizarTudo();
+            this.LayoutMdi(System.Windows.Forms.MdiLayout.TileVertical);
+        }
+
+        private void horizontalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MaximizarTudo();
+            this.LayoutMdi(System.Windows.Forms.MdiLayout.TileHorizontal);
+        }
+
+        private void minimizarTudoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (Form form in this.MdiChildren)
+            {
+                if (form.WindowState == FormWindowState.Normal ||
+                    form.WindowState == FormWindowState.Maximized)
+                {
+                    form.WindowState = FormWindowState.Minimized;
+                }
+            }
+        }
+
+        private void restaurarTudoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MaximizarTudo();
+        }
+
+        private void MaximizarTudo()
+        {
+            foreach (Form form in this.MdiChildren)
+            {
+                if (form.WindowState == FormWindowState.Minimized ||
+                    form.WindowState == FormWindowState.Maximized)
+                {
+                    form.WindowState = FormWindowState.Normal;
+                }
+            }
+        }
+
+        private void fecharTudoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (Form form in this.MdiChildren)
+            {
+                form.Close();
+            }
         }
 
     }

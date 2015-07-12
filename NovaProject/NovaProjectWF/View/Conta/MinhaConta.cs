@@ -45,7 +45,8 @@ namespace NovaProjectWF.View.Conta
             user.LinkExterno = txtLink.Text.Trim();
 
             control.Salvar(user.Id+"",user.Nome, user.FormacaoAcademica, user.ExperienciaSistema
-                , user.Email, user.Login, user.Senha, user.Senha, user.LinkExterno, user.Status, user.TipoUsuarioId);
+                , user.Email, user.Login, user.Senha, user.Senha, user.LinkExterno, user.Status, user.TipoUsuarioId, 
+                false);
         }
     }
 }

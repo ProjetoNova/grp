@@ -60,7 +60,6 @@
             this.btnSalvar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.label4 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -382,10 +381,6 @@
             this.txtNome.Size = new System.Drawing.Size(645, 20);
             this.txtNome.TabIndex = 3;
             // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -451,7 +446,6 @@
         private System.Windows.Forms.TextBox txtFase;
         private System.Windows.Forms.TextBox txtProjeto;
         private System.Windows.Forms.TextBox dtFim;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Label label4;
     }
 }

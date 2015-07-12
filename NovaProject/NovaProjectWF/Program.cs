@@ -34,7 +34,7 @@ namespace NovaProjectWF
             if (control.TodosOsDados().Count == 0)
             {
                 tControl.Salvar("0", "Administrador", true, true);
-                control.Salvar("0", "Sistema", "", "", "", "sistema", "1234", "1234", "", true, 1);
+                control.Salvar("0", "Sistema", "", "", "", "sistema", "1234", "1234", "", true, 1, true);
             }
 
             frmSplash.Dispose();

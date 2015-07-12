@@ -32,8 +32,8 @@ namespace NovaProjectWF.Controllers.SessaoController
                 return false;
             }
 
-            SessaoSistema.Administrador = control.BuscarPorId(
-                                            usuarioLogin.TipoUsuarioId+"").Administrador;
+            SessaoSistema.Administrador = (control.BuscarPorId(
+                                            usuarioLogin.TipoUsuarioId+"").Administrador || usuarioLogin.Master);
             SessaoSistema.LoginUsuario = usuarioLogin.Login;
             SessaoSistema.NomeUsuario = usuarioLogin.Nome;
             SessaoSistema.UsuarioId = usuarioLogin.Id;

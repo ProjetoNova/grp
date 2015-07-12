@@ -1,5 +1,6 @@
 ﻿using NovaProjectWF.Dao;
 using NovaProjectWF.Models;
+using NovaProjectWF.Models.NaoPersistido;
 using NovaProjectWF.View.Utilitarios;
 using System;
 using System.Collections.Generic;
@@ -44,20 +45,23 @@ namespace NovaProjectWF.Controllers.ProjetoController
             return crud.GetUsuarioProjeto(ProjetoId, UsuarioId);
         }
 
-        public List<UsuarioProjeto> GetUsuariosDoProjeto(int ProjetoId)
+        public List<EquipeProjeto> GetUsuariosDoProjeto(int ProjetoId)
         {
             crud = new UsuarioProjetoDAO();
             TipoUsuarioDAO tuDao = new TipoUsuarioDAO();
             UsuarioDAO uDao = new UsuarioDAO();
 
             List<UsuarioProjeto> lista = crud.GetUsuariosDoProjeto(ProjetoId);
+            List<EquipeProjeto> listaRetorno = new List<EquipeProjeto>();
 
             for (int i = 0; i < lista.Count; i++)
             {
-                lista[i].Papel = (TipoUsuario)tuDao.select(lista[i].TipoUsuarioId.Value);
-                lista[i].Usuario = (Usuario)uDao.select(lista[i].UsuarioId.Value);
+                EquipeProjeto equipe = new EquipeProjeto();
+                equipe.Papel = ((TipoUsuario)tuDao.select(lista[i].TipoUsuarioId.Value)).Nome;
+                equipe.NomeUsuario = ((Usuario)uDao.select(lista[i].UsuarioId.Value)).Nome;
+                listaRetorno.Add(equipe);
             }
-            return lista;
+            return listaRetorno;
         }
 
         public List<string> GetNomesDoProjeto(int ProjetoId)
@@ -66,15 +70,22 @@ namespace NovaProjectWF.Controllers.ProjetoController
             TipoUsuarioDAO tuDao = new TipoUsuarioDAO();
             UsuarioDAO uDao = new UsuarioDAO();
 
-            List<UsuarioProjeto> lista = GetUsuariosDoProjeto(ProjetoId);
+            List<EquipeProjeto> lista = GetUsuariosDoProjeto(ProjetoId);
             List<string> listaReturn = new List<string>();
 
             foreach (var usuario in lista)
             {
-                listaReturn.Add(((UsuarioProjeto)usuario).Usuario.Nome);
+                listaReturn.Add(((EquipeProjeto)usuario).NomeUsuario);
             }
 
             return listaReturn;
+        }
+
+        public Object ExcluirUsuario(int usuarioProjetoId)
+        {
+            crud = new UsuarioProjetoDAO();
+            return crud.delete((UsuarioProjeto)crud.select(usuarioProjetoId));
+            
         }
     }
 }
