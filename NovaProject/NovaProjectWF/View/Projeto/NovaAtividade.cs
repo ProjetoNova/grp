@@ -113,9 +113,13 @@ namespace NovaProjectWF.View.Projeto
 
             UsuarioProjetoController upc = new UsuarioProjetoController();
             TipoUsuarioController tuc = new TipoUsuarioController();
-            AtivaDesativaCampos(tuc.BuscarPorId(
-                upc.GetUsuarioProjeto(this.atividade.FaseProjeto.ProjetoId,
-                SessaoSistema.UsuarioId).TipoUsuarioId.ToString()).Administrador);
+            UsuarioProjeto up = upc.GetUsuarioProjeto(this.atividade.FaseProjeto.ProjetoId,
+                SessaoSistema.UsuarioId);
+            if(up == null) {
+                AtivaDesativaCampos(false);
+            } else{
+                AtivaDesativaCampos(tuc.BuscarPorId(up.TipoUsuarioId.ToString()).Administrador);
+            }
         }
 
         public void ExibirNova(Form parent, Object FaseProjeto)
