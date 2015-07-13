@@ -128,10 +128,10 @@ namespace NovaProjectWF.View.Projeto
             this.atividade.FaseProjeto = (Models.FaseProjeto)FaseProjeto;
             this.atividade.FaseProjetoId = this.atividade.FaseProjeto.Id;
 
-            this.dtInicio.MinDate = this.atividade.FaseProjeto.DataInicio;
-            this.dtInicio.MaxDate = this.atividade.FaseProjeto.DataFim;
-            this.dtPrevista.MinDate = this.atividade.FaseProjeto.DataInicio;
-            this.dtPrevista.MaxDate = this.atividade.FaseProjeto.DataFim;
+            this.dtInicio.MinDate = this.atividade.FaseProjeto.DataInicio.Date;
+            this.dtInicio.MaxDate = this.atividade.FaseProjeto.DataFim.Date;
+            this.dtPrevista.MinDate = this.atividade.FaseProjeto.DataInicio.Date;
+            this.dtPrevista.MaxDate = this.atividade.FaseProjeto.DataFim.Date;
 
             this.txtProjeto.Text = this.atividade.FaseProjeto.Projeto.Titulo;
             this.txtFase.Text = this.atividade.FaseProjeto.Descricao;
@@ -164,7 +164,6 @@ namespace NovaProjectWF.View.Projeto
             {
                 atividade.TempoEstimado = Validar.HoraToDouble(txtEstimado.Text.Trim());
             }
-            //atividade.TempoGasto = 1;
             if (cbTipoAtividade.SelectedItem != null)
             {
                 atividade.TipoAtividade = tControl.BuscarPorNome(cbTipoAtividade.SelectedItem.ToString())[0];
@@ -174,11 +173,19 @@ namespace NovaProjectWF.View.Projeto
             {
                 atividade.Colaborador = userControl.BuscarPorNome(cbAtribuidoPara.SelectedItem.ToString())[0];
             }
-            //atividade.DataFim = Convert.ToDateTime(dtFim.Text.Trim());
             atividade.DataInicio = Convert.ToDateTime(dtInicio.Value);
             atividade.DataPrevista = Convert.ToDateTime(dtPrevista.Value);
             atividade.Descricao = txtDescricao.Text;
-            atividade.FaseProjeto = this.atividade.FaseProjeto;//fControl.BuscarPorNome(this.atividade. txtFase.Text.Trim())[0];
+            atividade.FaseProjeto = this.atividade.FaseProjeto;
+           
+            if (dtFim == null || dtFim.Text.Trim() == string.Empty)
+            {
+                atividade.DataFim = null;
+            }
+            else
+            {
+                atividade.DataFim = Convert.ToDateTime(dtFim.Text.Trim());
+            }
 
             Object retorno = control.Salvar(label1.Text.Replace("#","").Trim(), atividade.Prioridade, atividade.SituacaoAtividade, atividade.TempoEstimado,
                 atividade.TempoGasto, atividade.TipoAtividade, atividade.Titulo, atividade.Colaborador, atividade.DataFim,
@@ -196,6 +203,8 @@ namespace NovaProjectWF.View.Projeto
                 }
                 else
                 {
+                    if (control.BuscarPorId(label1.Text.Trim().Replace("#", "")).DataFim != null)
+                        dtFim.Text = control.BuscarPorId(label1.Text.Trim().Replace("#", "")).DataFim.Value.ToString();
                     Mensagem.Informacao("Salvo com sucesso");
                 }
             }

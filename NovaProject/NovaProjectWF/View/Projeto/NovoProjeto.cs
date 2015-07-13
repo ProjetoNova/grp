@@ -24,7 +24,7 @@ namespace NovaProjectWF.View.Projeto
         Models.Projeto projeto;
         List<Models.FaseProjeto> fases;
         List<EquipeProjeto> equipe;
-        List<Models.Atividade> atividades;
+        List<AtividadeProjeto> atividades;
 
         public NovoProjeto()
         {
@@ -213,8 +213,9 @@ namespace NovaProjectWF.View.Projeto
         {
             if (gridAtividade.SelectedRows.Count > 0)
             {
+                AtividadeController control = new AtividadeController();
                 NovaAtividade atv = new NovaAtividade(this, Convert.ToInt32(lblId.Text.Trim()));
-                Atividade atv_ = atividades[gridAtividade.SelectedRows[0].Index];
+                Atividade atv_ =  control.BuscarPorId(atividades[gridAtividade.SelectedRows[0].Index].Id);
                 atv.Exibir(this.MdiParent, atv_);
             }
         }
@@ -297,24 +298,16 @@ namespace NovaProjectWF.View.Projeto
                 gridAtividade.DataSource = null;
                 gridAtividade.DataSource = atividades;
                 gridAtividade.Refresh();
-
-                this.gridAtividade.Columns["FaseProjetoId"].Visible = false;
-                this.gridAtividade.Columns["UsuarioId"].Visible = false;
-                this.gridAtividade.Columns["TipoAtividadeId"].Visible = false;
-                this.gridAtividade.Columns["FaseProjeto"].Visible = false;
-                this.gridAtividade.Columns["Colaborador"].Visible = false;
-                this.gridAtividade.Columns["TipoAtividade"].Visible = false;
-                this.gridAtividade.Columns["Anexos"].Visible = false;
-                this.gridAtividade.Columns["Descricao"].Visible = false;
-                this.gridAtividade.Columns["TempoEstimado"].Visible = false;
-                this.gridAtividade.Columns["TempoGasto"].Visible = false;
-                this.gridAtividade.Columns["SituacaoAtividadeId"].Visible = false;
-                this.gridAtividade.Columns["SituacaoAtividadeId"].Visible = false;
+                
             }
         }
 
-        //IGNORE THIS METHODS
-        private void gridFase_CellContentClick(object sender, DataGridViewCellEventArgs e){}
+        //atualiza grid de atividade ao clicar na fase
+        private void gridFase_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            gridAtividadesRefresh();
+        }
+        //IGNORE THIS METHOD
         private void dtInicio_MaskInputRejected(object sender, MaskInputRejectedEventArgs e){}
 
         

@@ -7,6 +7,8 @@ using NovaProjectWF.Models;
 using NovaProjectWF.View.Utilitarios;
 using NovaProjectWF.Dao;
 using NovaProjectWF.Models.Enumerados;
+using NovaProjectWF.Controllers.CadastroController;
+using NovaProjectWF.Models.NaoPersistido;
 
 namespace NovaProjectWF.Controllers.ProjetoController
 {
@@ -19,13 +21,30 @@ namespace NovaProjectWF.Controllers.ProjetoController
             crud = new AtividadeDAO();
         }
 
-        public List<Atividade> GetAtividadesDaFase(int FaseProjetoId)
+        public List<AtividadeProjeto> GetAtividadesDaFase(int FaseProjetoId)
         {
             crud = new AtividadeDAO();
 
             List<Atividade> lista = crud.GetAtividadesDaFase(FaseProjetoId);
 
-            return lista;
+            List<AtividadeProjeto> listaRetonrno = new List<AtividadeProjeto>();
+
+            SituacaoAtividadeController control = new SituacaoAtividadeController();
+
+            foreach (Atividade item in lista)
+            {
+                AtividadeProjeto atp = new AtividadeProjeto();
+                atp.Id = item.Id+"";
+                atp.Situacao = control.BuscarPorId(item.SituacaoAtividadeId + "").Nome;
+                atp.Titulo = item.Titulo;
+                atp.Prioridade = Prioridade.GetValue(item.Prioridade);
+                atp.dtInicio = item.DataInicio;
+                atp.dtPrevista = item.DataPrevista;
+                atp.dtFim = Convert.ToDateTime(item.DataFim);
+                listaRetonrno.Add(atp);
+            }
+
+            return listaRetonrno;
         }
 
         public Object Salvar(string Id, EPrioridade prioridade, SituacaoAtividade situacaoAtividade, 
@@ -62,7 +81,7 @@ namespace NovaProjectWF.Controllers.ProjetoController
             {
                 Mensagem.Erro("Tempo Estimado não pode ser Nulo!");
             }
-            else if (dataPrevista < dataInicio)
+            else if (dataPrevista.Date < dataInicio.Date)
             {
                 Mensagem.Erro("Data Prevista não pode ser menor que data Início!");
             }
@@ -73,6 +92,10 @@ namespace NovaProjectWF.Controllers.ProjetoController
                 if (situacaoAtividade.Concluida && dataFim == null)
                 {
                     atividade.DataFim = Convert.ToDateTime(DateTime.Now);
+                }
+                else
+                {
+                    atividade.DataFim = dataFim;
                 }
 
                 atividade.Prioridade = prioridade;

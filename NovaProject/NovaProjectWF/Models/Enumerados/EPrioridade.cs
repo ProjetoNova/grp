@@ -33,6 +33,37 @@ namespace NovaProjectWF.Models.Enumerados
             return lista;
         }
 
+        public static string GetValue(EPrioridade prioridade)
+        {
+            string ret = "";
+
+            switch (prioridade)
+            {
+                case EPrioridade.MUITO_BAIXA:
+                    ret = "Muito Baixa";
+                    break;
+                case EPrioridade.BAIXA:
+                    ret = "Baixa";
+                    break;
+                case EPrioridade.NORMAL:
+                    ret = "Normal";
+                    break;
+                case EPrioridade.ALTA:
+                    ret = "Alta";
+                    break;
+                case EPrioridade.MUITO_ALTA:
+                    ret = "Muito Alta";
+                    break;
+                case EPrioridade.URGENTE:
+                    ret = "Urgente";
+                    break;
+                default:
+                    break;
+            }
+
+            return ret;
+        }
+
         //retorna o index
         public static int GetIndex(EPrioridade prioridade)
         {

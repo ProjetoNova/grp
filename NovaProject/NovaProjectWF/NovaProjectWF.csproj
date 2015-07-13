@@ -161,6 +161,7 @@
     <Compile Include="Models\Enumerados\ESituacaoProjeto.cs" />
     <Compile Include="Models\FaseProjeto.cs" />
     <Compile Include="Models\Interfaces\IEntidade.cs" />
+    <Compile Include="Models\NaoPersistido\AtividadeProjeto.cs" />
     <Compile Include="Models\NaoPersistido\EquipeProjeto.cs" />
     <Compile Include="Models\Projeto.cs" />
     <Compile Include="Models\SituacaoAtividade.cs" />

@@ -32,7 +32,7 @@ namespace NovaProjectWF.Controllers.ProjetoController
             {
                 Mensagem.Erro("Descrição não pode ser nula!");
             }
-            else if (DataInicio > DataFim)
+            else if (DataInicio.Date > DataFim.Date)
             {
                 Mensagem.Erro("Data Fim não pode ser menor que Data Início!");
             }

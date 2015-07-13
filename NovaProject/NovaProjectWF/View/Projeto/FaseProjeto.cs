@@ -109,5 +109,13 @@ namespace NovaProjectWF.View.Projeto
                 Mensagem.Informacao("Salvo com sucesso");
             }
         }
+
+        private void btnNova_Click(object sender, EventArgs e)
+        {
+            lblId.Text = "";
+            txtDescricao.Text = "";
+            dtInicio.Text = DateTime.Today.ToString();
+            dtFim.Text = DateTime.Today.ToString();
+        }
     }
 }

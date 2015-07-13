@@ -55,7 +55,7 @@ namespace NovaProjectWF.Controllers.ProjetoController
                 DateTime dtDataInicio = Convert.ToDateTime(dataInicio);
                 DateTime dtDataPrevista = Convert.ToDateTime(dataPrevista);
 
-                if (dtDataPrevista < dtDataInicio)
+                if (dtDataPrevista.Date < dtDataInicio.Date)
                 {
                     Mensagem.Erro("Data Prevista não pode ser anterior a data de Início");
 

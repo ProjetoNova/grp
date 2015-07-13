@@ -147,6 +147,7 @@
             this.btnNova.TabIndex = 11;
             this.btnNova.Text = "Nova";
             this.btnNova.UseVisualStyleBackColor = true;
+            this.btnNova.Click += new System.EventHandler(this.btnNova_Click);
             // 
             // checkAtivo
             // 
