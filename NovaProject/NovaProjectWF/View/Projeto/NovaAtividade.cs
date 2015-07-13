@@ -115,7 +115,7 @@ namespace NovaProjectWF.View.Projeto
             TipoUsuarioController tuc = new TipoUsuarioController();
             UsuarioProjeto up = upc.GetUsuarioProjeto(this.atividade.FaseProjeto.ProjetoId,
                 SessaoSistema.UsuarioId);
-            if(up == null&&!SessaoSistema.Administrador) {
+            if(up == null||!SessaoSistema.Administrador) {
                 AtivaDesativaCampos(false);
             } else{
                 AtivaDesativaCampos(tuc.BuscarPorId(up.TipoUsuarioId.ToString()).Administrador);
