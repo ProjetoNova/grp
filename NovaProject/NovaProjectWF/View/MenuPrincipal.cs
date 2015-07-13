@@ -126,11 +126,7 @@ namespace NovaProjectWF.View
 
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            LoginController control = new LoginController();
-
-            control.Logout();
-            
-            Janela.Exibir(new Login(), null, false);
+            this.Close();
         }
 
         private void MenuPrincipal_Load(object sender, EventArgs e)
