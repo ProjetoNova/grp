@@ -13,6 +13,7 @@ using NovaProjectWF.View.Projeto;
 using NovaProjectWF.View.Cadastro;
 using NovaProjectWF.Dao;
 using NovaProjectWF.Controllers.SessaoController;
+using NovaProjectWF.View.Relatorios;
 namespace NovaProjectWF.View
 {
     public partial class MenuPrincipal : Form
@@ -237,6 +238,13 @@ namespace NovaProjectWF.View
             {
                 form.Close();
             }
+        }
+
+        private void relatórioDeProjetosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RelProjeto relProj = new RelProjeto();
+
+            Janela.Exibir(relProj, this, true);
         }
 
     }

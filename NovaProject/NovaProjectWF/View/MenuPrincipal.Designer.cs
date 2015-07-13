@@ -58,6 +58,7 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.timeStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.relatórioDeProjetosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -151,6 +152,8 @@
             // 
             // relatóriosToolStripMenuItem
             // 
+            this.relatóriosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.relatórioDeProjetosToolStripMenuItem});
             this.relatóriosToolStripMenuItem.Name = "relatóriosToolStripMenuItem";
             this.relatóriosToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.relatóriosToolStripMenuItem.Text = "Relatórios";
@@ -294,6 +297,13 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // relatórioDeProjetosToolStripMenuItem
+            // 
+            this.relatórioDeProjetosToolStripMenuItem.Name = "relatórioDeProjetosToolStripMenuItem";
+            this.relatórioDeProjetosToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.relatórioDeProjetosToolStripMenuItem.Text = "Relatório de Projetos";
+            this.relatórioDeProjetosToolStripMenuItem.Click += new System.EventHandler(this.relatórioDeProjetosToolStripMenuItem_Click);
+            // 
             // MenuPrincipal
             // 
             this.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuBar;
@@ -348,5 +358,6 @@
         private System.Windows.Forms.ToolStripMenuItem restaurarTudoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fecharTudoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem relatóriosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem relatórioDeProjetosToolStripMenuItem;
     }
 }
