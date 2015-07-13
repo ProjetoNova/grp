@@ -15,14 +15,14 @@ namespace NovaProjectWF.View.Utilitarios
 {
     public partial class CadastroUsuario : Form
     {
-
         List<Usuario> listaControle;
+        List<string> lista;
         public CadastroUsuario()
         {
             InitializeComponent();
             TipoUsuarioController control = new TipoUsuarioController();
 
-            List<string> lista = new List<string>();
+            lista = new List<string>();
 
             foreach(TipoUsuario t in control.TodosOsDados()) {
                 if(t.Status)
@@ -135,6 +135,37 @@ namespace NovaProjectWF.View.Utilitarios
 
             this.gridUsuario.Columns["Id"].Width = 20;
         
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            Usuario usuario = null;
+
+            foreach (DataGridViewRow row in gridUsuario.SelectedRows)
+            {
+                usuario = listaControle[row.Index];
+            }
+
+            if (usuario != null)
+            {
+                lblId.Text = usuario.Id + "";
+                txtNome.Text = usuario.Nome;
+                cbAtivo.Checked = usuario.Status;
+                txtEmail.Text = usuario.Email;
+                txtLogin.Text = usuario.Login;
+                txtSenha.Text = usuario.Senha;
+                txtConfSenha.Text = usuario.Senha;
+                txtExperiencia.Text = usuario.ExperienciaSistema;
+                txtFormacao.Text = usuario.FormacaoAcademica;
+                txtLink.Text = usuario.LinkExterno;
+
+                TipoUsuarioController controlTipo = new TipoUsuarioController();
+
+                cbTipoUsuario.SelectedIndex = 
+                    lista.IndexOf(controlTipo.BuscarPorId(usuario.TipoUsuarioId + "").Nome);
+
+                tabControl1.SelectedIndex = 0;
+            }
         }
     }
 }
