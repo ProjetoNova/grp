@@ -302,7 +302,6 @@
             this.relatórioDeProjetosToolStripMenuItem.Name = "relatórioDeProjetosToolStripMenuItem";
             this.relatórioDeProjetosToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.relatórioDeProjetosToolStripMenuItem.Text = "Relatório de Projetos";
-            this.relatórioDeProjetosToolStripMenuItem.Click += new System.EventHandler(this.relatórioDeProjetosToolStripMenuItem_Click);
             // 
             // MenuPrincipal
             // 
