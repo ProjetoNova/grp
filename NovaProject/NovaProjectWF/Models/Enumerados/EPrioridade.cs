@@ -101,7 +101,7 @@ namespace NovaProjectWF.Models.Enumerados
         {
             if (value.Equals("Muito Baixa"))
             {
-                return EPrioridade.MUITO_ALTA;
+                return EPrioridade.MUITO_BAIXA;
             }
 
             if (value.Equals("Baixa"))

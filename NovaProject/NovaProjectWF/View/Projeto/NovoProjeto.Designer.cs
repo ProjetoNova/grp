@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPlano = new System.Windows.Forms.TabPage();
+            this.txtPlanoProjeto = new System.Windows.Forms.RichTextBox();
             this.tabProjeto = new System.Windows.Forms.TabPage();
             this.dtPrevista = new System.Windows.Forms.DateTimePicker();
             this.dtInicio = new System.Windows.Forms.DateTimePicker();
@@ -62,11 +64,10 @@
             this.gridFase = new System.Windows.Forms.DataGridView();
             this.btnEditarFase = new System.Windows.Forms.Button();
             this.btnNovaFase = new System.Windows.Forms.Button();
-            this.tabPlano = new System.Windows.Forms.TabPage();
-            this.txtPlanoProjeto = new System.Windows.Forms.RichTextBox();
             this.btnNovo = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
+            this.tabPlano.SuspendLayout();
             this.tabProjeto.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridEquipe)).BeginInit();
@@ -75,7 +76,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridAtividade)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridFase)).BeginInit();
-            this.tabPlano.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -83,35 +83,48 @@
             this.tabControl1.Controls.Add(this.tabPlano);
             this.tabControl1.Controls.Add(this.tabProjeto);
             this.tabControl1.Controls.Add(this.tabFase);
-            this.tabControl1.Location = new System.Drawing.Point(12, 41);
+            this.tabControl1.Location = new System.Drawing.Point(12, 81);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(816, 518);
+            this.tabControl1.Size = new System.Drawing.Size(816, 478);
             this.tabControl1.TabIndex = 0;
+            // 
+            // tabPlano
+            // 
+            this.tabPlano.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPlano.Controls.Add(this.txtPlanoProjeto);
+            this.tabPlano.Location = new System.Drawing.Point(4, 22);
+            this.tabPlano.Name = "tabPlano";
+            this.tabPlano.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPlano.Size = new System.Drawing.Size(808, 452);
+            this.tabPlano.TabIndex = 2;
+            this.tabPlano.Text = "Plano de Projeto";
+            // 
+            // txtPlanoProjeto
+            // 
+            this.txtPlanoProjeto.Location = new System.Drawing.Point(0, 0);
+            this.txtPlanoProjeto.Name = "txtPlanoProjeto";
+            this.txtPlanoProjeto.Size = new System.Drawing.Size(812, 492);
+            this.txtPlanoProjeto.TabIndex = 0;
+            this.txtPlanoProjeto.Text = "";
             // 
             // tabProjeto
             // 
             this.tabProjeto.BackColor = System.Drawing.SystemColors.Control;
             this.tabProjeto.Controls.Add(this.dtPrevista);
             this.tabProjeto.Controls.Add(this.dtInicio);
-            this.tabProjeto.Controls.Add(this.lblId);
-            this.tabProjeto.Controls.Add(this.label8);
             this.tabProjeto.Controls.Add(this.lblStatus);
             this.tabProjeto.Controls.Add(this.dtFim);
             this.tabProjeto.Controls.Add(this.label2);
             this.tabProjeto.Controls.Add(this.groupBox2);
-            this.tabProjeto.Controls.Add(this.cbSituacao);
-            this.tabProjeto.Controls.Add(this.label7);
             this.tabProjeto.Controls.Add(this.txtDescricao);
             this.tabProjeto.Controls.Add(this.label6);
             this.tabProjeto.Controls.Add(this.label5);
             this.tabProjeto.Controls.Add(this.label4);
-            this.tabProjeto.Controls.Add(this.txtNome);
-            this.tabProjeto.Controls.Add(this.label3);
             this.tabProjeto.Location = new System.Drawing.Point(4, 22);
             this.tabProjeto.Name = "tabProjeto";
             this.tabProjeto.Padding = new System.Windows.Forms.Padding(3);
-            this.tabProjeto.Size = new System.Drawing.Size(808, 492);
+            this.tabProjeto.Size = new System.Drawing.Size(808, 452);
             this.tabProjeto.TabIndex = 0;
             this.tabProjeto.Text = "Projeto";
             // 
@@ -134,7 +147,7 @@
             // lblId
             // 
             this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(31, 7);
+            this.lblId.Location = new System.Drawing.Point(47, 55);
             this.lblId.Name = "lblId";
             this.lblId.Size = new System.Drawing.Size(0, 13);
             this.lblId.TabIndex = 25;
@@ -142,7 +155,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 7);
+            this.label8.Location = new System.Drawing.Point(13, 55);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(19, 13);
             this.label8.TabIndex = 24;
@@ -159,7 +172,7 @@
             // dtFim
             // 
             this.dtFim.Enabled = false;
-            this.dtFim.Location = new System.Drawing.Point(564, 83);
+            this.dtFim.Location = new System.Drawing.Point(554, 55);
             this.dtFim.Mask = "00/00/0000";
             this.dtFim.Name = "dtFim";
             this.dtFim.Size = new System.Drawing.Size(68, 20);
@@ -169,7 +182,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(478, 87);
+            this.label2.Location = new System.Drawing.Point(478, 58);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 13);
             this.label2.TabIndex = 21;
@@ -184,9 +197,9 @@
             this.groupBox2.Controls.Add(this.gridEquipe);
             this.groupBox2.Controls.Add(this.btnExcluirUsuario);
             this.groupBox2.Controls.Add(this.btnIncluirUsuario);
-            this.groupBox2.Location = new System.Drawing.Point(9, 118);
+            this.groupBox2.Location = new System.Drawing.Point(9, 93);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(791, 368);
+            this.groupBox2.Size = new System.Drawing.Size(791, 359);
             this.groupBox2.TabIndex = 20;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Equipe do Projeto";
@@ -237,7 +250,7 @@
             this.gridEquipe.Name = "gridEquipe";
             this.gridEquipe.ReadOnly = true;
             this.gridEquipe.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridEquipe.Size = new System.Drawing.Size(778, 312);
+            this.gridEquipe.Size = new System.Drawing.Size(778, 303);
             this.gridEquipe.TabIndex = 2;
             // 
             // btnExcluirUsuario
@@ -264,7 +277,7 @@
             // 
             this.cbSituacao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSituacao.FormattingEnabled = true;
-            this.cbSituacao.Location = new System.Drawing.Point(564, 43);
+            this.cbSituacao.Location = new System.Drawing.Point(644, 52);
             this.cbSituacao.Name = "cbSituacao";
             this.cbSituacao.Size = new System.Drawing.Size(180, 21);
             this.cbSituacao.TabIndex = 5;
@@ -272,7 +285,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(478, 46);
+            this.label7.Location = new System.Drawing.Point(567, 55);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(59, 13);
             this.label7.TabIndex = 19;
@@ -280,7 +293,7 @@
             // 
             // txtDescricao
             // 
-            this.txtDescricao.Location = new System.Drawing.Point(79, 46);
+            this.txtDescricao.Location = new System.Drawing.Point(79, 10);
             this.txtDescricao.MaxLength = 300;
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.Size = new System.Drawing.Size(393, 61);
@@ -290,7 +303,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 46);
+            this.label6.Location = new System.Drawing.Point(6, 13);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(65, 13);
             this.label6.TabIndex = 17;
@@ -317,16 +330,16 @@
             // txtNome
             // 
             this.txtNome.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txtNome.Location = new System.Drawing.Point(120, 7);
+            this.txtNome.Location = new System.Drawing.Point(143, 55);
             this.txtNome.MaxLength = 70;
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(352, 20);
+            this.txtNome.Size = new System.Drawing.Size(403, 20);
             this.txtNome.TabIndex = 1;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(76, 10);
+            this.label3.Location = new System.Drawing.Point(92, 55);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(45, 13);
             this.label3.TabIndex = 9;
@@ -342,7 +355,7 @@
             this.tabFase.Location = new System.Drawing.Point(4, 22);
             this.tabFase.Name = "tabFase";
             this.tabFase.Padding = new System.Windows.Forms.Padding(3);
-            this.tabFase.Size = new System.Drawing.Size(808, 492);
+            this.tabFase.Size = new System.Drawing.Size(808, 452);
             this.tabFase.TabIndex = 1;
             this.tabFase.Text = "Fases do Projeto";
             // 
@@ -353,7 +366,7 @@
             this.groupBox4.Controls.Add(this.gridAtividade);
             this.groupBox4.Location = new System.Drawing.Point(7, 185);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(795, 301);
+            this.groupBox4.Size = new System.Drawing.Size(795, 264);
             this.groupBox4.TabIndex = 6;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Atividade (Selecione uma Fase)";
@@ -388,7 +401,7 @@
             this.gridAtividade.Name = "gridAtividade";
             this.gridAtividade.ReadOnly = true;
             this.gridAtividade.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridAtividade.Size = new System.Drawing.Size(782, 247);
+            this.gridAtividade.Size = new System.Drawing.Size(782, 213);
             this.gridAtividade.TabIndex = 0;
             // 
             // groupBox3
@@ -435,25 +448,6 @@
             this.btnNovaFase.UseVisualStyleBackColor = true;
             this.btnNovaFase.Click += new System.EventHandler(this.btnNovaFase_Click);
             // 
-            // tabPlano
-            // 
-            this.tabPlano.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPlano.Controls.Add(this.txtPlanoProjeto);
-            this.tabPlano.Location = new System.Drawing.Point(4, 22);
-            this.tabPlano.Name = "tabPlano";
-            this.tabPlano.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPlano.Size = new System.Drawing.Size(808, 492);
-            this.tabPlano.TabIndex = 2;
-            this.tabPlano.Text = "Plano de Projeto";
-            // 
-            // txtPlanoProjeto
-            // 
-            this.txtPlanoProjeto.Location = new System.Drawing.Point(0, 0);
-            this.txtPlanoProjeto.Name = "txtPlanoProjeto";
-            this.txtPlanoProjeto.Size = new System.Drawing.Size(812, 492);
-            this.txtPlanoProjeto.TabIndex = 0;
-            this.txtPlanoProjeto.Text = "";
-            // 
             // btnNovo
             // 
             this.btnNovo.Location = new System.Drawing.Point(94, 12);
@@ -482,12 +476,19 @@
             this.ClientSize = new System.Drawing.Size(841, 571);
             this.Controls.Add(this.btnNovo);
             this.Controls.Add(this.btnSalvar);
+            this.Controls.Add(this.lblId);
             this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.cbSituacao);
+            this.Controls.Add(this.txtNome);
+            this.Controls.Add(this.label7);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "NovoProjeto";
             this.Text = "Projeto";
             this.tabControl1.ResumeLayout(false);
+            this.tabPlano.ResumeLayout(false);
             this.tabProjeto.ResumeLayout(false);
             this.tabProjeto.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -498,8 +499,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridAtividade)).EndInit();
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridFase)).EndInit();
-            this.tabPlano.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

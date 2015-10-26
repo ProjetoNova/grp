@@ -91,8 +91,13 @@ namespace NovaProjectWF.View.Projeto
         {
             ProjetoController control = new ProjetoController();
 
+            string conteudo = "";
+
+            if (txtPlanoProjeto.Text.Trim() != string.Empty)
+                conteudo = txtPlanoProjeto.Rtf;
+
             Object retorno = control.Salvar(lblId.Text.Trim(), txtNome.Text.Trim(), txtDescricao.Text.Trim(),
-                dtInicio.Text.Trim(), dtPrevista.Text.Trim(), Validar.GetBytes(txtPlanoProjeto.Rtf), 
+                dtInicio.Text.Trim(), dtPrevista.Text.Trim(), Validar.GetBytes(conteudo), 
                 "", SituacaoProjeto.GetEnum(cbSituacao.SelectedValue.ToString()));
 
             if (retorno == null)

@@ -30,11 +30,18 @@ namespace NovaProjectWF
 
             UsuarioController control = new UsuarioController();
             TipoUsuarioController tControl = new TipoUsuarioController();
+            SituacaoAtividadeController saControl = new SituacaoAtividadeController();
+            TipoAtividadeController taControl = new TipoAtividadeController();
 
             if (control.TodosOsDados().Count == 0)
             {
                 tControl.Salvar("0", "Administrador", true, true);
                 control.Salvar("0", "Sistema", "", "", "", "sistema", "1234", "1234", "", true, 1, true);
+                saControl.Salvar("0", "Não Iniciada", true, false);
+                saControl.Salvar("0", "Iniciada", true, false);
+                saControl.Salvar("0", "Concluída", true, true);
+                taControl.Salvar("0", "Desenvolvimento", true);
+
             }
 
             frmSplash.Dispose();

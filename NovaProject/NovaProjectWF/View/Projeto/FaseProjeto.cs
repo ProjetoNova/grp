@@ -1,4 +1,5 @@
-﻿using NovaProjectWF.Controllers.ProjetoController;
+﻿using NovaProjectWF.Controllers;
+using NovaProjectWF.Controllers.ProjetoController;
 using NovaProjectWF.View.Utilitarios;
 using System;
 using System.Collections.Generic;
@@ -44,10 +45,10 @@ namespace NovaProjectWF.View.Projeto
             this.txtDescricao.Text = this.faseProjeto.Descricao;
             this.dtInicio.Value = this.faseProjeto.DataInicio;
             this.dtFim.Value = this.faseProjeto.DataFim;
-            this.dtInicio.MinDate = this.faseProjeto.Projeto.DataInicio;
-            this.dtInicio.MaxDate = this.faseProjeto.Projeto.DataPrevisao;
-            this.dtFim.MinDate = this.faseProjeto.Projeto.DataInicio;
-            this.dtFim.MaxDate = this.faseProjeto.Projeto.DataPrevisao;
+            this.dtInicio.MinDate = this.faseProjeto.Projeto.DataInicio.Value;
+            this.dtInicio.MaxDate = this.faseProjeto.Projeto.DataPrevisao.Value;
+            this.dtFim.MinDate = this.faseProjeto.Projeto.DataInicio.Value;
+            this.dtFim.MaxDate = this.faseProjeto.Projeto.DataPrevisao.Value;
 
             if (Janela.Fechada(parent, this.GetType())) {
                 Janela.Exibir(this, parent, true);
@@ -67,10 +68,10 @@ namespace NovaProjectWF.View.Projeto
 
             this.txtProjeto.Text = this.faseProjeto.Projeto.Titulo;
 
-            this.dtInicio.MinDate = this.faseProjeto.Projeto.DataInicio;
-            this.dtInicio.MaxDate = this.faseProjeto.Projeto.DataPrevisao;
-            this.dtFim.MinDate = this.faseProjeto.Projeto.DataInicio;
-            this.dtFim.MaxDate = this.faseProjeto.Projeto.DataPrevisao;
+            this.dtInicio.MinDate = this.faseProjeto.Projeto.DataInicio.Value;
+            this.dtInicio.MaxDate = this.faseProjeto.Projeto.DataPrevisao.Value;
+            this.dtFim.MinDate = this.faseProjeto.Projeto.DataInicio.Value;
+            this.dtFim.MaxDate = this.faseProjeto.Projeto.DataPrevisao.Value;
 
             if (Janela.Fechada(parent, this.GetType()))
             {

@@ -140,6 +140,7 @@ namespace NovaProjectWF.View.Projeto
 
             this.txtProjeto.Text = this.atividade.FaseProjeto.Projeto.Titulo;
             this.txtFase.Text = this.atividade.FaseProjeto.Descricao;
+            this.cbSituacao.Enabled = false;
 
             if (Janela.Fechada(parent, this.GetType()))
             {

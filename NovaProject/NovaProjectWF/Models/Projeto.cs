@@ -21,13 +21,11 @@ namespace NovaProjectWF.Models
            [InverseProperty("Projeto")]
            public virtual ICollection<UsuarioProjeto> Usuarios { get; set; }
            [Required]
-           public string Titulo { get; set; } //troquei 'Nome' por 'Titulo'
+           public string Titulo { get; set; } 
            [Required]
            public string Descricao { get; set; }
-           [Required]
-           public DateTime DataInicio { get; set; }
-           [Required]
-           public DateTime DataPrevisao {get; set; }
+           public DateTime? DataInicio { get; set; }
+           public DateTime? DataPrevisao {get; set; }
            public DateTime? DataConclusao { get; set; }
            [Required]
            public byte[] PlanoProjeto { get; set; }
