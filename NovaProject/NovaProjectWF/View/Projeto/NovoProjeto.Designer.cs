@@ -63,7 +63,7 @@
             this.btnEditarFase = new System.Windows.Forms.Button();
             this.btnNovaFase = new System.Windows.Forms.Button();
             this.tabPlano = new System.Windows.Forms.TabPage();
-            this.txtPlanoProjeto = new RicherTextBox.RicherTextBox();
+            this.txtPlanoProjeto = new System.Windows.Forms.RichTextBox();
             this.btnNovo = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
@@ -80,10 +80,10 @@
             // 
             // tabControl1
             // 
+            this.tabControl1.Controls.Add(this.tabPlano);
             this.tabControl1.Controls.Add(this.tabProjeto);
             this.tabControl1.Controls.Add(this.tabFase);
-            this.tabControl1.Controls.Add(this.tabPlano);
-            this.tabControl1.Location = new System.Drawing.Point(13, 41);
+            this.tabControl1.Location = new System.Drawing.Point(12, 41);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(816, 518);
@@ -448,50 +448,11 @@
             // 
             // txtPlanoProjeto
             // 
-            this.txtPlanoProjeto.AlignCenterVisible = false;
-            this.txtPlanoProjeto.AlignLeftVisible = false;
-            this.txtPlanoProjeto.AlignRightVisible = false;
-            this.txtPlanoProjeto.BoldVisible = false;
-            this.txtPlanoProjeto.BulletsVisible = false;
-            this.txtPlanoProjeto.ChooseFontVisible = false;
-            this.txtPlanoProjeto.FindReplaceVisible = false;
-            this.txtPlanoProjeto.FontColorVisible = false;
-            this.txtPlanoProjeto.FontFamilyVisible = false;
-            this.txtPlanoProjeto.FontSizeVisible = false;
-            this.txtPlanoProjeto.GroupAlignmentVisible = false;
-            this.txtPlanoProjeto.GroupBoldUnderlineItalicVisible = false;
-            this.txtPlanoProjeto.GroupFontColorVisible = false;
-            this.txtPlanoProjeto.GroupFontNameAndSizeVisible = false;
-            this.txtPlanoProjeto.GroupIndentationAndBulletsVisible = false;
-            this.txtPlanoProjeto.GroupInsertVisible = false;
-            this.txtPlanoProjeto.GroupSaveAndLoadVisible = false;
-            this.txtPlanoProjeto.GroupZoomVisible = false;
-            this.txtPlanoProjeto.INDENT = 10;
-            this.txtPlanoProjeto.IndentVisible = false;
-            this.txtPlanoProjeto.InsertPictureVisible = false;
-            this.txtPlanoProjeto.ItalicVisible = false;
-            this.txtPlanoProjeto.LoadVisible = false;
             this.txtPlanoProjeto.Location = new System.Drawing.Point(0, 0);
             this.txtPlanoProjeto.Name = "txtPlanoProjeto";
-            this.txtPlanoProjeto.OutdentVisible = false;
-            this.txtPlanoProjeto.Rtf = "{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1046{\\fonttbl{\\f0\\fnil\\fcharset204 Microsoft" +
-    " Sans Serif;}}\r\n\\viewkind4\\uc1\\pard\\f0\\fs18\\par\r\n}\r\n";
-            this.txtPlanoProjeto.SaveVisible = false;
-            this.txtPlanoProjeto.SeparatorAlignVisible = false;
-            this.txtPlanoProjeto.SeparatorBoldUnderlineItalicVisible = false;
-            this.txtPlanoProjeto.SeparatorFontColorVisible = false;
-            this.txtPlanoProjeto.SeparatorFontVisible = false;
-            this.txtPlanoProjeto.SeparatorIndentAndBulletsVisible = false;
-            this.txtPlanoProjeto.SeparatorInsertVisible = false;
-            this.txtPlanoProjeto.SeparatorSaveLoadVisible = false;
             this.txtPlanoProjeto.Size = new System.Drawing.Size(812, 492);
             this.txtPlanoProjeto.TabIndex = 0;
-            this.txtPlanoProjeto.ToolStripVisible = false;
-            this.txtPlanoProjeto.UnderlineVisible = false;
-            this.txtPlanoProjeto.WordWrapVisible = false;
-            this.txtPlanoProjeto.ZoomFactorTextVisible = false;
-            this.txtPlanoProjeto.ZoomInVisible = false;
-            this.txtPlanoProjeto.ZoomOutVisible = false;
+            this.txtPlanoProjeto.Text = "";
             // 
             // btnNovo
             // 
@@ -579,7 +540,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnEditarAtividade;
         private System.Windows.Forms.Button btnNovaAtividade;
-        private RicherTextBox.RicherTextBox txtPlanoProjeto;
+        private System.Windows.Forms.RichTextBox txtPlanoProjeto;
         private System.Windows.Forms.DateTimePicker dtInicio;
         private System.Windows.Forms.DateTimePicker dtPrevista;
 

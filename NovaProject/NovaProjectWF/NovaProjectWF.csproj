@@ -378,12 +378,6 @@
     <None Include="Resources\loading.gif" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\RicherTextBox\RicherTextBox.csproj">
-      <Project>{8f3074d8-e771-4c5e-a11e-0c0fbae34ae3}</Project>
-      <Name>RicherTextBox</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\carregando.png" />
   </ItemGroup>
   <ItemGroup>

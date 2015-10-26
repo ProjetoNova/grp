@@ -92,6 +92,11 @@ namespace NovaProjectWF.View.Projeto
             this.txtDescricao.Text = this.atividade.Descricao;
             this.dtInicio.Value = this.atividade.DataInicio;
             this.dtPrevista.Value = this.atividade.DataPrevista;
+            this.dtInicio.MinDate = this.atividade.FaseProjeto.DataInicio.Date;
+            this.dtInicio.MaxDate = this.atividade.FaseProjeto.DataFim.Date;
+            this.dtPrevista.MinDate = this.atividade.FaseProjeto.DataInicio.Date;
+            this.dtPrevista.MaxDate = this.atividade.FaseProjeto.DataFim.Date;
+
             if (this.atividade.DataFim != null)
             {
                 this.dtFim.Text = this.atividade.DataFim.ToString();

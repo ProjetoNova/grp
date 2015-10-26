@@ -23,8 +23,6 @@ namespace NovaProjectWF.Controllers.ProjetoController
             string dataPrevista, byte[] planoProjeto, string dataConclusao, ESituacaoProjeto situacao)
         {
 
-            
-
             if (Id == string.Empty)
             {
                 Id = "0";
