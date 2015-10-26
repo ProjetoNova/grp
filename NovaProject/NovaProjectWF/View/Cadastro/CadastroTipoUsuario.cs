@@ -24,6 +24,7 @@ namespace NovaProjectWF.View.Utilitarios
             InitializeComponent();
             string[] colunas = {"Id", "Nome"};
             comboBox1.DataSource = colunas;
+            ckdPermissoes.Enabled = false;
         }
 
         private void button1_Click(object sender, EventArgs e){}
@@ -72,6 +73,8 @@ namespace NovaProjectWF.View.Utilitarios
         {
             TipoUsuarioController controller = new TipoUsuarioController();
 
+            List<int> itens = new List<int>();
+
             Object retorno = controller.Salvar(lblId.Text, txtNome.Text.Trim(), 
                 checkBox1.Checked, cbAdministrador.Checked);
 
@@ -95,6 +98,18 @@ namespace NovaProjectWF.View.Utilitarios
                 lblId.Text = ((TipoUsuario)retorno).Id + "";
                 Mensagem.Informacao("Salvo com sucesso");
             }
+
+
+            if (!lblId.Text.Equals("0") || !lblId.Text.Equals(""))
+            {
+                if (!cbAdministrador.Checked) 
+                {
+                    foreach (int itemChecked in ckdPermissoes.CheckedIndices)
+                    {
+                        controller.IncluirPermissao(itemChecked, Convert.ToInt32(lblId.Text));
+                    }
+                }
+            }
         }
 
         //botao novo
@@ -104,11 +119,14 @@ namespace NovaProjectWF.View.Utilitarios
             txtNome.Text = string.Empty;
             checkBox1.Checked = true;
             cbAdministrador.Checked = false;
+            ckdPermissoes.Enabled = true;
         }
 
+        //botao editar
         private void btnEditar_Click(object sender, EventArgs e)
         {
             TipoUsuario tipoUsuario = null;
+            TipoUsuarioController control = new TipoUsuarioController();
 
             foreach(DataGridViewRow row in dataGridView1.SelectedRows) {
                 tipoUsuario = listaControle[row.Index];
@@ -119,9 +137,23 @@ namespace NovaProjectWF.View.Utilitarios
                 txtNome.Text = tipoUsuario.Nome;
                 cbAdministrador.Checked = tipoUsuario.Administrador;
                 checkBox1.Checked = tipoUsuario.Status;
-
+                ckdPermissoes.Enabled = !cbAdministrador.Checked;
                 tabControl1.SelectedIndex = 0;
+
+                for (int a = 0; a < ckdPermissoes.Items.Count; a++)
+                    ckdPermissoes.SetItemChecked(a, false);
+
+                List<PermissaoTipoUsuario> permissoes = control.BuscarPorTipoDeUsuario(tipoUsuario.Id);
+                foreach(PermissaoTipoUsuario p in permissoes) {
+                    ckdPermissoes.SetItemChecked(p.PermissaoIndice, true);
+                }
+                
             }
+        }
+
+        private void cbAdministrador_CheckedChanged(object sender, EventArgs e)
+        {
+            ckdPermissoes.Enabled = !cbAdministrador.Checked;
         }
     }
 }

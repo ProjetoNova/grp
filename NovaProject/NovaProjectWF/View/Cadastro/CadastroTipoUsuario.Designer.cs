@@ -30,6 +30,7 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label3 = new System.Windows.Forms.Label();
             this.cbAdministrador = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.button3 = new System.Windows.Forms.Button();
@@ -45,7 +46,9 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.ckdPermissoes = new System.Windows.Forms.CheckedListBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -59,12 +62,15 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(351, 332);
+            this.tabControl1.Size = new System.Drawing.Size(351, 368);
             this.tabControl1.TabIndex = 17;
             // 
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage1.Controls.Add(this.label6);
+            this.tabPage1.Controls.Add(this.label5);
+            this.tabPage1.Controls.Add(this.ckdPermissoes);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.cbAdministrador);
             this.tabPage1.Controls.Add(this.checkBox1);
@@ -77,9 +83,18 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(343, 306);
+            this.tabPage1.Size = new System.Drawing.Size(343, 342);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Cadastro";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(93, 324);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(158, 13);
+            this.label3.TabIndex = 22;
+            this.label3.Text = "(Campos com * são obrigatórios)";
             // 
             // cbAdministrador
             // 
@@ -92,6 +107,7 @@
             this.cbAdministrador.TabIndex = 21;
             this.cbAdministrador.Text = "Administrador";
             this.cbAdministrador.UseVisualStyleBackColor = true;
+            this.cbAdministrador.CheckedChanged += new System.EventHandler(this.cbAdministrador_CheckedChanged);
             // 
             // checkBox1
             // 
@@ -171,7 +187,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(343, 306);
+            this.tabPage2.Size = new System.Drawing.Size(343, 342);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Pesquisar";
             // 
@@ -185,7 +201,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(328, 219);
+            this.dataGridView1.Size = new System.Drawing.Size(328, 255);
             this.dataGridView1.TabIndex = 22;
             // 
             // btnEditar
@@ -232,20 +248,46 @@
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 17;
             // 
-            // label3
+            // ckdPermissoes
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(93, 290);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(158, 13);
-            this.label3.TabIndex = 22;
-            this.label3.Text = "(Campos com * são obrigatórios)";
+            this.ckdPermissoes.CheckOnClick = true;
+            this.ckdPermissoes.FormattingEnabled = true;
+            this.ckdPermissoes.Items.AddRange(new object[] {
+            "Cadastro Usuário",
+            "Cadastro Tipo Usuário",
+            "Cadastro Situação Atividade",
+            "Cadastro Tipo de Atividade",
+            "Novo Projeto",
+            "Nova Fase de Projeto",
+            "Nova Atividade"});
+            this.ckdPermissoes.Location = new System.Drawing.Point(15, 169);
+            this.ckdPermissoes.Name = "ckdPermissoes";
+            this.ckdPermissoes.Size = new System.Drawing.Size(315, 109);
+            this.ckdPermissoes.TabIndex = 23;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(12, 152);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(63, 13);
+            this.label5.TabIndex = 24;
+            this.label5.Text = "Permissões:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(15, 281);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(311, 13);
+            this.label6.TabIndex = 25;
+            this.label6.Text = "(Demais telas e permissões são liberadas para todos os usuários)";
             // 
             // CadastroTipoUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(374, 348);
+            this.ClientSize = new System.Drawing.Size(371, 385);
             this.Controls.Add(this.tabControl1);
             this.Name = "CadastroTipoUsuario";
             this.Text = "Tipo de Usuario";
@@ -279,6 +321,9 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.CheckBox cbAdministrador;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.CheckedListBox ckdPermissoes;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
 
     }
 }

@@ -27,14 +27,19 @@ namespace NovaProjectWF.Controllers.ProjetoController
             {
                 Id = "0";
             }
-            
-            if (titulo == string.Empty)
+
+            if (descricao == string.Empty)
+            {
+                descricao = "// " + titulo.ToUpper() + " //";
+            }
+
+            if (Id == "0" && situacao.Equals(ESituacaoProjeto.CANCELADO))
+            {
+                Mensagem.Aviso("Projeto não deve ser inserido com status de CANCELADO");
+            }
+            else if (titulo == string.Empty)
             {
                 Mensagem.Erro("Título não pode ser Nulo!");
-            }
-            else if (descricao == string.Empty)
-            {
-                Mensagem.Erro("Descrição não pode ser Nula!");
             }
             else if (dataInicio.Replace("_", "").Replace("/", "").Trim() == string.Empty)
             {
@@ -47,6 +52,10 @@ namespace NovaProjectWF.Controllers.ProjetoController
             else if (planoProjeto.Count() == 0)
             {
                 Mensagem.Erro("Plano de Projeto não pode ser Nulo!");
+            }
+            else if ((situacao.Equals(ESituacaoProjeto.INICIADO) || situacao.Equals(ESituacaoProjeto.CONCLUIDO))  && DateTime.Today < Convert.ToDateTime(dataInicio))
+            {
+                Mensagem.Aviso("Projeto não pode ser iniciado, data de início maior que data atual");
             }
             else
             {

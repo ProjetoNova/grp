@@ -148,6 +148,7 @@
     <Compile Include="Dao\Contexto.cs" />
     <Compile Include="Dao\CRUD.cs" />
     <Compile Include="Dao\FaseProjetoDAO.cs" />
+    <Compile Include="Dao\PermissaoDAO.cs" />
     <Compile Include="Dao\ProjetoDAO.cs" />
     <Compile Include="Dao\SituacaoAtividadeDAO.cs" />
     <Compile Include="Dao\TipoAtvidadeDAO.cs" />
@@ -163,6 +164,7 @@
     <Compile Include="Models\Interfaces\IEntidade.cs" />
     <Compile Include="Models\NaoPersistido\AtividadeProjeto.cs" />
     <Compile Include="Models\NaoPersistido\EquipeProjeto.cs" />
+    <Compile Include="Models\PermissaoTipoUsuario.cs" />
     <Compile Include="Models\Projeto.cs" />
     <Compile Include="Models\SituacaoAtividade.cs" />
     <Compile Include="Models\TipoAtividade.cs" />

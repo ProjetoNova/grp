@@ -34,6 +34,8 @@ namespace NovaProjectWF.View.Projeto
             TipoUsuarioController controlTUsuario = new TipoUsuarioController();
             cbUsuario.DataSource = controlUser.TodosOsNomes();
             cbPapel.DataSource = controlTUsuario.TodosOsNomes();
+            dtInicio.Value = DateTime.Today;
+            dtPrevista.Value = DateTime.Today;
 
             AtivaDesativaCampos();
         }
@@ -121,6 +123,9 @@ namespace NovaProjectWF.View.Projeto
                 dtFim.Text = ((Models.Projeto)retorno).DataConclusao + "";
                 Mensagem.Informacao("Salvo com sucesso");
                 projeto = (Models.Projeto)retorno;
+                UsuarioProjetoController upcontrol = new UsuarioProjetoController();
+                upcontrol.Salvar(1, projeto.Id, 1);
+                AtualizaGridEquipe(upcontrol);
                 AtivaDesativaCampos();
             }
         }
