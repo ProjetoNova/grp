@@ -135,6 +135,7 @@
     <Compile Include="Controllers\CadastroController\SituacaoAtividadeController.cs" />
     <Compile Include="Controllers\CadastroController\TipoUsuarioController.cs" />
     <Compile Include="Controllers\CadastroController\UsuarioController.cs" />
+    <Compile Include="Controllers\ProjetoController\AnexoProjetoController.cs" />
     <Compile Include="Controllers\ProjetoController\AtividadeController.cs" />
     <Compile Include="Controllers\ProjetoController\FaseProjetoController.cs" />
     <Compile Include="Controllers\ProjetoController\ProjetoController.cs" />
@@ -162,6 +163,7 @@
     <Compile Include="Models\Enumerados\ESituacaoProjeto.cs" />
     <Compile Include="Models\FaseProjeto.cs" />
     <Compile Include="Models\Interfaces\IEntidade.cs" />
+    <Compile Include="Models\NaoPersistido\ArtefatosProjeto.cs" />
     <Compile Include="Models\NaoPersistido\AtividadeProjeto.cs" />
     <Compile Include="Models\NaoPersistido\EquipeProjeto.cs" />
     <Compile Include="Models\PermissaoTipoUsuario.cs" />
@@ -269,6 +271,12 @@
     <Compile Include="View\Projeto\NovoProjeto.Designer.cs">
       <DependentUpon>NovoProjeto.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Projeto\PropriedadeArtefato.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Projeto\PropriedadeArtefato.Designer.cs">
+      <DependentUpon>PropriedadeArtefato.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Utilitarios\Janela.cs" />
     <Compile Include="View\Utilitarios\Mensagem.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -328,6 +336,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Projeto\NovoProjeto.resx">
       <DependentUpon>NovoProjeto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Projeto\PropriedadeArtefato.resx">
+      <DependentUpon>PropriedadeArtefato.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\NovaProjectWF.Models.TipoUsuario.datasource" />

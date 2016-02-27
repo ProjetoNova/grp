@@ -55,6 +55,11 @@ namespace NovaProjectWF.View.Projeto
 
             Models.Projeto proj = null;
 
+            if (e.RowIndex < 0)
+            {
+                return;
+            }
+
             proj = listaProjeto[e.RowIndex];
 
             novoProjeto.Exibir(this.MdiParent, proj);

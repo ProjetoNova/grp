@@ -124,6 +124,11 @@ namespace NovaProjectWF.View.Projeto
 
         private void gridAtividade_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex < 0)
+            {
+                return;
+            }
+
             if (gridAtividade.SelectedRows.Count > 0)
             {
                 Atividade atv_ = atividades[gridAtividade.SelectedRows[0].Index];

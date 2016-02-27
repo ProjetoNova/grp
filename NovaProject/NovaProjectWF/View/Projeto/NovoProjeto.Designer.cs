@@ -34,8 +34,6 @@
             this.tabProjeto = new System.Windows.Forms.TabPage();
             this.dtPrevista = new System.Windows.Forms.DateTimePicker();
             this.dtInicio = new System.Windows.Forms.DateTimePicker();
-            this.lblId = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.lblStatus = new System.Windows.Forms.Label();
             this.dtFim = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -47,14 +45,10 @@
             this.gridEquipe = new System.Windows.Forms.DataGridView();
             this.btnExcluirUsuario = new System.Windows.Forms.Button();
             this.btnIncluirUsuario = new System.Windows.Forms.Button();
-            this.cbSituacao = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.txtDescricao = new System.Windows.Forms.RichTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtNome = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.tabFase = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.btnEditarAtividade = new System.Windows.Forms.Button();
@@ -64,8 +58,20 @@
             this.gridFase = new System.Windows.Forms.DataGridView();
             this.btnEditarFase = new System.Windows.Forms.Button();
             this.btnNovaFase = new System.Windows.Forms.Button();
+            this.tabArtefatos = new System.Windows.Forms.TabPage();
+            this.lblId = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.cbSituacao = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtNome = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.btnNovo = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
+            this.btnPropriedades = new System.Windows.Forms.Button();
+            this.btnExcluir = new System.Windows.Forms.Button();
+            this.btnCarregarArtefato = new System.Windows.Forms.Button();
+            this.gridArtefato = new System.Windows.Forms.DataGridView();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.tabControl1.SuspendLayout();
             this.tabPlano.SuspendLayout();
             this.tabProjeto.SuspendLayout();
@@ -76,6 +82,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridAtividade)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridFase)).BeginInit();
+            this.tabArtefatos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridArtefato)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -83,6 +91,7 @@
             this.tabControl1.Controls.Add(this.tabPlano);
             this.tabControl1.Controls.Add(this.tabProjeto);
             this.tabControl1.Controls.Add(this.tabFase);
+            this.tabControl1.Controls.Add(this.tabArtefatos);
             this.tabControl1.Location = new System.Drawing.Point(12, 81);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -104,7 +113,7 @@
             // 
             this.txtPlanoProjeto.Location = new System.Drawing.Point(0, 0);
             this.txtPlanoProjeto.Name = "txtPlanoProjeto";
-            this.txtPlanoProjeto.Size = new System.Drawing.Size(812, 492);
+            this.txtPlanoProjeto.Size = new System.Drawing.Size(812, 449);
             this.txtPlanoProjeto.TabIndex = 0;
             this.txtPlanoProjeto.Text = "";
             // 
@@ -143,23 +152,6 @@
             this.dtInicio.Name = "dtInicio";
             this.dtInicio.Size = new System.Drawing.Size(78, 20);
             this.dtInicio.TabIndex = 28;
-            // 
-            // lblId
-            // 
-            this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(47, 55);
-            this.lblId.Name = "lblId";
-            this.lblId.Size = new System.Drawing.Size(0, 13);
-            this.lblId.TabIndex = 25;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(13, 55);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(19, 13);
-            this.label8.TabIndex = 24;
-            this.label8.Text = "Id:";
             // 
             // lblStatus
             // 
@@ -273,24 +265,6 @@
             this.btnIncluirUsuario.UseVisualStyleBackColor = true;
             this.btnIncluirUsuario.Click += new System.EventHandler(this.btnIncluirUsuario_Click);
             // 
-            // cbSituacao
-            // 
-            this.cbSituacao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbSituacao.FormattingEnabled = true;
-            this.cbSituacao.Location = new System.Drawing.Point(644, 52);
-            this.cbSituacao.Name = "cbSituacao";
-            this.cbSituacao.Size = new System.Drawing.Size(180, 21);
-            this.cbSituacao.TabIndex = 5;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(567, 55);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(59, 13);
-            this.label7.TabIndex = 19;
-            this.label7.Text = "Situação: *";
-            // 
             // txtDescricao
             // 
             this.txtDescricao.Location = new System.Drawing.Point(79, 10);
@@ -326,24 +300,6 @@
             this.label4.Size = new System.Drawing.Size(70, 13);
             this.label4.TabIndex = 11;
             this.label4.Text = "Data Início: *";
-            // 
-            // txtNome
-            // 
-            this.txtNome.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txtNome.Location = new System.Drawing.Point(143, 55);
-            this.txtNome.MaxLength = 70;
-            this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(403, 20);
-            this.txtNome.TabIndex = 1;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(92, 55);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(45, 13);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Nome: *";
             // 
             // tabFase
             // 
@@ -448,6 +404,73 @@
             this.btnNovaFase.UseVisualStyleBackColor = true;
             this.btnNovaFase.Click += new System.EventHandler(this.btnNovaFase_Click);
             // 
+            // tabArtefatos
+            // 
+            this.tabArtefatos.Controls.Add(this.gridArtefato);
+            this.tabArtefatos.Controls.Add(this.btnPropriedades);
+            this.tabArtefatos.Controls.Add(this.btnExcluir);
+            this.tabArtefatos.Controls.Add(this.btnCarregarArtefato);
+            this.tabArtefatos.Location = new System.Drawing.Point(4, 22);
+            this.tabArtefatos.Name = "tabArtefatos";
+            this.tabArtefatos.Padding = new System.Windows.Forms.Padding(3);
+            this.tabArtefatos.Size = new System.Drawing.Size(808, 452);
+            this.tabArtefatos.TabIndex = 3;
+            this.tabArtefatos.Text = "Artefatos";
+            this.tabArtefatos.UseVisualStyleBackColor = true;
+            // 
+            // lblId
+            // 
+            this.lblId.AutoSize = true;
+            this.lblId.Location = new System.Drawing.Point(47, 55);
+            this.lblId.Name = "lblId";
+            this.lblId.Size = new System.Drawing.Size(0, 13);
+            this.lblId.TabIndex = 25;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(13, 55);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(19, 13);
+            this.label8.TabIndex = 24;
+            this.label8.Text = "Id:";
+            // 
+            // cbSituacao
+            // 
+            this.cbSituacao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbSituacao.FormattingEnabled = true;
+            this.cbSituacao.Location = new System.Drawing.Point(644, 52);
+            this.cbSituacao.Name = "cbSituacao";
+            this.cbSituacao.Size = new System.Drawing.Size(180, 21);
+            this.cbSituacao.TabIndex = 5;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(567, 55);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(59, 13);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "Situação: *";
+            // 
+            // txtNome
+            // 
+            this.txtNome.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.txtNome.Location = new System.Drawing.Point(143, 55);
+            this.txtNome.MaxLength = 70;
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(403, 20);
+            this.txtNome.TabIndex = 1;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(92, 55);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(45, 13);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Nome: *";
+            // 
             // btnNovo
             // 
             this.btnNovo.Location = new System.Drawing.Point(94, 12);
@@ -467,6 +490,54 @@
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            // 
+            // btnPropriedades
+            // 
+            this.btnPropriedades.Location = new System.Drawing.Point(6, 66);
+            this.btnPropriedades.Name = "btnPropriedades";
+            this.btnPropriedades.Size = new System.Drawing.Size(146, 23);
+            this.btnPropriedades.TabIndex = 6;
+            this.btnPropriedades.Text = "Propriedades do Artefato";
+            this.btnPropriedades.UseVisualStyleBackColor = true;
+            this.btnPropriedades.Click += new System.EventHandler(this.btnPropriedades_Click);
+            // 
+            // btnExcluir
+            // 
+            this.btnExcluir.Location = new System.Drawing.Point(6, 36);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(146, 23);
+            this.btnExcluir.TabIndex = 5;
+            this.btnExcluir.Text = "Excluir Artefato";
+            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
+            // 
+            // btnCarregarArtefato
+            // 
+            this.btnCarregarArtefato.Location = new System.Drawing.Point(6, 6);
+            this.btnCarregarArtefato.Name = "btnCarregarArtefato";
+            this.btnCarregarArtefato.Size = new System.Drawing.Size(147, 23);
+            this.btnCarregarArtefato.TabIndex = 4;
+            this.btnCarregarArtefato.Text = "Carregar Novo Artefato...";
+            this.btnCarregarArtefato.UseVisualStyleBackColor = true;
+            this.btnCarregarArtefato.Click += new System.EventHandler(this.btnCarregarArtefato_Click);
+            // 
+            // gridArtefato
+            // 
+            this.gridArtefato.AllowUserToAddRows = false;
+            this.gridArtefato.AllowUserToDeleteRows = false;
+            this.gridArtefato.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridArtefato.Location = new System.Drawing.Point(160, 6);
+            this.gridArtefato.MultiSelect = false;
+            this.gridArtefato.Name = "gridArtefato";
+            this.gridArtefato.ReadOnly = true;
+            this.gridArtefato.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gridArtefato.Size = new System.Drawing.Size(642, 440);
+            this.gridArtefato.TabIndex = 7;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.InitialDirectory = "C:\\";
+            this.openFileDialog1.Title = "Abrir Arquivo de Artefato";
             // 
             // NovoProjeto
             // 
@@ -499,6 +570,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridAtividade)).EndInit();
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridFase)).EndInit();
+            this.tabArtefatos.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridArtefato)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -544,6 +617,12 @@
         private System.Windows.Forms.RichTextBox txtPlanoProjeto;
         private System.Windows.Forms.DateTimePicker dtInicio;
         private System.Windows.Forms.DateTimePicker dtPrevista;
+        private System.Windows.Forms.TabPage tabArtefatos;
+        private System.Windows.Forms.Button btnPropriedades;
+        private System.Windows.Forms.Button btnExcluir;
+        private System.Windows.Forms.Button btnCarregarArtefato;
+        private System.Windows.Forms.DataGridView gridArtefato;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
 
     }
 }
