@@ -39,7 +39,6 @@
             this.meusProjetosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.novoProjetoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.minhasAtividadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.relatóriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.minhaContaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alterarSenhaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -58,7 +57,6 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.timeStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.relatórioDeProjetosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -69,7 +67,6 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cadastroToolStripMenuItem,
             this.projetosToolStripMenuItem,
-            this.relatóriosToolStripMenuItem,
             this.contaToolStripMenuItem,
             this.ajudaToolStripMenuItem,
             this.janelasToolStripMenuItem});
@@ -150,14 +147,6 @@
             this.minhasAtividadesToolStripMenuItem.Text = "Minhas Atividades";
             this.minhasAtividadesToolStripMenuItem.Click += new System.EventHandler(this.minhasAtividadesToolStripMenuItem_Click);
             // 
-            // relatóriosToolStripMenuItem
-            // 
-            this.relatóriosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.relatórioDeProjetosToolStripMenuItem});
-            this.relatóriosToolStripMenuItem.Name = "relatóriosToolStripMenuItem";
-            this.relatóriosToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
-            this.relatóriosToolStripMenuItem.Text = "Relatórios";
-            // 
             // contaToolStripMenuItem
             // 
             this.contaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -171,21 +160,21 @@
             // minhaContaToolStripMenuItem
             // 
             this.minhaContaToolStripMenuItem.Name = "minhaContaToolStripMenuItem";
-            this.minhaContaToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.minhaContaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.minhaContaToolStripMenuItem.Text = "Minha Conta";
             this.minhaContaToolStripMenuItem.Click += new System.EventHandler(this.minhaContaToolStripMenuItem_Click);
             // 
             // alterarSenhaToolStripMenuItem
             // 
             this.alterarSenhaToolStripMenuItem.Name = "alterarSenhaToolStripMenuItem";
-            this.alterarSenhaToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.alterarSenhaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.alterarSenhaToolStripMenuItem.Text = "Alterar Senha";
             this.alterarSenhaToolStripMenuItem.Click += new System.EventHandler(this.alterarSenhaToolStripMenuItem_Click);
             // 
             // sairToolStripMenuItem
             // 
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
@@ -297,12 +286,6 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // relatórioDeProjetosToolStripMenuItem
-            // 
-            this.relatórioDeProjetosToolStripMenuItem.Name = "relatórioDeProjetosToolStripMenuItem";
-            this.relatórioDeProjetosToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
-            this.relatórioDeProjetosToolStripMenuItem.Text = "Relatório de Projetos";
-            // 
             // MenuPrincipal
             // 
             this.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuBar;
@@ -356,7 +339,5 @@
         private System.Windows.Forms.ToolStripMenuItem minimizarTudoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem restaurarTudoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fecharTudoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem relatóriosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem relatórioDeProjetosToolStripMenuItem;
     }
 }

@@ -61,6 +61,8 @@ namespace NovaProjectWF.View.Projeto
 
             cbPrioridade.DataSource = null;
             cbPrioridade.DataSource = Prioridade.GetList();
+            
+            btnLiberar.Visible = false;
         }
 
         protected override void OnClosed(EventArgs e)
@@ -78,6 +80,7 @@ namespace NovaProjectWF.View.Projeto
         public void Exibir(Form parent, Object Atividade) {
 
             this.atividade = (Models.Atividade)Atividade;
+            //this.atividade = control.BuscarPorId(this.atividade.Id.ToString());
 
             this.atividade.TipoAtividade = tControl.BuscarPorId(this.atividade.TipoAtividadeId+"");
             this.atividade.SituacaoAtividade = sControl.BuscarPorId(this.atividade.SituacaoAtividadeId+"");
@@ -96,6 +99,8 @@ namespace NovaProjectWF.View.Projeto
             this.dtInicio.MaxDate = this.atividade.FaseProjeto.DataFim.Date;
             this.dtPrevista.MinDate = this.atividade.FaseProjeto.DataInicio.Date;
             this.dtPrevista.MaxDate = this.atividade.FaseProjeto.DataFim.Date;
+            this.txtEstimado.Text = "0"+this.atividade.TempoEstimado.ToString();
+            this.maskedTextBox3.Text = "0"+this.atividade.TempoGasto.ToString();
 
             if (this.atividade.DataFim != null)
             {
@@ -120,10 +125,16 @@ namespace NovaProjectWF.View.Projeto
             TipoUsuarioController tuc = new TipoUsuarioController();
             UsuarioProjeto up = upc.GetUsuarioProjeto(this.atividade.FaseProjeto.ProjetoId,
                 SessaoSistema.UsuarioId);
-            if(up == null||!SessaoSistema.Administrador) {
+
+            if( up == null || !SessaoSistema.Administrador ) {
                 AtivaDesativaCampos(false);
-            } else{
+            } else {
                 AtivaDesativaCampos(tuc.BuscarPorId(up.TipoUsuarioId.ToString()).Administrador);
+            }
+
+            if (this.atividade.SituacaoAtividade.Nome.Equals("Concluída"))
+            {
+                DesativaConcluida();
             }
         }
 
@@ -142,6 +153,8 @@ namespace NovaProjectWF.View.Projeto
             this.txtFase.Text = this.atividade.FaseProjeto.Descricao;
             this.cbSituacao.Enabled = false;
 
+            btnLiberar.Visible = false;
+
             if (Janela.Fechada(parent, this.GetType()))
             {
                 Janela.Exibir(this, parent, true);
@@ -158,6 +171,7 @@ namespace NovaProjectWF.View.Projeto
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             Atividade atividade = new Atividade();
+
             if (cbPrioridade.SelectedItem != null)
             {
                 atividade.Prioridade = Prioridade.GetEnum(cbPrioridade.SelectedItem.ToString());
@@ -170,6 +184,21 @@ namespace NovaProjectWF.View.Projeto
             {
                 atividade.TempoEstimado = Validar.HoraToDouble(txtEstimado.Text.Trim());
             }
+
+            if (maskedTextBox3.Text.Trim().Replace(":", "") == string.Empty)
+            {
+                atividade.TempoGasto = 0;
+            }
+            else
+            {
+                atividade.TempoGasto = Validar.HoraToDouble(maskedTextBox3.Text.Trim());
+
+                if (atividade.SituacaoAtividade.Nome.Equals("Não Iniciada"))
+                {
+                    atividade.SituacaoAtividade = sControl.BuscarPorNome("Iniciada")[0];
+                }
+            }
+
             if (cbTipoAtividade.SelectedItem != null)
             {
                 atividade.TipoAtividade = tControl.BuscarPorNome(cbTipoAtividade.SelectedItem.ToString())[0];
@@ -183,6 +212,7 @@ namespace NovaProjectWF.View.Projeto
             atividade.DataPrevista = Convert.ToDateTime(dtPrevista.Value);
             atividade.Descricao = txtDescricao.Text;
             atividade.FaseProjeto = this.atividade.FaseProjeto;
+            
            
             if (dtFim == null || dtFim.Text.Trim() == string.Empty)
             {
@@ -239,8 +269,53 @@ namespace NovaProjectWF.View.Projeto
                 dtPrevista.Enabled = false;
                 txtEstimado.Enabled = false;
             }
+
+        }
+
+        public void DesativaConcluida()
+        {
+            txtNome.Enabled = false;
+            txtDescricao.ReadOnly = true;
+            cbTipoAtividade.Enabled = false;
+            cbPrioridade.Enabled = false;
+            dtInicio.Enabled = false;
+            dtPrevista.Enabled = false;
+            txtEstimado.Enabled = false;
+            cbSituacao.Enabled = false;
+            cbAtribuidoPara.Enabled = false;
+            maskedTextBox3.Enabled = false;
+            btnLiberar.Visible = true;
+        }
+
+        public void AtivaConcluida()
+        {
+            txtNome.Enabled = true;
+            txtDescricao.ReadOnly = false;
+            cbTipoAtividade.Enabled = true;
+            cbPrioridade.Enabled = true;
+            dtInicio.Enabled = true;
+            dtPrevista.Enabled = true;
+            txtEstimado.Enabled = true;
+            cbSituacao.Enabled = true;
+            cbAtribuidoPara.Enabled = true;
+            maskedTextBox3.Enabled = true;
+            btnLiberar.Visible = false;
         }
 
         private void btnEscolherArquivo_Click(object sender, EventArgs e){}
+
+        private void btnLiberar_Click(object sender, EventArgs e)
+        {
+            LoginController control = new LoginController();
+
+            if (SessaoSistema.Administrador) 
+            {
+                AtivaConcluida();
+            }
+            else
+            {
+                Mensagem.Erro("Usuário sem permissão");
+            }
+        }
     }
 }

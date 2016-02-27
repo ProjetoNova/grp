@@ -53,7 +53,11 @@ namespace NovaProjectWF.View.Projeto
         {
             NovoProjeto novoProjeto = new NovoProjeto();
 
-            novoProjeto.Exibir(this.MdiParent, listaProjeto[e.RowIndex]);
+            Models.Projeto proj = null;
+
+            proj = listaProjeto[e.RowIndex];
+
+            novoProjeto.Exibir(this.MdiParent, proj);
         }
 
         private void OcultarColunas()

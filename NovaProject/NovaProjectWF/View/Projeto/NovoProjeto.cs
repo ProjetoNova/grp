@@ -43,8 +43,12 @@ namespace NovaProjectWF.View.Projeto
         //Metodo para Exibir um Projeto Ja existente
         public void Exibir(Form parent, Object projeto)
         {
+            ProjetoController pcontrol = new ProjetoController();
             //atribui os valores
             this.projeto = (Models.Projeto)projeto;
+            string id = this.projeto.Id.ToString();
+            this.projeto = pcontrol.BuscarPorId(id);
+
             lblId.Text = this.projeto.Id+"";
             txtNome.Text = this.projeto.Titulo;
             txtDescricao.Text = this.projeto.Descricao;
@@ -124,7 +128,11 @@ namespace NovaProjectWF.View.Projeto
                 Mensagem.Informacao("Salvo com sucesso");
                 projeto = (Models.Projeto)retorno;
                 UsuarioProjetoController upcontrol = new UsuarioProjetoController();
-                upcontrol.Salvar(1, projeto.Id, 1);
+                UsuarioController ucontrol = new UsuarioController();
+                TipoUsuarioController tucontrol = new TipoUsuarioController();
+
+                upcontrol.Salvar(tucontrol.TodosOsDados().First().Id, projeto.Id, 
+                    ucontrol.TodosOsDados().First().Id);
                 AtualizaGridEquipe(upcontrol);
                 AtivaDesativaCampos();
             }
@@ -134,8 +142,8 @@ namespace NovaProjectWF.View.Projeto
         private void btnNovo_Click(object sender, EventArgs e)
         {
             NovoProjeto novo = new NovoProjeto();
-            Janela.Exibir(novo, this.MdiParent, true);
             this.Close();
+            //Janela.Exibir(novo, MdiParent, true);
             AtivaDesativaCampos();
         }
         
@@ -190,6 +198,12 @@ namespace NovaProjectWF.View.Projeto
         //click botao nova fase
         private void btnNovaFase_Click(object sender, EventArgs e)
         {
+            if (!SessaoSistema.NovoFaseProjeto)
+            {
+                Mensagem.Aviso("Voce nao tem acesso a essa tela!");
+                return;
+            }
+
             FaseProjeto fase = new FaseProjeto(this);
             fase.ExibirNova(this.MdiParent, this.projeto);
         }
@@ -200,7 +214,8 @@ namespace NovaProjectWF.View.Projeto
             if (gridFase.SelectedRows.Count > 0)
             {
                 FaseProjeto fase = new FaseProjeto(this);
-                Models.FaseProjeto fase_ = fases[gridFase.SelectedRows[0].Index];
+                Models.FaseProjeto fase_ = null;
+                fase_ =  fases[gridFase.SelectedRows[0].Index];
                 fase_.Projeto = projeto;
                 fase.Exibir(this.MdiParent, fase_);
             }
@@ -209,6 +224,12 @@ namespace NovaProjectWF.View.Projeto
         //click botao nova atividade
         private void btnAtividade_Click(object sender, EventArgs e)
         {
+            if (!SessaoSistema.NovoAtividade)
+            {
+                Mensagem.Aviso("Voce nao tem acesso a essa tela!");
+                return;
+            }
+
             if (gridFase.SelectedRows.Count > 0)
             {
                 NovaAtividade atv = new NovaAtividade(this, Convert.ToInt32(lblId.Text.Trim()));
@@ -225,7 +246,8 @@ namespace NovaProjectWF.View.Projeto
             {
                 AtividadeController control = new AtividadeController();
                 NovaAtividade atv = new NovaAtividade(this, Convert.ToInt32(lblId.Text.Trim()));
-                Atividade atv_ =  control.BuscarPorId(atividades[gridAtividade.SelectedRows[0].Index].Id);
+                Atividade atv_ = null;
+                atv_ =  control.BuscarPorId(atividades[gridAtividade.SelectedRows[0].Index].Id);
                 atv.Exibir(this.MdiParent, atv_);
             }
         }

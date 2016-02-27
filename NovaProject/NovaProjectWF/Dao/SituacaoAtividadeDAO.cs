@@ -33,7 +33,7 @@ namespace NovaProjectWF.Dao
             using (Contexto ctx = new Contexto())
             {
                 var query = from c in ctx.SITUACAO_ATIVIDADE_
-                            where c.Nome.Contains(nome)
+                            where c.Nome.Equals(nome)
                             select c;
 
                 foreach (var item in query)

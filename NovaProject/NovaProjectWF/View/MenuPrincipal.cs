@@ -64,6 +64,12 @@ namespace NovaProjectWF.View
         //Menu Cadastro de Usuario
         private void usuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (!SessaoSistema.CadUsuario)
+            {
+                Mensagem.Aviso("Voce nao tem acesso a essa tela!");
+                return;
+            }
+
             if (Janela.Fechada(this, typeof(CadastroUsuario)))
                 cadUsuario = new CadastroUsuario();
 
@@ -73,6 +79,7 @@ namespace NovaProjectWF.View
         //Menu Cadastro de Tipo de Usuario
         private void tipoUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            
             if (Janela.Fechada(this, typeof(CadastroTipoUsuario))) 
                 cadTipUsuario = new CadastroTipoUsuario();
 
@@ -82,6 +89,13 @@ namespace NovaProjectWF.View
         //Menu Cadastro de Tipo de Atividade
         private void tipoAtividadeToolStripMenuItem_Click(object sender, EventArgs e)
         {
+          
+            if (!SessaoSistema.CadTipoAtividade)
+            {
+                Mensagem.Aviso("Voce nao tem acesso a essa tela!");
+                return;
+            }
+
             if (Janela.Fechada(this, typeof(CadastroTipoAtividade)))
                 cadTipoAtividade = new CadastroTipoAtividade();
 
@@ -100,6 +114,12 @@ namespace NovaProjectWF.View
         //Menu Novo Projeto
         private void novoProjetoToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (!SessaoSistema.NovoProjeto)
+            {
+                Mensagem.Aviso("Voce nao tem acesso a essa tela!");
+                return;
+            }
+
             if (Janela.Fechada(this, typeof(NovoProjeto)))
                 novoProj = new NovoProjeto();
 
@@ -159,6 +179,12 @@ namespace NovaProjectWF.View
         //menu situacao atividade
         private void situaçãoAtividadeToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (!SessaoSistema.CadSitAtividade)
+            {
+                Mensagem.Aviso("Voce nao tem acesso a essa tela!");
+                return;
+            }
+
             if (Janela.Fechada(this, typeof(SituacaoAtividade)))
                 situacao = new SituacaoAtividade();
 

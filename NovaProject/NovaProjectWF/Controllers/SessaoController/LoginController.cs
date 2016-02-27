@@ -32,12 +32,62 @@ namespace NovaProjectWF.Controllers.SessaoController
                 return false;
             }
 
+            List<PermissaoTipoUsuario> permissao = control.BuscarPorTipoDeUsuario(usuarioLogin.TipoUsuarioId);
+
             SessaoSistema.Administrador = (control.BuscarPorId(
                                             usuarioLogin.TipoUsuarioId+"").Administrador || usuarioLogin.Master);
             SessaoSistema.LoginUsuario = usuarioLogin.Login;
             SessaoSistema.NomeUsuario = usuarioLogin.Nome;
             SessaoSistema.UsuarioId = usuarioLogin.Id;
             SessaoSistema.DataHoraLogin = Convert.ToDateTime(DateTime.Now);
+
+            foreach(PermissaoTipoUsuario p in permissao) {
+                if (p.PermissaoIndice == 0)
+                {
+                    SessaoSistema.CadUsuario = true;
+                }
+                if (p.PermissaoIndice == 1)
+                {
+                    SessaoSistema.CadTipoUsuario = true;
+                }
+                if (p.PermissaoIndice == 2)
+                {
+                    SessaoSistema.CadSitAtividade = true;
+                }
+                if (p.PermissaoIndice == 3)
+                {
+                    SessaoSistema.CadTipoAtividade = true;
+                }
+                if (p.PermissaoIndice == 4)
+                {
+                    SessaoSistema.NovoProjeto = true;
+                }
+                if (p.PermissaoIndice == 5)
+                {
+                    SessaoSistema.NovoFaseProjeto = true;
+                }
+                if (p.PermissaoIndice == 6)
+                {
+                    SessaoSistema.NovoAtividade = true;
+                }
+            }
+
+
+            return true;
+        }
+
+        //realiza o login direto com o login usuario
+        public bool Login(string senha)
+        {
+            Usuario usuarioLogin = null;
+
+            TipoUsuarioController control = new TipoUsuarioController();
+            usuarioLogin = crud.login("sistema", senha);
+
+            if (usuarioLogin == null)
+            {
+                return false;
+            }
 
             return true;
         }

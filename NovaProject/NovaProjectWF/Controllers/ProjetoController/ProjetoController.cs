@@ -53,7 +53,7 @@ namespace NovaProjectWF.Controllers.ProjetoController
             {
                 Mensagem.Erro("Plano de Projeto não pode ser Nulo!");
             }
-            else if ((situacao.Equals(ESituacaoProjeto.INICIADO) || situacao.Equals(ESituacaoProjeto.CONCLUIDO))  && DateTime.Today < Convert.ToDateTime(dataInicio))
+            else if (!situacao.Equals(ESituacaoProjeto.NAO_INICIADO)  && DateTime.Today < Convert.ToDateTime(dataInicio))
             {
                 Mensagem.Aviso("Projeto não pode ser iniciado, data de início maior que data atual");
             }

@@ -47,6 +47,12 @@ namespace NovaProjectWF.View
 
         private void btnNovoProjeto_Click(object sender, EventArgs e)
         {
+            if (!SessaoSistema.NovoProjeto)
+            {
+                Mensagem.Aviso("Voce nao tem acesso a essa tela!");
+                return;
+            }
+
             if (Janela.Fechada(this.MdiParent, typeof(NovoProjeto)))
                 novoProj = new NovoProjeto();
 

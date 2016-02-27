@@ -47,6 +47,17 @@ namespace NovaProjectWF.Controllers.ProjetoController
             return listaRetonrno;
         }
 
+        private double HorasProjeto(Models.Projeto proj)
+        {
+            double tempoTotal = 0;
+            double dataInicio = proj.DataInicio.Value.ToOADate();
+            double dataFim = proj.DataPrevisao.Value.ToOADate();
+
+            tempoTotal = dataFim - dataInicio;
+
+            return tempoTotal*2400;
+        }
+
         public Object Salvar(string Id, EPrioridade prioridade, SituacaoAtividade situacaoAtividade, 
             double tempoEstimado, double? tempoGasto, TipoAtividade tipoAtividade, string titulo, 
             Usuario usuario, DateTime? dataFim, DateTime dataInicio, DateTime dataPrevista, string descricao, 
@@ -57,7 +68,15 @@ namespace NovaProjectWF.Controllers.ProjetoController
             {
                 Id = "0";
             }
-            if (titulo == string.Empty)
+            
+            ProjetoController pc = new ProjetoController();
+            Models.Projeto p = pc.BuscarPorId(faseProjeto.ProjetoId+"");
+
+            if (tempoEstimado > HorasProjeto(p)) 
+            {
+                Mensagem.Aviso("Tempo Estimado é maior que o total de horas do projeto");
+            }
+            else if (titulo == string.Empty)
             {
                 Mensagem.Erro("Título não pode ser Nulo!");
             }

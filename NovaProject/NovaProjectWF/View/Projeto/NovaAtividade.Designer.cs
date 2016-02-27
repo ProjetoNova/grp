@@ -61,6 +61,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnLiberar = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -80,6 +81,7 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage1.Controls.Add(this.btnLiberar);
             this.tabPage1.Controls.Add(this.dtFim);
             this.tabPage1.Controls.Add(this.txtFase);
             this.tabPage1.Controls.Add(this.txtProjeto);
@@ -390,6 +392,17 @@
             this.label4.TabIndex = 44;
             this.label4.Text = "(Campos com * são obrigatórios)";
             // 
+            // btnLiberar
+            // 
+            this.btnLiberar.BackColor = System.Drawing.Color.Red;
+            this.btnLiberar.Location = new System.Drawing.Point(97, 6);
+            this.btnLiberar.Name = "btnLiberar";
+            this.btnLiberar.Size = new System.Drawing.Size(113, 23);
+            this.btnLiberar.TabIndex = 44;
+            this.btnLiberar.Text = "Liberar Atividade";
+            this.btnLiberar.UseVisualStyleBackColor = false;
+            this.btnLiberar.Click += new System.EventHandler(this.btnLiberar_Click);
+            // 
             // NovaAtividade
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -447,5 +460,6 @@
         private System.Windows.Forms.TextBox txtProjeto;
         private System.Windows.Forms.TextBox dtFim;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnLiberar;
     }
 }

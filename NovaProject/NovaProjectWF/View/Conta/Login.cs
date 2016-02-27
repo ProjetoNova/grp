@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using NovaProjectWF.View.Utilitarios;
 using NovaProjectWF.Controllers.SessaoController;
+using NovaProjectWF.Controllers.CadastroController;
+using NovaProjectWF.Models;
 
 namespace NovaProjectWF.View.Conta
 {
@@ -30,6 +32,20 @@ namespace NovaProjectWF.View.Conta
             if (result == DialogResult.Yes)
             {
                 this.Close();
+            }
+        }
+
+        private void txtUsuario_Leave(object sender, EventArgs e)
+        {
+            UsuarioController uControl = new UsuarioController();
+
+            List<Usuario> usuarios = uControl.BuscarPorNome(txtUsuario.Text.Trim());
+
+            if (usuarios.Count > 0)
+            {
+                Usuario u = uControl.BuscarPorNome(txtUsuario.Text.Trim()).First();
+
+                txtUsuario.Text = u.Login;
             }
         }
 

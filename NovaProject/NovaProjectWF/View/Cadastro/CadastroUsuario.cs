@@ -1,5 +1,6 @@
 ﻿using NovaProjectWF.Controllers;
 using NovaProjectWF.Controllers.CadastroController;
+using NovaProjectWF.Controllers.SessaoController;
 using NovaProjectWF.Models;
 using System;
 using System.Collections.Generic;
@@ -17,8 +18,13 @@ namespace NovaProjectWF.View.Utilitarios
     {
         List<Usuario> listaControle;
         List<string> lista;
+        
         public CadastroUsuario()
         {
+            
+
+            
+
             InitializeComponent();
             TipoUsuarioController control = new TipoUsuarioController();
 
