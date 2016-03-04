@@ -1,7 +1,7 @@
 ﻿using NovaProjectWF.Controllers.CadastroController;
-using NovaProjectWF.Dao;
-using NovaProjectWF.Models;
-using NovaProjectWF.Models.NaoPersistido;
+using Negocio.Dao;
+using Negocio.Models;
+using Negocio.Models.NaoPersistido;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace NovaProjectWF.Controllers.ProjetoController
 {
-    class AnexoProjetoController
+    public class AnexoProjetoController
     {
         AnexoProjetoDAO crud;
 

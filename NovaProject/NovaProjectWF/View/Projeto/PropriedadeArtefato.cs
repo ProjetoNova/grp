@@ -1,7 +1,7 @@
 ﻿using NovaProjectWF.Controllers.ProjetoController;
-using NovaProjectWF.Dao;
-using NovaProjectWF.Models;
-using NovaProjectWF.Models.NaoPersistido;
+using Negocio.Dao;
+using Negocio.Models;
+using Negocio.Models.NaoPersistido;
 using NovaProjectWF.View.Utilitarios;
 using System;
 using System.Collections.Generic;

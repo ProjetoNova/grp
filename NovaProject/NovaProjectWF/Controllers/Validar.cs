@@ -23,6 +23,8 @@ namespace NovaProjectWF.Controllers
             return true;
         }
 
+      
+
         public static bool SenhasConferem(string senha1, string senha2)
         {
             if (senha1 != string.Empty && senha2 != string.Empty)

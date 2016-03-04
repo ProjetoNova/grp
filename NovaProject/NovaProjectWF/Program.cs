@@ -26,7 +26,7 @@ namespace NovaProjectWF
             frmSplash.Show();
             Application.DoEvents();
 
-            Database.SetInitializer(new NovaProjectWF.Dao.Contexto.MyInitializer());
+            Database.SetInitializer(new Negocio.Dao.Contexto.MyInitializer());
 
             UsuarioController control = new UsuarioController();
             TipoUsuarioController tControl = new TipoUsuarioController();

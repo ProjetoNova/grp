@@ -1,6 +1,6 @@
 ﻿using NovaProjectWF.Controllers.CadastroController;
 using NovaProjectWF.Controllers.SessaoController;
-using NovaProjectWF.Models;
+using Negocio.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

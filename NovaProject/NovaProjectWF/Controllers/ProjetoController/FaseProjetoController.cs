@@ -1,5 +1,5 @@
-﻿using NovaProjectWF.Dao;
-using NovaProjectWF.Models;
+﻿using Negocio.Dao;
+using Negocio.Models;
 using NovaProjectWF.View.Utilitarios;
 using System;
 using System.Collections.Generic;

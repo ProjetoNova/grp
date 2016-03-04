@@ -7,8 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using NovaProjectWF.Models.Interfaces;
-using NovaProjectWF.Models;
+using Negocio.Models.Interfaces;
+using Negocio.Models;
 using NovaProjectWF.Controllers.CadastroController;
 using NovaProjectWF.Controllers;
 
@@ -27,6 +27,13 @@ namespace NovaProjectWF.View.Utilitarios
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
+            if (txtNome.Text.Trim() == string.Empty)
+            {
+                Mensagem.Erro("Nome não pode ser Nulo!");
+                return;
+            }
+
+
             TipoAtividadeController controller = new TipoAtividadeController();
 
             Object retorno = controller.Salvar(lblId.Text, txtNome.Text.Trim(),

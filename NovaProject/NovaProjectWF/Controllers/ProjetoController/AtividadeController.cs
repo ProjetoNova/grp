@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using NovaProjectWF.Models;
+using Negocio.Models;
 using NovaProjectWF.View.Utilitarios;
-using NovaProjectWF.Dao;
-using NovaProjectWF.Models.Enumerados;
+using Negocio.Dao;
+using Negocio.Models.Enumerados;
 using NovaProjectWF.Controllers.CadastroController;
-using NovaProjectWF.Models.NaoPersistido;
+using Negocio.Models.NaoPersistido;
 
 namespace NovaProjectWF.Controllers.ProjetoController
 {
@@ -47,7 +47,7 @@ namespace NovaProjectWF.Controllers.ProjetoController
             return listaRetonrno;
         }
 
-        private double HorasProjeto(Models.Projeto proj)
+        private double HorasProjeto(Negocio.Models.Projeto proj)
         {
             double tempoTotal = 0;
             double dataInicio = proj.DataInicio.Value.ToOADate();
@@ -70,7 +70,7 @@ namespace NovaProjectWF.Controllers.ProjetoController
             }
             
             ProjetoController pc = new ProjetoController();
-            Models.Projeto p = pc.BuscarPorId(faseProjeto.ProjetoId+"");
+            Negocio.Models.Projeto p = pc.BuscarPorId(faseProjeto.ProjetoId + "");
 
             if (tempoEstimado > HorasProjeto(p)) 
             {

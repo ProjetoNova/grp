@@ -1,7 +1,7 @@
 ﻿using NovaProjectWF.Controllers;
 using NovaProjectWF.Controllers.CadastroController;
 using NovaProjectWF.Controllers.SessaoController;
-using NovaProjectWF.Models;
+using Negocio.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -48,6 +48,7 @@ namespace NovaProjectWF.View.Utilitarios
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
+
             UsuarioController control = new UsuarioController();
             TipoUsuarioController controlTipo = new TipoUsuarioController();
 

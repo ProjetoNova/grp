@@ -1,6 +1,6 @@
 ﻿using NovaProjectWF.Controllers;
 using NovaProjectWF.Controllers.ProjetoController;
-using NovaProjectWF.Models.Enumerados;
+using Negocio.Models.Enumerados;
 using NovaProjectWF.View.Utilitarios;
 using System;
 using System.Collections.Generic;
@@ -11,18 +11,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using NovaProjectWF.Models;
-using NovaProjectWF.Dao;
+using Negocio.Models;
+using Negocio.Dao;
 using NovaProjectWF.Controllers.CadastroController;
 using NovaProjectWF.Controllers.SessaoController;
-using NovaProjectWF.Models.NaoPersistido;
+using Negocio.Models.NaoPersistido;
 
 namespace NovaProjectWF.View.Projeto
 {
     public partial class NovoProjeto : Form
     {
-        Models.Projeto projeto;
-        List<Models.FaseProjeto> fases;
+        Negocio.Models.Projeto projeto;
+        List<Negocio.Models.FaseProjeto> fases;
         List<EquipeProjeto> equipe;
         List<AtividadeProjeto> atividades;
         List<ArtefatosProjeto> artefatos;
@@ -47,7 +47,7 @@ namespace NovaProjectWF.View.Projeto
         {
             ProjetoController pcontrol = new ProjetoController();
             //atribui os valores
-            this.projeto = (Models.Projeto)projeto;
+            this.projeto = (Negocio.Models.Projeto)projeto;
             string id = this.projeto.Id.ToString();
             this.projeto = pcontrol.BuscarPorId(id);
 
@@ -127,10 +127,10 @@ namespace NovaProjectWF.View.Projeto
             }
             else
             {
-                lblId.Text = ((Models.Projeto)retorno).Id + "";
-                dtFim.Text = ((Models.Projeto)retorno).DataConclusao + "";
+                lblId.Text = ((Negocio.Models.Projeto)retorno).Id + "";
+                dtFim.Text = ((Negocio.Models.Projeto)retorno).DataConclusao + "";
                 Mensagem.Informacao("Salvo com sucesso");
-                projeto = (Models.Projeto)retorno;
+                projeto = (Negocio.Models.Projeto)retorno;
                 UsuarioProjetoController upcontrol = new UsuarioProjetoController();
                 UsuarioController ucontrol = new UsuarioController();
                 TipoUsuarioController tucontrol = new TipoUsuarioController();
@@ -218,7 +218,7 @@ namespace NovaProjectWF.View.Projeto
             if (gridFase.SelectedRows.Count > 0)
             {
                 FaseProjeto fase = new FaseProjeto(this);
-                Models.FaseProjeto fase_ = null;
+                Negocio.Models.FaseProjeto fase_ = null;
                 fase_ =  fases[gridFase.SelectedRows[0].Index];
                 fase_.Projeto = projeto;
                 fase.Exibir(this.MdiParent, fase_);
@@ -237,7 +237,7 @@ namespace NovaProjectWF.View.Projeto
             if (gridFase.SelectedRows.Count > 0)
             {
                 NovaAtividade atv = new NovaAtividade(this, Convert.ToInt32(lblId.Text.Trim()));
-                Models.FaseProjeto fase = fases[gridFase.SelectedRows[0].Index];
+                Negocio.Models.FaseProjeto fase = fases[gridFase.SelectedRows[0].Index];
                 fase.Projeto = projeto;
                 atv.ExibirNova(this.MdiParent, fase);
             }

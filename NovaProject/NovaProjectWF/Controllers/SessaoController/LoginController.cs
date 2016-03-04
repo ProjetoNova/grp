@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using NovaProjectWF.Models;
-using NovaProjectWF.Dao;
+using Negocio.Models;
+using Negocio.Dao;
 using NovaProjectWF.Controllers.CadastroController;
 
 namespace NovaProjectWF.Controllers.SessaoController

@@ -14,7 +14,7 @@ namespace NovaProjectWF.View.Projeto
 {
     public partial class Projetos : Form
     {
-        private List<NovaProjectWF.Models.Projeto> listaProjeto;
+        private List<Negocio.Models.Projeto> listaProjeto;
 
         public Projetos()
         {
@@ -53,7 +53,7 @@ namespace NovaProjectWF.View.Projeto
         {
             NovoProjeto novoProjeto = new NovoProjeto();
 
-            Models.Projeto proj = null;
+            Negocio.Models.Projeto proj = null;
 
             if (e.RowIndex < 0)
             {

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using NovaProjectWF.Models;
+using Negocio.Models;
 using NovaProjectWF.View.Utilitarios;
-using NovaProjectWF.Dao;
+using Negocio.Dao;
 
 namespace NovaProjectWF.Controllers.CadastroController
 {

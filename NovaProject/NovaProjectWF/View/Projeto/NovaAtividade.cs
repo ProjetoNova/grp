@@ -2,8 +2,8 @@
 using NovaProjectWF.Controllers.CadastroController;
 using NovaProjectWF.Controllers.ProjetoController;
 using NovaProjectWF.Controllers.SessaoController;
-using NovaProjectWF.Models;
-using NovaProjectWF.Models.Enumerados;
+using Negocio.Models;
+using Negocio.Models.Enumerados;
 using NovaProjectWF.View.Utilitarios;
 using System;
 using System.Collections.Generic;
@@ -79,7 +79,7 @@ namespace NovaProjectWF.View.Projeto
 
         public void Exibir(Form parent, Object Atividade) {
 
-            this.atividade = (Models.Atividade)Atividade;
+            this.atividade = (Negocio.Models.Atividade)Atividade;
             //this.atividade = control.BuscarPorId(this.atividade.Id.ToString());
 
             this.atividade.TipoAtividade = tControl.BuscarPorId(this.atividade.TipoAtividadeId+"");
@@ -141,7 +141,7 @@ namespace NovaProjectWF.View.Projeto
         public void ExibirNova(Form parent, Object FaseProjeto)
         {
             this.atividade = new Atividade();
-            this.atividade.FaseProjeto = (Models.FaseProjeto)FaseProjeto;
+            this.atividade.FaseProjeto = (Negocio.Models.FaseProjeto)FaseProjeto;
             this.atividade.FaseProjetoId = this.atividade.FaseProjeto.Id;
 
             this.dtInicio.MinDate = this.atividade.FaseProjeto.DataInicio.Date;
@@ -246,7 +246,7 @@ namespace NovaProjectWF.View.Projeto
             }
             else
             {
-                label1.Text = label1.Text+((Models.Atividade)retorno).Id;
+                label1.Text = label1.Text + ((Negocio.Models.Atividade)retorno).Id;
                 if (((Atividade)retorno).DataFim != null)
                 {
                     dtFim.Text = ((Atividade)retorno).DataFim.Value.ToString();

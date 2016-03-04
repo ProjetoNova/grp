@@ -15,7 +15,7 @@ namespace NovaProjectWF.View.Cadastro
 {
     public partial class SituacaoAtividade : Form
     {
-        List<Models.SituacaoAtividade> listaControle;
+        List<Negocio.Models.SituacaoAtividade> listaControle;
 
         public SituacaoAtividade()
         {
@@ -26,6 +26,13 @@ namespace NovaProjectWF.View.Cadastro
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
+            if (txtNome.Text.Trim() == string.Empty)
+            {
+                Mensagem.Erro("Nome não pode ser Nulo!");
+                return;
+            }
+
+
             SituacaoAtividadeController controller = new SituacaoAtividadeController();
 
             Object retorno = controller.Salvar(lblId.Text, txtNome.Text.Trim(),
@@ -48,7 +55,7 @@ namespace NovaProjectWF.View.Cadastro
             }
             else
             {
-                lblId.Text = ((Models.SituacaoAtividade)retorno).Id + "";
+                lblId.Text = ((Negocio.Models.SituacaoAtividade)retorno).Id + "";
                 Mensagem.Informacao("Salvo com sucesso");
             }
         }
@@ -64,7 +71,7 @@ namespace NovaProjectWF.View.Cadastro
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
             SituacaoAtividadeController control = new SituacaoAtividadeController();
-            listaControle = new List<Models.SituacaoAtividade>();
+            listaControle = new List<Negocio.Models.SituacaoAtividade>();
 
             if (textBox1.Text.Trim() == string.Empty)
             {
@@ -99,7 +106,7 @@ namespace NovaProjectWF.View.Cadastro
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            Models.SituacaoAtividade situacao = null;
+            Negocio.Models.SituacaoAtividade situacao = null;
 
             foreach (DataGridViewRow row in dataGridView1.SelectedRows)
             {

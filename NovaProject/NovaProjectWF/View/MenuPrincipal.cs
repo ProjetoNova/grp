@@ -11,7 +11,7 @@ using NovaProjectWF.View.Utilitarios;
 using NovaProjectWF.View.Conta;
 using NovaProjectWF.View.Projeto;
 using NovaProjectWF.View.Cadastro;
-using NovaProjectWF.Dao;
+using Negocio.Dao;
 using NovaProjectWF.Controllers.SessaoController;
 namespace NovaProjectWF.View
 {

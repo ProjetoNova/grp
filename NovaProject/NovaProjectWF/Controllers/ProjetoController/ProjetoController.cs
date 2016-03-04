@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using NovaProjectWF.Models;
+using Negocio.Models;
 using NovaProjectWF.View.Utilitarios;
-using NovaProjectWF.Dao;
-using NovaProjectWF.Models.Enumerados;
+using Negocio.Dao;
+using Negocio.Models.Enumerados;
 
 namespace NovaProjectWF.Controllers.ProjetoController
 {

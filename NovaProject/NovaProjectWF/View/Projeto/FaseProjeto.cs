@@ -15,7 +15,7 @@ namespace NovaProjectWF.View.Projeto
 {
     public partial class FaseProjeto : Form
     {
-        Models.FaseProjeto faseProjeto;
+        Negocio.Models.FaseProjeto faseProjeto;
         NovoProjeto proj;
 
         public FaseProjeto(Object janelaProjeto)
@@ -38,7 +38,7 @@ namespace NovaProjectWF.View.Projeto
 
         public void Exibir(Form parent, Object faseProjeto)
         {
-            this.faseProjeto = (Models.FaseProjeto) faseProjeto;
+            this.faseProjeto = (Negocio.Models.FaseProjeto)faseProjeto;
 
             this.lblId.Text = this.faseProjeto.Id+"";
             this.txtProjeto.Text = this.faseProjeto.Projeto.Titulo;
@@ -62,9 +62,9 @@ namespace NovaProjectWF.View.Projeto
 
         public void ExibirNova(Form parent, Object projeto)
         {
-            this.faseProjeto = new Models.FaseProjeto();
+            this.faseProjeto = new Negocio.Models.FaseProjeto();
 
-            this.faseProjeto.Projeto = (Models.Projeto)projeto;
+            this.faseProjeto.Projeto = (Negocio.Models.Projeto)projeto;
 
             this.txtProjeto.Text = this.faseProjeto.Projeto.Titulo;
 
@@ -111,7 +111,7 @@ namespace NovaProjectWF.View.Projeto
             }
             else
             {
-                lblId.Text = ((Models.FaseProjeto)obj).Id + "";
+                lblId.Text = ((Negocio.Models.FaseProjeto)obj).Id + "";
                 Mensagem.Informacao("Salvo com sucesso");
                 this.Close();
             }

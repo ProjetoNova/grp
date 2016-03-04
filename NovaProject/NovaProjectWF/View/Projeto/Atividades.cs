@@ -1,7 +1,7 @@
 ﻿using NovaProjectWF.Controllers.CadastroController;
 using NovaProjectWF.Controllers.ProjetoController;
 using NovaProjectWF.Controllers.SessaoController;
-using NovaProjectWF.Models;
+using Negocio.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -135,7 +135,7 @@ namespace NovaProjectWF.View.Projeto
 
                 FaseProjetoController fControl = new FaseProjetoController();
 
-                Models.FaseProjeto fp = fControl.BuscarPorId(atv_.FaseProjetoId+"");
+                Negocio.Models.FaseProjeto fp = fControl.BuscarPorId(atv_.FaseProjetoId+"");
 
                 NovaAtividade atv = new NovaAtividade(null, fp.ProjetoId);
 

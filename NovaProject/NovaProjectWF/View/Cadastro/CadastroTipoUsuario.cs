@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using NovaProjectWF.View.Utilitarios;
 using NovaProjectWF.Controllers.CadastroController;
-using NovaProjectWF.Models;
+using Negocio.Models;
 using System.Threading;
 using NovaProjectWF.Controllers;
 
@@ -71,6 +71,13 @@ namespace NovaProjectWF.View.Utilitarios
         //botao salvar
         private void button1_Click_1(object sender, EventArgs e)
         {
+
+            if (txtNome.Text.Trim() == string.Empty)
+            {
+                Mensagem.Erro("Nome não pode ser Nulo!");
+                return;
+            }
+
             TipoUsuarioController controller = new TipoUsuarioController();
 
             List<int> itens = new List<int>();

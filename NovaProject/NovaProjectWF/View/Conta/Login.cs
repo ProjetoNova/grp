@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using NovaProjectWF.View.Utilitarios;
 using NovaProjectWF.Controllers.SessaoController;
 using NovaProjectWF.Controllers.CadastroController;
-using NovaProjectWF.Models;
+using Negocio.Models;
 
 namespace NovaProjectWF.View.Conta
 {
@@ -37,15 +37,18 @@ namespace NovaProjectWF.View.Conta
 
         private void txtUsuario_Leave(object sender, EventArgs e)
         {
-            UsuarioController uControl = new UsuarioController();
-
-            List<Usuario> usuarios = uControl.BuscarPorNome(txtUsuario.Text.Trim());
-
-            if (usuarios.Count > 0)
+            if (txtUsuario.Text.Trim().Length > 0)
             {
-                Usuario u = uControl.BuscarPorNome(txtUsuario.Text.Trim()).First();
+                UsuarioController uControl = new UsuarioController();
 
-                txtUsuario.Text = u.Login;
+                List<Usuario> usuarios = uControl.BuscarPorNome(txtUsuario.Text.Trim());
+
+                if (usuarios.Count > 0)
+                {
+                    Usuario u = uControl.BuscarPorNome(txtUsuario.Text.Trim()).First();
+
+                    txtUsuario.Text = u.Login;
+                }
             }
         }
 
@@ -63,6 +66,7 @@ namespace NovaProjectWF.View.Conta
                 Mensagem.Aviso("Senha nao pode ser vazio!");
                 txtSenha.Focus();
             }
+            
             else if(!lControl.Login(txtUsuario.Text.Trim(),
                     txtSenha.Text.Trim()))
             {

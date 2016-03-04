@@ -11,6 +11,7 @@
     <AssemblyName>NovaProjectWF</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publicar\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -23,7 +24,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -131,8 +131,8 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\CadastroController\TipoAtividadeController.cs" />
     <Compile Include="Controllers\CadastroController\SituacaoAtividadeController.cs" />
+    <Compile Include="Controllers\CadastroController\TipoAtividadeController.cs" />
     <Compile Include="Controllers\CadastroController\TipoUsuarioController.cs" />
     <Compile Include="Controllers\CadastroController\UsuarioController.cs" />
     <Compile Include="Controllers\ProjetoController\AnexoProjetoController.cs" />
@@ -143,36 +143,6 @@
     <Compile Include="Controllers\SessaoController\LoginController.cs" />
     <Compile Include="Controllers\SessaoController\Sessao.cs" />
     <Compile Include="Controllers\Validar.cs" />
-    <Compile Include="Dao\AnexoAtividadeDAO.cs" />
-    <Compile Include="Dao\AnexoProjetoDAO.cs" />
-    <Compile Include="Dao\AtividadeDAO.cs" />
-    <Compile Include="Dao\Contexto.cs" />
-    <Compile Include="Dao\CRUD.cs" />
-    <Compile Include="Dao\FaseProjetoDAO.cs" />
-    <Compile Include="Dao\PermissaoDAO.cs" />
-    <Compile Include="Dao\ProjetoDAO.cs" />
-    <Compile Include="Dao\SituacaoAtividadeDAO.cs" />
-    <Compile Include="Dao\TipoAtvidadeDAO.cs" />
-    <Compile Include="Dao\TipoUsuarioDAO.cs" />
-    <Compile Include="Dao\UsuarioDAO.cs" />
-    <Compile Include="Dao\UsuarioProjetoDAO.cs" />
-    <Compile Include="Models\AnexoAtividade.cs" />
-    <Compile Include="Models\AnexoProjeto.cs" />
-    <Compile Include="Models\Atividade.cs" />
-    <Compile Include="Models\Enumerados\EPrioridade.cs" />
-    <Compile Include="Models\Enumerados\ESituacaoProjeto.cs" />
-    <Compile Include="Models\FaseProjeto.cs" />
-    <Compile Include="Models\Interfaces\IEntidade.cs" />
-    <Compile Include="Models\NaoPersistido\ArtefatosProjeto.cs" />
-    <Compile Include="Models\NaoPersistido\AtividadeProjeto.cs" />
-    <Compile Include="Models\NaoPersistido\EquipeProjeto.cs" />
-    <Compile Include="Models\PermissaoTipoUsuario.cs" />
-    <Compile Include="Models\Projeto.cs" />
-    <Compile Include="Models\SituacaoAtividade.cs" />
-    <Compile Include="Models\TipoAtividade.cs" />
-    <Compile Include="Models\TipoUsuario.cs" />
-    <Compile Include="Models\Usuario.cs" />
-    <Compile Include="Models\UsuarioProjeto.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\Ajuda.cs">
@@ -358,7 +328,7 @@
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">
       <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.5 %28x86 e x64%29</ProductName>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -398,6 +368,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\carregando3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Negocio\Negocio.csproj">
+      <Project>{64cde04c-296f-418b-b56e-1c710941ff19}</Project>
+      <Name>Negocio</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
