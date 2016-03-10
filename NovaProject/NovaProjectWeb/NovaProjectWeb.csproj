@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Pages\index.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
   </ItemGroup>
@@ -80,6 +81,17 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\CadastroController\TipoUsuarioController.cs" />
+    <Compile Include="Controller\CadastroController\UsuarioController.cs" />
+    <Compile Include="Controller\SessaoController\LoginController.cs" />
+    <Compile Include="Controller\SessaoController\Sessao.cs" />
+    <Compile Include="Pages\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
