@@ -47,7 +47,7 @@ namespace NovaProjectWeb.View.pages
                 {
                     lancaErro("Fez Login!");
 
-                    Response.Redirect("index.html");
+                    Response.Redirect("index.aspx");
                 }
                 else
                 {

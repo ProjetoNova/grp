@@ -67,8 +67,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Pages\adminPage.aspx" />
-    <Content Include="Pages\index.aspx" />
     <Content Include="View\bower_components\bootstrap-social\bootstrap-social.css" />
     <Content Include="View\bower_components\bootstrap\dist\css\bootstrap-theme.css" />
     <Content Include="View\bower_components\bootstrap\dist\css\bootstrap-theme.min.css" />
@@ -511,18 +509,13 @@
     <Content Include="View\js\flot-data.js" />
     <Content Include="View\js\morris-data.js" />
     <Content Include="View\pages\blank.html" />
-    <Content Include="View\pages\buttons.html" />
     <Content Include="View\pages\flot.html" />
-    <Content Include="View\pages\forms.html" />
-    <Content Include="View\pages\grid.html" />
-    <Content Include="View\pages\icons.html" />
-    <Content Include="View\pages\index.html" />
+    <Content Include="View\pages\graficos.aspx" />
+    <Content Include="View\pages\index.aspx" />
     <Content Include="View\pages\login.aspx" />
     <Content Include="View\pages\morris.html" />
-    <Content Include="View\pages\notifications.html" />
-    <Content Include="View\pages\panels-wells.html" />
-    <Content Include="View\pages\tables.html" />
-    <Content Include="View\pages\typography.html" />
+    <Content Include="View\pages\relAtividade.aspx" />
+    <Content Include="View\pages\relProjeto.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
   </ItemGroup>
@@ -862,27 +855,41 @@
     <Compile Include="Controller\CadastroController\UsuarioController.cs" />
     <Compile Include="Controller\SessaoController\LoginController.cs" />
     <Compile Include="Controller\SessaoController\Sessao.cs" />
-    <Compile Include="Pages\adminPage.aspx.cs">
-      <DependentUpon>adminPage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\adminPage.aspx.designer.cs">
-      <DependentUpon>adminPage.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\index.aspx.cs">
-      <DependentUpon>index.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\index.aspx.designer.cs">
-      <DependentUpon>index.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\pages\graficos.aspx.cs">
+      <DependentUpon>graficos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\pages\graficos.aspx.designer.cs">
+      <DependentUpon>graficos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\pages\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\pages\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\pages\login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="View\pages\login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\pages\relAtividade.aspx.cs">
+      <DependentUpon>relAtividade.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\pages\relAtividade.aspx.designer.cs">
+      <DependentUpon>relAtividade.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\pages\relProjeto.aspx.cs">
+      <DependentUpon>relProjeto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\pages\relProjeto.aspx.designer.cs">
+      <DependentUpon>relProjeto.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
