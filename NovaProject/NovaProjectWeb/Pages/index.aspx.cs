@@ -46,6 +46,8 @@ namespace NovaProjectWeb.Pages
                 if (controll.Login(nome, senha))
                 {
                     lancaErro("Fez Login!");
+
+                    Response.Redirect("adminPage.aspx");
                 }
                 else
                 {
