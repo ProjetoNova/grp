@@ -59,6 +59,10 @@
             this.btnEditarFase = new System.Windows.Forms.Button();
             this.btnNovaFase = new System.Windows.Forms.Button();
             this.tabArtefatos = new System.Windows.Forms.TabPage();
+            this.gridArtefato = new System.Windows.Forms.DataGridView();
+            this.btnPropriedades = new System.Windows.Forms.Button();
+            this.btnExcluir = new System.Windows.Forms.Button();
+            this.btnCarregarArtefato = new System.Windows.Forms.Button();
             this.lblId = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.cbSituacao = new System.Windows.Forms.ComboBox();
@@ -67,11 +71,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnNovo = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
-            this.btnPropriedades = new System.Windows.Forms.Button();
-            this.btnExcluir = new System.Windows.Forms.Button();
-            this.btnCarregarArtefato = new System.Windows.Forms.Button();
-            this.gridArtefato = new System.Windows.Forms.DataGridView();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.btnAtualiza = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPlano.SuspendLayout();
             this.tabProjeto.SuspendLayout();
@@ -418,6 +419,49 @@
             this.tabArtefatos.Text = "Artefatos";
             this.tabArtefatos.UseVisualStyleBackColor = true;
             // 
+            // gridArtefato
+            // 
+            this.gridArtefato.AllowUserToAddRows = false;
+            this.gridArtefato.AllowUserToDeleteRows = false;
+            this.gridArtefato.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridArtefato.Location = new System.Drawing.Point(160, 6);
+            this.gridArtefato.MultiSelect = false;
+            this.gridArtefato.Name = "gridArtefato";
+            this.gridArtefato.ReadOnly = true;
+            this.gridArtefato.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gridArtefato.Size = new System.Drawing.Size(642, 440);
+            this.gridArtefato.TabIndex = 7;
+            // 
+            // btnPropriedades
+            // 
+            this.btnPropriedades.Location = new System.Drawing.Point(6, 66);
+            this.btnPropriedades.Name = "btnPropriedades";
+            this.btnPropriedades.Size = new System.Drawing.Size(146, 23);
+            this.btnPropriedades.TabIndex = 6;
+            this.btnPropriedades.Text = "Propriedades do Artefato";
+            this.btnPropriedades.UseVisualStyleBackColor = true;
+            this.btnPropriedades.Click += new System.EventHandler(this.btnPropriedades_Click);
+            // 
+            // btnExcluir
+            // 
+            this.btnExcluir.Location = new System.Drawing.Point(6, 36);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(146, 23);
+            this.btnExcluir.TabIndex = 5;
+            this.btnExcluir.Text = "Excluir Artefato";
+            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
+            // 
+            // btnCarregarArtefato
+            // 
+            this.btnCarregarArtefato.Location = new System.Drawing.Point(6, 6);
+            this.btnCarregarArtefato.Name = "btnCarregarArtefato";
+            this.btnCarregarArtefato.Size = new System.Drawing.Size(147, 23);
+            this.btnCarregarArtefato.TabIndex = 4;
+            this.btnCarregarArtefato.Text = "Carregar Novo Artefato...";
+            this.btnCarregarArtefato.UseVisualStyleBackColor = true;
+            this.btnCarregarArtefato.Click += new System.EventHandler(this.btnCarregarArtefato_Click);
+            // 
             // lblId
             // 
             this.lblId.AutoSize = true;
@@ -491,53 +535,20 @@
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
-            // btnPropriedades
-            // 
-            this.btnPropriedades.Location = new System.Drawing.Point(6, 66);
-            this.btnPropriedades.Name = "btnPropriedades";
-            this.btnPropriedades.Size = new System.Drawing.Size(146, 23);
-            this.btnPropriedades.TabIndex = 6;
-            this.btnPropriedades.Text = "Propriedades do Artefato";
-            this.btnPropriedades.UseVisualStyleBackColor = true;
-            this.btnPropriedades.Click += new System.EventHandler(this.btnPropriedades_Click);
-            // 
-            // btnExcluir
-            // 
-            this.btnExcluir.Location = new System.Drawing.Point(6, 36);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(146, 23);
-            this.btnExcluir.TabIndex = 5;
-            this.btnExcluir.Text = "Excluir Artefato";
-            this.btnExcluir.UseVisualStyleBackColor = true;
-            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
-            // 
-            // btnCarregarArtefato
-            // 
-            this.btnCarregarArtefato.Location = new System.Drawing.Point(6, 6);
-            this.btnCarregarArtefato.Name = "btnCarregarArtefato";
-            this.btnCarregarArtefato.Size = new System.Drawing.Size(147, 23);
-            this.btnCarregarArtefato.TabIndex = 4;
-            this.btnCarregarArtefato.Text = "Carregar Novo Artefato...";
-            this.btnCarregarArtefato.UseVisualStyleBackColor = true;
-            this.btnCarregarArtefato.Click += new System.EventHandler(this.btnCarregarArtefato_Click);
-            // 
-            // gridArtefato
-            // 
-            this.gridArtefato.AllowUserToAddRows = false;
-            this.gridArtefato.AllowUserToDeleteRows = false;
-            this.gridArtefato.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridArtefato.Location = new System.Drawing.Point(160, 6);
-            this.gridArtefato.MultiSelect = false;
-            this.gridArtefato.Name = "gridArtefato";
-            this.gridArtefato.ReadOnly = true;
-            this.gridArtefato.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridArtefato.Size = new System.Drawing.Size(642, 440);
-            this.gridArtefato.TabIndex = 7;
-            // 
             // openFileDialog1
             // 
             this.openFileDialog1.InitialDirectory = "C:\\";
             this.openFileDialog1.Title = "Abrir Arquivo de Artefato";
+            // 
+            // btnAtualiza
+            // 
+            this.btnAtualiza.Location = new System.Drawing.Point(749, 12);
+            this.btnAtualiza.Name = "btnAtualiza";
+            this.btnAtualiza.Size = new System.Drawing.Size(75, 23);
+            this.btnAtualiza.TabIndex = 26;
+            this.btnAtualiza.Text = "Atualizar";
+            this.btnAtualiza.UseVisualStyleBackColor = true;
+            this.btnAtualiza.Click += new System.EventHandler(this.btnAtualiza_Click);
             // 
             // NovoProjeto
             // 
@@ -545,6 +556,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(841, 571);
+            this.Controls.Add(this.btnAtualiza);
             this.Controls.Add(this.btnNovo);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.lblId);
@@ -623,6 +635,7 @@
         private System.Windows.Forms.Button btnCarregarArtefato;
         private System.Windows.Forms.DataGridView gridArtefato;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Button btnAtualiza;
 
     }
 }

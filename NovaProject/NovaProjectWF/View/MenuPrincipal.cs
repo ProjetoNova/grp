@@ -64,7 +64,7 @@ namespace NovaProjectWF.View
         //Menu Cadastro de Usuario
         private void usuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (!SessaoSistema.CadUsuario)
+            if (!SessaoSistema.CadUsuario && !SessaoSistema.Administrador)
             {
                 Mensagem.Aviso("Voce nao tem acesso a essa tela!");
                 return;
@@ -89,8 +89,8 @@ namespace NovaProjectWF.View
         //Menu Cadastro de Tipo de Atividade
         private void tipoAtividadeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-          
-            if (!SessaoSistema.CadTipoAtividade)
+
+            if (!SessaoSistema.CadTipoAtividade && !SessaoSistema.Administrador)
             {
                 Mensagem.Aviso("Voce nao tem acesso a essa tela!");
                 return;
@@ -114,7 +114,7 @@ namespace NovaProjectWF.View
         //Menu Novo Projeto
         private void novoProjetoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (!SessaoSistema.NovoProjeto)
+            if (!SessaoSistema.NovoProjeto && !SessaoSistema.Administrador)
             {
                 Mensagem.Aviso("Voce nao tem acesso a essa tela!");
                 return;
@@ -179,7 +179,7 @@ namespace NovaProjectWF.View
         //menu situacao atividade
         private void situaçãoAtividadeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (!SessaoSistema.CadSitAtividade)
+            if (!SessaoSistema.CadSitAtividade && !SessaoSistema.Administrador)
             {
                 Mensagem.Aviso("Voce nao tem acesso a essa tela!");
                 return;

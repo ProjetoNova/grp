@@ -47,7 +47,7 @@ namespace NovaProjectWF.View
 
         private void btnNovoProjeto_Click(object sender, EventArgs e)
         {
-            if (!SessaoSistema.NovoProjeto)
+            if (!SessaoSistema.NovoProjeto && !SessaoSistema.Administrador)
             {
                 Mensagem.Aviso("Voce nao tem acesso a essa tela!");
                 return;

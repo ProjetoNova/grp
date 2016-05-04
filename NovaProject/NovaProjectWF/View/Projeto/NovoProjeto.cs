@@ -228,7 +228,7 @@ namespace NovaProjectWF.View.Projeto
         //click botao nova atividade
         private void btnAtividade_Click(object sender, EventArgs e)
         {
-            if (!SessaoSistema.NovoAtividade)
+            if (!SessaoSistema.NovoAtividade && !SessaoSistema.Administrador)
             {
                 Mensagem.Aviso("Voce nao tem acesso a essa tela!");
                 return;
@@ -428,6 +428,14 @@ namespace NovaProjectWF.View.Projeto
                     atualizaGridArtefato();
                 }
             }
+        }
+
+        private void btnAtualiza_Click(object sender, EventArgs e)
+        {
+            UsuarioController controlUser = new UsuarioController();
+            TipoUsuarioController controlTUsuario = new TipoUsuarioController();
+            cbUsuario.DataSource = controlUser.TodosOsNomes();
+            cbPapel.DataSource = controlTUsuario.TodosOsNomes();
         }
     }
 }
