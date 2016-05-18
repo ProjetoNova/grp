@@ -27,6 +27,7 @@ namespace NovaProjectWF.View.Projeto
         List<AtividadeProjeto> atividades;
         List<ArtefatosProjeto> artefatos;
         PropriedadeArtefato propArte;
+        Form parent;
 
         public NovoProjeto()
         {
@@ -45,6 +46,7 @@ namespace NovaProjectWF.View.Projeto
         //Metodo para Exibir um Projeto Ja existente
         public void Exibir(Form parent, Object projeto)
         {
+            this.parent = parent;
             ProjetoController pcontrol = new ProjetoController();
             //atribui os valores
             this.projeto = (Negocio.Models.Projeto)projeto;
@@ -436,6 +438,24 @@ namespace NovaProjectWF.View.Projeto
             TipoUsuarioController controlTUsuario = new TipoUsuarioController();
             cbUsuario.DataSource = controlUser.TodosOsNomes();
             cbPapel.DataSource = controlTUsuario.TodosOsNomes();
+
+            Mensagem.Informacao("Projeto Atualizado!");
+        }
+
+        private void btnEditarUP_Click(object sender, EventArgs e)
+        {
+            if (gridEquipe.SelectedRows.Count > 0)
+            {
+                EquipeProjeto ep = equipe[gridEquipe.SelectedRows[0].Index];
+                UsuarioController uc = new UsuarioController();
+                UsuarioProjetoController upc = new UsuarioProjetoController();
+                Negocio.Models.UsuarioProjeto up = upc.GetUsuarioProjeto(projeto.Id, uc.BuscarPorNome(ep.NomeUsuario)[0].Id);
+
+                View.Projeto.UsuarioProjeto upView = new View.Projeto.UsuarioProjeto();
+                upView.Exibir(parent, up);
+
+                AtualizaGridEquipe(upc);
+            }
         }
     }
 }

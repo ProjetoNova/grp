@@ -31,7 +31,6 @@
             this.cbPapel = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.cbUsuario = new System.Windows.Forms.ComboBox();
             this.btnIncluirUsuario = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dtInclusao = new System.Windows.Forms.DateTimePicker();
@@ -39,6 +38,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnExcluirUsuario = new System.Windows.Forms.Button();
             this.cbAtivo = new System.Windows.Forms.CheckBox();
+            this.txtNomeUsuario = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.rtbObservacoes = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // cbPapel
@@ -68,23 +70,15 @@
             this.label9.TabIndex = 10;
             this.label9.Text = "Usuário:";
             // 
-            // cbUsuario
-            // 
-            this.cbUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbUsuario.FormattingEnabled = true;
-            this.cbUsuario.Location = new System.Drawing.Point(109, 9);
-            this.cbUsuario.Name = "cbUsuario";
-            this.cbUsuario.Size = new System.Drawing.Size(280, 21);
-            this.cbUsuario.TabIndex = 9;
-            // 
             // btnIncluirUsuario
             // 
-            this.btnIncluirUsuario.Location = new System.Drawing.Point(41, 180);
+            this.btnIncluirUsuario.Location = new System.Drawing.Point(109, 321);
             this.btnIncluirUsuario.Name = "btnIncluirUsuario";
             this.btnIncluirUsuario.Size = new System.Drawing.Size(75, 23);
             this.btnIncluirUsuario.TabIndex = 7;
             this.btnIncluirUsuario.Text = "Salvar";
             this.btnIncluirUsuario.UseVisualStyleBackColor = true;
+            this.btnIncluirUsuario.Click += new System.EventHandler(this.btnIncluirUsuario_Click);
             // 
             // label1
             // 
@@ -120,12 +114,13 @@
             // 
             // btnExcluirUsuario
             // 
-            this.btnExcluirUsuario.Location = new System.Drawing.Point(133, 180);
+            this.btnExcluirUsuario.Location = new System.Drawing.Point(208, 321);
             this.btnExcluirUsuario.Name = "btnExcluirUsuario";
             this.btnExcluirUsuario.Size = new System.Drawing.Size(75, 23);
             this.btnExcluirUsuario.TabIndex = 8;
             this.btnExcluirUsuario.Text = "Cancelar";
             this.btnExcluirUsuario.UseVisualStyleBackColor = true;
+            this.btnExcluirUsuario.Click += new System.EventHandler(this.btnExcluirUsuario_Click);
             // 
             // cbAtivo
             // 
@@ -137,11 +132,39 @@
             this.cbAtivo.Text = "Ativo";
             this.cbAtivo.UseVisualStyleBackColor = true;
             // 
+            // txtNomeUsuario
+            // 
+            this.txtNomeUsuario.Location = new System.Drawing.Point(110, 9);
+            this.txtNomeUsuario.Name = "txtNomeUsuario";
+            this.txtNomeUsuario.ReadOnly = true;
+            this.txtNomeUsuario.Size = new System.Drawing.Size(279, 20);
+            this.txtNomeUsuario.TabIndex = 18;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(27, 188);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(73, 13);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "Observações:";
+            // 
+            // rtbObservacoes
+            // 
+            this.rtbObservacoes.Location = new System.Drawing.Point(107, 188);
+            this.rtbObservacoes.Name = "rtbObservacoes";
+            this.rtbObservacoes.Size = new System.Drawing.Size(282, 113);
+            this.rtbObservacoes.TabIndex = 20;
+            this.rtbObservacoes.Text = "";
+            // 
             // UsuarioProjeto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(402, 218);
+            this.ClientSize = new System.Drawing.Size(403, 356);
+            this.Controls.Add(this.rtbObservacoes);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txtNomeUsuario);
             this.Controls.Add(this.cbAtivo);
             this.Controls.Add(this.dtSaida);
             this.Controls.Add(this.label2);
@@ -150,7 +173,6 @@
             this.Controls.Add(this.cbPapel);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.cbUsuario);
             this.Controls.Add(this.btnExcluirUsuario);
             this.Controls.Add(this.btnIncluirUsuario);
             this.Name = "UsuarioProjeto";
@@ -165,7 +187,6 @@
         private System.Windows.Forms.ComboBox cbPapel;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox cbUsuario;
         private System.Windows.Forms.Button btnIncluirUsuario;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dtInclusao;
@@ -173,5 +194,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnExcluirUsuario;
         private System.Windows.Forms.CheckBox cbAtivo;
+        private System.Windows.Forms.TextBox txtNomeUsuario;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.RichTextBox rtbObservacoes;
     }
 }

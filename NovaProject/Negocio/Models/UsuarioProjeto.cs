@@ -22,5 +22,11 @@ namespace Negocio.Models
         public virtual Usuario Usuario { get; set; }
         [ForeignKey("TipoUsuarioId")]
         public virtual TipoUsuario Papel { get; set; }
+
+        public DateTime? InicioProjeto { get; set; }
+        public DateTime? FimProjeto { get; set; }
+        public bool Status { get; set; }
+        public string Observacao { get; set; }
+
     }
 }

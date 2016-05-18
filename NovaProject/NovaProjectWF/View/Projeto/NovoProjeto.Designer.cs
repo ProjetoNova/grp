@@ -73,6 +73,7 @@
             this.btnSalvar = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.btnAtualiza = new System.Windows.Forms.Button();
+            this.btnEditarUP = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPlano.SuspendLayout();
             this.tabProjeto.SuspendLayout();
@@ -183,6 +184,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnEditarUP);
             this.groupBox2.Controls.Add(this.cbPapel);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.label9);
@@ -201,15 +203,15 @@
             // 
             this.cbPapel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbPapel.FormattingEnabled = true;
-            this.cbPapel.Location = new System.Drawing.Point(388, 22);
+            this.cbPapel.Location = new System.Drawing.Point(316, 23);
             this.cbPapel.Name = "cbPapel";
-            this.cbPapel.Size = new System.Drawing.Size(235, 21);
+            this.cbPapel.Size = new System.Drawing.Size(223, 21);
             this.cbPapel.TabIndex = 6;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(345, 25);
+            this.label10.Location = new System.Drawing.Point(273, 26);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(37, 13);
             this.label10.TabIndex = 5;
@@ -230,7 +232,7 @@
             this.cbUsuario.FormattingEnabled = true;
             this.cbUsuario.Location = new System.Drawing.Point(59, 23);
             this.cbUsuario.Name = "cbUsuario";
-            this.cbUsuario.Size = new System.Drawing.Size(280, 21);
+            this.cbUsuario.Size = new System.Drawing.Size(208, 21);
             this.cbUsuario.TabIndex = 3;
             // 
             // gridEquipe
@@ -258,11 +260,11 @@
             // 
             // btnIncluirUsuario
             // 
-            this.btnIncluirUsuario.Location = new System.Drawing.Point(629, 21);
+            this.btnIncluirUsuario.Location = new System.Drawing.Point(548, 21);
             this.btnIncluirUsuario.Name = "btnIncluirUsuario";
             this.btnIncluirUsuario.Size = new System.Drawing.Size(75, 23);
             this.btnIncluirUsuario.TabIndex = 0;
-            this.btnIncluirUsuario.Text = "Incluir Colaborador";
+            this.btnIncluirUsuario.Text = "Incluir";
             this.btnIncluirUsuario.UseVisualStyleBackColor = true;
             this.btnIncluirUsuario.Click += new System.EventHandler(this.btnIncluirUsuario_Click);
             // 
@@ -271,7 +273,7 @@
             this.txtDescricao.Location = new System.Drawing.Point(79, 10);
             this.txtDescricao.MaxLength = 300;
             this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(393, 61);
+            this.txtDescricao.Size = new System.Drawing.Size(393, 65);
             this.txtDescricao.TabIndex = 4;
             this.txtDescricao.Text = "";
             // 
@@ -550,6 +552,16 @@
             this.btnAtualiza.UseVisualStyleBackColor = true;
             this.btnAtualiza.Click += new System.EventHandler(this.btnAtualiza_Click);
             // 
+            // btnEditarUP
+            // 
+            this.btnEditarUP.Location = new System.Drawing.Point(629, 21);
+            this.btnEditarUP.Name = "btnEditarUP";
+            this.btnEditarUP.Size = new System.Drawing.Size(75, 23);
+            this.btnEditarUP.TabIndex = 7;
+            this.btnEditarUP.Text = "Editar";
+            this.btnEditarUP.UseVisualStyleBackColor = true;
+            this.btnEditarUP.Click += new System.EventHandler(this.btnEditarUP_Click);
+            // 
             // NovoProjeto
             // 
             this.AcceptButton = this.btnSalvar;
@@ -636,6 +648,7 @@
         private System.Windows.Forms.DataGridView gridArtefato;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button btnAtualiza;
+        private System.Windows.Forms.Button btnEditarUP;
 
     }
 }

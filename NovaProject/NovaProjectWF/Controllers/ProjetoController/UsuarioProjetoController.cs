@@ -31,9 +31,32 @@ namespace NovaProjectWF.Controllers.ProjetoController
                 up.UsuarioId = UsuarioId;
                 up.ProjetoId = ProjetoId;
                 up.TipoUsuarioId = TipoUsuarioId;
+                up.Observacao = "";
+                up.InicioProjeto = new DateTime();
+                up.FimProjeto = new DateTime();
+                up.Status = true;
 
                 objRetorno = crud.save(Convert.ToInt32("0"), up);
             }
+
+            return objRetorno;
+        }
+
+        public Object Update(Negocio.Models.UsuarioProjeto UsuarioProjetoId, int TipoUsuarioId, 
+                                            DateTime dataInicio, DateTime dataFim, bool Ativo, string obs)
+        {
+            UsuarioProjeto up = new UsuarioProjeto();
+
+            up.UsuarioId = UsuarioProjetoId.UsuarioId;
+            up.ProjetoId = UsuarioProjetoId.ProjetoId;
+            up.TipoUsuarioId = TipoUsuarioId;
+            up.InicioProjeto = dataInicio;
+            up.FimProjeto = dataFim;
+            up.Status = Ativo;
+            up.Observacao = obs;
+            crud = new UsuarioProjetoDAO();
+            Object objRetorno = null;
+            objRetorno = crud.save(UsuarioProjetoId.Id, up);
 
             return objRetorno;
         }
