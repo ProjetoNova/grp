@@ -85,17 +85,18 @@
                         <li>
                             <a href="index.aspx"><i class="fa fa-dashboard fa-fw"></i> Principal</a>
                         </li>
-                         <li>
+                                                          
+                        <li>
                             <a href="#"><i class="fa fa-files-o fa-fw"></i>Graficos<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="relAtividade.aspx">Atividades Por Colaborador</a>
                                 </li>
                                 <li>
-                                    <a href="tipoAtividade.aspx">Tipos de Atividades</a>
+                                    <a href="relProjeto.aspx">Tipos de Atividades</a>
                                 </li>
                                 <li>
-                                    <a href="tempoGasto.aspx">Tempo Gasto por Atividade</a>
+                                    <a href="relProjeto.aspx">Tempo Gasto por Atividade</a>
                                 </li>
                                  <li>
                                     <a href="relProjeto.aspx">Projetos em Execução</a>
@@ -115,15 +116,36 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Atividades Por Colaborador</h1>
+                    <h1 class="page-header">Projetos em Execução</h1>
                        <div class="panel panel-default">
-                                                  <!-- /.panel-heading -->
+                        <div class="panel-heading">
+                            <i class="fa fa-bar-chart-o fa-fw"></i> Bar Chart Example
+                            <div class="pull-right">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                                        Actions
+                                        <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu pull-right" role="menu">
+                                        <li><a href="#">Action</a>
+                                        </li>
+                                        <li><a href="#">Another action</a>
+                                        </li>
+                                        <li><a href="#">Something else here</a>
+                                        </li>
+                                        <li class="divider"></li>
+                                        <li><a href="#">Separated link</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                           <!-- /.panel-heading -->
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-4">
-                                    <div class="table-responsive">                              
-                                        <table class="table table-bordered table-hover table-striped" >
-                                            
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered table-hover table-striped">
                                             <thead>
                                                 <tr>
                                                     <th>#</th>

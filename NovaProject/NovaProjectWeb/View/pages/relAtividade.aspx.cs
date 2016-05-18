@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NovaProjectWeb.Controller.ProjetoController;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,9 +10,14 @@ namespace NovaProjectWeb.View.pages
 {
     public partial class relAtividade : System.Web.UI.Page
     {
-        protected void Page_Load(object sender, EventArgs e)
+        List<Negocio.Models.Atividade> listaAtividades;
+
+        relAtividade()
         {
 
+            RelatorioAtividades dao = new RelatorioAtividades();
+
+            listaAtividades = dao.AtividadesPorUsuario();
         }
     }
 }

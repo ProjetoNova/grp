@@ -123,7 +123,7 @@ namespace NovaProjectWF.View.Projeto
 
             UsuarioProjetoController upc = new UsuarioProjetoController();
             TipoUsuarioController tuc = new TipoUsuarioController();
-            UsuarioProjeto up = upc.GetUsuarioProjeto(this.atividade.FaseProjeto.ProjetoId,
+            Negocio.Models.UsuarioProjeto up = upc.GetUsuarioProjeto(this.atividade.FaseProjeto.ProjetoId,
                 SessaoSistema.UsuarioId);
 
             if( up == null || !SessaoSistema.Administrador ) {

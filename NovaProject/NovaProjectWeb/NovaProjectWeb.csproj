@@ -19,6 +19,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -514,7 +515,10 @@
     <Content Include="View\pages\index.aspx" />
     <Content Include="View\pages\login.aspx" />
     <Content Include="View\pages\morris.html" />
+    <Content Include="View\pages\.aspx" />
     <Content Include="View\pages\relAtividade.aspx" />
+    <Content Include="View\pages\tempoGasto.aspx" />
+    <Content Include="View\pages\tipoAtividade.aspx" />
     <Content Include="View\pages\relProjeto.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -853,6 +857,10 @@
   <ItemGroup>
     <Compile Include="Controller\CadastroController\TipoUsuarioController.cs" />
     <Compile Include="Controller\CadastroController\UsuarioController.cs" />
+    <Compile Include="Controller\ProjetoController\RelatorioAtividades.cs" />
+    <Compile Include="Controller\ProjetoController\RelatorioProjeto.cs" />
+    <Compile Include="Controller\ProjetoController\RelatorioTempoGasto.cs" />
+    <Compile Include="Controller\ProjetoController\RelatorioTipoAtividade.cs" />
     <Compile Include="Controller\SessaoController\LoginController.cs" />
     <Compile Include="Controller\SessaoController\Sessao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -877,12 +885,33 @@
     <Compile Include="View\pages\login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="View\pages\.aspx.cs">
+      <DependentUpon>.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\pages\.aspx.designer.cs">
+      <DependentUpon>.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\pages\relAtividade.aspx.cs">
       <DependentUpon>relAtividade.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="View\pages\relAtividade.aspx.designer.cs">
       <DependentUpon>relAtividade.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\pages\tempoGasto.aspx.cs">
+      <DependentUpon>tempoGasto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\pages\tempoGasto.aspx.designer.cs">
+      <DependentUpon>tempoGasto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\pages\tipoAtividade.aspx.cs">
+      <DependentUpon>tipoAtividade.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\pages\tipoAtividade.aspx.designer.cs">
+      <DependentUpon>tipoAtividade.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\pages\relProjeto.aspx.cs">
       <DependentUpon>relProjeto.aspx</DependentUpon>
@@ -910,7 +939,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>50380</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>

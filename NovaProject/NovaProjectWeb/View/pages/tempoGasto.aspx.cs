@@ -9,6 +9,9 @@ namespace NovaProjectWeb.View.pages
 {
     public partial class relProjeto : System.Web.UI.Page
     {
-        
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

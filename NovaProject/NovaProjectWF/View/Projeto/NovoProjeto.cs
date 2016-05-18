@@ -83,7 +83,7 @@ namespace NovaProjectWF.View.Projeto
             
             atualizaGridArtefato();
             //verifica se eh gerente ou administrador
-            UsuarioProjeto up = control.GetUsuarioProjeto(this.projeto.Id, SessaoSistema.UsuarioId);
+            Negocio.Models.UsuarioProjeto up = control.GetUsuarioProjeto(this.projeto.Id, SessaoSistema.UsuarioId);
             TipoUsuarioController tuc = new TipoUsuarioController();
             if (up == null)
             {
@@ -172,7 +172,7 @@ namespace NovaProjectWF.View.Projeto
                 EquipeProjeto ep = equipe[gridEquipe.SelectedRows[0].Index];
                 UsuarioController uc = new UsuarioController();
                 UsuarioProjetoController upc = new UsuarioProjetoController();
-                UsuarioProjeto up = upc.GetUsuarioProjeto(projeto.Id, uc.BuscarPorNome(ep.NomeUsuario)[0].Id);
+                Negocio.Models.UsuarioProjeto up = upc.GetUsuarioProjeto(projeto.Id, uc.BuscarPorNome(ep.NomeUsuario)[0].Id);
 
                 Object excluir = upc.ExcluirUsuario(up.Id);
 

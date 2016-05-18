@@ -77,24 +77,26 @@
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
 
-                        <li>
-                            <a href="index.aspx"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                          <li>
+                            <a href="index.aspx"><i class="fa fa-dashboard fa-fw"></i> Principal</a>
                         </li>
-
+                                                          
                         <li>
-                            <a href="graficos.aspx"><i class="fa fa-bar-chart-o fa-fw"></i>Gráficos</a>
-
-                        </li>
-
-                        <li>
-                            <a href="#"><i class="fa fa-files-o fa-fw"></i>Relatórios<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-files-o fa-fw"></i>Graficos<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="relAtividade.aspx">Relatórios de Atividades</a>
+                                    <a href="relAtividade.aspx">Atividades Por Colaborador</a>
                                 </li>
                                 <li>
-                                    <a href="relProjeto.aspx">Relatórios de Projetos</a>
+                                    <a href="relProjeto.aspx">Tipos de Atividades</a>
                                 </li>
+                                <li>
+                                    <a href="relProjeto.aspx">Tempo Gasto por Atividade</a>
+                                </li>
+                                 <li>
+                                    <a href="relProjeto.aspx">Projetos em Execução</a>
+                                </li>
+
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>

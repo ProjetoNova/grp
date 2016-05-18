@@ -26,6 +26,25 @@ namespace Negocio.Dao
             return allSituacao;
         }
 
+        public List<SituacaoAtividade> GetNaoConcluidas()
+        {
+            List<SituacaoAtividade> allSituacao = new List<SituacaoAtividade>();
+
+            using (Contexto ctx = new Contexto())
+            {
+                var query = from c in ctx.SITUACAO_ATIVIDADE_
+                            where c.Concluida == false 
+                            select c;
+
+                foreach (var item in query)
+                {
+                    allSituacao.Add(item);
+                }
+            }
+
+            return allSituacao;
+        }
+
         public List<SituacaoAtividade> selectNome(string nome)
         {
             List<SituacaoAtividade> situacao = new List<SituacaoAtividade>();

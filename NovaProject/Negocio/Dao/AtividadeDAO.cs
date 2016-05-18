@@ -28,6 +28,26 @@ namespace Negocio.Dao
             return atividades;
         }
 
+        public List<Atividade> AtividadesAgrupPorUsuario()
+        {
+            List<Atividade> atividades = new List<Atividade>();
+
+            using (Contexto ctx = new Contexto())
+            {
+                var query = from c in ctx.ATIVIDADE_
+                            where c.DataFim >= new DateTime().AddDays(-30)
+                            orderby c.TipoAtividadeId, c.DataFim descending
+                            select c;
+
+                foreach (var item in query)
+                {
+                    atividades.Add((Atividade)item);
+                }
+            }
+
+            return atividades;
+        }
+
         public List<Atividade> selectPorSituacao(SituacaoAtividade atv)
         {
             List<Atividade> atividades = new List<Atividade>();
