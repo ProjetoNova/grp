@@ -197,6 +197,11 @@ namespace NovaProjectWF.View.Projeto
                 {
                     atividade.SituacaoAtividade = sControl.BuscarPorNome("Iniciada")[0];
                 }
+
+                if (!atividade.SituacaoAtividade.Nome.Equals("Concluída"))
+                {
+                    atividade.DataFim = null;
+                }
             }
 
             if (cbTipoAtividade.SelectedItem != null)

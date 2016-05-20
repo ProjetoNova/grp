@@ -10,6 +10,6 @@
 namespace NovaProjectWeb.View.pages {
     
     
-    public partial class index {
+    public partial class TipoAtividade {
     }
 }

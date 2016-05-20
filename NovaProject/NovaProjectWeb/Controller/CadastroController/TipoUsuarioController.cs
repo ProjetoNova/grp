@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Negocio.Models;
 using Negocio.Dao;
 
-namespace NovaProjectWF.Controllers.CadastroController
+namespace NovaProjectWeb.Controller.CadastroController
 {
     class TipoUsuarioController
     {

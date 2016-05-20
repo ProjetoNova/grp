@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Negocio.Models;
 using Negocio.Dao;
-using NovaProjectWF.Controllers.CadastroController;
+using NovaProjectWeb.Controller.CadastroController;
 
-namespace NovaProjectWF.Controllers.SessaoController
+namespace NovaProjectWeb.Controller.SessaoController
 {
     class LoginController
     {

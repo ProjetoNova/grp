@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="NovaProjectWeb.View.pages.index" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RelProjeto.aspx.cs" Inherits="NovaProjectWeb.View.pages.RelProjeto" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -25,8 +25,6 @@
     <!-- Custom CSS -->
     <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
 
-    <!-- Morris Charts CSS -->
-    <link href="../bower_components/morrisjs/morris.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -61,7 +59,7 @@
                 <!-- /.dropdown -->
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                        <i class="fa fa-user fa-fw"></i><i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
                         <li><a href="#"><i class="fa fa-user fa-fw"></i>Meu Perfil</a>
@@ -81,25 +79,24 @@
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
-                        
+
                         <li>
-                            <a href="index.aspx"><i class="fa fa-dashboard fa-fw"></i> Principal</a>
+                            <a href="index.aspx"><i class="fa fa-dashboard fa-fw"></i>Principal</a>
                         </li>
-                                                          
-                          <li>
-                            <a href="#"><i class="fa fa-files-o fa-fw"></i>Graficos<span class="fa arrow"></span></a>
+                        <li>
+                            <a href="#"><i class="fa fa-files-o fa-fw"></i>Relatórios<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="relAtividade.aspx">Atividades Por Colaborador</a>
+                                    <a href="RelAtividade.aspx">Atividades Por Colaborador</a>
                                 </li>
                                 <li>
-                                    <a href="tipoAtividade.aspx">Tipos de Atividades</a>
+                                    <a href="TipoAtividade.aspx">Tipos de Atividades</a>
                                 </li>
                                 <li>
-                                    <a href="tempoGasto.aspx">Tempo Gasto por Atividade</a>
+                                    <a href="TempoGasto.aspx">Tempo Gasto por Atividade</a>
                                 </li>
-                                 <li>
-                                    <a href="relProjeto.aspx">Projetos em Execução</a>
+                                <li>
+                                    <a href="RelProjeto.aspx">Projetos em Execução</a>
                                 </li>
 
                             </ul>
@@ -115,44 +112,41 @@
 
         <div id="page-wrapper">
             <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="page-header">Projetos em Execução</h1>
-                </div>
-                <!-- /.col-lg-12 -->
-            </div>
-            <!-- /.row -->
-            <div class="row">
-                <div class="col-lg-8">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <i class="fa fa-bar-chart-o fa-fw"></i> Area Chart Example
-                            <div class="pull-right">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
-                                        Actions
-                                        <span class="caret"></span>
-                                    </button>
-                                    <ul class="dropdown-menu pull-right" role="menu">
-                                        <li><a href="#">Action</a>
-                                        </li>
-                                        <li><a href="#">Another action</a>
-                                        </li>
-                                        <li><a href="#">Something else here</a>
-                                        </li>
-                                        <li class="divider"></li>
-                                        <li><a href="#">Separated link</a>
-                                        </li>
-                                    </ul>
+                <form runat="server">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">Atividades Por Colaborador</h1>
+                        <div class="panel panel-default">
+
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-lg-4" style="width:100%">
+                                        <div class="table-responsive">
+                                           <%-- <asp:GridView Width="100%" runat="server" ID="gridAtv" AutoGenerateColumns="False" OnSorting="gridAtv_Sorting"
+                                                    OnSelectedIndexChanging="gridAtv_SelectedIndexChanging" CssClass="table table-bordered table-hover table-striped">
+                                                <Columns>
+                                                    <asp:BoundField DataField="NomeUsuario" HeaderText="NomeUsuario" SortExpression="NomeUsuario" />
+                                                    <asp:BoundField DataField="NomeAtividade" HeaderText="NomeAtividade" SortExpression="NomeAtividade" />
+                                                    <asp:BoundField DataField="TipoAtividade" HeaderText="TipoAtividade" SortExpression="TipoAtividade" />
+                                                    <asp:BoundField DataField="DataInicio" HeaderText="DataInicio" SortExpression="DataInicio" />
+                                                    <asp:BoundField DataField="DataPrevista" HeaderText="DataPrevista" SortExpression="DataPrevista" />
+                                                    <asp:BoundField DataField="SituacaoAtividade" HeaderText="SituacaoAtividade" SortExpression="SituacaoAtividade" />
+                                                </Columns>
+                                            </asp:GridView>--%>
+                                        </div>
+
+                                    </div>
                                 </div>
+
                             </div>
+
                         </div>
-                         <!-- /.panel-heading -->
-                        <div class="panel-body">
-                            <div id="morris-area-chart"></div>
-                        </div>
-                        <!-- /.panel-body -->
+
                     </div>
-                                             
+                </form>
+
+            </div>
+
+        </div>
 
     </div>
     <!-- /#wrapper -->
@@ -166,10 +160,6 @@
     <!-- Metis Menu Plugin JavaScript -->
     <script src="../bower_components/metisMenu/dist/metisMenu.min.js"></script>
 
-    <!-- Morris Charts JavaScript -->
-    <script src="../bower_components/raphael/raphael-min.js"></script>
-    <script src="../bower_components/morrisjs/morris.min.js"></script>
-    <script src="../js/morris-data.js"></script>
 
     <!-- Custom Theme JavaScript -->
     <script src="../dist/js/sb-admin-2.js"></script>

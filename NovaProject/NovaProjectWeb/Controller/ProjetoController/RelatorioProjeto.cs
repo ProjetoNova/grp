@@ -21,10 +21,10 @@ namespace NovaProjectWeb.Controller.ProjetoController
         
         }
 
-        public List<Negocio.Models.Atividade> AtividadesProjeto()
-        {
-            return atvDao.AtividadesAgrupProjeto(); ;
-        }
+//        public List<Negocio.Models.Atividade> AtividadesProjeto()
+  //      {
+    //        return atvDao.AtividadesAgrupProjeto(); ;
+      //  }
 
     }
 }

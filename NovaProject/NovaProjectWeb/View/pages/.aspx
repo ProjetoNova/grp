@@ -42,7 +42,6 @@
 
 <body>
 
-    <div id="wrapper">
 
         <!-- Navigation -->
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
@@ -87,7 +86,7 @@
                         </li>
                                                           
                         <li>
-                            <a href="#"><i class="fa fa-files-o fa-fw"></i>Graficos<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-files-o fa-fw"></i>Relatórios<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="relAtividade.aspx">Atividades Por Colaborador</a>

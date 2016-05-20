@@ -24,10 +24,10 @@ namespace NovaProjectWeb.Controller.ProjetoController
             tipDao = new TipoAtvidadeDAO();
         }
 
-        public List<Negocio.Models.Atividade> AtividadesPorTipo()
-        {
-            return atvDao.AtividadesAgrupPorTipo(); ;
-        }
+       // public List<Negocio.Models.Atividade> AtividadesPorTipo()
+        //{
+         //    return atvDao.AtividadesAgrupPorTipo(); ;
+        //}
 
     }
 }

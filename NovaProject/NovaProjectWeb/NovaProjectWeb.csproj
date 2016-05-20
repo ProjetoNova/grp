@@ -509,17 +509,14 @@
     <Content Include="View\dist\js\sb-admin-2.js" />
     <Content Include="View\js\flot-data.js" />
     <Content Include="View\js\morris-data.js" />
-    <Content Include="View\pages\blank.html" />
-    <Content Include="View\pages\flot.html" />
-    <Content Include="View\pages\graficos.aspx" />
     <Content Include="View\pages\index.aspx" />
     <Content Include="View\pages\login.aspx" />
     <Content Include="View\pages\morris.html" />
     <Content Include="View\pages\.aspx" />
-    <Content Include="View\pages\relAtividade.aspx" />
-    <Content Include="View\pages\tempoGasto.aspx" />
-    <Content Include="View\pages\tipoAtividade.aspx" />
-    <Content Include="View\pages\relProjeto.aspx" />
+    <Content Include="View\pages\RelAtividade.aspx" />
+    <Content Include="View\pages\RelProjeto.aspx" />
+    <Content Include="View\pages\TempoGasto.aspx" />
+    <Content Include="View\pages\TipoAtividade.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
   </ItemGroup>
@@ -863,14 +860,9 @@
     <Compile Include="Controller\ProjetoController\RelatorioTipoAtividade.cs" />
     <Compile Include="Controller\SessaoController\LoginController.cs" />
     <Compile Include="Controller\SessaoController\Sessao.cs" />
+    <Compile Include="Controller\TransientObject\RelAtividadeTo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="View\pages\graficos.aspx.cs">
-      <DependentUpon>graficos.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="View\pages\graficos.aspx.designer.cs">
-      <DependentUpon>graficos.aspx</DependentUpon>
-    </Compile>
+    <Compile Include="View\GridGouper\GridViewGrouper.cs" />
     <Compile Include="View\pages\index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -892,33 +884,33 @@
     <Compile Include="View\pages\.aspx.designer.cs">
       <DependentUpon>.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View\pages\relAtividade.aspx.cs">
-      <DependentUpon>relAtividade.aspx</DependentUpon>
+    <Compile Include="View\pages\RelAtividade.aspx.cs">
+      <DependentUpon>RelAtividade.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View\pages\relAtividade.aspx.designer.cs">
-      <DependentUpon>relAtividade.aspx</DependentUpon>
+    <Compile Include="View\pages\RelAtividade.aspx.designer.cs">
+      <DependentUpon>RelAtividade.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View\pages\tempoGasto.aspx.cs">
-      <DependentUpon>tempoGasto.aspx</DependentUpon>
+    <Compile Include="View\pages\RelProjeto.aspx.cs">
+      <DependentUpon>RelProjeto.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View\pages\tempoGasto.aspx.designer.cs">
-      <DependentUpon>tempoGasto.aspx</DependentUpon>
+    <Compile Include="View\pages\RelProjeto.aspx.designer.cs">
+      <DependentUpon>RelProjeto.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View\pages\tipoAtividade.aspx.cs">
-      <DependentUpon>tipoAtividade.aspx</DependentUpon>
+    <Compile Include="View\pages\TempoGasto.aspx.cs">
+      <DependentUpon>TempoGasto.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View\pages\tipoAtividade.aspx.designer.cs">
-      <DependentUpon>tipoAtividade.aspx</DependentUpon>
+    <Compile Include="View\pages\TempoGasto.aspx.designer.cs">
+      <DependentUpon>TempoGasto.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View\pages\relProjeto.aspx.cs">
-      <DependentUpon>relProjeto.aspx</DependentUpon>
+    <Compile Include="View\pages\TipoAtividade.aspx.cs">
+      <DependentUpon>TipoAtividade.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View\pages\relProjeto.aspx.designer.cs">
-      <DependentUpon>relProjeto.aspx</DependentUpon>
+    <Compile Include="View\pages\TipoAtividade.aspx.designer.cs">
+      <DependentUpon>TipoAtividade.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

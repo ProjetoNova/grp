@@ -55,6 +55,11 @@ namespace NovaProjectWF.Controllers.ProjetoController
 
             tempoTotal = dataFim - dataInicio;
 
+            if (tempoTotal == 0)
+            {
+                tempoTotal = 1;
+            }
+
             return tempoTotal*2400;
         }
 
@@ -103,6 +108,10 @@ namespace NovaProjectWF.Controllers.ProjetoController
             else if (dataPrevista.Date < dataInicio.Date)
             {
                 Mensagem.Erro("Data Prevista não pode ser menor que data Início!");
+            }
+            else if (usuario == null)
+            {
+                Mensagem.Erro("Deve haver um responsável pela atividade");
             }
             else
             {

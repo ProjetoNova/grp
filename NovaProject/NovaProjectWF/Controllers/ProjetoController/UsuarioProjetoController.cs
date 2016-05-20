@@ -32,8 +32,8 @@ namespace NovaProjectWF.Controllers.ProjetoController
                 up.ProjetoId = ProjetoId;
                 up.TipoUsuarioId = TipoUsuarioId;
                 up.Observacao = "";
-                up.InicioProjeto = new DateTime();
-                up.FimProjeto = new DateTime();
+                up.InicioProjeto = DateTime.Now;
+                up.FimProjeto = DateTime.Now;
                 up.Status = true;
 
                 objRetorno = crud.save(Convert.ToInt32("0"), up);

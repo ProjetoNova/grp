@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using NovaProjectWeb.Controller.SessaoController;
 
 namespace NovaProjectWeb.View.pages
 {
@@ -11,7 +12,7 @@ namespace NovaProjectWeb.View.pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            labelNome.Text = SessaoSistema.NomeUsuario;
         }
     }
 }

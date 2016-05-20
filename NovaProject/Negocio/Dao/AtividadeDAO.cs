@@ -32,10 +32,34 @@ namespace Negocio.Dao
         {
             List<Atividade> atividades = new List<Atividade>();
 
+            DateTime now = DateTime.Now;
+
+            DateTime nowMinus30Days = now.AddDays(-30);
+
             using (Contexto ctx = new Contexto())
             {
                 var query = from c in ctx.ATIVIDADE_
-                            where c.DataFim >= new DateTime().AddDays(-30)
+                            where c.DataFim >= nowMinus30Days
+                            orderby c.TipoAtividadeId, c.DataFim descending
+                            select c;
+
+                foreach (var item in query)
+                {
+                    atividades.Add((Atividade)item);
+                }
+            }
+
+            return atividades;
+        }
+
+        public List<Atividade> AtividadesAbertaPorUsuario()
+        {
+            List<Atividade> atividades = new List<Atividade>();
+        
+            using (Contexto ctx = new Contexto())
+            {
+                var query = from c in ctx.ATIVIDADE_
+                            where c.DataFim == null
                             orderby c.TipoAtividadeId, c.DataFim descending
                             select c;
 

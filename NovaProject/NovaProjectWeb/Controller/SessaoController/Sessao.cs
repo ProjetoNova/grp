@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Negocio.Models;
 using Negocio.Dao;
 
-namespace NovaProjectWF.Controllers.SessaoController
+namespace NovaProjectWeb.Controller.SessaoController
 {
     public static class SessaoSistema
     {

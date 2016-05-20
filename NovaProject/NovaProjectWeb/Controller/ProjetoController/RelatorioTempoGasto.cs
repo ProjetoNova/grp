@@ -22,10 +22,10 @@ namespace NovaProjectWeb.Controller.ProjetoController
             
         }
 
-        public List<Negocio.Models.Atividade> AtividadeTempoGasto()
-        {
-            return atvDao.TempoGastoAgrupPorProjeto(); ;
-        }
+      //  public List<Negocio.Models.Atividade> AtividadeTempoGasto()
+        //{
+         //   return atvDao.TempoGastoAgrupPorProjeto(); ;
+        //}
 
     }
 }

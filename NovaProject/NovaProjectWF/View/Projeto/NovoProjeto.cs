@@ -204,7 +204,7 @@ namespace NovaProjectWF.View.Projeto
         //click botao nova fase
         private void btnNovaFase_Click(object sender, EventArgs e)
         {
-            if (!SessaoSistema.NovoFaseProjeto)
+            if (!SessaoSistema.NovoFaseProjeto && !SessaoSistema.Administrador)
             {
                 Mensagem.Aviso("Voce nao tem acesso a essa tela!");
                 return;
