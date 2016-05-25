@@ -24,9 +24,9 @@ namespace Negocio.Models
            public string Titulo { get; set; } 
            [Required]
            public string Descricao { get; set; }
-           public DateTime? DataInicio { get; set; }
-           public DateTime? DataPrevisao {get; set; }
-           public DateTime? DataConclusao { get; set; }
+           public DateTime DataInicio { get; set; }
+           public DateTime DataPrevisao {get; set; }
+           public DateTime DataConclusao { get; set; }
            [Required]
            public byte[] PlanoProjeto { get; set; }
            public ESituacaoProjeto Situacao { get; set; }
