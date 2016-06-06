@@ -72,6 +72,44 @@ namespace Negocio.Dao
             return atividades;
         }
 
+        public List<Atividade> PorTipoEmAberto(int idTipo)
+        {
+            List<Atividade> atividades = new List<Atividade>();
+
+            using (Contexto ctx = new Contexto())
+            {
+                var query = from c in ctx.ATIVIDADE_
+                            where c.DataFim == null && c.TipoAtividadeId == idTipo
+                            select c;
+
+                foreach (var item in query)
+                {
+                    atividades.Add((Atividade)item);
+                }
+            }
+
+            return atividades;
+        }
+
+        public List<Atividade> PorTipoConcluida(int idTipo)
+        {
+            List<Atividade> atividades = new List<Atividade>();
+
+            using (Contexto ctx = new Contexto())
+            {
+                var query = from c in ctx.ATIVIDADE_
+                            where c.DataFim != null && c.TipoAtividadeId == idTipo
+                            select c;
+
+                foreach (var item in query)
+                {
+                    atividades.Add((Atividade)item);
+                }
+            }
+
+            return atividades;
+        }
+
         public List<Atividade> AtividadesExecucao()
         {
             List<Atividade> atividades = new List<Atividade>();

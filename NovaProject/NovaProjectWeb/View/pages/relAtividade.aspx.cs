@@ -9,6 +9,7 @@ using Negocio.Models;
 using NovaProjectWeb.Controller.TransientObject;
 using System.Collections;
 using NovaProjectWeb.View.GridGouper;
+using NovaProjectWeb.Controller.SessaoController;
 
 namespace NovaProjectWeb.View.pages
 {
@@ -18,6 +19,8 @@ namespace NovaProjectWeb.View.pages
 
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            labelNome.Text = SessaoSistema.NomeUsuario;
             
             SituacaoAtividadeDAO saDao = new SituacaoAtividadeDAO();
             UsuarioDAO usuDao = new UsuarioDAO();
@@ -51,7 +54,8 @@ namespace NovaProjectWeb.View.pages
             //gridAtv.Sort("NomeUsuario", SortDirection.Ascending);
             gridAtv.DataSource = listaRetorno;
             gridAtv.DataBind();
-            agrupar(sender,e);
+            if (listaRetorno.Count > 0) 
+             agrupar(sender,e);
             
 
         }
@@ -78,19 +82,21 @@ namespace NovaProjectWeb.View.pages
 
         public void agrupar(object sender, EventArgs e)
         {
-            switch (rdBtnList.SelectedValue)
-            {
-                case "0":
-                    {
-                        GridViewGrouper.GroupGridView(gridAtv.Rows, 0, 1);
-                        break;
-                    }
-                case "1":
-                    {
-                        GridViewGrouper.GroupGridView(gridAtv.Rows, 1, 2);
-                        break;
-                    }
-            }
+            
+                switch (rdBtnList.SelectedValue)
+                {
+                    case "0":
+                        {
+                            GridViewGrouper.GroupGridView(gridAtv.Rows, 0, 1);
+                            break;
+                        }
+                    case "1":
+                        {
+                            GridViewGrouper.GroupGridView(gridAtv.Rows, 1, 2);
+                            break;
+                        }
+                }
+            
         }
 
         protected void OnSelectedIndexChanging(GridViewSelectEventArgs e)

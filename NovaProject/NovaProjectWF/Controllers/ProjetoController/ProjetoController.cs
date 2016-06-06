@@ -38,7 +38,7 @@ namespace NovaProjectWF.Controllers.ProjetoController
             {
                 Mensagem.Aviso("Projeto não deve ser inserido com status de CANCELADO");
             }
-            else  if (crud.selectNome(titulo).Count >= 1)
+            else  if (crud.selectNomeUnico(titulo, Convert.ToInt32(Id)).Count >= 1)
             {
                 Mensagem.Erro("Nome do Projeto já existe");
             }

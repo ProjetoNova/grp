@@ -53,12 +53,12 @@ namespace NovaProjectWF.Controllers.CadastroController
             return (TipoUsuario)crud.select(Convert.ToInt32(Id));
         }
 
-        public void IncluirPermissao(int Permissao, int TipoUsuario)
+        public Object IncluirPermissao(int Permissao, int TipoUsuario)
         {
             PermissaoTipoUsuario ptu = new PermissaoTipoUsuario();
             ptu.PermissaoIndice = Permissao;
             ptu.TipoUsuarioId = TipoUsuario;
-            pCrud.save(0, ptu);
+            return pCrud.save(0, ptu);
         }
 
         public List<TipoUsuario> BuscarPorNome(string nome)

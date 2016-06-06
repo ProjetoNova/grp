@@ -15,6 +15,21 @@
     <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
     <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
+    <script type = "text/javascript">
+        function PrintPanel() {
+            var panel = document.getElementById("<%=pnlContents.ClientID %>");
+            var printWindow = window.open('', '', 'height=400,width=800');
+            printWindow.document.write('<html><head>');
+            printWindow.document.write('</head><body >');
+            printWindow.document.write(panel.innerHTML);
+            printWindow.document.write('</body></html>');
+            printWindow.document.close();
+            setTimeout(function () {
+                printWindow.print();
+            }, 500);
+            return false;
+        }
+    </script>
 </head>
 
 <body>
@@ -35,14 +50,11 @@
             <ul class="nav navbar-top-links navbar-right">
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-user fa-fw"></i><i class="fa fa-caret-down"></i>
+                        <i class="fa fa-user fa-fw"></i>
+                        <asp:Label runat="server" ID="labelNome"></asp:Label>  <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i>Meu Perfil</a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i>Configurações</a>
-                        </li>
-                        <li class="divider"></li>
+                       
                         <li><a href="login.aspx"><i class="fa fa-sign-out fa-fw"></i>Sair</a>
                         </li>
                     </ul>
@@ -65,9 +77,9 @@
                                 <li>
                                     <a href="TipoAtividade.aspx">Tipos de Atividades</a>
                                 </li>
-                                <li>
+                               <%-- <li>
                                     <a href="TempoGasto.aspx">Tempo Gasto por Atividade</a>
-                                </li>
+                                </li>--%>
                                 <li>
                                     <a href="RelProjeto.aspx">Projetos em Execução</a>
                                 </li>
@@ -83,35 +95,37 @@
         <div id="page-wrapper">
             <div class="row">
                 <form runat="server">
+                    <asp:Button ID="btnPrint" runat="server" class="btn" Text="Imprimir" OnClientClick = "return PrintPanel();" />
+                    <asp:Panel id="pnlContents" runat = "server">
                     <div class="col-lg-12">
-                        <h1 class="page-header">Atividades Por Colaborador</h1>
+                        <h1 class="page-header">Tipos de Atividade</h1>
                         <div class="panel panel-default">
 
                             <div class="panel-body">
                                 <div class="row">
                                     <div class="col-lg-4" style="width:100%">
                                         <div class="table-responsive">
-                                            <%--<asp:GridView Width="100%" runat="server" ID="gridAtv" AutoGenerateColumns="False" OnSorting="gridAtv_Sorting"
+                                              <asp:RadioButtonList ID="rdBtnList" runat="server" AutoPostBack="True" OnSelectedIndexChanged="filtrar">
+                                                    <asp:ListItem Value="0" Selected="True">Em aberto</asp:ListItem>
+                                                    <asp:ListItem Value="1">Concluído</asp:ListItem>
+                                                </asp:RadioButtonList>
+
+                                             <asp:GridView Width="100%" runat="server" ID="gridTipoAtv" AutoGenerateColumns="False" OnSorting="gridAtv_Sorting"
                                                     OnSelectedIndexChanging="gridAtv_SelectedIndexChanging" CssClass="table table-bordered table-hover table-striped">
                                                 <Columns>
-                                                    <asp:BoundField DataField="NomeUsuario" HeaderText="NomeUsuario" SortExpression="NomeUsuario" />
-                                                    <asp:BoundField DataField="NomeAtividade" HeaderText="NomeAtividade" SortExpression="NomeAtividade" />
-                                                    <asp:BoundField DataField="TipoAtividade" HeaderText="TipoAtividade" SortExpression="TipoAtividade" />
-                                                    <asp:BoundField DataField="DataInicio" HeaderText="DataInicio" SortExpression="DataInicio" />
-                                                    <asp:BoundField DataField="DataPrevista" HeaderText="DataPrevista" SortExpression="DataPrevista" />
-                                                    <asp:BoundField DataField="SituacaoAtividade" HeaderText="SituacaoAtividade" SortExpression="SituacaoAtividade" />
+                                                    <asp:BoundField DataField="Descricao" HeaderText="Descricao" SortExpression="Descricao" />
+                                                    <asp:BoundField DataField="QntdAtv" HeaderText="Qntd de Atividades" SortExpression="QntdAtv" />
+                                                    <asp:BoundField DataField="SomaHoras" HeaderText="Horas de Atividades" SortExpression="SomaHoras" />
+                                                   
                                                 </Columns>
-                                            </asp:GridView>--%>
+                                            </asp:GridView>
                                         </div>
-
                                     </div>
                                 </div>
-
                             </div>
-
                         </div>
-
                     </div>
+                    </asp:Panel>
                 </form>
 
             </div>

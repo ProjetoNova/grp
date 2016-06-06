@@ -44,5 +44,7 @@ namespace Negocio.Dao
 
             return tipoAtividade;
         }
+
+        
     }
 }

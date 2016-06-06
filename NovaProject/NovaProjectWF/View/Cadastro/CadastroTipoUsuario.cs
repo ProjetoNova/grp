@@ -85,20 +85,28 @@ namespace NovaProjectWF.View.Utilitarios
             Object retorno = controller.Salvar(lblId.Text, txtNome.Text.Trim(), 
                 checkBox1.Checked, cbAdministrador.Checked);
 
+            Object retornoI = new object(); ;
+
+            if (!lblId.Text.Equals("0") || !lblId.Text.Equals(""))
+            {
+                if (!cbAdministrador.Checked)
+                {
+                    foreach (int itemChecked in ckdPermissoes.CheckedIndices)
+                    {
+                        retornoI = controller.IncluirPermissao(itemChecked, Convert.ToInt32(lblId.Text));
+                    }
+                }
+            }
+
             if (retorno == null)
             {
                 Mensagem.Erro("Não foi possível Salvar");
             }
-            else if (retorno.GetType().Equals(typeof(Int32)))
+            else if (retorno.GetType().Equals(typeof(Int32)) || retornoI.GetType().Equals(typeof(Int32)))
             {
-                if (Convert.ToInt32(retorno) <= 0)
-                {
-                    Mensagem.Erro("Nenhuma alteração a fazer");
-                }
-                else
-                {
-                    Mensagem.Informacao("Salvo com sucesso");
-                }
+                
+                Mensagem.Informacao("Salvo com sucesso");
+                
             }
             else
             {
@@ -107,16 +115,7 @@ namespace NovaProjectWF.View.Utilitarios
             }
 
 
-            if (!lblId.Text.Equals("0") || !lblId.Text.Equals(""))
-            {
-                if (!cbAdministrador.Checked) 
-                {
-                    foreach (int itemChecked in ckdPermissoes.CheckedIndices)
-                    {
-                        controller.IncluirPermissao(itemChecked, Convert.ToInt32(lblId.Text));
-                    }
-                }
-            }
+            
         }
 
         //botao novo

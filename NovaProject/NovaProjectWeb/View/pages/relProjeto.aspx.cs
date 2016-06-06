@@ -10,6 +10,7 @@ using System.Collections;
 using NovaProjectWeb.View.GridGouper;
 using Negocio.Dao;
 using Negocio.Models;
+using NovaProjectWeb.Controller.SessaoController;
 
 
 
@@ -19,6 +20,8 @@ namespace NovaProjectWeb.View.pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            labelNome.Text = SessaoSistema.NomeUsuario;
             ProjetoDAO pDao = new ProjetoDAO();
             UsuarioDAO usuDao = new UsuarioDAO();
             UsuarioProjetoDAO usupDAO = new UsuarioProjetoDAO();
@@ -32,20 +35,38 @@ namespace NovaProjectWeb.View.pages
             foreach (Projeto prj in lista)
             {
                 RelProjetoTo to = new RelProjetoTo();
-                to.NomeUsuario = Convert.ToString(prj.Usuarios); //tenho que mudar isso aki
-                to.DataInicio = prj.DataInicio;
-                to.DataPrevista = prj.DataPrevisao;
+                //to.NomeUsuario = Convert.ToString(prj.Usuarios); //tenho que mudar isso aki
+                to.DataInicio = Convert.ToDateTime(prj.DataInicio);
+                to.DataPrevista = Convert.ToDateTime(prj.DataPrevisao);
                 to.NomeProjeto = prj.Titulo;
-                to.DatConclusao = prj.DataConclusao;
+                to.TempoGasto = Math.Round(DateTime.Now.Subtract(to.DataInicio).TotalHours, 0) + " horas" ;
+                //to.DatConclusao = Convert.ToDateTime(prj.DataConclusao);
 
                 listaRetorno.Add(to);   
             }
 
             gridPrj.DataSource = listaRetorno;
             gridPrj.DataBind();
-            GridViewGrouper.GroupGridView(gridPrj.Rows, 0, 1);
+            
+            if (listaRetorno.Count>0)
+             GridViewGrouper.GroupGridView(gridPrj.Rows, 0, 1);
 
             
-            }
+        }
+
+        protected void OnSelectedIndexChanging(GridViewSelectEventArgs e)
+        {
+
+        }
+
+        protected void gridPrj_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
+        {
+
+        }
+
+        protected void gridPrj_Sorting(object sender, GridViewSortEventArgs e)
+        {
+
+        }
     }
 }

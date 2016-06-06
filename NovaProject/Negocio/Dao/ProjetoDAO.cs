@@ -66,10 +66,43 @@ namespace Negocio.Dao
             return tipoUsuario;
         }
 
+        public List<Projeto> selectNomeUnico(string nome, int id)
+        {
+            List<Projeto> tipoUsuario = new List<Projeto>();
+
+            using (Contexto ctx = new Contexto())
+            {
+                var query = from c in ctx.PROJETO_
+                            where c.Titulo == nome && c.Id != id
+                            select c;
+
+                foreach (var item in query)
+                {
+                    tipoUsuario.Add(item);
+                }
+            }
+
+            return tipoUsuario;
+        }
+
 
         public List<Projeto> ProjetosRelatorio()
         {
-            throw new NotImplementedException();
+            List<Projeto> tipoUsuario = new List<Projeto>();
+
+            using (Contexto ctx = new Contexto())
+            {
+                var query = from c in ctx.PROJETO_
+                            where c.Situacao == ESituacaoProjeto.INICIADO
+                            select c;
+
+                foreach (var item in query)
+                {
+                    tipoUsuario.Add(item);
+                }
+            }
+
+            return tipoUsuario;
         }
     }
 }

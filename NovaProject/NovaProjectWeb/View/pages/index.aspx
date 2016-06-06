@@ -40,11 +40,7 @@
                         <asp:Label runat="server" ID="labelNome"></asp:Label>  <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i>Meu Perfil</a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i>Configurações</a>
-                        </li>
-                        <li class="divider"></li>
+                        
                         <li><a href="login.aspx"><i class="fa fa-sign-out fa-fw"></i>Sair</a>
                         </li>
                     </ul>
@@ -68,9 +64,9 @@
                                 <li>
                                     <a href="TipoAtividade.aspx">Tipos de Atividades</a>
                                 </li>
-                                <li>
+                               <%-- <li>
                                     <a href="TempoGasto.aspx">Tempo Gasto por Atividade</a>
-                                </li>
+                                </li>--%>
                                  <li>
                                     <a href="RelProjeto.aspx">Projetos em Execução</a>
                                 </li>

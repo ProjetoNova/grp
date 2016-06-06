@@ -862,6 +862,7 @@
     <Compile Include="Controller\SessaoController\Sessao.cs" />
     <Compile Include="Controller\TransientObject\RelProjetoTo.cs" />
     <Compile Include="Controller\TransientObject\RelAtividadeTo.cs" />
+    <Compile Include="Controller\TransientObject\RelTipoAtvTo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\GridGouper\GridViewGrouper.cs" />
     <Compile Include="View\pages\index.aspx.cs">
