@@ -14,15 +14,18 @@ namespace NovaProjectWeb.View.pages
 {
     public partial class RelAtividade : System.Web.UI.Page
     {
+        List<Negocio.Models.Atividade> lista;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            AtividadeDAO aDao = new AtividadeDAO();
+            
             SituacaoAtividadeDAO saDao = new SituacaoAtividadeDAO();
             UsuarioDAO usuDao = new UsuarioDAO();
             TipoAtvidadeDAO tDao = new TipoAtvidadeDAO();
+            ProjetoDAO pDao = new ProjetoDAO();
+            FaseProjetoDAO fDao = new FaseProjetoDAO();
 
-            List<Negocio.Models.Atividade> lista = aDao.AtividadesAbertaPorUsuario();
-
+            carregarList();
             List<RelAtividadeTo> listaRetorno = new List<RelAtividadeTo>();
 
             foreach (Atividade atv in lista)
@@ -35,10 +38,12 @@ namespace NovaProjectWeb.View.pages
                 String situacao = ((SituacaoAtividade)saDao.select(atv.SituacaoAtividadeId)).Nome;
                 String usuario = ((Usuario)usuDao.select(atv.UsuarioId)).Nome;
                 String tipoAtividade = ((Negocio.Models.TipoAtividade)tDao.select(atv.TipoAtividadeId)).Nome;
+                String projeto = ((Negocio.Models.Projeto)pDao.select(((Negocio.Models.FaseProjeto)fDao.select(atv.FaseProjetoId)).ProjetoId)).Titulo;
 
                 to.SituacaoAtividade = situacao;
                 to.NomeUsuario = usuario;
                 to.TipoAtividade = tipoAtividade;
+                to.NomeProjeto = projeto;
 
                 listaRetorno.Add(to);
             }
@@ -46,7 +51,46 @@ namespace NovaProjectWeb.View.pages
             //gridAtv.Sort("NomeUsuario", SortDirection.Ascending);
             gridAtv.DataSource = listaRetorno;
             gridAtv.DataBind();
-            GridViewGrouper.GroupGridView(gridAtv.Rows, 0, 1);
+            agrupar(sender,e);
+            
+
+        }
+
+        public void carregarList()
+        {
+
+            AtividadeDAO aDao = new AtividadeDAO();
+            switch (rdBtnList.SelectedValue)
+            {
+
+                case "0":
+                    {
+                        lista = aDao.AtividadesAbertaPorUsuario();
+                        break;
+                    }
+                case "1":
+                    {
+                        lista = aDao.AtividadesAbertaPorUsuario2();
+                        break;
+                    }
+            }
+        }
+
+        public void agrupar(object sender, EventArgs e)
+        {
+            switch (rdBtnList.SelectedValue)
+            {
+                case "0":
+                    {
+                        GridViewGrouper.GroupGridView(gridAtv.Rows, 0, 1);
+                        break;
+                    }
+                case "1":
+                    {
+                        GridViewGrouper.GroupGridView(gridAtv.Rows, 1, 2);
+                        break;
+                    }
+            }
         }
 
         protected void OnSelectedIndexChanging(GridViewSelectEventArgs e)

@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using NovaProjectWeb.Controller.SessaoController;
+using Negocio.Dao;
 
 namespace NovaProjectWeb.View.pages
 {
@@ -13,6 +14,14 @@ namespace NovaProjectWeb.View.pages
         protected void Page_Load(object sender, EventArgs e)
         {
             labelNome.Text = SessaoSistema.NomeUsuario;
+            
+            ProjetoDAO dao = new ProjetoDAO();
+            projExec.Text = dao.emAberto().Count.ToString();
+            
+            AtividadeDAO aDao = new AtividadeDAO();
+            atvAberto.Text = aDao.AtividadesAbertaPorUsuario().Count.ToString();
+            atvAndamento.Text = aDao.AtividadesExecucao().Count.ToString();
+            atvAtraso.Text = aDao.AtividadesAtraso().Count.ToString();
         }
     }
 }

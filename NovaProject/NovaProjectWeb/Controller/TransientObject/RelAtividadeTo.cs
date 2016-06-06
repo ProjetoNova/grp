@@ -13,6 +13,7 @@ namespace NovaProjectWeb.Controller.TransientObject
         public DateTime DataInicio { get; set; }
         public DateTime DataPrevista { get; set; }
         public string SituacaoAtividade { get; set; }
+        public string NomeProjeto { get; set; }
 
     }
 }

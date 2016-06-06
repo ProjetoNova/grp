@@ -1,4 +1,5 @@
 ﻿using Negocio.Models;
+using Negocio.Models.Enumerados;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +25,26 @@ namespace Negocio.Dao
             }
 
             return allTipoUsuario;
+        }
+
+        public List<Projeto> emAberto()
+        {
+            List<Projeto> tipoUsuario = new List<Projeto>();
+
+            using (Contexto ctx = new Contexto())
+            {
+                var query = from c in ctx.PROJETO_
+                            where c.Situacao == ESituacaoProjeto.INICIADO
+                            || c.Situacao == ESituacaoProjeto.NAO_INICIADO
+                            select c;
+
+                foreach (var item in query)
+                {
+                    tipoUsuario.Add(item);
+                }
+            }
+
+            return tipoUsuario;
         }
 
         public List<Projeto> selectNome(string nome)

@@ -60,7 +60,65 @@ namespace Negocio.Dao
             {
                 var query = from c in ctx.ATIVIDADE_
                             where c.DataFim == null
-                            orderby c.TipoAtividadeId, c.DataFim descending
+                            orderby c.UsuarioId, c.TipoAtividadeId, c.DataFim descending
+                            select c;
+
+                foreach (var item in query)
+                {
+                    atividades.Add((Atividade)item);
+                }
+            }
+
+            return atividades;
+        }
+
+        public List<Atividade> AtividadesExecucao()
+        {
+            List<Atividade> atividades = new List<Atividade>();
+
+            using (Contexto ctx = new Contexto())
+            {
+                var query = from c in ctx.ATIVIDADE_
+                            where c.DataFim == null && c.DataInicio <= DateTime.Now
+                            select c;
+
+                foreach (var item in query)
+                {
+                    atividades.Add((Atividade)item);
+                }
+            }
+
+            return atividades;
+        }
+
+        public List<Atividade> AtividadesAtraso()
+        {
+            List<Atividade> atividades = new List<Atividade>();
+
+            using (Contexto ctx = new Contexto())
+            {
+                var query = from c in ctx.ATIVIDADE_
+                            where c.DataFim == null && c.DataPrevista < DateTime.Now
+                            select c;
+
+                foreach (var item in query)
+                {
+                    atividades.Add((Atividade)item);
+                }
+            }
+
+            return atividades;
+        }
+
+        public List<Atividade> AtividadesAbertaPorUsuario2()
+        {
+            List<Atividade> atividades = new List<Atividade>();
+
+            using (Contexto ctx = new Contexto())
+            {
+                var query = from c in ctx.ATIVIDADE_
+                            where c.DataFim == null
+                            orderby c.FaseProjetoId, c.TipoAtividadeId, c.DataFim descending
                             select c;
 
                 foreach (var item in query)

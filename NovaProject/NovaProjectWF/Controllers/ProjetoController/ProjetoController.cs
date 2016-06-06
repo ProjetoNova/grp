@@ -33,10 +33,16 @@ namespace NovaProjectWF.Controllers.ProjetoController
                 descricao = "// " + titulo.ToUpper() + " //";
             }
 
+           
             if (Id == "0" && situacao.Equals(ESituacaoProjeto.CANCELADO))
             {
                 Mensagem.Aviso("Projeto não deve ser inserido com status de CANCELADO");
             }
+            else  if (crud.selectNome(titulo).Count >= 1)
+            {
+                Mensagem.Erro("Nome do Projeto já existe");
+            }
+
             else if (titulo == string.Empty)
             {
                 Mensagem.Erro("Título não pode ser Nulo!");
