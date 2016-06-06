@@ -344,19 +344,19 @@ namespace NovaProjectWF.View.Projeto
         {
             AnexoProjetoController aC = new AnexoProjetoController();
 
-            gridArtefato.DataSource = null;
-            artefatos = aC.getArtefatoPorProjeto(projeto.Id);
-            gridArtefato.DataSource = artefatos;
-            gridArtefato.Columns["IdAnexo"].Visible = false;
-            gridArtefato.Columns["TamanhoArquivo"].Visible = false;
-            gridArtefato.Columns["DataArquivo"].Visible = false;
-            gridArtefato.Columns["Responsavel"].Visible = false;
-            gridArtefato.Columns["Projeto"].Visible = false;
-            gridArtefato.Columns["Observacoes"].Visible = false;
-            gridArtefato.Columns["NomeArquivo"].Width = gridArtefato.Width-45;
-            gridArtefato.Columns["NomeArquivo"].Resizable = DataGridViewTriState.False;
-            gridArtefato.Columns["NomeArquivo"].Name = "Artefatos";
-            gridArtefato.Refresh();
+            //gridArtefato.DataSource = null;
+            //artefatos = aC.getArtefatoPorProjeto(projeto.Id);
+            //gridArtefato.DataSource = artefatos;
+            //gridArtefato.Columns["IdAnexo"].Visible = false;
+            //gridArtefato.Columns["TamanhoArquivo"].Visible = false;
+            //gridArtefato.Columns["DataArquivo"].Visible = false;
+            //gridArtefato.Columns["Responsavel"].Visible = false;
+            //gridArtefato.Columns["Projeto"].Visible = false;
+            //gridArtefato.Columns["Observacoes"].Visible = false;
+            //gridArtefato.Columns["NomeArquivo"].Width = gridArtefato.Width-45;
+            //gridArtefato.Columns["NomeArquivo"].Resizable = DataGridViewTriState.False;
+            //gridArtefato.Columns["NomeArquivo"].Name = "Artefatos";
+            //gridArtefato.Refresh();
         }
 
         //atualiza grid de atividade ao clicar na fase
@@ -369,14 +369,14 @@ namespace NovaProjectWF.View.Projeto
 
         private void btnPropriedades_Click(object sender, EventArgs e)
         {
-            if (gridArtefato.SelectedRows.Count > 0)
-            {
-                PropriedadeArtefato prop = new PropriedadeArtefato();
+            //if (gridArtefato.SelectedRows.Count > 0)
+            //{
+            //    PropriedadeArtefato prop = new PropriedadeArtefato();
 
-                ArtefatosProjeto artefato = artefatos[gridArtefato.SelectedRows[0].Index];
+            //    ArtefatosProjeto artefato = artefatos[gridArtefato.SelectedRows[0].Index];
 
-                prop.Exibir(this.MdiParent, artefato);
-            }
+            //    prop.Exibir(this.MdiParent, artefato);
+            //}
         }
 
         private void btnCarregarArtefato_Click(object sender, EventArgs e)
@@ -414,22 +414,22 @@ namespace NovaProjectWF.View.Projeto
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            if (gridArtefato.SelectedRows.Count > 0)
-            {
-                DialogResult confirm = MessageBox.Show("Deseja Excluir o Artefato?", "Excluir Artefato", 
-                    MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation,MessageBoxDefaultButton.Button2);
+            //if (gridArtefato.SelectedRows.Count > 0)
+            //{
+            //    DialogResult confirm = MessageBox.Show("Deseja Excluir o Artefato?", "Excluir Artefato", 
+            //        MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation,MessageBoxDefaultButton.Button2);
 
-                if (confirm.ToString().ToUpper() == "YES")
-                {
-                    ArtefatosProjeto artefato = artefatos[gridArtefato.SelectedRows[0].Index];
+            //    if (confirm.ToString().ToUpper() == "YES")
+            //    {
+            //        ArtefatosProjeto artefato = artefatos[gridArtefato.SelectedRows[0].Index];
 
-                    AnexoProjetoDAO dao = new AnexoProjetoDAO();
+            //        AnexoProjetoDAO dao = new AnexoProjetoDAO();
 
-                    dao.delete((AnexoProjeto)dao.select(artefato.IdAnexo));
+            //        dao.delete((AnexoProjeto)dao.select(artefato.IdAnexo));
 
-                    atualizaGridArtefato();
-                }
-            }
+            //        atualizaGridArtefato();
+            //    }
+            //}
         }
 
         private void btnAtualiza_Click(object sender, EventArgs e)

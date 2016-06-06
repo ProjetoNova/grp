@@ -62,23 +62,16 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.gridEvolucao = new System.Windows.Forms.DataGridView();
-            this.txtComentario = new System.Windows.Forms.RichTextBox();
-            this.btnEnviar = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridEvolucao)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -410,44 +403,6 @@
             this.label4.TabIndex = 44;
             this.label4.Text = "(Campos com * são obrigatórios)";
             // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.btnEnviar);
-            this.tabPage2.Controls.Add(this.txtComentario);
-            this.tabPage2.Controls.Add(this.gridEvolucao);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(808, 499);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Evolução";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // gridEvolucao
-            // 
-            this.gridEvolucao.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridEvolucao.Location = new System.Drawing.Point(6, 6);
-            this.gridEvolucao.Name = "gridEvolucao";
-            this.gridEvolucao.Size = new System.Drawing.Size(796, 399);
-            this.gridEvolucao.TabIndex = 0;
-            // 
-            // txtComentario
-            // 
-            this.txtComentario.Location = new System.Drawing.Point(7, 412);
-            this.txtComentario.Name = "txtComentario";
-            this.txtComentario.Size = new System.Drawing.Size(707, 81);
-            this.txtComentario.TabIndex = 1;
-            this.txtComentario.Text = "";
-            // 
-            // btnEnviar
-            // 
-            this.btnEnviar.Location = new System.Drawing.Point(720, 411);
-            this.btnEnviar.Name = "btnEnviar";
-            this.btnEnviar.Size = new System.Drawing.Size(82, 81);
-            this.btnEnviar.TabIndex = 2;
-            this.btnEnviar.Text = "Enviar";
-            this.btnEnviar.UseVisualStyleBackColor = true;
-            // 
             // NovaAtividade
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -465,8 +420,6 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridEvolucao)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -508,9 +461,5 @@
         private System.Windows.Forms.TextBox dtFim;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnLiberar;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Button btnEnviar;
-        private System.Windows.Forms.RichTextBox txtComentario;
-        private System.Windows.Forms.DataGridView gridEvolucao;
     }
 }
