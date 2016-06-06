@@ -66,10 +66,5 @@ namespace Negocio.Dao
             return tipoUsuario;
         }
 
-
-        public List<Projeto> ProjetosRelatorio()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

@@ -21,11 +21,6 @@ namespace NovaProjectWeb.Controller.ProjetoController
         
         }
 
-        public List<Negocio.Models.Projeto> ProjetosRelatorio ()
-        {
-            return prjDao.ProjetosRelatorio(); ;
-        }
-
 //        public List<Negocio.Models.Atividade> AtividadesProjeto()
   //      {
     //        return atvDao.AtividadesAgrupProjeto(); ;

@@ -90,22 +90,21 @@
                         <h1 class="page-header">Atividades Por Colaborador</h1>
                         <div class="panel panel-default">
 
-                            
                             <div class="panel-body">
                                 <div class="row">
                                     <div class="col-lg-4" style="width:100%">
                                         <div class="table-responsive">
-                                           <asp:GridView Width="100%" runat="server" ID="gridPrj" AutoGenerateColumns="False" OnSorting="gridPrj_Sorting"
-                                                    OnSelectedIndexChanging="gridPrj_SelectedIndexChanging" CssClass="table table-bordered table-hover table-striped">
+                                           <%-- <asp:GridView Width="100%" runat="server" ID="gridAtv" AutoGenerateColumns="False" OnSorting="gridAtv_Sorting"
+                                                    OnSelectedIndexChanging="gridAtv_SelectedIndexChanging" CssClass="table table-bordered table-hover table-striped">
                                                 <Columns>
-                                                    <asp:BoundField DataField="NomeProjeto" HeaderText="Projeto" SortExpression="NomeProjeto" />
-                                                    <asp:BoundField DataField="NomeUsuario" HeaderText="Usuario" SortExpression="NomeUsuario" />
-                                               <%-- <asp:BoundField DataField="TipoAtividade" HeaderText="TipoAtividade" SortExpression="TipoAtividade" /> --%>
-                                                    <asp:BoundField DataField="DataInicio" HeaderText="Data de Inicio" SortExpression="DataInicio" />
-                                                    <asp:BoundField DataField="DataPrevista" HeaderText="Data Prevista" SortExpression="DataPrevista" />
-                                                    <asp:BoundField DataField="DataConclusao" HeaderText="Data de Conclusão" SortExpression="DataConclusao" />
+                                                    <asp:BoundField DataField="NomeUsuario" HeaderText="NomeUsuario" SortExpression="NomeUsuario" />
+                                                    <asp:BoundField DataField="NomeAtividade" HeaderText="NomeAtividade" SortExpression="NomeAtividade" />
+                                                    <asp:BoundField DataField="TipoAtividade" HeaderText="TipoAtividade" SortExpression="TipoAtividade" />
+                                                    <asp:BoundField DataField="DataInicio" HeaderText="DataInicio" SortExpression="DataInicio" />
+                                                    <asp:BoundField DataField="DataPrevista" HeaderText="DataPrevista" SortExpression="DataPrevista" />
+                                                    <asp:BoundField DataField="SituacaoAtividade" HeaderText="SituacaoAtividade" SortExpression="SituacaoAtividade" />
                                                 </Columns>
-                                            </asp:GridView>
+                                            </asp:GridView>--%>
                                         </div>
 
                                     </div>
