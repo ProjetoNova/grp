@@ -147,9 +147,8 @@ namespace NovaProjectWF.View.Projeto
         //click botao novo projeto
         private void btnNovo_Click(object sender, EventArgs e)
         {
-            NovoProjeto novo = new NovoProjeto();
             this.Close();
-            //Janela.Exibir(novo, MdiParent, true);
+            Janela.Exibir(this, this.MdiParent, false);
             AtivaDesativaCampos();
         }
         
@@ -171,10 +170,19 @@ namespace NovaProjectWF.View.Projeto
         {
             if (gridEquipe.SelectedRows.Count > 0)
             {
+
+                if (equipe.Count == 1)
+                {
+                    Mensagem.Informacao("O Projeto deve haver ao menos um membro na equipe!");
+                    return;
+                }
+
                 EquipeProjeto ep = equipe[gridEquipe.SelectedRows[0].Index];
                 UsuarioController uc = new UsuarioController();
                 UsuarioProjetoController upc = new UsuarioProjetoController();
                 Negocio.Models.UsuarioProjeto up = upc.GetUsuarioProjeto(projeto.Id, uc.BuscarPorNome(ep.NomeUsuario)[0].Id);
+
+
 
                 Object excluir = upc.ExcluirUsuario(up.Id);
 
@@ -288,7 +296,7 @@ namespace NovaProjectWF.View.Projeto
                 ((Control)tabPlano).Enabled = false;
                 ((Control)tabFase).Enabled = false;
                 btnSalvar.Enabled = false;
-                btnNovo.Enabled = false;
+                //btnNovo.Enabled = false;
             }
         }
 
@@ -323,6 +331,13 @@ namespace NovaProjectWF.View.Projeto
             this.gridFase.Columns["ProjetoId"].Visible = false;
             this.gridFase.Columns["Projeto"].Visible = false;
             this.gridFase.Columns["Id"].Visible = false;
+        }
+
+        public void gridEquipeRefresh()
+        {
+            UsuarioProjetoController fControl = new UsuarioProjetoController();
+            AtualizaGridEquipe(fControl);
+
         }
 
         //atualiza a grid de atividades
@@ -452,7 +467,7 @@ namespace NovaProjectWF.View.Projeto
                 Negocio.Models.UsuarioProjeto up = upc.GetUsuarioProjeto(projeto.Id, uc.BuscarPorNome(ep.NomeUsuario)[0].Id);
 
                 View.Projeto.UsuarioProjeto upView = new View.Projeto.UsuarioProjeto();
-                upView.Exibir(parent, up);
+                upView.Exibir(parent, up, this);
 
                 AtualizaGridEquipe(upc);
             }

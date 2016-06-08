@@ -65,7 +65,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnNovo = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.btnAtualiza = new System.Windows.Forms.Button();
@@ -462,16 +461,6 @@
             this.label3.TabIndex = 9;
             this.label3.Text = "Nome: *";
             // 
-            // btnNovo
-            // 
-            this.btnNovo.Location = new System.Drawing.Point(94, 12);
-            this.btnNovo.Name = "btnNovo";
-            this.btnNovo.Size = new System.Drawing.Size(75, 23);
-            this.btnNovo.TabIndex = 10;
-            this.btnNovo.Text = "Novo";
-            this.btnNovo.UseVisualStyleBackColor = true;
-            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
-            // 
             // btnSalvar
             // 
             this.btnSalvar.Location = new System.Drawing.Point(12, 12);
@@ -489,11 +478,11 @@
             // 
             // btnAtualiza
             // 
-            this.btnAtualiza.Location = new System.Drawing.Point(749, 12);
+            this.btnAtualiza.Location = new System.Drawing.Point(717, 12);
             this.btnAtualiza.Name = "btnAtualiza";
-            this.btnAtualiza.Size = new System.Drawing.Size(75, 23);
+            this.btnAtualiza.Size = new System.Drawing.Size(107, 23);
             this.btnAtualiza.TabIndex = 26;
-            this.btnAtualiza.Text = "Atualizar";
+            this.btnAtualiza.Text = "Recarregar Info.";
             this.btnAtualiza.UseVisualStyleBackColor = true;
             this.btnAtualiza.Click += new System.EventHandler(this.btnAtualiza_Click);
             // 
@@ -504,7 +493,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(841, 571);
             this.Controls.Add(this.btnAtualiza);
-            this.Controls.Add(this.btnNovo);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.lblId);
             this.Controls.Add(this.tabControl1);
@@ -540,7 +528,6 @@
         private System.Windows.Forms.TabPage tabProjeto;
         private System.Windows.Forms.TabPage tabFase;
         private System.Windows.Forms.TabPage tabPlano;
-        private System.Windows.Forms.Button btnNovo;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtNome;

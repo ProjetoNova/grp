@@ -62,8 +62,6 @@
     <Compile Include="Dao\UsuarioDAO.cs" />
     <Compile Include="Dao\UsuarioProjetoDAO.cs" />
     <Compile Include="Models\AtividadeEvolucao.cs" />
-    <Compile Include="Models\AnexoAtividade.cs" />
-    <Compile Include="Models\AnexoProjeto.cs" />
     <Compile Include="Models\Atividade.cs" />
     <Compile Include="Models\Enumerados\EPrioridade.cs" />
     <Compile Include="Models\Enumerados\ESituacaoProjeto.cs" />

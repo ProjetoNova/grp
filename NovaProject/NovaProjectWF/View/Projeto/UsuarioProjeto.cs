@@ -24,8 +24,11 @@ namespace NovaProjectWF.View.Projeto
 
         Negocio.Models.UsuarioProjeto entidade;
 
-        public void Exibir(Form parent, Negocio.Models.UsuarioProjeto entidade)
+        NovoProjeto telaProj;
+
+        public void Exibir(Form parent, Negocio.Models.UsuarioProjeto entidade, NovoProjeto telaProj)
         {
+            this.telaProj = telaProj;
             this.entidade = entidade;
             UsuarioController controlUser = new UsuarioController();
             TipoUsuarioController controlTUsuario = new TipoUsuarioController();
@@ -65,12 +68,25 @@ namespace NovaProjectWF.View.Projeto
         
         }
 
+        private void AtualizaProjeto()
+        {
+            telaProj.gridEquipeRefresh();
+        }
+
+        protected override void OnClosed(EventArgs e)
+        {
+            AtualizaProjeto();
+            //proj.Focus();
+            base.OnClosed(e);
+        }
+
         private void btnIncluirUsuario_Click(object sender, EventArgs e)
         {
             UsuarioProjetoController control = new UsuarioProjetoController();
             TipoUsuarioDAO tuDao = new TipoUsuarioDAO();
             TipoUsuario tu = tuDao.selectNome(cbPapel.SelectedItem.ToString())[0];
             control.Update(entidade, tu.Id, dtInclusao.Value, dtSaida.Value, cbAtivo.Checked, rtbObservacoes.Text);
+
 
             Mensagem.Informacao("Registro Salvo com Sucesso!");
             this.Close();

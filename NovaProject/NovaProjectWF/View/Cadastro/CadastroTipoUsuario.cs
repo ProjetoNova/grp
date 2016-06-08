@@ -87,7 +87,7 @@ namespace NovaProjectWF.View.Utilitarios
 
             Object retornoI = new object(); ;
 
-            if (!lblId.Text.Equals("0") || !lblId.Text.Equals(""))
+            if (!lblId.Text.Equals("0") && !lblId.Text.Equals(""))
             {
                 if (!cbAdministrador.Checked)
                 {
@@ -111,6 +111,14 @@ namespace NovaProjectWF.View.Utilitarios
             else
             {
                 lblId.Text = ((TipoUsuario)retorno).Id + "";
+                if (!cbAdministrador.Checked)
+                {
+                    foreach (int itemChecked in ckdPermissoes.CheckedIndices)
+                    {
+                        retornoI = controller.IncluirPermissao(itemChecked, Convert.ToInt32(lblId.Text));
+                    }
+                }
+
                 Mensagem.Informacao("Salvo com sucesso");
             }
 

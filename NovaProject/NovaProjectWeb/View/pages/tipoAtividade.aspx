@@ -72,16 +72,16 @@
                             <a href="#"><i class="fa fa-files-o fa-fw"></i>Relatórios<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="RelAtividade.aspx">Atividades Por Colaborador</a>
+                                    <a href="RelAtividade.aspx">Atividades por colaborador</a>
                                 </li>
                                 <li>
-                                    <a href="TipoAtividade.aspx">Tipos de Atividades</a>
+                                    <a href="TipoAtividade.aspx">Tipos de atividades</a>
                                 </li>
                                <%-- <li>
                                     <a href="TempoGasto.aspx">Tempo Gasto por Atividade</a>
                                 </li>--%>
                                 <li>
-                                    <a href="RelProjeto.aspx">Projetos em Execução</a>
+                                    <a href="RelProjeto.aspx">Projetos em execução</a>
                                 </li>
 
                             </ul>
@@ -98,7 +98,7 @@
                     <asp:Button ID="btnPrint" runat="server" class="btn" Text="Imprimir" OnClientClick = "return PrintPanel();" />
                     <asp:Panel id="pnlContents" runat = "server">
                     <div class="col-lg-12">
-                        <h1 class="page-header">Tipos de Atividade</h1>
+                        <h1 class="page-header">Tipos de atividade</h1>
                         <div class="panel panel-default">
 
                             <div class="panel-body">
@@ -113,9 +113,9 @@
                                              <asp:GridView Width="100%" runat="server" ID="gridTipoAtv" AutoGenerateColumns="False" OnSorting="gridAtv_Sorting"
                                                     OnSelectedIndexChanging="gridAtv_SelectedIndexChanging" CssClass="table table-bordered table-hover table-striped">
                                                 <Columns>
-                                                    <asp:BoundField DataField="Descricao" HeaderText="Descricao" SortExpression="Descricao" />
-                                                    <asp:BoundField DataField="QntdAtv" HeaderText="Qntd de Atividades" SortExpression="QntdAtv" />
-                                                    <asp:BoundField DataField="SomaHoras" HeaderText="Horas de Atividades" SortExpression="SomaHoras" />
+                                                    <asp:BoundField DataField="Descricao" HeaderText="Descrição" SortExpression="Descricao" />
+                                                    <asp:BoundField DataField="QntdAtv" HeaderText="Quantidade de atividades" SortExpression="QntdAtv" />
+                                                    <asp:BoundField DataField="SomaHoras" HeaderText="Horas de atividades" SortExpression="SomaHoras" />
                                                    
                                                 </Columns>
                                             </asp:GridView>

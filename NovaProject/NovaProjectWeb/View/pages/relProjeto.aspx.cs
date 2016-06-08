@@ -27,6 +27,8 @@ namespace NovaProjectWeb.View.pages
             UsuarioProjetoDAO usupDAO = new UsuarioProjetoDAO();
             //SituacaoAtividadeDAO saDao = new SituacaoAtividadeDAO();
             // TipoAtvidadeDAO tDao = new TipoAtvidadeDAO();
+            FaseProjetoDAO fDao = new FaseProjetoDAO();
+            AtividadeDAO aDao = new AtividadeDAO();
 
             List<Negocio.Models.Projeto> lista = pDao.ProjetosRelatorio();
 
@@ -39,7 +41,15 @@ namespace NovaProjectWeb.View.pages
                 to.DataInicio = Convert.ToDateTime(prj.DataInicio);
                 to.DataPrevista = Convert.ToDateTime(prj.DataPrevisao);
                 to.NomeProjeto = prj.Titulo;
-                to.TempoGasto = Math.Round(DateTime.Now.Subtract(to.DataInicio).TotalHours, 0) + " horas" ;
+
+                List<FaseProjeto> fpl = fDao.GetFasesDoProjeto(prj.Id);
+                
+                int qntdAtvPrj = 0;
+                foreach(FaseProjeto fp in fpl) {
+                    qntdAtvPrj += aDao.GetAtividadesDaFase(fp.Id).Count;
+                }
+
+                to.TempoGasto = qntdAtvPrj + " atividades" ;
                 //to.DatConclusao = Convert.ToDateTime(prj.DataConclusao);
 
                 listaRetorno.Add(to);   

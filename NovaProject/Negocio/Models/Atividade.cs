@@ -32,8 +32,6 @@ namespace Negocio.Models
         [ForeignKey("SituacaoAtividadeId")]
         public virtual SituacaoAtividade SituacaoAtividade { get; set; }
         
-        [InverseProperty("Atividade")]
-        public virtual ICollection<AnexoAtividade> Anexos { get; set; }
 
         [Required]
         public EPrioridade Prioridade { get; set; }

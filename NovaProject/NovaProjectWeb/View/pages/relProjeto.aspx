@@ -75,16 +75,16 @@
                             <a href="#"><i class="fa fa-files-o fa-fw"></i>Relatórios<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="RelAtividade.aspx">Atividades Em Aberto</a>
+                                    <a href="RelAtividade.aspx">Atividades em aberto</a>
                                 </li>
                                 <li>
-                                    <a href="TipoAtividade.aspx">Tipos de Atividades</a>
+                                    <a href="TipoAtividade.aspx">Tipos de atividades</a>
                                 </li>
                                 <%--<li>
                                     <a href="TempoGasto.aspx">Tempo Gasto por Atividade</a>
                                 </li>--%>
                                 <li>
-                                    <a href="RelProjeto.aspx">Projetos em Execução</a>
+                                    <a href="RelProjeto.aspx">Projetos em execução</a>
                                 </li>
 
                             </ul>
@@ -101,7 +101,7 @@
                     <asp:Button ID="btnPrint" runat="server" class="btn" Text="Imprimir" OnClientClick = "return PrintPanel();" />
                     <asp:Panel id="pnlContents" runat = "server">
                     <div class="col-lg-12">
-                        <h1 class="page-header">Projetos em Execução</h1>
+                        <h1 class="page-header">Projetos em execução</h1>
                         <div class="panel panel-default">
 
                             
@@ -113,9 +113,9 @@
                                                     OnSelectedIndexChanging="gridPrj_SelectedIndexChanging" CssClass="table table-bordered table-hover table-striped">
                                                 <Columns>
                                                     <asp:BoundField DataField="NomeProjeto" HeaderText="Projeto" SortExpression="NomeProjeto" />
-                                                    <asp:BoundField DataField="DataInicio" HeaderText="Data de Inicio" SortExpression="DataInicio" />
-                                                    <asp:BoundField DataField="DataPrevista" HeaderText="Data Prevista" SortExpression="DataPrevista" />
-                                                    <asp:BoundField DataField="TempoGasto" HeaderText="Tempo Gasto" SortExpression="TempoGasto" />
+                                                    <asp:BoundField DataField="DataInicio" HeaderText="Data de inicio" SortExpression="DataInicio" />
+                                                    <asp:BoundField DataField="DataPrevista" HeaderText="Data prevista" SortExpression="DataPrevista" />
+                                                    <asp:BoundField DataField="TempoGasto" HeaderText="Quantidade de atividades" SortExpression="TempoGasto" />
                                                 </Columns>
                                             </asp:GridView>
                                         </div>

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Negocio.Dao
 {
-    public class AnexoAtividadeDAO : CRUD<AnexoAtividade>
+    public class AnexoAtividadeDAO 
 
     {
     }

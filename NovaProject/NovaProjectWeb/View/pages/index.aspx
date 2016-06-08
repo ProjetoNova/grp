@@ -59,16 +59,16 @@
                             <a href="#"><i class="fa fa-files-o fa-fw"></i>Relatórios<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="RelAtividade.aspx">Atividades Em Aberto</a>
+                                    <a href="RelAtividade.aspx">Atividades em aberto</a>
                                 </li>
                                 <li>
-                                    <a href="TipoAtividade.aspx">Tipos de Atividades</a>
+                                    <a href="TipoAtividade.aspx">Tipos de atividades</a>
                                 </li>
                                <%-- <li>
                                     <a href="TempoGasto.aspx">Tempo Gasto por Atividade</a>
                                 </li>--%>
                                  <li>
-                                    <a href="RelProjeto.aspx">Projetos em Execução</a>
+                                    <a href="RelProjeto.aspx">Projetos em execução</a>
                                 </li>
 
                             </ul>
@@ -82,7 +82,7 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Painel Gerencial</h1>
+                    <h1 class="page-header">Painel gerencial</h1>
                 </div>
             </div>
             <div class="row">
@@ -92,7 +92,7 @@
                             <div class="row">
                                 <div class="col-xs-12 text-left">
                                     <div class="huge"><asp:Label runat="server" ID="projExec"></asp:Label></div>
-                                    <div>Projetos em Execução</div>
+                                    <div>Projetos em execução</div>
                                 </div>
                             </div>
                         </div>
@@ -113,7 +113,7 @@
                             <div class="row">
                                 <div class="col-xs-12 text-left">
                                     <div class="huge"><asp:Label runat="server" ID="atvAberto" /></div>
-                                    <div>Atividades em Aberto</div>
+                                    <div>Atividades em aberto</div>
                                 </div>
                             </div>
                         </div>
@@ -134,14 +134,14 @@
                             <div class="row">
                                 <div class="col-xs-12 text-left">
                                     <div class="huge"><asp:Label runat="server" ID="atvAndamento" /></div>
-                                    <div>Atividades em Andamento</div>
+                                    <div>Atividades em andamento</div>
                                 </div>
                             </div>
                         </div>
                         <a href="#">
                             <div class="panel-footer">
                                 <a href="#">
-                                    <span class="pull-left">Ver detelhes</span>
+                                    <span class="pull-left">Ver detalhes</span>
                                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                     <div class="clearfix"></div>
                                 </a>

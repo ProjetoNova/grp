@@ -13,8 +13,6 @@ namespace Negocio.Dao
 
         }
 
-        public DbSet<AnexoAtividade> ANEXO_ATIVIDADE_ { get; set; }
-        public DbSet<AnexoProjeto> ANEXO_PROJETO_ { get; set; }
         public DbSet<Atividade> ATIVIDADE_ { get; set; }
         public DbSet<FaseProjeto> FASE_PROJETO_ { get; set; }
         public DbSet<Projeto> PROJETO_ { get; set; }

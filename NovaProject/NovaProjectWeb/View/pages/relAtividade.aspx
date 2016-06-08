@@ -73,16 +73,16 @@
                             <a href="#"><i class="fa fa-files-o fa-fw"></i>Relatórios<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="RelAtividade.aspx">Atividades Em Aberto</a>
+                                    <a href="RelAtividade.aspx">Atividades em aberto</a>
                                 </li>
                                 <li>
-                                    <a href="TipoAtividade.aspx">Tipos de Atividades</a>
+                                    <a href="TipoAtividade.aspx">Tipos de atividades</a>
                                 </li>
                                 <%--<li>
                                     <a href="TempoGasto.aspx">Tempo Gasto por Atividade</a>
                                 </li>--%>
                                 <li>
-                                    <a href="RelProjeto.aspx">Projetos em Execução</a>
+                                    <a href="RelProjeto.aspx">Projetos em execução</a>
                                 </li>
 
                             </ul>
@@ -100,7 +100,7 @@
                     <asp:Panel id="pnlContents" runat = "server">
                         <div class="col-lg-12">
                             
-                            <h1 class="page-header">Atividades em Aberto</h1>
+                            <h1 class="page-header">Atividades em aberto</h1>
                             <div class="panel panel-default">
 
                                 <div class="panel-body">
@@ -109,20 +109,20 @@
                                             <div class="table-responsive">
                                             
                                                 <asp:RadioButtonList ID="rdBtnList" runat="server" AutoPostBack="True" OnSelectedIndexChanged="agrupar" >
-                                                    <asp:ListItem Value="0" Selected="True">Por Colaborador</asp:ListItem>
-                                                    <asp:ListItem Value="1">Por Projeto</asp:ListItem>
+                                                    <asp:ListItem Value="0" Selected="True">Por colaborador</asp:ListItem>
+                                                    <asp:ListItem Value="1">Por projeto</asp:ListItem>
                                                 </asp:RadioButtonList>
                                             
                                                 <asp:GridView Width="100%" runat="server" ID="gridAtv" AutoGenerateColumns="False" OnSorting="gridAtv_Sorting"
                                                         OnSelectedIndexChanging="gridAtv_SelectedIndexChanging" CssClass="table table-bordered table-hover table-striped">
                                                     <Columns>
-                                                        <asp:BoundField DataField="NomeUsuario" HeaderText="Nome do Colaborador" SortExpression="NomeUsuario" />
-                                                        <asp:BoundField DataField="NomeProjeto" HeaderText="Nome do Projeto" SortExpression="NomeProjeto" />
-                                                        <asp:BoundField DataField="NomeAtividade" HeaderText="Nome da Atividade" SortExpression="NomeAtividade" />
-                                                        <asp:BoundField DataField="TipoAtividade" HeaderText="Tipo da Atividade" SortExpression="TipoAtividade" />
-                                                        <asp:BoundField DataField="DataInicio" HeaderText="Data de Inicio" SortExpression="DataInicio" />
-                                                        <asp:BoundField DataField="DataPrevista" HeaderText="Data Prevista" SortExpression="DataPrevista" />
-                                                        <asp:BoundField DataField="SituacaoAtividade" HeaderText="Situacao da Atividade" SortExpression="SituacaoAtividade" />
+                                                        <asp:BoundField DataField="NomeUsuario" HeaderText="Nome do colaborador" SortExpression="NomeUsuario" />
+                                                        <asp:BoundField DataField="NomeProjeto" HeaderText="Nome do projeto" SortExpression="NomeProjeto" />
+                                                        <asp:BoundField DataField="NomeAtividade" HeaderText="Nome da atividade" SortExpression="NomeAtividade" />
+                                                        <asp:BoundField DataField="TipoAtividade" HeaderText="Tipo da atividade" SortExpression="TipoAtividade" />
+                                                        <asp:BoundField DataField="DataInicio" HeaderText="Data de inicio" SortExpression="DataInicio" />
+                                                        <asp:BoundField DataField="DataPrevista" HeaderText="Data prevista" SortExpression="DataPrevista" />
+                                                        <asp:BoundField DataField="SituacaoAtividade" HeaderText="Situacao da atividade" SortExpression="SituacaoAtividade" />
                                                      </Columns>
                                                 </asp:GridView>
                                             </div>
