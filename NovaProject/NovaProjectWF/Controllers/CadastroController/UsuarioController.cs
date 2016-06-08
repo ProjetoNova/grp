@@ -30,6 +30,18 @@ namespace NovaProjectWF.Controllers.CadastroController
             return nomes;
         }
 
+        public List<string> TodosOsAtivos()
+        {
+            List<String> nomes = new List<String>();
+
+            foreach (Usuario t in crud.selectAtivos())
+            {
+                nomes.Add(t.Nome);
+            }
+
+            return nomes;
+        }
+
         public Object Salvar(string Id, string Nome, string Formacao,
            string Experiencia, string Email, string Login, string senha, string confSenha,
            string Link, bool Status, int TipoUsuarioId, bool Master)

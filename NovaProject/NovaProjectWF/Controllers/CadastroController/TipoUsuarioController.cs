@@ -88,5 +88,17 @@ namespace NovaProjectWF.Controllers.CadastroController
             return nomes;
         }
 
+        public List<string> TodosOsAtivos()
+        {
+            List<String> nomes = new List<String>();
+
+            foreach (TipoUsuario t in crud.selectAtivos())
+            {
+                nomes.Add(t.Nome);
+            }
+
+            return nomes;
+        }
+
     }
 }

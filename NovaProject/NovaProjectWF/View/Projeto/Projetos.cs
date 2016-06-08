@@ -68,7 +68,6 @@ namespace NovaProjectWF.View.Projeto
         private void OcultarColunas()
         {
             this.dataGridView1.Columns["FaseProjeto"].Visible = false;
-            this.dataGridView1.Columns["Anexos"].Visible = false;
             this.dataGridView1.Columns["Usuarios"].Visible = false;
             this.dataGridView1.Columns["Descricao"].Visible = false;
             this.dataGridView1.Columns["PlanoProjeto"].Visible = false;

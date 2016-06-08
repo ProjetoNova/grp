@@ -64,6 +64,25 @@ namespace Negocio.Dao
             return usuario;
         }
 
+        public List<Usuario> selectAtivos()
+        {
+            List<Usuario> usuario = new List<Usuario>();
+
+            using (Contexto ctx = new Contexto())
+            {
+                var query = from c in ctx.USUARIO_
+                            where c.Status == true
+                            select c;
+
+                foreach (var item in query)
+                {
+                    usuario.Add(item);
+                }
+            }
+
+            return usuario;
+        }
+
         public override List<Usuario> selectAll()
         {
             List<Usuario> allUsuario = new List<Usuario>();

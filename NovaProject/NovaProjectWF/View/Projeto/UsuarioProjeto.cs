@@ -34,7 +34,7 @@ namespace NovaProjectWF.View.Projeto
             TipoUsuarioController controlTUsuario = new TipoUsuarioController();
             Negocio.Models.Usuario user = controlUser.BuscarPorId(entidade.UsuarioId+"");
             txtNomeUsuario.Text = user.Nome;
-            List<String> papeis = controlTUsuario.TodosOsNomes();
+            List<String> papeis = controlTUsuario.TodosOsAtivos();
             cbPapel.DataSource = papeis;
             cbPapel.SelectedIndex = papeis.IndexOf(controlTUsuario.BuscarPorId(entidade.TipoUsuarioId+"").Nome);
             dtInclusao.Value = Convert.ToDateTime(entidade.InicioProjeto);

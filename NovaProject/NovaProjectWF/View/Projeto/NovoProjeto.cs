@@ -25,8 +25,6 @@ namespace NovaProjectWF.View.Projeto
         List<Negocio.Models.FaseProjeto> fases;
         List<EquipeProjeto> equipe;
         List<AtividadeProjeto> atividades;
-        List<ArtefatosProjeto> artefatos;
-        PropriedadeArtefato propArte;
         Form parent;
 
         public NovoProjeto()
@@ -35,8 +33,8 @@ namespace NovaProjectWF.View.Projeto
             cbSituacao.DataSource = SituacaoProjeto.GetList();
             UsuarioController controlUser = new UsuarioController();
             TipoUsuarioController controlTUsuario = new TipoUsuarioController();
-            cbUsuario.DataSource = controlUser.TodosOsNomes();
-            cbPapel.DataSource = controlTUsuario.TodosOsNomes();
+            cbUsuario.DataSource = controlUser.TodosOsAtivos();
+            cbPapel.DataSource = controlTUsuario.TodosOsAtivos();
             dtInicio.Value = DateTime.Today;
             dtPrevista.Value = DateTime.Today;
 
@@ -248,6 +246,13 @@ namespace NovaProjectWF.View.Projeto
             {
                 NovaAtividade atv = new NovaAtividade(this, Convert.ToInt32(lblId.Text.Trim()));
                 Negocio.Models.FaseProjeto fase = fases[gridFase.SelectedRows[0].Index];
+
+                if (fase.Status == false)
+                {
+                    Mensagem.Aviso("A Fase está inativa, não é possível incluir atividade");
+                    return;
+                }
+                
                 fase.Projeto = projeto;
                 atv.ExibirNova(this.MdiParent, fase);
             }
@@ -451,8 +456,8 @@ namespace NovaProjectWF.View.Projeto
         {
             UsuarioController controlUser = new UsuarioController();
             TipoUsuarioController controlTUsuario = new TipoUsuarioController();
-            cbUsuario.DataSource = controlUser.TodosOsNomes();
-            cbPapel.DataSource = controlTUsuario.TodosOsNomes();
+            cbUsuario.DataSource = controlUser.TodosOsAtivos();
+            cbPapel.DataSource = controlTUsuario.TodosOsAtivos();
 
             Mensagem.Informacao("Projeto Atualizado!");
         }

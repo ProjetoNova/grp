@@ -44,5 +44,24 @@ namespace Negocio.Dao
 
             return tipoUsuario;
         }
+
+        public List<TipoUsuario> selectAtivos()
+        {
+            List<TipoUsuario> tipoUsuario = new List<TipoUsuario>();
+
+            using (Contexto ctx = new Contexto())
+            {
+                var query = from c in ctx.TIPO_USUARIO_
+                            where c.Status == true
+                            select c;
+
+                foreach (var item in query)
+                {
+                    tipoUsuario.Add(item);
+                }
+            }
+
+            return tipoUsuario;
+        }
     }
 }
