@@ -17,8 +17,6 @@ namespace Negocio.Models
            [InverseProperty("Projeto")]     
            public virtual ICollection<FaseProjeto> FaseProjeto { get; set; }
            [InverseProperty("Projeto")]
-           public virtual ICollection<AnexoProjeto> Anexos {get; set;}
-           [InverseProperty("Projeto")]
            public virtual ICollection<UsuarioProjeto> Usuarios { get; set; }
            [Required]
            public string Titulo { get; set; } 

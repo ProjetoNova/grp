@@ -50,34 +50,34 @@ namespace NovaProjectWF.View.Projeto
             }
         }
 
-        private void btnSalvarArquivo_Click(object sender, EventArgs e)
-        {
-            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
-            saveFileDialog1.Title = "Salvar o Artefato no Computador Local";
-            saveFileDialog1.FileName = artefato.NomeArquivo;
-            saveFileDialog1.ShowDialog();
+        //private void btnSalvarArquivo_Click(object sender, EventArgs e)
+        //{
+        //    SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+        //    saveFileDialog1.Title = "Salvar o Artefato no Computador Local";
+        //    saveFileDialog1.FileName = artefato.NomeArquivo;
+        //    saveFileDialog1.ShowDialog();
 
-            AnexoProjetoDAO anexo = new AnexoProjetoDAO();
+        //    AnexoProjetoDAO anexo = new AnexoProjetoDAO();
 
-            BinaryWriter Writer = null;
-            string Name = saveFileDialog1.FileName;
-            byte[] Data  = ((AnexoProjeto)anexo.select(artefato.IdAnexo)).Anexo;
+        //    BinaryWriter Writer = null;
+        //    string Name = saveFileDialog1.FileName;
+        //    //byte[] Data  = ((AnexoProjeto)anexo.select(artefato.IdAnexo)).Anexo;
 
-            try
-            {
-                // Create a new stream to write to the file
-                Writer = new BinaryWriter(File.OpenWrite(Name));
+        //    try
+        //    {
+        //        // Create a new stream to write to the file
+        //        Writer = new BinaryWriter(File.OpenWrite(Name));
 
-                // Writer raw data                
-                Writer.Write(Data);
-                Writer.Flush();
-                Writer.Close();
-            }
-            catch
-            {
-                MessageBox.Show("Problema ao Salvar Arquivo");
-            }
+        //        // Writer raw data                
+        //        Writer.Write(Data);
+        //        Writer.Flush();
+        //        Writer.Close();
+        //    }
+        //    catch
+        //    {
+        //        MessageBox.Show("Problema ao Salvar Arquivo");
+        //    }
 
-        }
+        //}
     }
 }

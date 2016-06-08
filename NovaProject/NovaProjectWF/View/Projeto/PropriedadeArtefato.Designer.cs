@@ -113,13 +113,13 @@
             // 
             // btnSalvarArquivo
             // 
-            this.btnSalvarArquivo.Location = new System.Drawing.Point(16, 164);
-            this.btnSalvarArquivo.Name = "btnSalvarArquivo";
-            this.btnSalvarArquivo.Size = new System.Drawing.Size(98, 23);
-            this.btnSalvarArquivo.TabIndex = 6;
-            this.btnSalvarArquivo.Text = "Baixar Arquivo...";
-            this.btnSalvarArquivo.UseVisualStyleBackColor = true;
-            this.btnSalvarArquivo.Click += new System.EventHandler(this.btnSalvarArquivo_Click);
+            //this.btnSalvarArquivo.Location = new System.Drawing.Point(16, 164);
+            //this.btnSalvarArquivo.Name = "btnSalvarArquivo";
+            //this.btnSalvarArquivo.Size = new System.Drawing.Size(98, 23);
+            //this.btnSalvarArquivo.TabIndex = 6;
+            //this.btnSalvarArquivo.Text = "Baixar Arquivo...";
+            //this.btnSalvarArquivo.UseVisualStyleBackColor = true;
+            //this.btnSalvarArquivo.Click += new System.EventHandler(this.btnSalvarArquivo_Click);
             // 
             // btnOk
             // 

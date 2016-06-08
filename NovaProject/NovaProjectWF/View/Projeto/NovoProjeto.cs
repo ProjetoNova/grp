@@ -394,38 +394,38 @@ namespace NovaProjectWF.View.Projeto
             //}
         }
 
-        private void btnCarregarArtefato_Click(object sender, EventArgs e)
-        {
-            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                try
-                {
-                    System.IO.StreamReader sr = new System.IO.StreamReader(openFileDialog1.FileName);
+        //private void btnCarregarArtefato_Click(object sender, EventArgs e)
+        //{
+        //    if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+        //    {
+        //        try
+        //        {
+        //            System.IO.StreamReader sr = new System.IO.StreamReader(openFileDialog1.FileName);
 
-                    if (sr.BaseStream.Length > 10485760)
-                    {
-                        MessageBox.Show("Tamanho Máximo do Arquivo é de 10MB");
-                    }
-                    else
-                    {
-                        AnexoProjetoController control = new AnexoProjetoController();
+        //            if (sr.BaseStream.Length > 10485760)
+        //            {
+        //                MessageBox.Show("Tamanho Máximo do Arquivo é de 10MB");
+        //            }
+        //            else
+        //            {
+        //                AnexoProjetoController control = new AnexoProjetoController();
 
-                        control.Salvar("0", projeto.Id, SessaoSistema.UsuarioId, sr, DateTime.Now, openFileDialog1.SafeFileName, "");
+        //                control.Salvar("0", projeto.Id, SessaoSistema.UsuarioId, sr, DateTime.Now, openFileDialog1.SafeFileName, "");
 
-                        MessageBox.Show("Arquivo Carregado com Sucesso!");
+        //                MessageBox.Show("Arquivo Carregado com Sucesso!");
 
-                        atualizaGridArtefato();
-                    }
+        //                atualizaGridArtefato();
+        //            }
 
-                    sr.Close();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Erro ao carregar Arquivo");
-                    return;
-                }
-            }
-        }
+        //            sr.Close();
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            MessageBox.Show(ex.Message, "Erro ao carregar Arquivo");
+        //            return;
+        //        }
+        //    }
+        //}
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
