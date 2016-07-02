@@ -106,6 +106,28 @@ namespace NovaProjectWF.View.Projeto
             if (txtPlanoProjeto.Text.Trim() != string.Empty)
                 conteudo = txtPlanoProjeto.Rtf;
 
+            //if (SituacaoProjeto.GetEnum(cbSituacao.SelectedValue.ToString()).Equals(ESituacaoProjeto.CONCLUIDO))
+            //{
+            //    if(lblId.Text.Trim()!="" && lblId.Text.Trim()!=null) {
+            //        AtividadeController aC = new AtividadeController();
+            //        FaseProjetoController fC = new FaseProjetoController();
+            //        List<Negocio.Models.FaseProjeto> lfp = fC.GetFasesDoProjeto(Convert.ToInt32(lblId.Text.Trim()));
+
+            //        for (int i = 0; i < lfp.Count; i++)
+            //        {
+            //            List<Negocio.Models.NaoPersistido.AtividadeProjeto> la = 
+            //                aC.GetAtividadesDaFase(lfp[i].Id);
+
+            //            for (int j = 0; j < la.Count; j++)
+            //            {
+            //                if(la[i].dtFim!="" && la[i].dtFim!="")
+            //            }
+            //        }
+                
+            //    }
+                
+            //}
+
             Object retorno = control.Salvar(lblId.Text.Trim(), txtNome.Text.Trim(), txtDescricao.Text.Trim(),
                 dtInicio.Text.Trim(), dtPrevista.Text.Trim(), Validar.GetBytes(conteudo), 
                 "", SituacaoProjeto.GetEnum(cbSituacao.SelectedValue.ToString()));
@@ -122,6 +144,19 @@ namespace NovaProjectWF.View.Projeto
                 }
                 else
                 {
+                    if (SituacaoProjeto.GetEnum(cbSituacao.SelectedValue.ToString()).Equals(ESituacaoProjeto.CONCLUIDO))
+                    {
+                        DateTime dataFim = Convert.ToDateTime(control.BuscarPorId(lblId.Text.Trim()).DataConclusao);
+                        if (dataFim != null)
+                        {
+                            dtFim.Text = dataFim.ToString();
+                        }
+                    }
+                    else
+                    {
+                        dtFim.Text = "";
+                    }
+
                     Mensagem.Informacao("Salvo com sucesso");
                 }
             }
@@ -279,7 +314,6 @@ namespace NovaProjectWF.View.Projeto
                 cbPapel.Enabled = false;
                 cbUsuario.Enabled = false;
                 btnIncluirUsuario.Enabled = false;
-                btnExcluirUsuario.Enabled = false;
                 ((Control)tabFase).Enabled = false;
             }
             else
@@ -287,7 +321,6 @@ namespace NovaProjectWF.View.Projeto
                 cbPapel.Enabled = true;
                 cbUsuario.Enabled = true;
                 btnIncluirUsuario.Enabled = true;
-                btnExcluirUsuario.Enabled = true;
                 ((Control)tabFase).Enabled = true;
             }
         }
@@ -472,10 +505,15 @@ namespace NovaProjectWF.View.Projeto
                 Negocio.Models.UsuarioProjeto up = upc.GetUsuarioProjeto(projeto.Id, uc.BuscarPorNome(ep.NomeUsuario)[0].Id);
 
                 View.Projeto.UsuarioProjeto upView = new View.Projeto.UsuarioProjeto();
-                upView.Exibir(parent, up, this);
+                upView.Exibir(this.MdiParent, up, this);
 
                 AtualizaGridEquipe(upc);
             }
+        }
+
+        private void gridFase_CellContentClick(object sender, EventArgs e)
+        {
+            gridAtividadesRefresh();
         }
     }
 }

@@ -44,7 +44,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.cbUsuario = new System.Windows.Forms.ComboBox();
             this.gridEquipe = new System.Windows.Forms.DataGridView();
-            this.btnExcluirUsuario = new System.Windows.Forms.Button();
             this.btnIncluirUsuario = new System.Windows.Forms.Button();
             this.txtDescricao = new System.Windows.Forms.RichTextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -181,7 +180,6 @@
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.cbUsuario);
             this.groupBox2.Controls.Add(this.gridEquipe);
-            this.groupBox2.Controls.Add(this.btnExcluirUsuario);
             this.groupBox2.Controls.Add(this.btnIncluirUsuario);
             this.groupBox2.Location = new System.Drawing.Point(9, 93);
             this.groupBox2.Name = "groupBox2";
@@ -248,16 +246,6 @@
             this.gridEquipe.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridEquipe.Size = new System.Drawing.Size(778, 303);
             this.gridEquipe.TabIndex = 2;
-            // 
-            // btnExcluirUsuario
-            // 
-            this.btnExcluirUsuario.Location = new System.Drawing.Point(710, 21);
-            this.btnExcluirUsuario.Name = "btnExcluirUsuario";
-            this.btnExcluirUsuario.Size = new System.Drawing.Size(75, 23);
-            this.btnExcluirUsuario.TabIndex = 1;
-            this.btnExcluirUsuario.Text = "Excluir";
-            this.btnExcluirUsuario.UseVisualStyleBackColor = true;
-            this.btnExcluirUsuario.Click += new System.EventHandler(this.btnExcluirUsuario_Click);
             // 
             // btnIncluirUsuario
             // 
@@ -387,6 +375,7 @@
             this.gridFase.Size = new System.Drawing.Size(782, 114);
             this.gridFase.TabIndex = 0;
             this.gridFase.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridFase_CellContentClick);
+            this.gridFase.SelectionChanged += new System.EventHandler(this.gridFase_CellContentClick);
             // 
             // btnEditarFase
             // 
@@ -541,7 +530,6 @@
         private System.Windows.Forms.Button btnEditarFase;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnIncluirUsuario;
-        private System.Windows.Forms.Button btnExcluirUsuario;
         private System.Windows.Forms.DataGridView gridEquipe;
         private System.Windows.Forms.MaskedTextBox dtFim;
         private System.Windows.Forms.Label label2;

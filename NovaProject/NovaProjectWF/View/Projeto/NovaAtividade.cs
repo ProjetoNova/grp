@@ -99,8 +99,9 @@ namespace NovaProjectWF.View.Projeto
             this.dtInicio.MaxDate = this.atividade.FaseProjeto.DataFim.Date;
             this.dtPrevista.MinDate = this.atividade.FaseProjeto.DataInicio.Date;
             this.dtPrevista.MaxDate = this.atividade.FaseProjeto.DataFim.Date;
-            this.txtEstimado.Text = "0"+this.atividade.TempoEstimado.ToString();
-            this.maskedTextBox3.Text = "0"+this.atividade.TempoGasto.ToString();
+
+            this.txtEstimado.Text = this.atividade.TempoEstimado.ToString();
+            this.maskedTextBox3.Text = this.atividade.TempoGasto.ToString();
 
             if (this.atividade.DataFim != null)
             {

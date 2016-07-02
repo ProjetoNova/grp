@@ -45,7 +45,6 @@ namespace NovaProjectWF.View.Projeto
             this.gridAtividade.Columns["FaseProjeto"].Visible = false;
             this.gridAtividade.Columns["Colaborador"].Visible = false;
             this.gridAtividade.Columns["TipoAtividade"].Visible = false;
-            this.gridAtividade.Columns["Anexos"].Visible = false;
             this.gridAtividade.Columns["Descricao"].Visible = false;
             this.gridAtividade.Columns["TempoEstimado"].Visible = false;
             this.gridAtividade.Columns["TempoGasto"].Visible = false;

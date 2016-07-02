@@ -197,25 +197,24 @@
             this.groupBox2.Size = new System.Drawing.Size(140, 69);
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Tempo";
+            this.groupBox2.Text = "Tempo (Em Horas)";
             // 
             // maskedTextBox3
             // 
             this.maskedTextBox3.Location = new System.Drawing.Point(54, 37);
-            this.maskedTextBox3.Mask = "00:00";
             this.maskedTextBox3.Name = "maskedTextBox3";
             this.maskedTextBox3.Size = new System.Drawing.Size(42, 20);
             this.maskedTextBox3.TabIndex = 2;
+            this.maskedTextBox3.Text = "0";
             this.maskedTextBox3.ValidatingType = typeof(System.DateTime);
             // 
             // txtEstimado
             // 
             this.txtEstimado.Location = new System.Drawing.Point(8, 37);
-            this.txtEstimado.Mask = "00:00";
             this.txtEstimado.Name = "txtEstimado";
             this.txtEstimado.Size = new System.Drawing.Size(42, 20);
             this.txtEstimado.TabIndex = 1;
-            this.txtEstimado.Text = "0100";
+            this.txtEstimado.Text = "0";
             this.txtEstimado.ValidatingType = typeof(System.DateTime);
             // 
             // label12
